@@ -22,27 +22,27 @@ namespace BasicProgram
             {
                 case 1:
                     leapYear leapYear = new leapYear();
-                    leapYear.Leap();
+                    leapYear.LeapYearObj();
                     break;
                 case 2:
                     PowerOfTwo PowerOfTwo = new PowerOfTwo();
-                    PowerOfTwo.Power();
+                    PowerOfTwo.PowerOfTwoObj();
                     break;
                 case 3:
                     HarmonicNumber HarmonicNumber = new HarmonicNumber();
-                    HarmonicNumber.harmonic();
+                    HarmonicNumber.HarmonicNumberObj();
                     break;
                 case 4:
                     FlipCoin FlipCoin = new FlipCoin();
-                    FlipCoin.flipcoin();
+                    FlipCoin.FlipCoinObj();
                     break;
                 case 5:
                     PrimeFactors PrimeFactors = new PrimeFactors();
-                    PrimeFactors.factors();
+                    PrimeFactors.PrimeFactorsObj();
                     break;
                 case 6:
                     Hello Hello = new Hello();
-                    Hello.hello();
+                    Hello.HelloObj();
                     break;
                 default :
                     break;

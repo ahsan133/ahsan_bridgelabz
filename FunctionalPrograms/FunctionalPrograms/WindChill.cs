@@ -12,11 +12,11 @@ namespace FunctionalPrograms
 {
     class WindChill
     {
-        public static void wind()
+        public static void WindChillObj()
         {
             Console.WriteLine("enter the value of t and v");
-            int t = Convert.ToInt32(Console.ReadLine());
-            int v = Convert.ToInt32(Console.ReadLine());
+            int t = Utility.IsInteger(Console.ReadLine());
+            int v = Utility.IsInteger(Console.ReadLine());
             // the formula is not valid if t is larger than 50 in absolute value or if v is larger than 120 or less than 3
             if ((t > 50) || (v > 120) || (v < 3))
             {
@@ -25,7 +25,7 @@ namespace FunctionalPrograms
             else
             {
                 double w = 35.74 + (0.6215 * t) + (0.4275 * t - 35.75) * (Math.Pow(v, 0.16));
-                Console.WriteLine("windchill="w);
+                Console.WriteLine("windchill=" + w);
             }
         }
     }

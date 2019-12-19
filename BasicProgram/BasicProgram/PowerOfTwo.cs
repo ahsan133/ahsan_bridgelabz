@@ -12,11 +12,10 @@ namespace BasicPrograms
 {
     class PowerOfTwo
     {
-        public static void Power()
+        public static void PowerOfTwoObj()
         {
             Console.WriteLine("enter the number");
-            string s = Console.ReadLine();
-            int num = Convert.ToInt32(s);
+            int num = Utility.IsInteger(Console.ReadLine());
             for (int i = 1; i <= num; i++)
             {
                 Console.WriteLine(Math.Pow(2, i));

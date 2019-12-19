@@ -12,7 +12,7 @@ namespace AlgorithmPrograms
 {
     class Permutations
     {
-        public static void permute(string s,int lo,int hi)
+        public static void Permute(string s,int lo,int hi)
         {
             if(lo==hi)
                 Console.WriteLine(s);
@@ -20,14 +20,14 @@ namespace AlgorithmPrograms
             {
                 for(int i=lo;i<=hi;i++)
                 {
-                    s = swap(s, lo, i);
-                    permute(s, lo + 1, hi);
-                    s = swap(s, lo, i);
+                    s = Swap(s, lo, i);
+                    Permute(s, lo + 1, hi);
+                    s = Swap(s, lo, i);
                 }
             }
         }
         //swap characters at i and j
-        public static string swap(string s,int i,int j)
+        public static string Swap(string s,int i,int j)
         {
 
             char temp;
@@ -38,12 +38,12 @@ namespace AlgorithmPrograms
             string str = new string(a);
             return str;
         }
-        public static void permutation()
+        public static void PermutationsObj()
         {
             Console.WriteLine("enter the string");
-            String s = Console.ReadLine();
+            String s = Utility.IsString(Console.ReadLine());
             int n = s.Length;
-            permute(s, 0, n - 1);
+            Permute(s, 0, n - 1);
         }
     }
 }

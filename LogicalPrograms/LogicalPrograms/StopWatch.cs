@@ -12,7 +12,7 @@ namespace LogicalPrograms
 {
     class StopWatch
     {
-        public static void stopwatch()
+        public static void StopWatchObj()
         {
             int start = DateTime.Now.Second;
             Console.WriteLine("Timer started, Press Enter to stop");

@@ -4,6 +4,7 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
+using BasicPrograms;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,16 +13,15 @@ namespace BasicProgram
 {
     class FlipCoin
     {
-        public static void flipcoin()
+        public static void FlipCoinObj()
         {
-            Random random = new Random();
             int tails = 0, heads = 0;
             Console.WriteLine("enter the number");
-            int num = Convert.ToInt32(Console.ReadLine());
+            int num = Utility.IsInteger(Console.ReadLine());
             for (int i = 0; i < num; i++)
             {
                 //taking random number from 0 to 1
-                if (random.NextDouble() < 0.5)
+                if (Utility.RandomDouble() < 0.5)
                     tails++;
                 else
                     heads++;

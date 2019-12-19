@@ -12,19 +12,18 @@ namespace LogicalPrograms
 {
     class Gambler
     {
-        public static void gambler()
+        public static void GamblerObj()
         {
-            Random random = new Random();
             int win = 0, loss = 0, i = 0;
             Console.WriteLine("enter stake and goal");
-            int stake = Convert.ToInt32(Console.ReadLine());
-            int goal = Convert.ToInt32(Console.ReadLine());
+            int stake = Utility.IsInteger(Console.ReadLine());
+            int goal = Utility.IsInteger(Console.ReadLine());
             Console.WriteLine("enter number of times");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = Utility.IsInteger(Console.ReadLine());
             while ((i != n) && (stake != goal))
             {
                 //take random values
-                if (random.NextDouble() < 0.5)
+                if (Utility.RandomDouble() < 0.5)
                 {
                     win++;
                     stake++;

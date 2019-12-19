@@ -12,7 +12,7 @@ namespace BasicPrograms
     {
         
         //Check for four digit number
-       public static bool isYear(int year)
+       public static bool IsYear(int year)
         {
             int count = 0;
             while (year != 0)
@@ -26,42 +26,22 @@ namespace BasicPrograms
                 return false;
         }
 
-      public  static void Leap()
+      public  static void LeapYearObj()
         {
-            bool flag = false;
             Console.WriteLine("enter the the year");
-            var y = Console.ReadLine();
-            int year = Convert.ToInt32(y);
-            bool fourdigit = isYear(year);
-            if (!fourdigit)
+            int year = Utility.IsInteger(Console.ReadLine());
+            bool fourdigit = IsYear(year);
+            while(fourdigit==false)
             {
                 Console.WriteLine("enter a four digit number");
             }
-            else
-            {
-                //check for leap year
-                if (year % 4 == 0)
-                {
-                    if (year % 100 == 0)
-                    {
-                        if (year % 400 == 0)
-                            flag = true;
-                        else
-                            flag = false;
-                    }
-                    else
-                        flag = true;
-                }
-                else
-                    flag = false;
+            //check for leap year
+            bool flag = Utility.LeapYear(year);
 
                 if (flag)
                     Console.WriteLine(year + " is a leap year");
                 else
-                    Console.WriteLine(year + " is not a leap year");
-            }
-        }
-
-       
-    }
+                    Console.WriteLine(year + " is not a leap year");            
+      } 
+   }
 }

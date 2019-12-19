@@ -12,12 +12,11 @@ namespace LogicalPrograms
 {
     class CouponNumbers
     {
-        public static void couponnumbers()
+        public static void CouponNumbersObj()
         {
-            Random rand = new Random();
             var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789".ToCharArray();
             int max = 100000000;
-            int random = rand.Next(max);
+            int random = Utility.RandomInt(0,max);
             StringBuilder s = new StringBuilder();
             while(random>0)
             {

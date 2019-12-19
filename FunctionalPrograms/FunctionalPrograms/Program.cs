@@ -21,23 +21,23 @@ namespace FunctionalPrograms
             {
                 case 1:
                     TwoDArray TwoDArray = new TwoDArray();
-                    TwoDArray.twodarray();
+                    TwoDArray.TwoDArrayObj();
                     break;
                 case 2:
-                    SumOf3 SumOf3 = new SumOf3();
-                    SumOf3.sumof3();
+                    SumOfThree SumOfThree = new SumOfThree();
+                    SumOfThree.SumOfThreeObj();
                     break;
                 case 3:
                     Distance Distance = new Distance();
-                    Distance.distance();
+                    Distance.DistanceObj();
                     break;
                 case 4:
                     Quadratic Quadratic = new Quadratic();
-                    Quadratic.quad();
+                    Quadratic.QuadraticObj();
                     break;
                 case 5:
                     WindChill WindChill = new WindChill();
-                    WindChill.wind();
+                    WindChill.WindChillObj();
                     break;
                 default:
                     break;

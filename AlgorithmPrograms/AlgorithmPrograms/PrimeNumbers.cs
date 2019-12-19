@@ -12,26 +12,14 @@ namespace AlgorithmPrograms
 {
     class PrimeNumbers
     {
-        public static void prime()
+        public static void PrimeNumbersObj()
         {
             Console.WriteLine("enter the range");
-            int low = Convert.ToInt32(Console.ReadLine());
-            int high= Convert.ToInt32(Console.ReadLine());
-            while (low < high)
-            {
-                bool flag = false;
-                for (int i = 2; i <= low / 2; ++i)
-                {
-                    if (low % i == 0)
-                    {
-                        flag = true;
-                        break;
-                    }
-                }
-                if (!flag)
-                    Console.WriteLine(low + " ");
-                ++low;
-            }
+            int low = Utility.IsInteger(Console.ReadLine());
+            int high= Utility.IsInteger(Console.ReadLine());
+            int[] array=Utility.PrimeNumbers(low, high);
+            for (int i=0;i<array.Length;i++)
+                Console.WriteLine(array);
         }
           
     }

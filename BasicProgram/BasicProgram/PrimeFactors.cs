@@ -4,6 +4,7 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
+using BasicPrograms;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,10 +13,10 @@ namespace BasicProgram
 {
     class PrimeFactors
     {
-        public static void factors()
+        public static void PrimeFactorsObj()
         {
             Console.WriteLine("enter the number");
-            int num = Convert.ToInt32(Console.ReadLine());
+            int num = Utility.IsInteger(Console.ReadLine());
             // traverse till i*i <= num
             for (int i=2;i<Math.Sqrt(num);i++)
             {

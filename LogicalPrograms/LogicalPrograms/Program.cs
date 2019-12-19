@@ -22,19 +22,19 @@ namespace LogicalPrograms
             {
                 case 1:
                     Gambler Gambler = new Gambler();
-                    Gambler.gambler();
+                    Gambler.GamblerObj();
                     break;
                 case 2:
                     CouponNumbers CouponNumbers = new CouponNumbers();
-                    CouponNumbers.couponnumbers();
+                    CouponNumbers.CouponNumbersObj();
                     break;
                 case 3:
                     TicTacToe TicTacToe = new TicTacToe();
-                    TicTacToe.tictactoe();
+                    TicTacToe.TicTacToeObj();
                     break;
                 case 4:
                     StopWatch StopWatch = new StopWatch();
-                    StopWatch.stopwatch();
+                    StopWatch.StopWatchObj();
                     break;
                 default:
                     break;

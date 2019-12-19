@@ -12,12 +12,12 @@ namespace FunctionalPrograms
 {
     class Distance
     {
-        public static void distance()
+        public static void DistanceObj()
         {
             Console.WriteLine("enter the value of x");
-            int x = Convert.ToInt32(Console.ReadLine());
+            int x = Utility.IsInteger(Console.ReadLine());
             Console.WriteLine("enter the value of y");
-            int y = Convert.ToInt32(Console.ReadLine());
+            int y = Utility.IsInteger(Console.ReadLine());
             double distance = Math.Sqrt((x * x) + (y * y));
             Console.WriteLine("distance = " + distance);
         }

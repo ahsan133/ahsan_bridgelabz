@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="SumOf3.cs" company="Bridgelabz">
+// <copyright file="SumOfThree.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="MD Ahsanullah"/>
@@ -10,17 +10,17 @@ using System.Text;
 
 namespace FunctionalPrograms
 {
-    class SumOf3
+    class SumOfThree
     {
-        public static void sumof3()
+        public static void SumOfThreeObj()
         {
             int count = 0;
             Console.WriteLine("enter number of integers");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = Utility.IsInteger(Console.ReadLine());
             int[] a = new int[n];
             Console.WriteLine("enter "+n+" integers");
             for(int i=0;i<n;i++)
-                a[i]= Convert.ToInt32(Console.ReadLine());
+                a[i]= Utility.IsInteger(Console.ReadLine());
             //take random numbers
             for (int i = 0; i < n-2; i++)
             {

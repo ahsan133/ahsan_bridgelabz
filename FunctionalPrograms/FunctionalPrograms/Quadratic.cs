@@ -12,14 +12,14 @@ namespace FunctionalPrograms
 {
     class Quadratic
     {
-        public static void quad()
+        public static void QuadraticObj()
         {
             double root1 = 0;
             double root2 = 0;
             Console.WriteLine("enter the value of a b c");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
-            int c = Convert.ToInt32(Console.ReadLine());
+            int a = Utility.IsInteger(Console.ReadLine());
+            int b = Utility.IsInteger(Console.ReadLine());
+            int c = Utility.IsInteger(Console.ReadLine());
             int delta = (b * b) - (4 * a * c);
             //for different values of delta
             if (delta == 0)

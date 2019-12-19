@@ -12,7 +12,7 @@ namespace AlgorithmPrograms
 {
     class FindTheNumber
     {
-        public static void num(int lo,int hi)
+        public static void Number(int lo,int hi)
         {
             int mid = lo + (hi - lo) / 2;
             if( (lo!=mid) || (mid!=hi) )
@@ -21,19 +21,21 @@ namespace AlgorithmPrograms
                 {
                     Console.WriteLine("is your number " + mid);
                     Console.WriteLine("enter 1 for yes and 0 for no");
-                    int rs = Convert.ToInt32(Console.ReadLine());
+                    int rs = Utility.IsInteger(Console.ReadLine());
                     if (rs != 1)
                     {
                         Console.WriteLine("is your number between " + lo + " and " + mid);
                         Console.WriteLine("enter 1 for yes and 0 for no");
-                        int res = Convert.ToInt32(Console.ReadLine());
+                        int res = Utility.IsInteger(Console.ReadLine());
                         if (res == 1)
-                            num(lo, mid);
+                            Number(lo, mid);
                         else
-                            num(mid + 1, hi);
+                            Number(mid + 1, hi);
                     }
-                    if(rs==1)
+                    else                        
                         break;
+                    //break out of while loop 
+                    break;
                 }                          
             }
             else
@@ -41,12 +43,12 @@ namespace AlgorithmPrograms
                 Console.WriteLine("your number is " + mid);              
             }
         }
-        public static void findthenumber()
+        public static void FindTheNumberObj()
         {
             Console.WriteLine("enter the number which power of 2");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = Utility.IsInteger(Console.ReadLine());
             Console.WriteLine("think of a number between 0 and "+n);
-            num(0, n);
+            Number(0, n);
         }
     }
 }

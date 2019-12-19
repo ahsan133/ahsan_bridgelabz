@@ -12,7 +12,7 @@ namespace AlgorithmPrograms
 {
     class Anagram
     {
-        public static bool compare(char[] a, char[] b)
+        public static bool Compare(char[] a, char[] b)
         {
             int n = a.Length, count = 0;
             Array.Sort(a);
@@ -27,13 +27,13 @@ namespace AlgorithmPrograms
             else
                 return false;
         }
-        public static void anagram()
+        public static void AnagramObj()
         {
             bool flag = false;
             Console.WriteLine("enter the first string");
-            String s1 = Console.ReadLine();
+            String s1 = Utility.IsString(Console.ReadLine());
             Console.WriteLine("enter the second string");
-            String s2 = Console.ReadLine();
+            String s2 = Utility.IsString(Console.ReadLine());
             int n1 = s1.Length;
             int n2 = s2.Length;
             if (n1 != n2)
@@ -43,7 +43,7 @@ namespace AlgorithmPrograms
                 char[] c1 = s1.ToCharArray();
                 char[] c2 = s2.ToCharArray();
                 //compare two strings
-                flag = compare(c1, c2);
+                flag = Compare(c1, c2);
             }
             if (flag)
                 Console.WriteLine("the two strings are anagram");

@@ -34,7 +34,7 @@ namespace AlgorithmPrograms
             else
                return 0;
         }
-        public static void binarysearch()
+        public static void BinarySearchObj()
         {
             //read text from file
             string[] s = File.ReadAllLines(text);

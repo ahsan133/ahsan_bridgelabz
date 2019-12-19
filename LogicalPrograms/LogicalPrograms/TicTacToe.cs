@@ -13,7 +13,7 @@ namespace LogicalPrograms
     class TicTacToe
     {
         //Print the board
-        public static void print(char[,] ar)
+        public static void Print(char[,] ar)
         {
             Console.WriteLine(ar[0,0] + " " + ar[0,1] + " " + ar[0,2]);
             Console.WriteLine(ar[1,0] + " " + ar[1,1] + " " + ar[1,2]);
@@ -21,20 +21,19 @@ namespace LogicalPrograms
             Console.WriteLine("------");
         }
         //assign 'x' to the array
-        public static char[,] userinput(int row, int column, char[,] a)
+        public static char[,] UserInput(int row, int column, char[,] a)
         {
             a[row,column] = 'x';
             return a;
         }
         //assign 'o' to the array
-        public static char[,] compinput(int row, int column, char[,] a)
+        public static char[,] ComputerInput(int row, int column, char[,] a)
         {
             a[row,column] = 'o';
             return a;
         }
-        public static void tictactoe()
+        public static void TicTacToeObj()
         {
-            Random random = new Random();
             int turn = 0, row = 0, col = 0;
             bool win = false;
             char[,] a = { { ' ', ' ', ' ' }, { ' ', ' ', ' ', }, { ' ', ' ', ' ', } };
@@ -44,20 +43,20 @@ namespace LogicalPrograms
                 {
                     Console.WriteLine("enter your move");
                     Console.WriteLine("enter the row 0-2");
-                    row = Convert.ToInt32(Console.ReadLine());
+                    row = Utility.InputForTicTacToe(Console.ReadLine());
                     Console.WriteLine("enter the column 0-2");
-                    col = Convert.ToInt32(Console.ReadLine());
+                    col = Utility.InputForTicTacToe(Console.ReadLine());
 
                     while ((a[row, col] == 'x') || (a[row, col] == 'o'))
                     {
                         Console.WriteLine("invalid move");
                         Console.WriteLine("enter the row 0-2");
-                        row = Convert.ToInt32(Console.ReadLine());
+                        row = Utility.InputForTicTacToe(Console.ReadLine());
                         Console.WriteLine("enter the column 0-2");
-                        col = Convert.ToInt32(Console.ReadLine());
+                        col = Utility.InputForTicTacToe(Console.ReadLine());
                     }
-                    a = userinput(row, col, a);
-                    print(a);
+                    a = UserInput(row, col, a);
+                    Print(a);
                 }
                 //check winning condition for user
                 if ((a[0, 0] == 'x' && a[0, 1] == 'x' && a[0, 2] == 'x') || (a[1, 0] == 'x' && a[1, 1] == 'x' && a[1, 2] == 'x') ||
@@ -72,15 +71,15 @@ namespace LogicalPrograms
                 turn++;
                 if ((turn != 9) && (!win))
                 {
-                    row = (int)(random.Next(3));
-                    col = (int)(random.Next(3));
+                    row = (int)(Utility.RandomInt(0, 2));
+                    col = (int)(Utility.RandomInt(0, 2));
                     while ((a[row,col] == 'x') || (a[row,col] == 'o'))
                     {
-                        row = (int)(random.Next(3));
-                        col = (int)(random.Next(3));
+                        row = (int)(Utility.RandomInt(0, 2));
+                        col = (int)(Utility.RandomInt(0, 2));
                     }
-                    a = compinput(row, col, a);
-                    print(a);
+                    a = ComputerInput(row, col, a);
+                    Print(a);
                     //check winning condition for computer
                     if ((a[0, 0] == 'o' && a[0, 1] == 'o' && a[0, 2] == 'o') || (a[1, 0] == 'o' && a[1, 1] == 'o' && a[1, 2] == 'o') ||
                         (a[2, 0] == 'o' && a[2, 1] == 'o' && a[2, 2] == 'o') || (a[0, 0] == 'o' && a[1, 0] == 'o' && a[2, 0] == 'o') ||

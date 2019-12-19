@@ -12,14 +12,14 @@ namespace AlgorithmPrograms
 {
     class BubbleSort
     { 
-        public static void bubblesort()
+        public static void BubbleSortObj()
         {
             Console.WriteLine("enter the size");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = Utility.IsInteger(Console.ReadLine());
             int[] array = new int[n];
             Console.WriteLine("enter the elements");
             for(int i=0;i<n;i++)
-            array[i]= Convert.ToInt32(Console.ReadLine());
+            array[i]= Utility.IsInteger(Console.ReadLine());
             //sorting the array
             for (int i = 0; i < n; i++)
             {

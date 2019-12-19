@@ -12,31 +12,15 @@ namespace FunctionalPrograms
 {
     class TwoDArray
     {
-        public static void twodarray()
+        public static void TwoDArrayObj()
         {
             Console.WriteLine("enter number of rows");
-            int M = Convert.ToInt32(Console.ReadLine());
+            int M = Utility.IsInteger(Console.ReadLine());
             Console.WriteLine("enter number of columns");
-            int N = Convert.ToInt32(Console.ReadLine());
+            int N = Utility.IsInteger(Console.ReadLine());
             int[,] array = new int[M,N];
             Console.WriteLine("enter the elements");
-            for(int i=0;i<M;i++)
-            {
-                for(int j=0;j<N;j++)
-                {
-                    array[i, j] = Convert.ToInt32(Console.ReadLine());
-                }
-            }
-            //print the array
-            for (int i = 0; i < M; i++)
-            {
-                Console.WriteLine();
-                for (int j = 0; j < N; j++)
-                {
-                    Console.Write(array[i,j]+" ");
-                }
-            }
-
+            Utility.TwoDArray(M, N);
         }
     }
 }
