@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="utility.cs" company="Bridgelabz">
+// <copyright file="Utility.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="MD Ahsanullah"/>
@@ -10,175 +10,170 @@ using System.Text;
 
 namespace DataStructures
 {
-    class Utility<T>
+    class Utility
     {
-        public Node<T> head = null;
-        public int count = 0; 
-        //add a value to the list
-        public void Insert(T data)
+        public static int IsInteger(string input)
         {
-            Node<T> node = new Node<T>(data);
-            if (head == null)
+            int number;
+            //check the value of input if its a number or not
+            if (int.TryParse(input, out number))
             {
-                head = node;
-                node.next = null;
+                return Convert.ToInt32(input);
             }
             else
             {
-                Node<T> temp = head;
-                while(temp.next!=null)
+                while (int.TryParse(input, out number) == false)
                 {
-                    temp = temp.next;
+                    Console.WriteLine("please enter a proper integer");
+                    input = Console.ReadLine();
                 }
-                temp.next = node;
+                return Convert.ToInt32(input);
             }
         }
-        //check if the list is empty and return true or false
-        public bool IsEmpty()
+
+        public static double IsDouble(string input)
         {
-            if (head == null)
+            double number;
+            //check the value of input if a number is decimal or not
+            if (double.TryParse(input, out number))
+            {
+                return number;
+            }
+            else
+            {
+                while (double.TryParse(input, out number) == false)
+                {
+                    Console.WriteLine("please enter a proper integer");
+                    input = Console.ReadLine();
+                }
+                return number;
+            }
+        }
+
+        public static string IsString(string input)
+        {
+            int flag = 1;
+            do
+            {
+                //check if the input has whitespace
+                if (input.Contains(" "))
+                {
+                    Console.WriteLine("the string entered has a whitespace. please enter a proper string");
+                    input = Console.ReadLine();
+                }
+                //check if the input has number or not
+                for (int i = 0; i < 10; i++)
+                {
+                    if (input.Contains(i.ToString()))
+                    {
+                        flag = 1;
+                        Console.WriteLine("the string entered has a number. please enter a proper string");
+                        input = Console.ReadLine();
+                        break;
+                    }
+                    else
+                        flag = 0;
+                }
+            } while (flag == 1);
+            return input;
+        }
+
+        public static bool IsBoolean(string input)
+        {
+            input.ToLower();
+            //check the value of input if its true or false
+            while (String.Equals(input, "true") != true && String.Equals(input, "false") != true)
+            {
+                input.ToLower();
+                Console.WriteLine("please enter a boolean value");
+                input = Console.ReadLine();
+            }
+            return input.Equals("true") ? true : false;
+        }
+
+        //read and print 2D array
+        public static int[,] TwoDArray(int m, int n)
+        {
+            int[,] array = new int[m, n];
+            //read the array
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                    array[i, j] = Utility.IsInteger(Console.ReadLine());
+            }
+            //print the array
+            for (int i = 0; i < m; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < n; j++)
+                    Console.Write(array[i, j] + " ");
+            }
+            return array;
+        }
+
+        public static double RandomDouble()
+        {
+            Random rand = new Random();
+            return rand.NextDouble();
+        }
+
+        public static int RandomInt(int min, int max)
+        {
+            Random rand = new Random();
+            return rand.Next(min, max + 1);
+        }
+
+        public static bool LeapYear(int year)
+        {
+            bool flag = false;
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0)
+                {
+                    if (year % 400 == 0)
+                        flag = true;
+                    else
+                        flag = false;
+                }
+                else
+                    flag = true;
+            }
+            else
+                flag = false;
+
+            if (flag)
                 return true;
             else
                 return false;
         }
-        //return the size of the list
-        public int Size()
+
+        public static int[] PrimeNumbers(int min, int max)
         {
-            Node<T> temp = head;
-            count = 0;
-            if (head==null)
-                Console.WriteLine("the list is empty");
-            while(temp!=null)
+            int[] arr = new int[1000];
+            int k = 0, count = 0;
+            while (min < max)
             {
-                count++;
-                temp = temp.next;
-            }
-            return count;
-        }
-        //search the value in the list and return true or false
-        public bool Search(T word)
-        {
-            Node<T> node = new Node<T>(word);
-            Node<T> temp = head;
-            count = 0;
-            while(temp!=null)
-            {
-                if (Equals(temp.data, word))
-                    return true;
-                else
-                    temp = temp.next;               
-            }
-                return false;
-        } 
-        //return the value from the index of the list
-        public T Get(int index)
-        {
-            count = 0;
-            Node<T> temp = head;
-            while (count != index)
-            {
-                temp = temp.next;
-                count++;
-            }
-            return temp.data;
-        }
-        //add the value to the perticular index
-        public void Insert(int index,T data)
-        {
-            Node<T> node = new Node<T>(data);
-            Node<T> temp = head;
-            Node<T> prev = null;
-            if(index==0 && temp!=null)
-            {
-                head = node;
-                node.next = head;
-                return;
-            }
-            while(count!=index && temp!=null)
-            {
-                prev = temp;
-                temp = temp.next;
-                count++;
-            }
-            prev.next = node;
-            node.next = temp;
-            return;
-        }
-        //delete the value from the list
-        public void Remove(T word)
-        {
-            Node<T> temp = head;
-            Node<T> prev = null;
-            if (temp != null && Equals(temp.data, word))
-            {
-                head = temp.next;
-                return;
-            }
-            while (temp != null && !Equals(temp.data, word))
-            {
-                prev = temp;
-                temp = temp.next;
-            }
-            prev.next = temp.next;
-            return;
-        }
-        public int Compare(T x,T y)
-        {
-            int a = Convert.ToInt32(x);
-            int b = Convert.ToInt32(y);
-            return a-b;
-        }
-        public void InsertAscending(T data)
-        {
-            Node<T> node = new Node<T>(data);
-            if (head == null)
-            {
-                head = node;
-                node.next = null;
-                return;
-            }
-            Node<T> temp = head;
-            Node<T> prev = null;
-            if (temp.next == null)
-            {
-                if (Compare(data, temp.data) > 0 || Compare(data, temp.data) == 0)
-                    temp.next = node;
-                else
+                bool flag = false;
+                for (int i = 2; i <= min / 2; ++i)
                 {
-                    head = node;
-                    head.next = temp;
+                    if (min % i == 0)
+                    {
+                        flag = true;
+                        break;
+                    }
                 }
-                return;
-            }
-            if(Compare(data, temp.data) <0)
-            {
-                head = node;
-                head.next = temp;
-                return;
-            }
-            while (temp.next != null)
-            {
-                prev = temp;
-                temp = temp.next;
-                if (Compare(temp.data,data) > 0 || Compare(temp.data, data) == 0)
+                if (!flag)
                 {
-                    prev.next = node;
-                    node.next = temp;
-                    return;
-                }                
+                    Console.WriteLine(min + " ");
+                    count++;
+                    arr[k++] = min;
+                }
+                ++min;
             }
-            temp.next = node;
-            return;
-        }
-        //print the list
-        public void Print()
-        {
-            Node<T> temp = head;
-            while(temp!=null)
-            {
-                Console.Write(temp.data+" ");
-                temp = temp.next;
-            }
+            int[] array = new int[count];
+            for (int j = 0; j < count; j++)
+                array[j] = arr[j];
+            return array;
         }
     }
 }

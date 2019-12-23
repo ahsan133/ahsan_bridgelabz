@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Node.cs" company="Bridgelabz">
+// <copyright file="Hashing.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="MD Ahsanullah"/>
@@ -10,15 +10,8 @@ using System.Text;
 
 namespace DataStructures
 {
-    public class Node<T>
+    class Hashing
     {
-        public T data;
-        public Node<T> next = null;
 
-        public Node(T d)
-        {
-            this.data = d;
-            this.next = null;
-        }
     }
 }

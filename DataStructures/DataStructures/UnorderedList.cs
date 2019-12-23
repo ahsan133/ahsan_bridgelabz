@@ -17,8 +17,7 @@ namespace DataStructures
         static readonly string textRes = @"C:\Users\Admin\Desktop\ahsan\unordered_result.txt";
         public static void UnorderedListObj()
         {
-
-            Utility<string> list = new Utility<string>();
+            LinkedListClass<string> list = new LinkedListClass<string>();
             string[] s = File.ReadAllLines(text);
             foreach (string line in s)
                 Console.WriteLine(line);
@@ -35,7 +34,7 @@ namespace DataStructures
             list.Print();
             Console.WriteLine();
             Console.WriteLine("enter the word to be searched");
-            string word = Console.ReadLine();
+            string word = Utility.IsString(Console.ReadLine());
             if (list.Search(word))
                 list.Remove(word);
             else
@@ -47,8 +46,6 @@ namespace DataStructures
             for ( i = 0; i < l; i++)
                 arr[i] = list.Get(i);
             File.WriteAllLines(textRes, arr);
-            
-
         }
     }
 }    

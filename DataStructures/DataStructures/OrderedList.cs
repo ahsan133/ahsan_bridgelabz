@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="OrderedList.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="MD Ahsanullah"/>
+// ------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -11,7 +17,7 @@ namespace DataStructures
         static readonly string textRes = @"C:\Users\Admin\Desktop\ahsan\ordered_result.txt";
         public static void OrderedListObj()
         {
-            Utility<int> list = new Utility<int>();
+            LinkedListClass<int> list = new LinkedListClass<int>();
             string[] arr = File.ReadAllLines(text);
             
             int n = arr.Length;
@@ -29,7 +35,7 @@ namespace DataStructures
             list.Print();
             Console.WriteLine();
             Console.WriteLine("enter a number");
-            int num = Convert.ToInt32(Console.ReadLine());
+            int num = Utility.IsInteger(Console.ReadLine());
             if (list.Search(num))
                 list.Remove(num);
             else
