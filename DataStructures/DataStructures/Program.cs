@@ -13,7 +13,8 @@ namespace DataStructures
         static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Balanced Parenthesis\n4.Banking Cash Counter\n5.Palindrome Checker");
+            Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Balanced Parenthesis\n4.Banking Cash Counter\n5.Palindrome Checker\n" +
+                "6.Find A Number\n7.Prime Numbers\n8.Prime Anagram");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
             
@@ -39,8 +40,22 @@ namespace DataStructures
                     PalindromeChecker PalindromeChecker = new PalindromeChecker();
                     PalindromeChecker.PalindromeCheckerObj();
                     return;
+                case 6:
+                    FindANumber FindANumber = new FindANumber();
+                    FindANumber.FindANumberObj();
+                    return;
+                case 7:
+                    PrimeNumbers PrimeNumbers = new PrimeNumbers();
+                    PrimeNumbers.PrimeNumbersObj();
+                    return;
+                case 8:
+                    PrimeAnagram PrimeAnagram = new PrimeAnagram();
+                    PrimeAnagram.PrimeAnagramObj();
+                    return;
+
+
                 default:
-                    break;
+                    return;
             }
         }
     }
