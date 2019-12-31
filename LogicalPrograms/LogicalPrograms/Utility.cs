@@ -4,18 +4,27 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // --------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace LogicalPrograms
 {
-    class Utility
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Utility Class
+    /// </summary>
+    public class Utility
     {
+        /// <summary>
+        /// Determines whether the specified input is integer.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        /// Returns the integer value
+        /// </returns>
         public static int IsInteger(string input)
         {
             int number;
-            //check the value of input if its a number or not
             if (int.TryParse(input, out number))
             {
                 return Convert.ToInt32(input);
@@ -27,14 +36,21 @@ namespace LogicalPrograms
                     Console.WriteLine("please enter a proper integer");
                     input = Console.ReadLine();
                 }
+
                 return Convert.ToInt32(input);
             }
         }
 
+        /// <summary>
+        /// Determines whether the specified input is double.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        /// Returns the double value
+        /// </returns>
         public static double IsDouble(string input)
         {
             double number;
-            //check the value of input if a number is decimal or not
             if (double.TryParse(input, out number))
             {
                 return number;
@@ -46,22 +62,30 @@ namespace LogicalPrograms
                     Console.WriteLine("please enter a proper integer");
                     input = Console.ReadLine();
                 }
+
                 return number;
             }
         }
 
+        /// <summary>
+        /// Determines whether the specified input is string.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        /// Returns the string
+        /// </returns>
         public static string IsString(string input)
         {
             int flag = 1;
             do
             {
-                //check if the input has whitespace
+                ////check if the input has whitespace
                 if (input.Contains(" "))
                 {
                     Console.WriteLine("the string entered has a whitespace. please enter a proper string");
                     input = Console.ReadLine();
                 }
-                //check if the input has number or not
+                ////check if the input has number or not
                 for (int i = 0; i < 10; i++)
                 {
                     if (input.Contains(i.ToString()))
@@ -72,72 +96,119 @@ namespace LogicalPrograms
                         break;
                     }
                     else
+                    {
                         flag = 0;
+                    }
                 }
-            } while (flag == 1);
+            }
+            while (flag == 1);
             return input;
         }
 
+        /// <summary>
+        /// Determines whether the specified input is boolean.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        ///   <c>true</c> if the specified input is boolean; otherwise, <c>false</c>.
+        /// </returns>
         public static bool IsBoolean(string input)
         {
             input.ToLower();
-            //check the value of input if its true or false
-            while (String.Equals(input, "true") != true && String.Equals(input, "false") != true)
+            ////check the value of input if its true or false
+            while (string.Equals(input, "true") != true && string.Equals(input, "false") != true)
             {
                 input.ToLower();
                 Console.WriteLine("please enter a boolean value");
                 input = Console.ReadLine();
             }
+
             return input.Equals("true") ? true : false;
         }
 
-        //read and print 2D array
-        public static int[,] TwoDArray(int m, int n)
+        /// <summary>
+        /// Twos the d array.
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <param name="column">The column.</param>
+        /// <returns>
+        /// Returns the 2D array
+        /// </returns>
+        public static int[,] TwoDArray(int row, int column)
         {
-            int[,] array = new int[m, n];
-            //read the array
-            for (int i = 0; i < m; i++)
+            int[,] array = new int[row, column];
+            ////read the array
+            for (int i = 0; i < row; i++)
             {
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < column; j++)
+                {
                     array[i, j] = Utility.IsInteger(Console.ReadLine());
+                }
             }
-            //print the array
-            for (int i = 0; i < m; i++)
+            ////print the array
+            for (int i = 0; i < row; i++)
             {
                 Console.WriteLine();
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < column; j++)
+                {
                     Console.Write(array[i, j] + " ");
+                }
             }
+
             return array;
         }
 
+        /// <summary>
+        /// Randoms the double.
+        /// </summary>
+        /// <returns>
+        /// Returns a random double value
+        /// </returns>
         public static double RandomDouble()
         {
             Random rand = new Random();
             return rand.NextDouble();
         }
 
-        public static int RandomInt(int min,int max)
+        /// <summary>
+        /// Randoms the int.
+        /// </summary>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
+        /// <returns>
+        /// Returns a random integer value
+        /// </returns>
+        public static int RandomInt(int min, int max)
         {
             Random rand = new Random();
-            return rand.Next(min,max+1);
+            return rand.Next(min, max + 1);
         }
 
+        /// <summary>
+        /// Inputs for tic tac toe.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        /// Returns the move
+        /// </returns>
         public static int InputForTicTacToe(string input)
         {
-            int a = Utility.IsInteger(input);
-            if (a == 0 || a == 1 || a == 2)
-                return a;
+            int move = Utility.IsInteger(input);
+            if (move == 0 || move == 1 || move == 2)
+            {
+                return move;
+            }               
             else
             {
-                while(a != 0 && a != 1 && a != 2)
+                while (move != 0 && move != 1 && move != 2)
                 {
                     Console.WriteLine("enter the valid input");
                     string s = Console.ReadLine();
-                    a= Utility.IsInteger(s);
+                    move = Utility.IsInteger(s);
                 }
-                return a;
+
+                return move;
             }
         }
-    }
+    } 
 }

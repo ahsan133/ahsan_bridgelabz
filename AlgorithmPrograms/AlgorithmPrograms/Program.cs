@@ -4,13 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-
 namespace AlgorithmPrograms
 {
-    class Program
+    using System;
+
+    /// <summary>
+    /// Main function
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
             int choice;
             Console.WriteLine("1.permutation\n2.binary search\n3.Bubble sort\n4.Insertion Sort\n5.Anagram\n6.Prime numbers\n7.Prime Anagram And Palindrome\n8.FindTheNumber\n9.Mergesort");
@@ -20,42 +27,41 @@ namespace AlgorithmPrograms
             switch (choice)
             {
                 case 1:
-                    Permutations Permutations = new Permutations();
+                    Permutations permutations = new Permutations();
                     Permutations.PermutationsObj();
                     break;
                 case 2:
-                    BinarySearch BinarySearch = new BinarySearch();
+                    BinarySearch binarySearch = new BinarySearch();
                     BinarySearch.BinarySearchObj();
                     break;
                 case 3:
-                    BubbleSort BubbleSort = new BubbleSort();
+                    BubbleSort bubbleSort = new BubbleSort();
                     BubbleSort.BubbleSortObj();
                     break;
                 case 4:
-                    InsertionSort InsertionSort = new InsertionSort();
+                    InsertionSort insertionSort = new InsertionSort();
                     InsertionSort.InsertionSortObj();
                     break;
                 case 5:
-                    Anagram Anagram = new Anagram();
+                    Anagram anagram = new Anagram();
                     Anagram.AnagramObj();
                     break;
                 case 6:
-                    PrimeNumbers PrimeNumbers = new PrimeNumbers();
+                    PrimeNumbers primeNumbers = new PrimeNumbers();
                     PrimeNumbers.PrimeNumbersObj();
                     break;
                 case 7:
-                    PrimeAnagramAndPalindrome PrimeAnagramAndPalindrome = new PrimeAnagramAndPalindrome();
+                    PrimeAnagramAndPalindrome primeAnagramAndPalindrome = new PrimeAnagramAndPalindrome();
                     PrimeAnagramAndPalindrome.PrimePalindromeAndAnagram();
                     break;
                 case 8:
-                    FindTheNumber FindTheNumber = new FindTheNumber();
+                    FindTheNumber findTheNumber = new FindTheNumber();
                     FindTheNumber.FindTheNumberObj();
                     break;
                 case 9:
-                    MergeSort MergeSort = new MergeSort();
+                    MergeSort mergeSort = new MergeSort();
                     MergeSort.MergeSortObj();
                     break;
-
                 default:
                     break;
             }

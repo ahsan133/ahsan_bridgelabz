@@ -4,13 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-
 namespace DataStructures
 {
-    class Program
+    using System;
+
+    /// <summary>
+    /// Main function
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
             int choice;
             Console.WriteLine("1.UnorderedList\n2.OrderedList\n3.Balanced Parenthesis\n4.Banking Cash Counter\n5.Palindrome Checker\n" +
@@ -21,39 +28,37 @@ namespace DataStructures
             switch (choice)
             {
                 case 1:
-                    UnorderedList UnorderedList = new UnorderedList();
+                    UnorderedList unorderedList = new UnorderedList();
                     UnorderedList.UnorderedListObj();
                     break;
                 case 2:
-                    OrderedList OrderedList = new OrderedList();
+                    OrderedList orderedList = new OrderedList();
                     OrderedList.OrderedListObj();
                     return;
                 case 3:
-                    BalancedParenthesis BalancedParenthesis = new BalancedParenthesis();
+                    BalancedParenthesis balancedParenthesis = new BalancedParenthesis();
                     BalancedParenthesis.BalancedParenthesisObj();
                     return;
                 case 4:
-                    BankingCashCounter BankingCashCounter = new BankingCashCounter();
+                    BankingCashCounter bankingCashCounter = new BankingCashCounter();
                     BankingCashCounter.BankingCashCounterObj();
                     return;
                 case 5:
-                    PalindromeChecker PalindromeChecker = new PalindromeChecker();
+                    PalindromeChecker palindromeChecker = new PalindromeChecker();
                     PalindromeChecker.PalindromeCheckerObj();
                     return;
                 case 6:
-                    FindANumber FindANumber = new FindANumber();
+                    FindANumber findANumber = new FindANumber();
                     FindANumber.FindANumberObj();
                     return;
                 case 7:
-                    PrimeNumbers PrimeNumbers = new PrimeNumbers();
+                    PrimeNumbers primeNumbers = new PrimeNumbers();
                     PrimeNumbers.PrimeNumbersObj();
                     return;
                 case 8:
-                    PrimeAnagram PrimeAnagram = new PrimeAnagram();
+                    PrimeAnagram primeAnagram = new PrimeAnagram();
                     PrimeAnagram.PrimeAnagramObj();
                     return;
-
-
                 default:
                     return;
             }

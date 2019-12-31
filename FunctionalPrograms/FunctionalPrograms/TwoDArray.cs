@@ -4,23 +4,29 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace FunctionalPrograms
 {
-    class TwoDArray
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Read and print 2D array
+    /// </summary>
+    public class TwoDArray
     {
+        /// <summary>
+        /// Twos the d array object.
+        /// </summary>
         public static void TwoDArrayObj()
         {
             Console.WriteLine("enter number of rows");
-            int M = Utility.IsInteger(Console.ReadLine());
+            int row = Utility.IsInteger(Console.ReadLine());
             Console.WriteLine("enter number of columns");
-            int N = Utility.IsInteger(Console.ReadLine());
-            int[,] array = new int[M,N];
+            int column = Utility.IsInteger(Console.ReadLine());
+            int[,] array = new int[row, column];
             Console.WriteLine("enter the elements");
-            Utility.TwoDArray(M, N);
+            Utility.TwoDArray(row, column);
         }
     }
 }

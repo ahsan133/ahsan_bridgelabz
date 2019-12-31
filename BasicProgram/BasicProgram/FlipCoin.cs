@@ -4,15 +4,21 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using BasicPrograms;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace BasicProgram
 {
-    class FlipCoin
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using BasicPrograms;
+
+    /// <summary>
+    /// Percentage of coin flip
+    /// </summary>
+    public class FlipCoin
     {
+        /// <summary>
+        /// Flips the coin object.
+        /// </summary>
         public static void FlipCoinObj()
         {
             int tails = 0, heads = 0;
@@ -20,16 +26,21 @@ namespace BasicProgram
             int num = Utility.IsInteger(Console.ReadLine());
             for (int i = 0; i < num; i++)
             {
-                //taking random number from 0 to 1
+                ////taking random number from 0 to 1
                 if (Utility.RandomDouble() < 0.5)
+                {
                     tails++;
+                }                   
                 else
+                {
                     heads++;
+                }                    
             }
-            double h = (heads * 100) / num;
-            double t = (tails * 100) / num;
-            Console.WriteLine("heads= " + h + "%");
-            Console.WriteLine("tails= " + t + "%");
+
+            double head = (heads * 100) / num;
+            double tail = (tails * 100) / num;
+            Console.WriteLine("heads= " + head + "%");
+            Console.WriteLine("tails= " + tail + "%");
         }
     }
 }

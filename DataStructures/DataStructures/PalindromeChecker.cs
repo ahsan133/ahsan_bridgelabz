@@ -4,14 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace DataStructures
 {
-    class PalindromeChecker
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Palindrome checking
+    /// </summary>
+    public class PalindromeChecker
     {
+        /// <summary>
+        /// Palindromes the checker object.
+        /// </summary>
         public static void PalindromeCheckerObj()
         {
             bool flag = false;
@@ -21,13 +27,17 @@ namespace DataStructures
             int n = ch.Length;
             DequeClass<char> deque = new DequeClass<char>(n);
             for (int i = 0; i < n; i++)
+            {
                 deque.AddRear(ch[i]);
+            }
+                
             char[] reverse = new char[n];
             for (int i = 0; i < n; i++)
             {
                 reverse[i] = deque.PeekRear();
                 deque.RemoveRear();
             }
+
             for (int i = 0; i < n; i++)
             {
                 if (ch[i] != reverse[i])
@@ -36,8 +46,11 @@ namespace DataStructures
                     break;
                 }                  
                 else
+                {
                     flag = true;
+                }                   
             }
+
             Console.WriteLine(flag);
         }
     }

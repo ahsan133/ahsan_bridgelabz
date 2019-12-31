@@ -4,37 +4,51 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // --------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AlgorithmPrograms
 {
-    class FindTheNumber
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Find the number
+    /// </summary>
+    public class FindTheNumber
     {
-        public static void Number(int lo,int hi)
+        /// <summary>
+        /// Numbers the specified lo.
+        /// </summary>
+        /// <param name="low">The lo.</param>
+        /// <param name="high">The hi.</param>
+        public static void Number(int low, int high)
         {
-            int mid = lo + (hi - lo) / 2;
-            if( (lo!=mid) || (mid!=hi) )
+            int mid = low + ((high - low) / 2);
+            if ((low != mid) || (mid != high))
             {
-                while (lo <= hi)
+                while (low <= high)
                 {
                     Console.WriteLine("is your number " + mid);
                     Console.WriteLine("enter 1 for yes and 0 for no");
-                    int rs = Utility.IsInteger(Console.ReadLine());
-                    if (rs != 1)
+                    int input = Utility.IsInteger(Console.ReadLine());
+                    if (input != 1)
                     {
-                        Console.WriteLine("is your number between " + lo + " and " + mid);
+                        Console.WriteLine("is your number between " + low + " and " + mid);
                         Console.WriteLine("enter 1 for yes and 0 for no");
-                        int res = Utility.IsInteger(Console.ReadLine());
-                        if (res == 1)
-                            Number(lo, mid);
+                        int result = Utility.IsInteger(Console.ReadLine());
+                        if (result == 1)
+                        {
+                            Number(low, mid);
+                        }
                         else
-                            Number(mid + 1, hi);
+                        {
+                            Number(mid + 1, high);
+                        }                         
                     }
-                    else                        
+                    else
+                    {
                         break;
-                    //break out of while loop 
+                    }   
+                    
                     break;
                 }                          
             }
@@ -43,12 +57,16 @@ namespace AlgorithmPrograms
                 Console.WriteLine("your number is " + mid);              
             }
         }
+
+        /// <summary>
+        /// Finds the number object.
+        /// </summary>
         public static void FindTheNumberObj()
         {
             Console.WriteLine("enter the number which power of 2");
-            int n = Utility.IsInteger(Console.ReadLine());
-            Console.WriteLine("think of a number between 0 and "+n);
-            Number(0, n);
+            int input = Utility.IsInteger(Console.ReadLine());
+            Console.WriteLine("think of a number between 0 and " + input);
+            Number(0, input);
         }
     }
 }

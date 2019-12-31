@@ -4,14 +4,21 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LogicalPrograms
 {
-    class Gambler
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Gambler Simulation.
+    /// </summary>
+    public class Gambler
     {
+        /// <summary>
+        /// Gamblers the object.
+        /// </summary>
         public static void GamblerObj()
         {
             int win = 0, loss = 0, i = 0;
@@ -22,7 +29,7 @@ namespace LogicalPrograms
             int n = Utility.IsInteger(Console.ReadLine());
             while ((i != n) && (stake != goal))
             {
-                //take random values
+                ////take random values
                 if (Utility.RandomDouble() < 0.5)
                 {
                     win++;
@@ -33,14 +40,15 @@ namespace LogicalPrograms
                     loss++;
                     stake--;
                 }
+
                 i++;
             }
-            //calculate percentage of wins and looses
-            int wp = (win * 100) / n;
-            int lp = (loss * 100) / n;
+            ////calculate percentage of wins and looses
+            int winPercentage = (win * 100) / n;
+            int loosePercentage = (loss * 100) / n;
             Console.WriteLine("number of wins =" + win);
-            Console.WriteLine("percentage wins =" + wp + "%");
-            Console.WriteLine("percentage loss =" + lp + "%");
+            Console.WriteLine("percentage wins =" + winPercentage + "%");
+            Console.WriteLine("percentage loss =" + loosePercentage + "%");
         }
     }
 }

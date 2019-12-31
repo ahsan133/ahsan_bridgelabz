@@ -4,52 +4,80 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AlgorithmPrograms
 {
-    class Anagram
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Anagram of two strings
+    /// </summary>
+    public class Anagram
     {
-        public static bool Compare(char[] a, char[] b)
+        /// <summary>
+        /// Compares the specified chars1.
+        /// </summary>
+        /// <param name="chars1">The chars1.</param>
+        /// <param name="chars2">The chars2.</param>
+        /// <returns>
+        /// Returns a boolean value if the characters are equal or not
+        /// </returns>
+        public static bool Compare(char[] chars1, char[] chars2)
         {
-            int n = a.Length, count = 0;
-            Array.Sort(a);
-            Array.Sort(b);
-            for (int i = 0; i < n; i++)
+            int length = chars1.Length, count = 0;
+            Array.Sort(chars1);
+            Array.Sort(chars2);
+            for (int i = 0; i < length; i++)
             {
-                if (a[i] == b[i])
+                if (chars1[i] == chars2[i])
+                {
                     count++;
+                }                   
             }
-            if (count == n)
+
+            if (count == length)
+            {
                 return true;
+            }                
             else
+            {
                 return false;
+            }                
         }
+
+        /// <summary>
+        /// Anagrams the object.
+        /// </summary>
         public static void AnagramObj()
         {
             bool flag = false;
             Console.WriteLine("enter the first string");
-            String s1 = Utility.IsString(Console.ReadLine());
+            string string1 = Utility.IsString(Console.ReadLine());
             Console.WriteLine("enter the second string");
-            String s2 = Utility.IsString(Console.ReadLine());
-            int n1 = s1.Length;
-            int n2 = s2.Length;
-            if (n1 != n2)
+            string string2 = Utility.IsString(Console.ReadLine());
+            int length1 = string1.Length;
+            int length2 = string2.Length;
+            if (length1 != length2)
+            {
                 Console.WriteLine("the two strings are not anagram");
+            }               
             else
             {
-                char[] c1 = s1.ToCharArray();
-                char[] c2 = s2.ToCharArray();
-                //compare two strings
-                flag = Compare(c1, c2);
+                char[] chars1 = string1.ToCharArray();
+                char[] chars2 = string2.ToCharArray();
+                ////compare two strings
+                flag = Compare(chars1, chars2);
             }
+
             if (flag)
+            {
                 Console.WriteLine("the two strings are anagram");
+            }                
             else
+            {
                 Console.WriteLine("the two strings are not anagram");
+            }               
         }
     }
 }
-

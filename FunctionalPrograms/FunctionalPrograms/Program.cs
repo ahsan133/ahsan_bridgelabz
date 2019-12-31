@@ -4,13 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-
 namespace FunctionalPrograms
 {
-    class Program
+    using System;
+
+    /// <summary>
+    /// Main program
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
             int choice;
             Console.WriteLine("1.2D Array\n2.sum of three\n3.Distance\n4.Quadratic\n5.Windchill");
@@ -20,23 +27,23 @@ namespace FunctionalPrograms
             switch (choice)
             {
                 case 1:
-                    TwoDArray TwoDArray = new TwoDArray();
+                    TwoDArray twoDArray = new TwoDArray();
                     TwoDArray.TwoDArrayObj();
                     break;
                 case 2:
-                    SumOfThree SumOfThree = new SumOfThree();
+                    SumOfThree sumOfThree = new SumOfThree();
                     SumOfThree.SumOfThreeObj();
                     break;
                 case 3:
-                    Distance Distance = new Distance();
+                    Distance distance = new Distance();
                     Distance.DistanceObj();
                     break;
                 case 4:
-                    Quadratic Quadratic = new Quadratic();
+                    Quadratic quadratic = new Quadratic();
                     Quadratic.QuadraticObj();
                     break;
                 case 5:
-                    WindChill WindChill = new WindChill();
+                    WindChill windChill = new WindChill();
                     WindChill.WindChillObj();
                     break;
                 default:

@@ -4,46 +4,69 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AlgorithmPrograms
 {
-    class Permutations
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// All permutations of a string
+    /// </summary>
+    public class Permutations
     {
-        public static void Permute(string s,int lo,int hi)
+        /// <summary>
+        /// Permutes the specified word.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <param name="low">The low.</param>
+        /// <param name="high">The high.</param>
+        public static void Permute(string word, int low, int high)
         {
-            if(lo==hi)
-                Console.WriteLine(s);
+            if (low == high)
+            {
+                Console.WriteLine(word);
+            }
             else
             {
-                for(int i=lo;i<=hi;i++)
+                for (int i = low; i <= high; i++)
                 {
-                    s = Swap(s, lo, i);
-                    Permute(s, lo + 1, hi);
-                    s = Swap(s, lo, i);
+                    word = Swap(word, low, i);
+                    Permute(word, low + 1, high);
+                    word = Swap(word, low, i);
                 }
             }
         }
-        //swap characters at i and j
-        public static string Swap(string s,int i,int j)
-        {
 
+        /// <summary>
+        /// Swaps the specified word.
+        /// </summary>
+        /// <param name="word">The word.</param>
+        /// <param name="i">The i.</param>
+        /// <param name="j">The j.</param>
+        /// <returns>
+        /// Returns swapped string
+        /// </returns>
+        public static string Swap(string word, int i, int j)
+        {
             char temp;
-            char[] a = s.ToCharArray();
-            temp = a[i];
-            a[i] = a[j];
-            a[j] = temp;
-            string str = new string(a);
-            return str;
+            char[] chars = word.ToCharArray();
+            temp = chars[i];
+            chars[i] = chars[j];
+            chars[j] = temp;
+            string swapped = new string(chars);
+            return swapped;
         }
+
+        /// <summary>
+        /// Permutations the object.
+        /// </summary>
         public static void PermutationsObj()
         {
             Console.WriteLine("enter the string");
-            String s = Utility.IsString(Console.ReadLine());
-            int n = s.Length;
-            Permute(s, 0, n - 1);
+            string word = Utility.IsString(Console.ReadLine());
+            int size = word.Length;
+            Permute(word, 0, size - 1);
         }
     }
 }

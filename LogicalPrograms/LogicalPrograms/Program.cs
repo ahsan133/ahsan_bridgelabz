@@ -4,14 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-
-using System;
-
 namespace LogicalPrograms
 {
-    class Program
+    using System;
+
+    /// <summary>
+    /// Main function
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        public static void Main(string[] args)
         {
             int choice;
             Console.WriteLine("1.Gambler\n2.Coupon number\n3.TicTacToe\n4.Stop watch");
@@ -21,24 +27,23 @@ namespace LogicalPrograms
             switch (choice)
             {
                 case 1:
-                    Gambler Gambler = new Gambler();
+                    Gambler gambler = new Gambler();
                     Gambler.GamblerObj();
                     break;
                 case 2:
-                    CouponNumbers CouponNumbers = new CouponNumbers();
+                    CouponNumbers couponNumbers = new CouponNumbers();
                     CouponNumbers.CouponNumbersObj();
                     break;
                 case 3:
-                    TicTacToe TicTacToe = new TicTacToe();
+                    TicTacToe ticTacToe = new TicTacToe();
                     TicTacToe.TicTacToeObj();
                     break;
                 case 4:
-                    StopWatch StopWatch = new StopWatch();
+                    StopWatch stopWatch = new StopWatch();
                     StopWatch.StopWatchObj();
                     break;
                 default:
                     break;
-
             }
         }
     }

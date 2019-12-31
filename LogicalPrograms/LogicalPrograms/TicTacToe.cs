@@ -4,97 +4,128 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace LogicalPrograms
 {
-    class TicTacToe
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// TicTacToe program with computer and user
+    /// </summary>
+    public class TicTacToe
     {
-        //Print the board
-        public static void Print(char[,] ar)
+        /// <summary>
+        /// Prints the specified array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        public static void Print(char[,] array)
         {
-            Console.WriteLine(ar[0,0] + " " + ar[0,1] + " " + ar[0,2]);
-            Console.WriteLine(ar[1,0] + " " + ar[1,1] + " " + ar[1,2]);
-            Console.WriteLine(ar[2,0] + " " + ar[2,1] + " " + ar[2,2]);
+            Console.WriteLine(array[0, 0] + " " + array[0, 1] + " " + array[0, 2]);
+            Console.WriteLine(array[1, 0] + " " + array[1, 1] + " " + array[1, 2]);
+            Console.WriteLine(array[2, 0] + " " + array[2, 1] + " " + array[2, 2]);
             Console.WriteLine("------");
         }
-        //assign 'x' to the array
-        public static char[,] UserInput(int row, int column, char[,] a)
+
+        /// <summary>
+        /// Users the input.
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <param name="column">The column.</param>
+        /// <param name="array">The array.</param>
+        /// <returns>
+        /// Returns the array
+        /// </returns>
+        public static char[,] UserInput(int row, int column, char[,] array)
         {
-            a[row,column] = 'x';
-            return a;
+            array[row, column] = 'x';
+            return array;
         }
-        //assign 'o' to the array
-        public static char[,] ComputerInput(int row, int column, char[,] a)
+
+        /// <summary>
+        /// Computers the input.
+        /// </summary>
+        /// <param name="row">The row.</param>
+        /// <param name="column">The column.</param>
+        /// <param name="array">The array.</param>
+        /// <returns>
+        /// Returns the array
+        /// </returns>
+        public static char[,] ComputerInput(int row, int column, char[,] array)
         {
-            a[row,column] = 'o';
-            return a;
+            array[row, column] = 'o';
+            return array;
         }
+
+        /// <summary>
+        /// Tics the tac toe object.
+        /// </summary>
         public static void TicTacToeObj()
         {
-            int turn = 0, row = 0, col = 0;
+            int turn = 0, row = 0, column = 0;
             bool win = false;
-            char[,] a = { { ' ', ' ', ' ' }, { ' ', ' ', ' ', }, { ' ', ' ', ' ', } };
-            while ((turn != 9) || (win))
+            char[,] array = { { ' ', ' ', ' ' }, { ' ', ' ', ' ', }, { ' ', ' ', ' ', } };
+            while (turn != 9 || win)
             {
-                if ((turn != 9) && (!win))
+                if (turn != 9 && !win)
                 {
                     Console.WriteLine("enter your move");
                     Console.WriteLine("enter the row 0-2");
                     row = Utility.InputForTicTacToe(Console.ReadLine());
                     Console.WriteLine("enter the column 0-2");
-                    col = Utility.InputForTicTacToe(Console.ReadLine());
-
-                    while ((a[row, col] == 'x') || (a[row, col] == 'o'))
+                    column = Utility.InputForTicTacToe(Console.ReadLine());
+                    while ((array[row, column] == 'x') || (array[row, column] == 'o'))
                     {
                         Console.WriteLine("invalid move");
                         Console.WriteLine("enter the row 0-2");
                         row = Utility.InputForTicTacToe(Console.ReadLine());
                         Console.WriteLine("enter the column 0-2");
-                        col = Utility.InputForTicTacToe(Console.ReadLine());
+                        column = Utility.InputForTicTacToe(Console.ReadLine());
                     }
-                    a = UserInput(row, col, a);
-                    Print(a);
+
+                    array = UserInput(row, column, array);
+                    Print(array);
                 }
-                //check winning condition for user
-                if ((a[0, 0] == 'x' && a[0, 1] == 'x' && a[0, 2] == 'x') || (a[1, 0] == 'x' && a[1, 1] == 'x' && a[1, 2] == 'x') ||
-                    (a[2, 0] == 'x' && a[2, 1] == 'x' && a[2, 2] == 'x') || (a[0, 0] == 'x' && a[1, 0] == 'x' && a[2, 0] == 'x') ||
-                    (a[0, 1] == 'x' && a[1, 1] == 'x' && a[2, 1] == 'x') || (a[0, 2] == 'x' && a[1, 2] == 'x' && a[2, 2] == 'x') ||
-                    (a[0, 0] == 'x' && a[1, 1] == 'x' && a[2, 2] == 'x') || (a[0, 2] == 'x' && a[1, 1] == 'x' && a[2, 0] == 'x'))
+                ////check winning condition for user
+                if ((array[0, 0] == 'x' && array[0, 1] == 'x' && array[0, 2] == 'x') || (array[1, 0] == 'x' && array[1, 1] == 'x' && array[1, 2] == 'x') ||
+                    (array[2, 0] == 'x' && array[2, 1] == 'x' && array[2, 2] == 'x') || (array[0, 0] == 'x' && array[1, 0] == 'x' && array[2, 0] == 'x') ||
+                    (array[0, 1] == 'x' && array[1, 1] == 'x' && array[2, 1] == 'x') || (array[0, 2] == 'x' && array[1, 2] == 'x' && array[2, 2] == 'x') ||
+                    (array[0, 0] == 'x' && array[1, 1] == 'x' && array[2, 2] == 'x') || (array[0, 2] == 'x' && array[1, 1] == 'x' && array[2, 0] == 'x'))
                 {
                     Console.WriteLine("you win");
                     win = true;
                     break;
                 }
+
                 turn++;
-                if ((turn != 9) && (!win))
+                if (turn != 9 && !win)
                 {
-                    row = (int)(Utility.RandomInt(0, 2));
-                    col = (int)(Utility.RandomInt(0, 2));
-                    while ((a[row,col] == 'x') || (a[row,col] == 'o'))
+                    row = (int)Utility.RandomInt(0, 2);
+                    column = (int)Utility.RandomInt(0, 2);
+                    while ((array[row, column] == 'x') || (array[row, column] == 'o'))
                     {
-                        row = (int)(Utility.RandomInt(0, 2));
-                        col = (int)(Utility.RandomInt(0, 2));
+                        row = (int)Utility.RandomInt(0, 2);
+                        column = (int)Utility.RandomInt(0, 2);
                     }
-                    a = ComputerInput(row, col, a);
-                    Print(a);
-                    //check winning condition for computer
-                    if ((a[0, 0] == 'o' && a[0, 1] == 'o' && a[0, 2] == 'o') || (a[1, 0] == 'o' && a[1, 1] == 'o' && a[1, 2] == 'o') ||
-                        (a[2, 0] == 'o' && a[2, 1] == 'o' && a[2, 2] == 'o') || (a[0, 0] == 'o' && a[1, 0] == 'o' && a[2, 0] == 'o') ||
-                        (a[0, 1] == 'o' && a[1, 1] == 'o' && a[2, 1] == 'o') || (a[0, 2] == 'o' && a[1, 2] == 'o' && a[2, 2] == 'o') ||
-                        (a[0, 0] == 'o' && a[1, 1] == 'o' && a[2, 2] == 'o') || (a[0, 2] == 'o' && a[1, 1] == 'o' && a[2, 0] == 'o'))
+
+                    array = ComputerInput(row, column, array);
+                    Print(array);
+                    ////check winning condition for computer
+                    if ((array[0, 0] == 'o' && array[0, 1] == 'o' && array[0, 2] == 'o') || (array[1, 0] == 'o' && array[1, 1] == 'o' && array[1, 2] == 'o') ||
+                        (array[2, 0] == 'o' && array[2, 1] == 'o' && array[2, 2] == 'o') || (array[0, 0] == 'o' && array[1, 0] == 'o' && array[2, 0] == 'o') ||
+                        (array[0, 1] == 'o' && array[1, 1] == 'o' && array[2, 1] == 'o') || (array[0, 2] == 'o' && array[1, 2] == 'o' && array[2, 2] == 'o') ||
+                        (array[0, 0] == 'o' && array[1, 1] == 'o' && array[2, 2] == 'o') || (array[0, 2] == 'o' && array[1, 1] == 'o' && array[2, 0] == 'o'))
                     {
                         Console.WriteLine("computer wins");
                         win = true;
                         break;
                     }
+
                     turn++;
                 }
             }
-            //check draw condition
-            if ((!win) || (turn == 9))
+            ////check draw condition
+            if (!win || turn == 9)
             {
                 Console.WriteLine("draw");
             }

@@ -4,14 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace FunctionalPrograms
 {
-    class Distance
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Calculating distance between origin and two points
+    /// </summary>
+    public class Distance
     {
+        /// <summary>
+        /// Distances the object.
+        /// </summary>
         public static void DistanceObj()
         {
             Console.WriteLine("enter the value of x");

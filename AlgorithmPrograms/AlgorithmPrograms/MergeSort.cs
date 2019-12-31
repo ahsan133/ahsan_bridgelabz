@@ -4,84 +4,111 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // --------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AlgorithmPrograms
 {
-    class MergeSort
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Sorting using merge sort
+    /// </summary>
+    public class MergeSort
     {
-        static public void Merge(int[] arr, int p, int q, int r)
+        /// <summary>
+        /// Merges the specified array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="low">The low.</param>
+        /// <param name="mid">The mid.</param>
+        /// <param name="high">The high.</param>
+        public static void Merge(int[] array, int low, int mid, int high)
         {
             int i, j, k;
-            int n1 = q - p + 1;
-            int n2 = r - q;
-            int[] L = new int[n1];
-            int[] R = new int[n2];
+            int n1 = mid - low + 1;
+            int n2 = high - mid;
+            int[] left = new int[n1];
+            int[] right = new int[n2];
             for (i = 0; i < n1; i++)
             {
-                L[i] = arr[p + i];
+                left[i] = array[low + i];
             }
+
             for (j = 0; j < n2; j++)
             {
-                R[j] = arr[q + 1 + j];
+                right[j] = array[mid + 1 + j];
             }
+
             i = 0;
             j = 0;
-            k = p;
+            k = low;
             while (i < n1 && j < n2)
             {
-                if (L[i] <= R[j])
+                if (left[i] <= right[j])
                 {
-                    arr[k] = L[i];
+                    array[k] = left[i];
                     i++;
                 }
                 else
                 {
-                    arr[k] = R[j];
+                    array[k] = right[j];
                     j++;
                 }
+
                 k++;
             }
+
             while (i < n1)
             {
-                arr[k] = L[i];
+                array[k] = left[i];
                 i++;
                 k++;
             }
+
             while (j < n2)
             {
-                arr[k] = R[j];
+                array[k] = right[j];
                 j++;
                 k++;
             }
         }
-        static public void Sort(int[] arr, int p, int r)
+
+        /// <summary>
+        /// Sorts the specified array.
+        /// </summary>
+        /// <param name="array">The array.</param>
+        /// <param name="low">The low.</param>
+        /// <param name="high">The high.</param>
+        public static void Sort(int[] array, int low, int high)
         {
-            if (p < r)
+            if (low < high)
             {
-                int q = (p + r) / 2;
-                Sort(arr, p, q);
-                Sort(arr, q + 1, r);
-                Merge(arr, p, q, r);
+                int mid = (low + high) / 2;
+                Sort(array, low, mid);
+                Sort(array, mid + 1, high);
+                Merge(array, low, mid, high);
             }
         }
+
+        /// <summary>
+        /// Merges the sort object.
+        /// </summary>
         public static void MergeSortObj()
         {
-            int[] arr = { 76, 89, 23, 1, 55, 78, 99, 12, 65, 100 };
-            int n = 10, i;
+            int[] array = { 76, 89, 23, 1, 55, 78, 99, 12, 65, 100 };
+            int length = 10, i;
             Console.WriteLine("Merge Sort");
             Console.Write("Initial array is: ");
-            for (i = 0; i < n; i++)
+            for (i = 0; i < length; i++)
             {
-                Console.Write(arr[i] + " ");
+                Console.Write(array[i] + " ");
             }
-            Sort(arr, 0, n - 1);
+
+            Sort(array, 0, length - 1);
             Console.Write("\nSorted Array is: ");
-            for (i = 0; i < n; i++)
+            for (i = 0; i < length; i++)
             {
-                Console.Write(arr[i] + " ");
+                Console.Write(array[i] + " ");
             }
         }
     }

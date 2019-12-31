@@ -4,26 +4,34 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace AlgorithmPrograms
 {
-    class BubbleSort
-    { 
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Bubble sorting
+    /// </summary>
+    public class BubbleSort
+    {
+        /// <summary>
+        /// Bubbles the sort object.
+        /// </summary>
         public static void BubbleSortObj()
         {
             Console.WriteLine("enter the size");
-            int n = Utility.IsInteger(Console.ReadLine());
-            int[] array = new int[n];
+            int size = Utility.IsInteger(Console.ReadLine());
+            int[] array = new int[size];
             Console.WriteLine("enter the elements");
-            for(int i=0;i<n;i++)
-            array[i]= Utility.IsInteger(Console.ReadLine());
-            //sorting the array
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < size; i++)
             {
-                for (int j = i + 1; j < n; j++)
+                array[i] = Utility.IsInteger(Console.ReadLine());
+            }           
+            ////sorting the array
+            for (int i = 0; i < size; i++)
+            {
+                for (int j = i + 1; j < size; j++)
                 {
                     if (array[j] < array[i])
                     {
@@ -33,12 +41,11 @@ namespace AlgorithmPrograms
                     }
                 }
             }
-            for (int i = 0; i < n; i++)
+
+            for (int i = 0; i < size; i++)
+            {
                 Console.WriteLine(array[i] + " ");
+            }
         }
     }
-
-}
-    
-
-        
+}       

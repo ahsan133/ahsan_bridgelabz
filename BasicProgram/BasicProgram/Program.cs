@@ -4,13 +4,20 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-using BasicPrograms;
-using System;
-
 namespace BasicProgram
 {
-   public class Program
+    using System;
+    using BasicPrograms;
+    
+    /// <summary>
+    /// Main function
+    /// </summary>
+    public class Program
     {
+        /// <summary>
+        /// Defines the entry point of the application.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         public static void Main(string[] args)
         {
             int choice;
@@ -21,37 +28,32 @@ namespace BasicProgram
             switch (choice)
             {
                 case 1:
-                    leapYear leapYear = new leapYear();
-                    leapYear.LeapYearObj();
+                    LeapYear leapYear = new LeapYear();
+                    LeapYear.LeapYearObj();
                     break;
                 case 2:
-                    PowerOfTwo PowerOfTwo = new PowerOfTwo();
+                    PowerOfTwo powerOfTwo = new PowerOfTwo();
                     PowerOfTwo.PowerOfTwoObj();
                     break;
                 case 3:
-                    HarmonicNumber HarmonicNumber = new HarmonicNumber();
+                    HarmonicNumber harmonicNumber = new HarmonicNumber();
                     HarmonicNumber.HarmonicNumberObj();
                     break;
                 case 4:
-                    FlipCoin FlipCoin = new FlipCoin();
+                    FlipCoin flipCoin = new FlipCoin();
                     FlipCoin.FlipCoinObj();
                     break;
                 case 5:
-                    PrimeFactors PrimeFactors = new PrimeFactors();
+                    PrimeFactors primeFactors = new PrimeFactors();
                     PrimeFactors.PrimeFactorsObj();
                     break;
                 case 6:
-                    Hello Hello = new Hello();
+                    Hello hello = new Hello();
                     Hello.HelloObj();
                     break;
-                default :
+                default:
                     break;
             }
-
-
-
-
-
         }
     }
 }
