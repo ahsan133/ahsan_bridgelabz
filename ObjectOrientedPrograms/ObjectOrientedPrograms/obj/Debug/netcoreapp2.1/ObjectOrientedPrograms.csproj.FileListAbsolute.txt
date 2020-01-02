@@ -1,0 +1,11 @@
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\bin\Debug\netcoreapp2.1\ObjectOrientedPrograms.deps.json
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\bin\Debug\netcoreapp2.1\ObjectOrientedPrograms.runtimeconfig.json
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\bin\Debug\netcoreapp2.1\ObjectOrientedPrograms.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\bin\Debug\netcoreapp2.1\ObjectOrientedPrograms.dll
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\bin\Debug\netcoreapp2.1\ObjectOrientedPrograms.pdb
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\obj\Debug\netcoreapp2.1\ObjectOrientedPrograms.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\obj\Debug\netcoreapp2.1\ObjectOrientedPrograms.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\obj\Debug\netcoreapp2.1\ObjectOrientedPrograms.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\obj\Debug\netcoreapp2.1\ObjectOrientedPrograms.AssemblyInfo.cs
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\obj\Debug\netcoreapp2.1\ObjectOrientedPrograms.dll
+C:\Users\Admin\Desktop\ahsan_bridgelabz\ObjectOrientedPrograms\ObjectOrientedPrograms\obj\Debug\netcoreapp2.1\ObjectOrientedPrograms.pdb
