@@ -20,7 +20,7 @@ namespace ObjectOrientedPrograms
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Data Management");
+            Console.WriteLine("1.Data Management\n2.InventoryManagement");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -29,6 +29,10 @@ namespace ObjectOrientedPrograms
                 case 1:
                     DataManagement dataManagement = new DataManagement();
                     DataManagement.DataManagementObj();
+                    break;
+                case 2:
+                    InventoryManagement inventoryManagement = new InventoryManagement();
+                    InventoryManagement.InventoryManagementObj();
                     break;
                 default:
                     break;

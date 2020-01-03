@@ -23,7 +23,7 @@ namespace ObjectOrientedPrograms
         public static void DataManagementObj()
         {
             ////reading the json file
-            StreamReader file = new StreamReader(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\inventory.json");
+            StreamReader file = new StreamReader(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory\inventory.json");
             var json = file.ReadToEnd();
             ////Converting json to .net type
             var files = JsonConvert.DeserializeObject<List<Inventory>>(json);
