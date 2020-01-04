@@ -1,21 +1,11 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Utility.cs" company="Bridgelabz">
-//   Copyright © 2019 Company="BridgeLabz"
-// </copyright>
-// <creator name="MD Ahsanullah"/>
-// ------------------------------------------------------------------------------------------------------------------
-namespace ObjectOrientedPrograms.Inventory_Management
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
-    using Newtonsoft.Json;
-    using Newtonsoft.Json.Linq;  
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
-    /// <summary>
-    /// Utility class
-    /// </summary>
+namespace ObjectOrientedPrograms.Address_Book
+{
     public class Utility
     {
         /// <summary>
@@ -78,9 +68,9 @@ namespace ObjectOrientedPrograms.Inventory_Management
                     }
                 }
             }
-            while (flag == 1); 
-            
-            return input;                      
+            while (flag == 1);
+
+            return input;
         }
 
         /// <summary>
@@ -90,16 +80,16 @@ namespace ObjectOrientedPrograms.Inventory_Management
         /// <returns>
         /// Returns the double value
         /// </returns>
-        public static double IsDouble(string input)
+        public static long IsLong(string input)
         {
-            double number;
-            if (double.TryParse(input, out number))
+            long number;
+            if (long.TryParse(input, out number))
             {
                 return number;
             }
             else
             {
-                while (double.TryParse(input, out number) == false)
+                while (long.TryParse(input, out number) == false)
                 {
                     Console.WriteLine("please enter a proper integer");
                     input = Console.ReadLine();
@@ -109,35 +99,6 @@ namespace ObjectOrientedPrograms.Inventory_Management
             }
         }
 
-        /// <summary>
-        /// Reads the json file.
-        /// </summary>
-        /// <returns>
-        /// Returns the json file
-        /// </returns>
-        public static InventoryItems ReadJsonFile()
-        {
-            if (File.Exists(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\InventoryManage.json"))
-            {
-                string files = File.ReadAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\InventoryManage.json");
-                InventoryItems array = JsonConvert.DeserializeObject<InventoryItems>(files);
-                return array;
-            }
-            else
-            {
-                Console.WriteLine("path does not exist");
-                return new InventoryItems();
-            }
-        }
-
-        /// <summary>
-        /// Writes the json file.
-        /// </summary>
-        /// <param name="file">The file.</param>
-        public static void WriteJsonFile(InventoryItems file)
-        {
-            string json = JsonConvert.SerializeObject(file);
-            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\InventoryManage.json", json);
-        }
-    }   
+       
+    }
 }

@@ -37,7 +37,7 @@ namespace ObjectOrientedPrograms
             
             for (i = 0; i < cards; i++)
             {
-                int number = Utility1.RandomInt(0, cards - 1);
+                int number = Utility.RandomInt(0, cards - 1);
                 string temp = deck[number];
                 deck[number] = deck[i];
                 deck[i] = temp;

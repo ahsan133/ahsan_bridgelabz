@@ -4,12 +4,11 @@
 // </copyright>
 // <creator name="MD Ahsanullah"/>
 // ------------------------------------------------------------------------------------------------------------------
-namespace ObjectOrientedPrograms
+namespace ObjectOrientedPrograms.Inventory_Management
 {
     using System;   
     using System.Collections.Generic;
     using System.Text;
-    using ObjectOrientedPrograms.Inventory_Management;
 
     /// <summary>
     /// Rice list

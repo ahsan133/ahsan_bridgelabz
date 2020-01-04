@@ -6,6 +6,7 @@
 // ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
+    using ObjectOrientedPrograms.Address_Book;
     using System;
 
     /// <summary>
@@ -20,7 +21,7 @@ namespace ObjectOrientedPrograms
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Data Management\n2.Inventory Management\n3.Deck Of Cards");
+            Console.WriteLine("1.Data Management\n2.Inventory Management\n3.Deck Of Cards\n4.Address Book");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -37,6 +38,10 @@ namespace ObjectOrientedPrograms
                 case 3:
                     DeckOfCards deckOfCards = new DeckOfCards();
                     DeckOfCards.DeckOfCardsObj();
+                    break;
+                case 4:
+                    AddressBook addressBook = new AddressBook();
+                    AddressBook.AddressBookObj();
                     break;
                 default:
                     break;

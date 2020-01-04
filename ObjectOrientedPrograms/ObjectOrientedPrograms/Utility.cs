@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Utility1.cs" company="Bridgelabz">
+// <copyright file="Utility.cs" company="Bridgelabz">
 //   Copyright © 2019 Company="BridgeLabz"
 // </copyright>
 // <creator name="MD Ahsanullah"/>
@@ -13,7 +13,7 @@ namespace ObjectOrientedPrograms
     /// <summary>
     /// Utility1 Class
     /// </summary>
-    public class Utility1
+    public class Utility
     {
         /// <summary>
         /// Randoms the int.
