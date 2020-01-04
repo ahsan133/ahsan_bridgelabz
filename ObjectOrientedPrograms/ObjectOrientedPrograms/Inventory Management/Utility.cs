@@ -1,13 +1,22 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using ObjectOrientedPrograms.Inventory_Management;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Utility.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="MD Ahsanullah"/>
+// ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using ObjectOrientedPrograms.Inventory_Management;    
+
+    /// <summary>
+    /// Utility class
+    /// </summary>
     public class Utility
     {
         /// <summary>
@@ -70,12 +79,45 @@ namespace ObjectOrientedPrograms
                     }
                 }
             }
-            while (flag == 1);
-            return input;
+            while (flag == 1); 
+            
+            return input;                      
         }
+
+        /// <summary>
+        /// Determines whether the specified input is double.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <returns>
+        /// Returns the double value
+        /// </returns>
+        public static double IsDouble(string input)
+        {
+            double number;
+            if (double.TryParse(input, out number))
+            {
+                return number;
+            }
+            else
+            {
+                while (double.TryParse(input, out number) == false)
+                {
+                    Console.WriteLine("please enter a proper integer");
+                    input = Console.ReadLine();
+                }
+
+                return number;
+            }
+        }
+
+        /// <summary>
+        /// Reads the json file.
+        /// </summary>
+        /// <returns>
+        /// Returns the json file
+        /// </returns>
         public static InventoryItems ReadJsonFile()
         {
-
             if (File.Exists(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\InventoryManage.json"))
             {
                 string files = File.ReadAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\InventoryManage.json");
@@ -89,14 +131,14 @@ namespace ObjectOrientedPrograms
             }
         }
 
+        /// <summary>
+        /// Writes the json file.
+        /// </summary>
+        /// <param name="file">The file.</param>
         public static void WriteJsonFile(InventoryItems file)
         {
             string json = JsonConvert.SerializeObject(file);
-            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\json1.json", json);
+            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Inventory Management\InventoryManage.json", json);
         }
-
-       
-
-      
     }   
 }

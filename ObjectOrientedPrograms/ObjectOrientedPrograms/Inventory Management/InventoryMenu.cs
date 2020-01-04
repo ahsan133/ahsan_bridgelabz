@@ -1,11 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Inventorymenu.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="MD Ahsanullah"/>
+// ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms.Inventory_Management
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    /// <summary>
+    /// Inventory menu Calling the other functions
+    /// </summary>
     public class InventoryMenu
     {
+        /// <summary>
+        /// Menus this instance.
+        /// </summary>
         public static void Menu()
         {
             Console.WriteLine("Select an category");
@@ -16,6 +28,7 @@ namespace ObjectOrientedPrograms.Inventory_Management
                 Console.WriteLine("item dosent exist");
                 category = Utility.IsInteger(Console.ReadLine());
             }
+
             switch (category)
             {
                 case 1:
@@ -39,6 +52,7 @@ namespace ObjectOrientedPrograms.Inventory_Management
                 Console.WriteLine("operation dosent exist");
                 operation = Utility.IsInteger(Console.ReadLine());
             }
+
             switch (operation)
             {
                 case 1:
@@ -53,7 +67,6 @@ namespace ObjectOrientedPrograms.Inventory_Management
                 default:
                     break;
             }
-
         }
     }
 }

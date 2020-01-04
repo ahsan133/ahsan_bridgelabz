@@ -1,34 +1,82 @@
-﻿using System;
-using ObjectOrientedPrograms.Inventory_Management;
-using System.Collections.Generic;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Rice.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="MD Ahsanullah"/>
+// ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
+    using System;   
+    using System.Collections.Generic;
+    using System.Text;
+    using ObjectOrientedPrograms.Inventory_Management;
+
+    /// <summary>
+    /// Rice list
+    /// </summary>
     public class Rice
     {
+        /// <summary>
+        /// The name
+        /// </summary>
         private string name;
-        private int weight;
-        private int price;
 
+        /// <summary>
+        /// The weight
+        /// </summary>
+        private double weight;
+
+        /// <summary>
+        /// The price
+        /// </summary>
+        private double price;
+
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
         public string Name { get => this.name; set => this.name = value; }
-        public int Weight { get => this.weight; set => this.weight = value; }
-        public int Price { get => this.price; set => this.price = value; }
 
+        /// <summary>
+        /// Gets or sets the weight.
+        /// </summary>
+        /// <value>
+        /// The weight.
+        /// </value>
+        public double Weight { get => this.weight; set => this.weight = value; }
 
+        /// <summary>
+        /// Gets or sets the price.
+        /// </summary>
+        /// <value>
+        /// The price.
+        /// </value>
+        public double Price { get => this.price; set => this.price = value; }
+
+        /// <summary>
+        /// Rice the object.
+        /// </summary>
         public static void RiceObj()
         {
             InventoryItems array = Utility.ReadJsonFile();
             foreach (var i in array.Rice)
             {
-                Console.WriteLine("name =" + i.Name );
+                Console.WriteLine("name =" + i.Name);
                 Console.WriteLine("weight =" + i.Weight);
                 Console.WriteLine("Price =" + i.Price);
                 Console.WriteLine();
             }
         }
 
-        public static void InsertRice(string name, int weight, int price)
+        /// <summary>
+        /// Inserts the rice.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="weight">The weight.</param>
+        /// <param name="price">The price.</param>
+        public static void InsertRice(string name, double weight, double price)
         {
             InventoryItems array = Utility.ReadJsonFile();
             Rice obj = new Rice();
@@ -39,13 +87,16 @@ namespace ObjectOrientedPrograms
             Utility.WriteJsonFile(array);
         }
 
+        /// <summary>
+        /// Updates the rice.
+        /// </summary>
         public static void UpdateRice()
         {
             int j = 1;
             InventoryItems array = Utility.ReadJsonFile();
             foreach (var i in array.Rice)
             {
-                Console.WriteLine(j++ + ".name =" + i.Name);
+                Console.WriteLine(j++ + "=" + i.Name);
             }
 
             Console.WriteLine("Enter the item");
@@ -55,7 +106,7 @@ namespace ObjectOrientedPrograms
             {
                 if (item.Name != name)
                 {
-                    continue; ;
+                    continue;
                 }
                 else
                 {
@@ -79,22 +130,39 @@ namespace ObjectOrientedPrograms
                 case 1:
                     Console.WriteLine("enter the new name");
                     string newName = Utility.IsString(Console.ReadLine());
-                    array.Rice[choice].Name = newName;
+                    array.Rice[itemNumber - 1].Name = newName;
                     break;
                 case 2:
                     Console.WriteLine("enter the new weight");
-                    int newWeight = Utility.IsInteger(Console.ReadLine());
-                    array.Rice[choice].Weight = newWeight;
+                    double newWeight = Utility.IsDouble(Console.ReadLine());
+                    array.Rice[itemNumber - 1].Weight = newWeight;
                     break;
                 case 3:
                     Console.WriteLine("enter the new price");
-                    int newPrice = Utility.IsInteger(Console.ReadLine());
-                    array.Rice[choice].Price = newPrice;
+                    double newPrice = Utility.IsDouble(Console.ReadLine());
+                    array.Rice[itemNumber - 1].Price = newPrice;
                     break;
             }
 
             Utility.WriteJsonFile(array);
+        }
 
+        /// <summary>
+        /// Deletes the rice.
+        /// </summary>
+        public static void DeleteRice()
+        {
+            int j = 1;
+            InventoryItems array = Utility.ReadJsonFile();
+            foreach (var i in array.Rice)
+            {
+                Console.WriteLine(j++ + "=" + i.Name);
+            }
+
+            Console.WriteLine("Enter the item to delete");
+            int itemNumber = Utility.IsInteger(Console.ReadLine());           
+            array.Rice.RemoveAt(itemNumber - 1);
+            Utility.WriteJsonFile(array);
         }
     }  
 }

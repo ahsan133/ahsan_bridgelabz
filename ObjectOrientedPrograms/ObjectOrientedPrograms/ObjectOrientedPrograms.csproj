@@ -13,4 +13,15 @@
     <Folder Include="Inventory\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Inventory Management\InventoryManagement.cs">
+      <ExcludeFromSourceAnalysis>False</ExcludeFromSourceAnalysis>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Update="Inventory Management\Rice.cs">
+      <ExcludeFromSourceAnalysis>False</ExcludeFromSourceAnalysis>
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
+  </ItemGroup>
+
 </Project>
