@@ -1,11 +1,20 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Utility.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="MD Ahsanullah"/>
+// ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms.Address_Book
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Newtonsoft.Json;
+
+    /// <summary>
+    /// Utility class
+    /// </summary>
     public class Utility
     {
         /// <summary>
@@ -99,6 +108,25 @@ namespace ObjectOrientedPrograms.Address_Book
             }
         }
 
-       
+        /// <summary>
+        /// Reads the json.
+        /// </summary>
+        /// <returns>
+        /// returns the json file
+        /// </returns>
+        public static string ReadJson()
+        {
+                string file = File.ReadAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\Addressjson.json");
+                return file;
+        }
+
+        /// <summary>
+        /// Writes the json.
+        /// </summary>
+        /// <param name="file">The file.</param>
+        public static void WriteJson(string file)
+        {
+            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\Addressjson.json", file);
+        }
     }
 }

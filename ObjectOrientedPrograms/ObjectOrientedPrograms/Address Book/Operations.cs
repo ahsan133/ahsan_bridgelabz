@@ -1,18 +1,29 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Operations.cs" company="Bridgelabz">
+//   Copyright © 2019 Company="BridgeLabz"
+// </copyright>
+// <creator name="MD Ahsanullah"/>
+// ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms.Address_Book
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Text;
+    using Newtonsoft.Json;
+
+    /// <summary>
+    /// Address book operations
+    /// </summary>
     public class Operations
     {
+        /// <summary>
+        /// Inserts this instance.
+        /// </summary>
         public static void Insert()
         {
-            StreamReader file = new StreamReader(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\Addressjson.json");
-            var json = file.ReadToEnd();
-            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(json);
+            string file = Utility.ReadJson();
+            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(file);
 
             AddressMaintain obj = new AddressMaintain();
             Console.WriteLine("enter first name");
@@ -31,22 +42,23 @@ namespace ObjectOrientedPrograms.Address_Book
             obj.Phone = Utility.IsLong(Console.ReadLine());
             array.Add(obj);
 
-            string jso = JsonConvert.SerializeObject(array);
-            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\json1.json", jso);
+            string json = JsonConvert.SerializeObject(array);
+            Utility.WriteJson(json);
             Console.WriteLine("added to address book");
         }
 
+        /// <summary>
+        /// Removes this instance.
+        /// </summary>
         public static void Remove()
         {
-            StreamReader file = new StreamReader(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\Addressjson.json");
-            var json = file.ReadToEnd();
-            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(json);
+            string file = Utility.ReadJson();
+            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(file);
 
             int count = 0;
             Console.WriteLine("enter the first name to delete");
             string name = Utility.IsString(Console.ReadLine());
-
-            foreach(var i in array)
+            foreach (var i in array)
             {
                 if (i.FirstName != name)
                 {
@@ -55,19 +67,22 @@ namespace ObjectOrientedPrograms.Address_Book
                 else
                 {
                     break;
-                }               
+                }
             }
+
             array.RemoveAt(count);
-            string jso = JsonConvert.SerializeObject(array);
-            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\json1.json", jso);
+            string json = JsonConvert.SerializeObject(array);
+            Utility.WriteJson(json);
             Console.WriteLine("name deleted");
         }
 
+        /// <summary>
+        /// Updates this instance.
+        /// </summary>
         public static void Update()
         {
-            StreamReader file = new StreamReader(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\Addressjson.json");
-            var json = file.ReadToEnd();
-            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(json);
+            string file = Utility.ReadJson();
+            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(file);
 
             int count = 0;
             Console.WriteLine("enter the first name to update");
@@ -83,6 +98,7 @@ namespace ObjectOrientedPrograms.Address_Book
                     break;
                 }
             }
+
             Console.WriteLine("enter 1 to update first name");
             Console.WriteLine("enter 2 to update last name");
             Console.WriteLine("enter 3 to update address");
@@ -91,7 +107,7 @@ namespace ObjectOrientedPrograms.Address_Book
             Console.WriteLine("enter 6 to update zip code");
             Console.WriteLine("enter 7 to update phone");
             int choice = Utility.IsInteger(Console.ReadLine());
-            switch(choice)
+            switch (choice)
             {
                 case 1:
                     Console.WriteLine("enter the new first name");
@@ -130,18 +146,42 @@ namespace ObjectOrientedPrograms.Address_Book
                     break;
             }
 
-            string jso = JsonConvert.SerializeObject(array);
-            File.WriteAllText(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\json1.json", jso);
+            string json = JsonConvert.SerializeObject(array);
+            Utility.WriteJson(json);
             Console.WriteLine("name updated");
-
         }
+
+        /// <summary>
+        /// Sorts this instance.
+        /// </summary>
         public static void Sort()
         {
-            StreamReader file = new StreamReader(@"C:\Users\Admin\source\ahsan\ObjectOrientedPrograms\ObjectOrientedPrograms\Address Book\Addressjson.json");
-            var json = file.ReadToEnd();
-            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(json);
+            string file = Utility.ReadJson();
+            var array = JsonConvert.DeserializeObject<List<AddressMaintain>>(file);
 
+            int count = 0;
 
+            foreach (var i in array)
+            {
+                count++;
+            }
+
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = i + 1; j < count; j++)
+                {
+                    int a = array[i].FirstName.CompareTo(array[j].FirstName);
+                    if (a > 0)
+                    {
+                        AddressMaintain temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                }
+            }
+
+            string json = JsonConvert.SerializeObject(array);
+            Utility.WriteJson(json);
         }
     }
 }
