@@ -170,8 +170,8 @@ namespace ObjectOrientedPrograms.Address_Book
             {
                 for (int j = i + 1; j < count; j++)
                 {
-                    int a = array[i].FirstName.CompareTo(array[j].FirstName);
-                    if (a > 0)
+                    int result = array[i].FirstName.CompareTo(array[j].FirstName);
+                    if (result > 0)
                     {
                         AddressMaintain temp = array[i];
                         array[i] = array[j];
