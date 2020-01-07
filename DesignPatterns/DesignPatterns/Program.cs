@@ -7,6 +7,7 @@
 namespace DesignPatterns
 {
     using DesignPatterns.FactoryPatterns;
+    using DesignPatterns.PrototypeDesignPatterns;
     using System;
 
     /// <summary>
@@ -21,7 +22,7 @@ namespace DesignPatterns
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Factory patterns");
+            Console.WriteLine("1.Factory patterns\n2.Prototype Pattern");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -31,6 +32,10 @@ namespace DesignPatterns
                     Test test = new Test();
                     Test.TestObj();
                     break;
+                case 2:
+                    PrototypePattern prototypePattern = new PrototypePattern();
+                    PrototypePattern.PrototypePatternObj();
+                    return;
             }
         }
     }
