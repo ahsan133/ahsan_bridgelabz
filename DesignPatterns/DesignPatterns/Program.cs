@@ -7,6 +7,7 @@
 namespace DesignPatterns
 {
     using DesignPatterns.Adapterdesignpattern;
+    using DesignPatterns.FacadeDesignPattern;
     using DesignPatterns.FactoryPatterns;
     using DesignPatterns.PrototypeDesignPatterns;
     using System;
@@ -23,7 +24,7 @@ namespace DesignPatterns
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Factory patterns\n2.Prototype Pattern\n3.Adapter Pattern");
+            Console.WriteLine("1.Factory patterns\n2.Prototype Pattern\n3.Adapter Pattern\n4.FacadePattern");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -36,11 +37,15 @@ namespace DesignPatterns
                 case 2:
                     PrototypePattern prototypePattern = new PrototypePattern();
                     PrototypePattern.PrototypePatternObj();
-                    return;
+                    break;
                 case 3:
                     AdapterPattern adapterPattern = new AdapterPattern();
                     AdapterPattern.AdapterPatternObj();
-                    return;
+                    break;
+                case 4:
+                    FacadePattern facadePattern = new FacadePattern();
+                    FacadePattern.FacadePatternObj();
+                    break;
             }
         }
     }
