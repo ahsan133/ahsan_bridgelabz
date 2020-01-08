@@ -24,6 +24,7 @@ namespace ObjectOrientedPrograms
         public static void InventoryManagementObj()
         {
             InventoryMenu.Menu();
+            Operations.Print();
             Console.WriteLine("do you want to exit(y/n)");
             string response = Console.ReadLine();
 
