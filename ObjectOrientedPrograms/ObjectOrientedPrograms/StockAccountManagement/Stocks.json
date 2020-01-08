@@ -1,0 +1,22 @@
+[
+  {
+    "name": "IBM",
+    "shares": 258,
+    "sharePrice": 34
+  },
+  {
+    "name": "Bosch",
+    "shares": 234,
+    "sharePrice": 74
+  },
+  {
+    "name": "Infosys",
+    "shares": 834,
+    "sharePrice": 45
+  },
+  {
+    "name": "Tata",
+    "shares": 934,
+    "sharePrice": 67
+  }
+]
