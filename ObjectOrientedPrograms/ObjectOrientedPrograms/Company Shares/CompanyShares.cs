@@ -86,10 +86,79 @@ namespace ObjectOrientedPrograms.Company_Shares
         }
 
         /// <summary>
+        /// Buying the shares and storing in stack
+        /// </summary>
+        /// <param name="stack"></param>
+        public static void Buy(StackClass<int> stack)
+        {
+            Console.WriteLine("enter company name");
+            string name = Utility.IsString(Console.ReadLine());
+            string json = Utility.Readjson();
+            var array = JsonConvert.DeserializeObject<List<Share>>(json);
+            int count = 0;
+            foreach (var i in array)
+            {
+                if (Equals(i.Name, name))
+                {
+                    break;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine("how many shares do you want to buy?");
+            int buy = Utility.IsInteger(Console.ReadLine());
+            while (array[count].Shares < buy || buy < 0)
+            {
+                Console.WriteLine("not enough shares\nenter valid shares to buy");
+                buy = Utility.IsInteger(Console.ReadLine());
+            }
+
+            stack.Push(buy);
+            array[count].Shares -= buy;
+            string file = JsonConvert.SerializeObject(array);
+            Utility.WriteJson(file);
+        }
+
+        /// <summary>
+        /// selling the shares and storing in stack
+        /// </summary>
+        /// <param name="stack"></param>
+        public static void Sell(StackClass<int> stack)
+        {
+            Console.WriteLine("enter company name");
+            string name = Utility.IsString(Console.ReadLine());
+            string json = Utility.Readjson();
+            var array = JsonConvert.DeserializeObject<List<Share>>(json);
+            int count = 0;
+            foreach (var i in array)
+            {
+                if (Equals(i.Name, name))
+                {
+                    break;
+                }
+                else
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine("how many shares do you want to sell?");
+            int sell = Utility.IsInteger(Console.ReadLine());
+            stack.Push(sell);
+            array[count].Shares += sell;
+            string file = JsonConvert.SerializeObject(array);
+            Utility.WriteJson(file);
+        }
+
+        /// <summary>
         /// Companies the shares object.
         /// </summary>
         public static void CompanySharesObj()
         {
+            StackClass<int> stack = new StackClass<int>();
             LinkedListClass<Share> list = new LinkedListClass<Share>();
             string json = Utility.Readjson();
             var array = JsonConvert.DeserializeObject<List<Share>>(json);
@@ -101,9 +170,9 @@ namespace ObjectOrientedPrograms.Company_Shares
             CompanyShares.Print(list);
 
             Console.WriteLine("enter the operation to perform");
-            Console.WriteLine("1.add\n2.remove");
+            Console.WriteLine("1.add\n2.remove\n3.Buy\n4.Sell");
             int operation = Utility.IsInteger(Console.ReadLine());
-            while (operation != 1 && operation != 2)
+            while (operation != 1 && operation != 2 && operation != 3 && operation != 4)
             {
                 Console.WriteLine("enter valid operation to perform");
                 operation = Utility.IsInteger(Console.ReadLine());
@@ -117,11 +186,27 @@ namespace ObjectOrientedPrograms.Company_Shares
                 case 2:
                     CompanyShares.Remove(list);
                     break;
+                case 3:
+                    CompanyShares.Buy(stack);
+                    break;
+                case 4:
+                    CompanyShares.Sell(stack);
+                    break;
                 default:
                     break;
             }
-            
-            CompanyShares.Print(list);
+
+            string file = Utility.Readjson();
+            var files = JsonConvert.DeserializeObject<List<Share>>(file);
+            foreach (var i in files)
+            {
+                Console.WriteLine("name= :" + i.Name);
+                Console.WriteLine("shares= :" + i.Shares);
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("no of shares bought and sold:");
+            stack.Print(); 
         }
     }
 }
