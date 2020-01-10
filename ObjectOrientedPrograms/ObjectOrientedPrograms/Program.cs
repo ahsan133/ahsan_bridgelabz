@@ -6,6 +6,7 @@
 // ------------------------------------------------------------------------------------------------------------------
 namespace ObjectOrientedPrograms
 {
+    using ObjectOrientedPrograms.CardsUsingQueue;
     using ObjectOrientedPrograms.StockAccountManagement;
     using ObjectOrientedPrograms.Company_Shares;
     using ObjectOrientedPrograms.Address_Book;
@@ -23,7 +24,7 @@ namespace ObjectOrientedPrograms
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Data Management\n2.Inventory Management\n3.Deck Of Cards\n4.Address Book\n5.Company Shares\n6.Stock Account");
+            Console.WriteLine("1.Data Management\n2.Inventory Management\n3.Deck Of Cards\n4.Address Book\n5.Company Shares\n6.Stock Account\n7.Deck of cards using queue");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -53,6 +54,11 @@ namespace ObjectOrientedPrograms
                     StockAccount stockAccount = new StockAccount();
                     StockAccount.StockAccountObj();
                     break;
+                case 7:
+                    Deck deck = new Deck();
+                    Deck.DeckObj();
+                    break;
+
                 default:
                     break;
             }

@@ -21,7 +21,7 @@ namespace ObjectOrientedPrograms
         public static void DeckOfCardsObj()
         {
             string[] suits = { "clubs", "hearts", "spades", "diamonds" };
-            string[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "jack", "queen", "king", "ace" };
+            string[] ranks = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace" };
             string[,] array = new string[4, 9];
             int k = 0;
             int i = 0;
