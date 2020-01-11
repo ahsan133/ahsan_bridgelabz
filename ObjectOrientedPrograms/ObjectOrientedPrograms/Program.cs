@@ -11,6 +11,7 @@ namespace ObjectOrientedPrograms
     using ObjectOrientedPrograms.Company_Shares;
     using ObjectOrientedPrograms.Address_Book;
     using System;
+    using ObjectOrientedPrograms.Commerercial_data_processing;
 
     /// <summary>
     /// Main function program
@@ -24,7 +25,8 @@ namespace ObjectOrientedPrograms
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Data Management\n2.Inventory Management\n3.Deck Of Cards\n4.Address Book\n5.Company Shares\n6.Stock Account\n7.Deck of cards using queue");
+            Console.WriteLine("1.Data Management\n2.Inventory Management\n3.Deck Of Cards\n4.Address Book\n5.Company Shares\n6.Stock Account\n" +
+                "7.Deck of cards using queue\n8.Commercial data  processing");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -57,6 +59,10 @@ namespace ObjectOrientedPrograms
                 case 7:
                     Deck deck = new Deck();
                     Deck.DeckObj();
+                    break;
+                case 8:
+                    StockData stockData = new StockData();
+                    StockData.StockDataObj();
                     break;
 
                 default:
