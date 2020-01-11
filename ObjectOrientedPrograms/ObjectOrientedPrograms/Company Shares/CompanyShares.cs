@@ -89,7 +89,7 @@ namespace ObjectOrientedPrograms.Company_Shares
         /// Buying the shares and storing in stack
         /// </summary>
         /// <param name="stack"></param>
-        public static void Buy(StackClass<int> stack)
+        public static void Buy(StackClass<int> stack, QueueClass<DateTime> queue)
         {
             Console.WriteLine("enter company name");
             string name = Utility.IsString(Console.ReadLine());
@@ -117,6 +117,7 @@ namespace ObjectOrientedPrograms.Company_Shares
             }
 
             stack.Push(buy);
+            queue.Insert(DateTime.Now);
             array[count].Shares -= buy;
             string file = JsonConvert.SerializeObject(array);
             Utility.WriteJson(file);
@@ -126,7 +127,7 @@ namespace ObjectOrientedPrograms.Company_Shares
         /// selling the shares and storing in stack
         /// </summary>
         /// <param name="stack"></param>
-        public static void Sell(StackClass<int> stack)
+        public static void Sell(StackClass<int> stack, QueueClass<DateTime> queue)
         {
             Console.WriteLine("enter company name");
             string name = Utility.IsString(Console.ReadLine());
@@ -148,6 +149,7 @@ namespace ObjectOrientedPrograms.Company_Shares
             Console.WriteLine("how many shares do you want to sell?");
             int sell = Utility.IsInteger(Console.ReadLine());
             stack.Push(sell);
+            queue.Insert(DateTime.Now);
             array[count].Shares += sell;
             string file = JsonConvert.SerializeObject(array);
             Utility.WriteJson(file);
@@ -158,6 +160,7 @@ namespace ObjectOrientedPrograms.Company_Shares
         /// </summary>
         public static void CompanySharesObj()
         {
+            QueueClass<DateTime> queue = new QueueClass<DateTime>();
             StackClass<int> stack = new StackClass<int>();
             LinkedListClass<Share> list = new LinkedListClass<Share>();
             string json = Utility.Readjson();
@@ -187,10 +190,10 @@ namespace ObjectOrientedPrograms.Company_Shares
                     CompanyShares.Remove(list);
                     break;
                 case 3:
-                    CompanyShares.Buy(stack);
+                    CompanyShares.Buy(stack, queue);
                     break;
                 case 4:
-                    CompanyShares.Sell(stack);
+                    CompanyShares.Sell(stack, queue);
                     break;
                 default:
                     break;
@@ -206,7 +209,10 @@ namespace ObjectOrientedPrograms.Company_Shares
             }
 
             Console.WriteLine("no of shares bought and sold:");
-            stack.Print(); 
+            stack.Print();
+
+            Console.WriteLine("date and time of the transcation");
+            queue.Print();
         }
     }
 }
