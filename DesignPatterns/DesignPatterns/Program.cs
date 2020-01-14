@@ -6,6 +6,8 @@
 // ------------------------------------------------------------------------------------------------------------------
 namespace DesignPatterns
 {
+
+    using DesignPatterns.ObserverDesignPattern;
     using DesignPatterns.Adapterdesignpattern;
     using DesignPatterns.FacadeDesignPattern;
     using DesignPatterns.FactoryPatterns;
@@ -24,7 +26,8 @@ namespace DesignPatterns
         public static void Main(string[] args)
         {
             int choice;
-            Console.WriteLine("1.Factory patterns\n2.Prototype Pattern\n3.Adapter Pattern\n4.FacadePattern\n5.Regular Expression");
+            Console.WriteLine("1.Factory patterns\n2.Prototype Pattern\n3.Adapter Pattern\n4.FacadePattern\n5.Regular Expression\n" +
+                "6. DesignPatterns.Observer Design Pattern");
             Console.WriteLine("Enter your choice");
             choice = int.Parse(Console.ReadLine());
 
@@ -47,8 +50,12 @@ namespace DesignPatterns
                     FacadePattern.FacadePatternObj();
                     break;
                 case 5:
-                    RegularExpression RegularExpression = new RegularExpression();
+                    RegularExpression regularExpression = new RegularExpression();
                     RegularExpression.RegularExpressionObj();
+                    break;
+                case 6:
+                    ObserverDesign observerDesign = new ObserverDesign();
+                    ObserverDesign.ObserverDesignObj();
                     break;
             }
         }

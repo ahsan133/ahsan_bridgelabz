@@ -47,7 +47,7 @@ namespace DesignPatterns
                 Console.WriteLine("enter proper mobile number");
             }
 
-            string date = System.DateTime.Today.ToString();
+            string date = DateTime.Today.ToString();
             string result = expression.Replace("<<name>>", split[0]).Replace("<<fullname>>", fullname).Replace("xxxxxxxxxx", phone.ToString()).Replace("01/01/2016", date);
             Console.WriteLine(result);
         }
