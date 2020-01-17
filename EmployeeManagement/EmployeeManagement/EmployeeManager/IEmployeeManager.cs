@@ -10,9 +10,9 @@ namespace EmployeeManagement.EmployeeManager
     {
         IEnumerable<Employee> Get();
 
-        void Add(string name, string email, string password, string address);
+        void Add(Employee employee);
 
-        void Update(string name, string email, string password, string address);
+        void Update(Employee employee);
 
         void Delete(int id);
     }

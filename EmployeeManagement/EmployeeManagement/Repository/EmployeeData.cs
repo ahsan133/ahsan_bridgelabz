@@ -49,6 +49,7 @@ namespace EmployeeManagement.Model
                 SqlCommand cmd = new SqlCommand("spAddEmployee", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@userId", employee.UserId);
                 cmd.Parameters.AddWithValue("@name", employee.Name);
                 cmd.Parameters.AddWithValue("@email", employee.Email);
                 cmd.Parameters.AddWithValue("@password", employee.Password);
@@ -67,6 +68,7 @@ namespace EmployeeManagement.Model
                 SqlCommand cmd = new SqlCommand("spUpdateEmployee", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
 
+                cmd.Parameters.AddWithValue("@userId", employee.UserId);
                 cmd.Parameters.AddWithValue("@name", employee.Name);
                 cmd.Parameters.AddWithValue("@email", employee.Email);
                 cmd.Parameters.AddWithValue("@password", employee.Password);

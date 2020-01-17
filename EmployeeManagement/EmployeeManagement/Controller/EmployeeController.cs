@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EmployeeManagement.EmployeeManager;
+using EmployeeManagement.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,84 +11,79 @@ namespace EmployeeManagement.Controller
 {
     public class EmployeeController : ControllerBase
     {
-        // GET: Employee
-        public ActionResult Index()
-        {
-            return View();
-        }
+        IEmployeeManager manager = new EmployeeManagers();
 
-        // GET: Employee/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: Employee/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Employee/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        [Route("api/add")]
+        public ActionResult AddEmployees(int userId,string name,string email,string password,string address)
         {
             try
             {
-                // TODO: Add insert logic here
+                Employee employee = new Employee();
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+                employee.UserId = userId;
+                employee.Name = name;
+                employee.Email = email;
+                employee.Password = password;
+                employee.Address = address;
+                this.manager.Add(employee);
+                return Ok(employee);
+            }catch(Exception e)
             {
-                return View();
-            }
+                return BadRequest(e.Message);
+            }            
         }
 
-        // GET: Employee/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Employee/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [Route("api/delete")]
+        public ActionResult DeleteEmployees(int userId)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
+                this.manager.Delete(userId);
+                return Ok(userId);
+            }catch(Exception e)
             {
-                return View();
-            }
+                return BadRequest(e.Message);
+            }          
         }
 
-        // GET: Employee/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Employee/Delete/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        [Route("api/update")]
+        public ActionResult UpdateEmployees(int userId, string name, string email, string password, string address)
         {
             try
             {
-                // TODO: Add delete logic here
+                Employee employee = new Employee()
+                {
+                    UserId = userId,
+                    Name = name,
+                    Email = email,
+                    Password = password,
+                    Address = address
+                };
 
-                return RedirectToAction(nameof(Index));
+                this.manager.Update(employee);
+                return Ok(employee);
             }
-            catch
+            catch (Exception e)
             {
-                return View();
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("api/get")]
+        public ActionResult GetEmployees()
+        {
+            try
+            {
+                IEnumerable<Employee> list = this.manager.Get();
+                return Ok(list);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
             }
         }
     }
