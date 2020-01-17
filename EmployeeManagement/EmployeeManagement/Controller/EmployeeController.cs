@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeManagement.Controller
 {
-    public class EmployeeController : Controller
+    public class EmployeeController : ControllerBase
     {
         // GET: Employee
         public ActionResult Index()

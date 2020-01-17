@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Model
 {
+    using EmployeeManagement.Repository;
     using EmployeeManagement.Utility;
     using System.Data;
     using System.Data.SqlClient;
 
-    public class EmployeeData
+    public class EmployeeData : IRepository
     {
         string connection = ConnectionString.ConnectionName;
 
@@ -45,7 +46,7 @@ namespace EmployeeManagement.Model
         {
             using (SqlConnection connect = new SqlConnection(connection))
             {
-                SqlCommand cmd = new SqlCommand("spGetAllEmployee", connect);
+                SqlCommand cmd = new SqlCommand("spAddEmployee", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@name", employee.Name);
@@ -63,13 +64,28 @@ namespace EmployeeManagement.Model
         {
             using (SqlConnection connect = new SqlConnection(connection))
             {
-                SqlCommand cmd = new SqlCommand("spGetAllEmployee", connect);
+                SqlCommand cmd = new SqlCommand("spUpdateEmployee", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@name", employee.Name);
                 cmd.Parameters.AddWithValue("@email", employee.Email);
                 cmd.Parameters.AddWithValue("@password", employee.Password);
                 cmd.Parameters.AddWithValue("@address", employee.Address);
+
+                connect.Open();
+                cmd.ExecuteNonQuery();
+                connect.Close();
+            }
+        }
+
+        public void DeleteEmployee(int? userId)
+        {
+            using (SqlConnection connect = new SqlConnection(connection))
+            {
+                SqlCommand cmd = new SqlCommand("spDeleteEmployee", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@userId", userId);
 
                 connect.Open();
                 cmd.ExecuteNonQuery();
