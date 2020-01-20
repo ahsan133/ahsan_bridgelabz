@@ -94,5 +94,30 @@ namespace EmployeeManagement.Model
                 connect.Close();
             }
         }
+
+        public bool LoginEmployee(string email, string password)
+        {
+            using (SqlConnection connect = new SqlConnection(connection))
+            {
+                SqlCommand cmd = new SqlCommand("spGetAllEmployee", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+                connect.Open();
+                SqlDataReader data = cmd.ExecuteReader();
+                while(data.Read())
+                {
+                    string a = data["password"].ToString();
+                    if (Equals(data["password"].ToString(), password))
+                    {
+                        if(Equals(data["email"].ToString(), email))
+                        {
+                            return true;
+                        }
+                    }
+                }
+
+                connect.Close();
+                return false;
+            }
+        }
     }
 }

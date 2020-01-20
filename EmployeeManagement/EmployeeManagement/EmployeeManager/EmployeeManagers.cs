@@ -28,6 +28,11 @@ namespace EmployeeManagement.EmployeeManager
         public void Delete(int id)
         {
             repository.DeleteEmployee(id);
-        }  
+        }
+
+        public bool Login(string email, string password)
+        {
+            return repository.LoginEmployee(email, password);
+        }
     }
 }

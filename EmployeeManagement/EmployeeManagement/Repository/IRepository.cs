@@ -14,5 +14,7 @@ namespace EmployeeManagement.Repository
         void UpdateEmployee(Employee employee);
 
         void DeleteEmployee(int? userId);
+
+        bool LoginEmployee(string emal, string password);
     }
 }

@@ -15,5 +15,6 @@ namespace EmployeeManagement.EmployeeManager
         void Update(Employee employee);
 
         void Delete(int id);
+        bool Login(string email, string password);
     }
 }

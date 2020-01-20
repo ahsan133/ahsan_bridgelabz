@@ -31,10 +31,10 @@ namespace EmployeeManagement.Controller
             }catch(Exception e)
             {
                 return BadRequest(e.Message);
-            }            
+            }
         }
 
-        [HttpPost]
+        [HttpDelete]
         [Route("api/delete")]
         public ActionResult DeleteEmployees(int userId)
         {
@@ -48,7 +48,7 @@ namespace EmployeeManagement.Controller
             }          
         }
 
-        [HttpPost]
+        [HttpPut]
         [Route("api/update")]
         public ActionResult UpdateEmployees(int userId, string name, string email, string password, string address)
         {
@@ -80,6 +80,21 @@ namespace EmployeeManagement.Controller
             {
                 IEnumerable<Employee> list = this.manager.Get();
                 return Ok(list);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("api/login")]
+        public ActionResult LoginEmployees(string email, string password)
+        {
+            try
+            {
+                bool flag = this.manager.Login(email, password);
+                return Ok(flag);
             }
             catch (Exception e)
             {
