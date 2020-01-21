@@ -2,43 +2,43 @@
 <html>
 <head>
     <meta charset="utf-8" />
-
-    <title>Register</title>
+    <title>Update</title>
 </head>
 <body>
+
     <div>
-        <div class="register">Register</div>
+        <div class="update">Update Employee</div>
         <div class="alignment">
-            <div class="user">User Id</div>
-            <input type="text" id="userId" name="userId">
+            <div class="id">User Id</div>
+            <input type="text" id="userId" name="userId" />
         </div>
         <br />
         <div class="alignment">
-            <div class="user">Name</div>
-            <input type="text" id="name" name="name">
+            <div class="id">Name</div>
+            <input type="text" id="name" name="name" />
         </div>
         <br />
         <div class="alignment">
-            <div class="user">Email Id</div>
-            <input type="text" id="email" name="email">
+            <div class="id">Email ID</div>
+            <input type="text" id="email" name="email" />
         </div>
         <br />
         <div class="alignment">
-            <div class="user">Password</div>
-            <input type="text" id="password" name="password">
+            <div class="id">Password</div>
+            <input type="text" id="password" name="password" />
         </div>
         <br />
         <div class="alignment">
-            <div class="user">Address</div>
-            <input type="text" id="address" name="address">
+            <div class="id">Address</div>
+            <input type="text" id="address" name="address" />
         </div>
         <br />
         <div class="buttons">
-            <div class="sign">
-                <input type="button" name="Sign Up" id="btn" onclick="btn()" value="Sign Up" class="login" />
+            <div class="btn">
+                <input type="button" id="btn" onclick="btn()" value="Update" class="up" />
             </div>
-            <div class="sign">
-                <input type="button" id="login" onclick="window.location.href='https://localhost:44345/Login.html'" value="Login" class="login" />
+            <div class="btn">
+                <input type="button" id="btn" onclick="window.location.href='https://localhost:44345/List.html'" value="Cancel" class="up" />
             </div>
         </div>
     </div>
@@ -55,34 +55,25 @@
                 formData.append("address", $("#address").val());
 
                 $.ajax({
-                    url: "api/add",
-                    type: 'POST',
+                    url: "api/update",
+                    type: 'PUT',
                     cache: false,
                     contentType: false,
                     processData: false,
                     data: formData,
 
                     success: function (response) {
-                        window.location.href = 'https://localhost:44345/Login.html'
-                        alert("Added!");
+                        window.location.href = 'https://localhost:44345/List.html'
+                        alert("Updated!!")
                     }
                 });
             });
         });
 
     </script>
+
     <style>
-        .user {
-            width: 100px;
-        }
-
-        .alignment {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .register {
+        .update {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -91,26 +82,32 @@
             padding: 20px;
         }
 
-        .buttons {
-            display: flex;
-            justify-content: center;
+        .alignment {
             align-items: center;
-        }
-
-        .login {
-            background: #36718c;
-            color: white;
-            outline: none;
-            width: 72px;
-            height: 28px;
-            border-radius: 9px;
-            border: 1px solid #aaa;
-        }
-
-        .sign {
-            width: 120px;
             display: flex;
+            justify-content: center
+        }
+
+        .id {
+            width: 100px;
+        }
+
+        .buttons {
+            align-items: center;
             justify-content: center;
+            display: flex;
+        }
+
+        .up {
+            border-radius: 10px;
+            background-color: #36718c;
+            width: 80px;
+            height: 30px;
+            color: white
+        }
+
+        .btn {
+            padding: 10px;
         }
     </style>
 </body>

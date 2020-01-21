@@ -46,7 +46,10 @@
                     success: function (Response) {
                         window.location.href = 'https://localhost:44345/List.html'
                         alert("Logged In!!");
-                    }
+                    },
+                    error: function () {
+                        alert("incorrect");
+                    }                   
                 });
             });
         });

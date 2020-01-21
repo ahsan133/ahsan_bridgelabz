@@ -94,7 +94,7 @@ namespace EmployeeManagement.Controller
             try
             {
                 bool flag = this.manager.Login(email, password);
-                return Ok(flag);
+                    return Ok(flag);
             }
             catch (Exception e)
             {
