@@ -30,7 +30,7 @@
         <br />
         <div class="buttons">
             <div class="sign">
-                <input type="button" name="Sign Up" id="btn" onclick="btn()" value="Sign Up" class="login" />
+                <input type="button" name="Sign Up" id="btn" onclick="btn" value="Sign Up" class="login" />
             </div>
             <div class="sign">
                 <input type="button" id="login" onclick="window.location.href='https://localhost:44345/Login.html'" value="Login" class="login" />
@@ -41,6 +41,17 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
         $(function () {
+
+              $("#btn").attr('disabled', true);
+            function validateNext() {
+                var buttonNext = $("#email").val().trim() === '' || $("#password").val().trim() === '' || $("#name").val().trim() === '' || $("#address").val().trim() === '';
+                $("#btn").attr('disabled', buttonNext);
+            }
+            $('#email').on('keyup', validateNext);
+            $('#password').on('keyup', validateNext);
+            $('#name').on('keyup', validateNext);
+            $('#address').on('keyup', validateNext);
+
             $("#btn").click(function () {
                 var formData = new FormData;
                 formData.append("userId", $("#userId").val());

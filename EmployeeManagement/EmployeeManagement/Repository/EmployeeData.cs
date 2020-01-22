@@ -19,12 +19,12 @@ namespace EmployeeManagement.Model
     /// EmployeeData implements IRepository.
     /// </summary>
     /// <seealso cref="EmployeeManagement.Repository.IRepository" />
-    public class EmployeeData : IRepository
+    public class EmployeeData : IRepository     
     {
         /// <summary>
         /// The connection
         /// </summary>
-        private string connection = ConnectionString.ConnectionName;
+        private string connection = ConnectionString.ConnectionName; 
 
         /// <summary>
         /// Gets all employee.
