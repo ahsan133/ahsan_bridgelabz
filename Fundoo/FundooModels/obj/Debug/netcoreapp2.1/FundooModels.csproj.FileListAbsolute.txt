@@ -3,9 +3,9 @@ C:\Users\Admin\source\ahsan\Fundoo\FundooModels\bin\Debug\netcoreapp2.1\FundooMo
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.runtimeconfig.dev.json
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.dll
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.pdb
-C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.csprojAssemblyReference.cache
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.AssemblyInfoInputs.cache
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.AssemblyInfo.cs
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.dll
 C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.pdb
+C:\Users\Admin\source\ahsan\Fundoo\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.csprojAssemblyReference.cache

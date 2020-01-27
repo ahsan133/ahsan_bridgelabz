@@ -8,13 +8,12 @@ namespace FundooRepository.Repository
 {
     public interface IUserRepository
     {
-        Task Register(RegisterModel registerModel);
+        void Register(RegisterModel registerModel);
 
-        Task Login(LoginModel loginModel);
+        Task<RegisterModel> Login(LoginModel loginModel);
 
-        Task ResetPassword(ResetPasswordModel reset);
+        void ResetPassword(ResetPasswordModel reset);
 
-        Task ForgotPassword(ForgotPasswordModel forgot);
+        void ForgotPassword(ForgotPasswordModel forgot);
     }
-
 }

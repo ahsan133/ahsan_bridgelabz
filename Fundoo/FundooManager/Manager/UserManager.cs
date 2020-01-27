@@ -9,35 +9,31 @@ namespace FundooManager.Manager
 {
     public class UserManager : IUserManager
     {
-        private readonly IUserRepository repository;
+        private IUserRepository repository;
 
-        public UserManager(IUserRepository repository)
+        public UserManager(IUserRepository userRepository)
         {
-            this.repository = repository;
+            this.repository = userRepository;
         }
 
-        public bool Regestration(RegisterModel registerModel)
+        public void Regestration(RegisterModel registerModel)
         {
-            this.repository.Register(registerModel);
-            return true;
+             this.repository.Register(registerModel);
         }
 
-        public async Task<bool> Login(LoginModel loginModel)
+        public void Login(LoginModel loginModel)
         {
-            await this.repository.Login(loginModel);
-            return true;
+             this.repository.Login(loginModel);
         }
 
-        public async Task<bool> ResetPassword(ResetPasswordModel reset)
+        public void ResetPassword(ResetPasswordModel reset)
         {
-            await this.repository.ResetPassword(reset);
-            return true;
+             this.repository.ResetPassword(reset);         
         }
 
-        public async Task<bool> ForgotPassword(ForgotPasswordModel forgot)
+        public void ForgotPassword(ForgotPasswordModel forgot)
         {
-            await this.repository.ForgotPassword(forgot);
-            return true;
+             this.repository.ForgotPassword(forgot);
         }
     }
 }

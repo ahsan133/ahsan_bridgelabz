@@ -1,5 +1,6 @@
 ﻿using FundooManager.Manager;
 using FundooModels.Models;
+using FundooRepository.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,20 +14,20 @@ namespace Fundoo.Controllers
     {
         private readonly IUserManager user;
 
-        public UserController(IUserManager user)
+        public UserController(IUserManager userManager)
         {
-            this.user = user;
+            this.user = userManager;
         }
 
-
+        [AllowAnonymous]
         [HttpPost]
-        [Route("api/register")]
-        public ActionResult Register(RegisterModel register)
+        [Route("register")]
+        public ActionResult Register(RegisterModel model)
         {
             try
             {
-                var result =  user.Regestration(register);
-                return Ok(result );
+                user.Regestration(model);
+                return Ok(model);
             }
             catch (Exception e)
             {
@@ -34,12 +35,14 @@ namespace Fundoo.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("login")]
         public ActionResult Login(LoginModel loginModel)
         {
             try
             {
-                var result = user.Login(loginModel);
-                return Ok(result);
+                user.Login(loginModel);
+                return Ok(loginModel);
             }
             catch (Exception e)
             {
@@ -47,12 +50,14 @@ namespace Fundoo.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("reset")]
         public ActionResult Resetpassword(ResetPasswordModel reset)
         {
             try
             {
-                var result = user.ResetPassword(reset);
-                return Ok(result);
+                user.ResetPassword(reset);
+                return Ok(reset);
             }
             catch (Exception e)
             {
@@ -60,12 +65,14 @@ namespace Fundoo.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("forgot")]
         public ActionResult Forgotpassword(ForgotPasswordModel forgot)
         {
             try
             {
-                var result = user.ForgotPassword(forgot);
-                return Ok(result);
+                user.ForgotPassword(forgot);
+                return Ok(forgot);
             }
             catch (Exception e)
             {

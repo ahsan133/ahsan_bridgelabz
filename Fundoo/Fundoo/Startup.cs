@@ -11,7 +11,9 @@ namespace Fundoo
     using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
+    using FundooManager.Manager;
     using FundooRepository.Context;
+    using FundooRepository.Repository;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -43,11 +45,13 @@ namespace Fundoo
             services.AddDbContextPool<UserContext>(
              options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
 
+            services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserManager, UserManager>();
 
-            //services.AddTransient<IRepository, EmployeeData>();
 
 
-            //services.AddTransient<IEmployeeManager, EmployeeManagers>();
+
+
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()

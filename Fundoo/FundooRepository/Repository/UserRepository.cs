@@ -1,7 +1,9 @@
 ﻿using FundooModels.Models;
 using FundooRepository.Context;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
@@ -10,39 +12,62 @@ namespace FundooRepository.Repository
 {
     public class UserRepository : IUserRepository
     {
-        private readonly UserContext context;
+        private UserContext context;
 
-        public UserRepository(UserContext context)
+        public UserRepository(UserContext userContext)
         {
-            this.context = context;
+            this.context = userContext;
         }
 
-        public Task Register(RegisterModel registerModel)
+
+        public void Register(RegisterModel registerModel)
         {
-            RegisterModel user = new RegisterModel()
+            
+            this.context.RegisterModels.Add(registerModel);
+            //return Task.Run(() => context.SaveChangesAsync());          
+        }
+
+        public Task<RegisterModel> Login(LoginModel loginModel)
+        {
+            var result = this.FindByEmail(loginModel.Email);
+            if (result != null && this.CheckPassword(loginModel.Email, loginModel.Password))
             {
-                FirstName = registerModel.FirstName,
-                LastName = registerModel.LastName,
-                Email = registerModel.Email,
-                Password = registerModel.Password
-            };
-            this.context.RegisterModels.Add(user);
-            return Task.Run(() => context.SaveChangesAsync());          
+                try
+                {
+                    var tokenDescription = new SecurityTokenDescriptor
+                    {
+
+                    }
+                }
+                catch(Exception e)
+                {
+                    return BadRequest(e.Message);
+                }
+            }
         }
 
-        public Task Login(LoginModel loginModel)
+        public void ResetPassword(ResetPasswordModel reset)
         {
-            return null;
+
         }
 
-        public Task ResetPassword(ResetPasswordModel reset)
+        public void ForgotPassword(ForgotPasswordModel forgot)
         {
-            return null;
+
         }
 
-        public Task ForgotPassword(ForgotPasswordModel reset)
+
+
+        public Task<RegisterModel> FindByEmail(string email)
         {
-            return null;
+            var user = this.context.RegisterModels.Where(r => r.Email == email).SingleOrDefault();
+            return Task.Run(() => user);
+        }
+
+        public Task<bool> CheckPassword(string email, string password)
+        {
+            bool result = context.RegisterModels.Where(p => p.Password == password && p.Email == email).SingleOrDefault().Password != null ? true : false;
+            return Task.Run(() => result);
         }
     }
 }

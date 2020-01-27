@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundooRepository.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20200124121132_forgotPassword")]
-    partial class forgotPassword
+    [Migration("20200127125058_register")]
+    partial class register
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,28 +19,6 @@ namespace FundooRepository.Migrations
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("FundooModels.Models.ForgotPasswordModel", b =>
-                {
-                    b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
-
-                    b.HasKey("Email");
-
-                    b.ToTable("ForgotModel");
-                });
-
-            modelBuilder.Entity("FundooModels.Models.LoginModel", b =>
-                {
-                    b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Password");
-
-                    b.HasKey("Email");
-
-                    b.ToTable("LoginModels");
-                });
 
             modelBuilder.Entity("FundooModels.Models.RegisterModel", b =>
                 {
@@ -56,20 +34,6 @@ namespace FundooRepository.Migrations
                     b.HasKey("Email");
 
                     b.ToTable("RegisterModels");
-                });
-
-            modelBuilder.Entity("FundooModels.Models.ResetPasswordModel", b =>
-                {
-                    b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ConfirmPassword");
-
-                    b.Property<string>("Password");
-
-                    b.HasKey("Email");
-
-                    b.ToTable("ResetModel");
                 });
 #pragma warning restore 612, 618
         }
