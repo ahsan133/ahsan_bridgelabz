@@ -8,9 +8,9 @@ namespace FundooManager.Manager
 {
     public interface IUserManager
     {
-        void Regestration(RegisterModel registerModel);
+        Task<int> Regestration(RegisterModel registerModel);
         void Login(LoginModel loginModel);
-        void ResetPassword(ResetPasswordModel reset);
-        void ForgotPassword(ForgotPasswordModel forgot);
+        Task<string> ResetPassword(ResetPasswordModel reset);
+        //void ForgotPassword(ForgotPasswordModel forgot);
     }
 }

@@ -11,5 +11,6 @@ namespace FundooModels.Models
 
         [Key]
         public string Email { get => this.email; set => this.email = value; }
+
     }
 }

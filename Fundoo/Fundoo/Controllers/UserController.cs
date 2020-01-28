@@ -19,65 +19,59 @@ namespace Fundoo.Controllers
             this.user = userManager;
         }
 
-        [AllowAnonymous]
         [HttpPost]
-        [Route("register")]
-        public ActionResult Register(RegisterModel model)
+        [Route("api/register")]
+        public async Task<ActionResult> Register([FromBody] RegisterModel model)
         {
-            try
+          var result= await this.user.Regestration(model);
+            if (result == 1)
             {
-                user.Regestration(model);
-                return Ok(model);
+                return this.Ok(model);
             }
-            catch (Exception e)
+            else
             {
-                return BadRequest(e.Message);
+                return this.BadRequest();
             }
         }
 
-        [HttpPost]
-        [Route("login")]
-        public ActionResult Login(LoginModel loginModel)
+        //[HttpPost]
+        //[Route("api/login")]
+        //public async Task<ActionResult> Login(LoginModel loginModel)
+        //{
+
+        //    try
+        //    {
+        //        await user.Login(loginModel);
+        //        return Ok(loginModel);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return BadRequest(e.Message);
+        //    }
+        //}
+
+        [HttpPut]
+        [Route("api/reset")]
+        public async Task<ActionResult> Resetpassword([FromBody] ResetPasswordModel reset)
         {
-            try
+            var result = await user.ResetPassword(reset);
+            if (result == "success")
             {
-                user.Login(loginModel);
-                return Ok(loginModel);
+                return this.Ok(reset);
             }
-            catch (Exception e)
+            else
             {
-                return BadRequest(e.Message);
+                return this.BadRequest();
             }
         }
 
-        [HttpPost]
-        [Route("reset")]
-        public ActionResult Resetpassword(ResetPasswordModel reset)
-        {
-            try
-            {
-                user.ResetPassword(reset);
-                return Ok(reset);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
-
-        [HttpPost]
-        [Route("forgot")]
-        public ActionResult Forgotpassword(ForgotPasswordModel forgot)
-        {
-            try
-            {
-                user.ForgotPassword(forgot);
-                return Ok(forgot);
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+        //[HttpPost]
+        //[Route("api/forgot")]
+        //public async Task<ActionResult> Forgotpassword(ForgotPasswordModel forgot)
+        //{
+        //    var result =await user.ForgotPassword(forgot);
+        //    return Ok(result);
+          
+        //}
     }
 }

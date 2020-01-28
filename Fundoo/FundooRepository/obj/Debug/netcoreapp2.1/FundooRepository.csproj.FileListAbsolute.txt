@@ -14,3 +14,7 @@ C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\obj\Debug\netcoreapp2.1\Fund
 C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.pdb
 C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Hosting.dll
 C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Hosting.xml
+C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Admin\source\ahsan\Fundoo\FundooRepository\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.xml

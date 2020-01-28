@@ -8,11 +8,11 @@ namespace FundooRepository.Repository
 {
     public interface IUserRepository
     {
-        void Register(RegisterModel registerModel);
+        Task<int> Register(RegisterModel registerModel);
 
-        Task<RegisterModel> Login(LoginModel loginModel);
+        //Task<RegisterModel> Login(LoginModel loginModel);
 
-        void ResetPassword(ResetPasswordModel reset);
+        Task<string> ResetPassword(ResetPasswordModel reset);
 
         void ForgotPassword(ForgotPasswordModel forgot);
     }

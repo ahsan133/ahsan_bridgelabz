@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using FundooModels.NotesModel;
 using FundooRepository.Repository;
 
@@ -8,25 +9,22 @@ namespace FundooManager.Manager
 {
     public class NotesManager : INotesManager
     {
-        private INotesRepository notes;
-        public NotesManager(INotesRepository note)
+        private INotesRepository repository;
+        public NotesManager(INotesRepository repository)
         {
-            this.notes = note;
+            this.repository = repository;
         }
 
-        public void AddNotes(NotesModel notes)
+        public Task<int> AddNotes(NotesModel notes)
         {
-          
+            var result = this.repository.AddNotes(notes);
+            return result;
         }
 
-        public void RemoveNotes()
+        public Task<string> UpdateNotes(NotesModel notes)
         {
-           
-        }
-
-        public void Updatenotes()
-        {
-            
+            var result = this.repository.UpdateNotes(notes);
+            return result;
         }
     }
 }

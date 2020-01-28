@@ -3,7 +3,9 @@ using FundooRepository.Context;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
@@ -20,54 +22,80 @@ namespace FundooRepository.Repository
         }
 
 
-        public void Register(RegisterModel registerModel)
-        {
-            
+        public Task<int> Register(RegisterModel registerModel)
+        {            
             this.context.RegisterModels.Add(registerModel);
-            //return Task.Run(() => context.SaveChangesAsync());          
+            var result=this.context.SaveChangesAsync();
+            return result;      
         }
 
-        public Task<RegisterModel> Login(LoginModel loginModel)
+        public RegisterModel Login(LoginModel loginModel)
         {
-            var result = this.FindByEmail(loginModel.Email);
+            var result = this.context.RegisterModels.Where(r => r.Email == loginModel.Email).SingleOrDefault();
             if (result != null && this.CheckPassword(loginModel.Email, loginModel.Password))
             {
                 try
                 {
-                    var tokenDescription = new SecurityTokenDescriptor
+                    var tokenDescriptor = new SecurityTokenDescriptor
                     {
+                        Subject = new ClaimsIdentity(new Claim[]
+                        {
+                            new Claim("Email", loginModel.Email.ToString())
+                        }),
+                        Expires = DateTime.UtcNow.AddDays(1),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12345678987654")), SecurityAlgorithms.HmacSha256)
 
-                    }
+                    };
+
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    var token = tokenHandler.WriteToken(securityToken);
+                    var cachekey = loginModel.Email;
+
+
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
-                    return BadRequest(e.Message);
+                    throw new Exception(e.Message);
                 }
+                return result;
             }
+            return result;
+      
         }
 
-        public void ResetPassword(ResetPasswordModel reset)
+        public async Task<string> ResetPassword(ResetPasswordModel reset)
         {
-
+            var user = context.RegisterModels.Where(p => p.Email == reset.Email).SingleOrDefault();
+            if (user != null)
+            {
+                if(reset.Password == reset.ConfirmPassword)
+                {
+                    user.Password = reset.Password;
+                    context.Update(user);
+                    await Task.Run(() => context.SaveChangesAsync());
+                    return "success";
+                }
+                return "Passwords did not match";
+            }
+            return "user does not exist";
         }
 
         public void ForgotPassword(ForgotPasswordModel forgot)
         {
+            var user = context.RegisterModels.Where(p => p.Email == forgot.Email).SingleOrDefault();
+            if(user != null)
+            {
+               
+            }
 
         }
 
 
-
-        public Task<RegisterModel> FindByEmail(string email)
-        {
-            var user = this.context.RegisterModels.Where(r => r.Email == email).SingleOrDefault();
-            return Task.Run(() => user);
-        }
-
-        public Task<bool> CheckPassword(string email, string password)
+        public bool CheckPassword(string email, string password)
         {
             bool result = context.RegisterModels.Where(p => p.Password == password && p.Email == email).SingleOrDefault().Password != null ? true : false;
-            return Task.Run(() => result);
+            return result;
         }
     }
 }

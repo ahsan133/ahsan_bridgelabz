@@ -16,24 +16,28 @@ namespace FundooManager.Manager
             this.repository = userRepository;
         }
 
-        public void Regestration(RegisterModel registerModel)
+        public Task<int> Regestration(RegisterModel registerModel)
         {
-             this.repository.Register(registerModel);
+             var result = this.repository.Register(registerModel);
+             return result;
         }
 
         public void Login(LoginModel loginModel)
         {
-             this.repository.Login(loginModel);
+             //this.repository.Login(loginModel);
         }
 
-        public void ResetPassword(ResetPasswordModel reset)
+        public Task<string> ResetPassword(ResetPasswordModel reset)
         {
-             this.repository.ResetPassword(reset);         
+             var result = this.repository.ResetPassword(reset);
+             return result;
         }
 
-        public void ForgotPassword(ForgotPasswordModel forgot)
-        {
-             this.repository.ForgotPassword(forgot);
-        }
+        //public Task ForgotPassword(ForgotPasswordModel forgot)
+        //{
+
+        //     var result = this.repository.ForgotPassword(forgot);
+        //    return result;
+        //}
     }
 }

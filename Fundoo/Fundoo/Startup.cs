@@ -48,9 +48,11 @@ namespace Fundoo
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserManager, UserManager>();
 
+            services.AddTransient<INotesRepository, NotesRepository>();
+            services.AddTransient<INotesManager, NotesManager>();
 
 
-
+     
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {

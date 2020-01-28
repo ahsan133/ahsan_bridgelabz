@@ -1,5 +1,6 @@
 ﻿
 using FundooModels.Models;
+using FundooModels.NotesModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace FundooRepository.Context
         }
 
         public DbSet<RegisterModel> RegisterModels
+        {
+            get;
+            set;
+        }
+
+        public DbSet<NotesModel> NotesModels
         {
             get;
             set;

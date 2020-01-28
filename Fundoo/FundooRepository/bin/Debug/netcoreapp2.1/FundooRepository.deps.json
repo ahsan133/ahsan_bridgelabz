@@ -10,7 +10,9 @@
         "dependencies": {
           "FundooModels": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
-          "Microsoft.AspNetCore.Hosting": "2.1.1.0"
+          "Microsoft.AspNetCore.Hosting": "2.1.1.0",
+          "Microsoft.IdentityModel.Tokens": "5.2.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.2.0.0"
         },
         "runtime": {
           "FundooRepository.dll": {}
@@ -513,6 +515,22 @@
             "fileVersion": "2.1.1.18157"
           }
         }
+      },
+      "Microsoft.IdentityModel.Tokens/5.2.0.0": {
+        "runtime": {
+          "Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.0.50129"
+          }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/5.2.0.0": {
+        "runtime": {
+          "System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.0.50129"
+          }
+        }
       }
     }
   },
@@ -899,6 +917,16 @@
       "sha512": ""
     },
     "Microsoft.AspNetCore.Hosting/2.1.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.IdentityModel.Tokens/5.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IdentityModel.Tokens.Jwt/5.2.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

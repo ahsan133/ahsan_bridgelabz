@@ -17,19 +17,37 @@ namespace Fundoo.Controllers
         {
             this.note = notes;
         }
-        public ActionResult AddNotes(NotesModel notes)
+
+        [HttpPost]
+        [Route("api/addNotes")]
+        public async Task<ActionResult> AddNotes([FromBody] NotesModel notes)
         {
-            try
+            var result = await this.note.AddNotes(notes);
+            if (result == 1)
             {
-                this.note.AddNotes(notes);
-                return Ok(notes);
+                return this.Ok(notes);
             }
-            catch(Exception e)
+            else
             {
-                return BadRequest(e.Message);
+                return BadRequest();
+            }       
+        }
+
+        [HttpPut]
+        [Route("api/updateNotes")]
+        public async Task<ActionResult> UpdateNotes([FromBody] NotesModel notes)
+        {
+            var result = await this.note.UpdateNotes(notes);
+            if (result == "success")
+            {
+                return this.Ok(notes);
+            }
+            else
+            {
+                return BadRequest();
             }
         }
 
-       
+        public Task<ActionResult> IsArchive() 
     }
 }
