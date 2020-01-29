@@ -1,6 +1,7 @@
 ﻿using FundooModels.Models;
 using FundooRepository.Context;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -51,7 +52,7 @@ namespace FundooRepository.Repository
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);
                     var token = tokenHandler.WriteToken(securityToken);
                     var cachekey = loginModel.Email;
-
+                    ConnectionMultiplexer  
 
                 }
                 catch (Exception e)
@@ -61,7 +62,6 @@ namespace FundooRepository.Repository
                 return result;
             }
             return result;
-      
         }
 
         public async Task<string> ResetPassword(ResetPasswordModel reset)

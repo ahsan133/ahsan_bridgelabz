@@ -20,8 +20,10 @@ namespace FundooRepository.Repository
 
         public Task<int> AddNotes(NotesModel notes)
         {
+            Random random = new Random();
             NotesModel model = new NotesModel()
             {
+                Id = random.Next(9999),
                 Email = notes.Email,
                 Title = notes.Title,
                 Description = notes.Description,
@@ -48,14 +50,221 @@ namespace FundooRepository.Repository
                 model.Description = notes.Description;
                 model.ModifiedTime = DateTime.Now;
 
-                var result = await this.context.SaveChangesAsync();
+                this.context.NotesModels.Update(model);
+                await this.context.SaveChangesAsync();
                 return "success";
             }
             else
             {
                 return "invalid";
-            }
-            
+            }            
         }
+
+        public async Task<string> RemoveNotes(int id)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            if(data != null)
+            {
+                context.NotesModels.Remove(data);
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return "no data or invalid id";
+        }
+
+        public List<NotesModel> GetNotes(string email)
+        {
+            List<NotesModel> list = new List<NotesModel>();
+            var result = context.NotesModels.Where(p => p.Email == email && p.Archive == false && p.Trash == false).FirstOrDefault();
+            if(result != null)
+            {
+                var data = from notes in this.context.NotesModels where notes.Email == email && notes.Archive == false && notes.Trash == false select notes;
+                foreach(var items in data)
+                {
+                    list.Add(items);
+                }
+                return list;
+            }
+            return null;
+        }
+
+        public Task IsArchive(int id)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id && p.Archive == false).SingleOrDefault();
+            if (data != null)
+            {
+                data.Archive = true;
+                return Task.Run(() => context.SaveChangesAsync());
+            }
+
+            return null;
+        }
+
+        public Task UnArchive(int id)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id && p.Archive == true).SingleOrDefault();
+            if (data != null)
+            {
+                data.Archive = false;
+                return Task.Run(() => context.SaveChangesAsync());
+            }
+
+            return null;
+        }
+
+        public Task IsPin(int id)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id && p.Pin == false).SingleOrDefault();
+            if (data != null)
+            {
+                data.Pin = true;
+                return Task.Run(() => context.SaveChangesAsync());
+            }
+
+            return null;
+        }
+
+        public Task UnPin(int id)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id && p.Pin == false).SingleOrDefault();
+            if (data != null)
+            {
+                data.Pin = true;
+                return Task.Run(() => context.SaveChangesAsync());
+            }
+
+            return null;
+        }
+
+        public async Task<string> SetRemainder(int id, string remainder)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            if (data != null)
+            {
+                data.Remainder = remainder;
+                data.ModifiedTime = DateTime.Now;
+                context.NotesModels.Update(data);
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return "invalid";
+        }
+
+        public async Task<string> RemoveRemainder(int id, string remainder)
+        {
+            var data = context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            if (data != null)
+            {
+                data.Remainder = null;
+                data.ModifiedTime = DateTime.Now;
+                context.NotesModels.Update(data);
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return "invalid";
+        }
+
+        public IEnumerable<NotesModel> GetList()
+        {
+            return context.NotesModels.ToList();
+        }
+
+        public List<NotesModel> GetTrashList(string email)
+        {
+            List<NotesModel> list = new List<NotesModel>();
+            var result = context.NotesModels.Where(p => p.Email == email && p.Trash == true).FirstOrDefault();
+            if(result != null)
+            {
+                var data = from user in context.NotesModels where user.Email == email && user.Trash == true select user;
+                foreach(var item in data)
+                {
+                    list.Add(item);
+                }
+                return list;
+            }
+
+            return null;
+        }
+
+        public List<NotesModel> GetArchiveList(string email)
+        {
+            List<NotesModel> list = new List<NotesModel>();
+            var result = context.NotesModels.Where(p => p.Email == email && p.Archive == true).FirstOrDefault();
+            if (result != null)
+            {
+                var data = from user in context.NotesModels where user.Email == email && user.Archive == true select user;
+                foreach (var item in data)
+                {
+                    list.Add(item);
+                }
+                return list;
+            }
+
+            return null;
+        }
+
+        public async Task<string> Restore(int id)
+        {
+            var result = context.NotesModels.Where(p => p.Id == id && p.Trash == true).SingleOrDefault();
+            if(result != null)
+            {
+                result.Trash = false;
+                context.NotesModels.Update(result);
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return null;
+        }
+
+        public async Task<string> RestoreAll(string email)
+        {
+            var result = context.NotesModels.Where(p => p.Email == email && p.Trash == true).FirstOrDefault();
+            if(result != null)
+            {
+                var data = from user in context.NotesModels where user.Email == email && user.Trash == true select user;
+                foreach(var item in data)
+                {
+                    item.Trash = false;
+                }
+                context.NotesModels.Update(result);
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return null;
+        }
+
+        public async Task<string> DeleteAll(string email)
+        {
+            var result = context.NotesModels.Where(p => p.Email == email && p.Trash == true).FirstOrDefault();
+            if (result != null)
+            {
+                var data = from user in context.NotesModels where user.Email == email && user.Trash == true select user;
+                foreach (var item in data)
+                {
+                    context.NotesModels.Remove(item);
+                }
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return null;
+        }
+
+        public async Task<string> Color(int id, string color)
+        {
+            var result = context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            if(result != null)
+            {
+                result.Color = color;
+                context.NotesModels.Update(result);
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+            return null;
+        }
+
+        //public Task Image(int id,string image)
+        //{
+
+        //}
     }
 }
