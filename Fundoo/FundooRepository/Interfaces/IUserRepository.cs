@@ -10,7 +10,7 @@ namespace FundooRepository.Repository
     {
         Task<int> Register(RegisterModel registerModel);
 
-        //Task<RegisterModel> Login(LoginModel loginModel);
+        Task<RegisterModel> Login(LoginModel loginModel);
 
         Task<string> ResetPassword(ResetPasswordModel reset);
 

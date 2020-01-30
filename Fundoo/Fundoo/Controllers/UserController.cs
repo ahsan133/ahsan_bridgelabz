@@ -34,21 +34,30 @@ namespace Fundoo.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("api/login")]
-        //public async Task<ActionResult> Login(LoginModel loginModel)
-        //{
-
-        //    try
-        //    {
-        //        await user.Login(loginModel);
-        //        return Ok(loginModel);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return BadRequest(e.Message);
-        //    }
-        //}
+        [HttpPost]
+        [Route("api/login")]
+        public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
+        {
+            var result = await this.user.Login(loginModel);
+            if(result != null)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+           
+            //try
+            //{
+            //    await user.Login(loginModel);
+            //    return Ok(loginModel);
+            //}
+            //catch (Exception e)
+            //{
+            //    return BadRequest(e.Message);
+            //}
+        }
 
         [HttpPut]
         [Route("api/reset")]

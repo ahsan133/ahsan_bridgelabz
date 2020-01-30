@@ -22,9 +22,10 @@ namespace FundooManager.Manager
              return result;
         }
 
-        public void Login(LoginModel loginModel)
+        public Task<RegisterModel> Login(LoginModel loginModel)
         {
-             //this.repository.Login(loginModel);
+            var result = this.repository.Login(loginModel);
+            return result;
         }
 
         public Task<string> ResetPassword(ResetPasswordModel reset)

@@ -30,38 +30,43 @@ namespace FundooRepository.Repository
             return result;      
         }
 
-        public RegisterModel Login(LoginModel loginModel)
+        public Task<RegisterModel> Login(LoginModel loginModel)
         {
             var result = this.context.RegisterModels.Where(r => r.Email == loginModel.Email).SingleOrDefault();
             if (result != null && this.CheckPassword(loginModel.Email, loginModel.Password))
             {
                 try
                 {
-                    var tokenDescriptor = new SecurityTokenDescriptor
-                    {
-                        Subject = new ClaimsIdentity(new Claim[]
-                        {
-                            new Claim("Email", loginModel.Email.ToString())
-                        }),
-                        Expires = DateTime.UtcNow.AddDays(1),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12345678987654")), SecurityAlgorithms.HmacSha256)
+                    //var tokenDescriptor = new SecurityTokenDescriptor
+                    //{
+                    //    Subject = new ClaimsIdentity(new Claim[]
+                    //    {
+                    //        new Claim("Email", loginModel.Email.ToString())
+                    //    }),
+                    //    Expires = DateTime.UtcNow.AddDays(1),
+                    //    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12345678987654")), SecurityAlgorithms.HmacSha256)
+                    //};
 
-                    };
+                    //var tokenHandler = new JwtSecurityTokenHandler();
+                    //var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    //var token = tokenHandler.WriteToken(securityToken);
 
-                    var tokenHandler = new JwtSecurityTokenHandler();
-                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                    var token = tokenHandler.WriteToken(securityToken);
                     var cachekey = loginModel.Email;
-                    ConnectionMultiplexer  
 
+                    ConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase database = connectionMultiplexer.GetDatabase();
+                    database.StringSet(key: cachekey, loginModel.Password);
+                    database.StringGet(cachekey);
+
+                    context.SaveChangesAsync();
+                    return Task.Run(()=>result);
                 }
                 catch (Exception e)
                 {
                     throw new Exception(e.Message);
                 }
-                return result;
             }
-            return result;
+            return null;
         }
 
         public async Task<string> ResetPassword(ResetPasswordModel reset)
@@ -88,9 +93,7 @@ namespace FundooRepository.Repository
             {
                
             }
-
         }
-
 
         public bool CheckPassword(string email, string password)
         {
