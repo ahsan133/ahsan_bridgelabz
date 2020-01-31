@@ -34,6 +34,12 @@ namespace FundooManager.Manager
             return result;
         }
 
+        public Task<RegisterModel> FaceBookLogin(LoginModel loginModel)
+        {
+            var result = this.repository.FaceBookLogin(loginModel);
+            return result;
+        }
+
         public Task<string> ResetPassword(ResetPasswordModel reset)
         {
              var result = this.repository.ResetPassword(reset);

@@ -11,6 +11,7 @@ namespace FundooManager.Manager
         Task<int> Regestration(RegisterModel registerModel);
         Task<RegisterModel> Login(LoginModel loginModel);
         Task<RegisterModel> GoogleLogin(LoginModel loginModel);
+        Task<RegisterModel> FaceBookLogin(LoginModel loginModel);
         Task<string> ResetPassword(ResetPasswordModel reset);
         Task<string> ForgotPassword(ForgotPasswordModel forgot);
         Task<string> Logout(string email);

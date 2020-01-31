@@ -108,6 +108,39 @@ namespace FundooRepository.Repository
             return null;
         }
 
+        public async Task<RegisterModel> FaceBookLogin(LoginModel loginModel)
+        {
+            var result = this.context.RegisterModels.Where(r => r.Email == loginModel.Email).SingleOrDefault();
+            if (result != null)
+            {
+                try
+                {
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecureKey"]));
+                    var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        expires: DateTime.Now.AddDays(1),
+                        signingCredentials: credential);
+
+                    var cacheKey = loginModel.Email;
+
+                    ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase database = connection.GetDatabase();
+                    database.StringSet(cacheKey, token.ToString());
+                    database.StringGet(cacheKey);
+
+                    result.Status = true;
+                    await this.context.SaveChangesAsync();
+                    return result;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
+            }
+
+            return null;
+        }
+
         public async Task<string> ResetPassword(ResetPasswordModel reset)
         {
             var user = context.RegisterModels.Where(p => p.Email == reset.Email).SingleOrDefault();

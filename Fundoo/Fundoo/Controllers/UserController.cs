@@ -64,6 +64,21 @@ namespace Fundoo.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/fbLogin")]
+        public async Task<ActionResult> FaceBookLogin([FromBody] LoginModel loginModel)
+        {
+            var result = await this.user.FaceBookLogin(loginModel);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpPut]
         [Route("api/reset")]
         public async Task<ActionResult> Resetpassword([FromBody] ResetPasswordModel reset)

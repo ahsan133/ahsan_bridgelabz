@@ -12,6 +12,7 @@ namespace FundooRepository.Repository
 
         Task<RegisterModel> Login(LoginModel loginModel);
         Task<RegisterModel> GoogleLogin(LoginModel loginModel);
+        Task<RegisterModel> FaceBookLogin(LoginModel loginModel);
 
         Task<string> ResetPassword(ResetPasswordModel reset);
 
