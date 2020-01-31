@@ -1,4 +1,5 @@
-﻿using FundooManager.Manager;
+﻿
+using FundooManager.Manager;
 using FundooModels.Models;
 using FundooRepository.Repository;
 using Microsoft.AspNetCore.Authorization;
@@ -13,12 +14,11 @@ namespace Fundoo.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserManager user;
-
         public UserController(IUserManager userManager)
         {
             this.user = userManager;
         }
-
+        
         [HttpPost]
         [Route("api/register")]
         public async Task<ActionResult> Register([FromBody] RegisterModel model)
@@ -39,24 +39,14 @@ namespace Fundoo.Controllers
         public async Task<ActionResult> Login([FromBody] LoginModel loginModel)
         {
             var result = await this.user.Login(loginModel);
-            if(result != null)
+            if (result != null)
             {
                 return this.Ok(result);
             }
             else
             {
                 return BadRequest();
-            }
-           
-            //try
-            //{
-            //    await user.Login(loginModel);
-            //    return Ok(loginModel);
-            //}
-            //catch (Exception e)
-            //{
-            //    return BadRequest(e.Message);
-            //}
+            }           
         }
 
         [HttpPut]
@@ -74,13 +64,32 @@ namespace Fundoo.Controllers
             }
         }
 
-        //[HttpPost]
-        //[Route("api/forgot")]
-        //public async Task<ActionResult> Forgotpassword(ForgotPasswordModel forgot)
-        //{
-        //    var result =await user.ForgotPassword(forgot);
-        //    return Ok(result);
-          
-        //}
+        [HttpPost]
+        [Route("api/forgot")]
+        public async Task<ActionResult> Forgotpassword(ForgotPasswordModel forgot)
+        {
+            var result = await user.ForgotPassword(forgot);
+            if (result == "success")
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
+
+        public async Task<ActionResult> Logout(string email)
+        {
+            var result = await user.Logout(email);
+            if (result == "success")
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
     }
 }

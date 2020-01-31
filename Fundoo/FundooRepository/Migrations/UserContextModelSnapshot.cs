@@ -30,6 +30,8 @@ namespace FundooRepository.Migrations
 
                     b.Property<string>("Password");
 
+                    b.Property<bool>("Status");
+
                     b.HasKey("Email");
 
                     b.ToTable("RegisterModels");

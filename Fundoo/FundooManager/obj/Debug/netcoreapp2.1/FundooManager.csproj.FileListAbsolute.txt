@@ -16,3 +16,5 @@ C:\Users\Admin\source\ahsan\Fundoo\FundooManager\obj\Debug\netcoreapp2.1\FundooM
 C:\Users\Admin\source\ahsan\Fundoo\FundooManager\obj\Debug\netcoreapp2.1\FundooManager.pdb
 C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Hosting.dll
 C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Hosting.xml
+C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.Extensions.ObjectPool.xml

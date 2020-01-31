@@ -41,13 +41,14 @@ namespace Fundoo
         //// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940        
         public void ConfigureServices(IServiceCollection services)
         {
+           // services.AddRabbit(Configuration);
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContextPool<UserContext>(
              options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
 
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IUserManager, UserManager>();
-
+            services.AddTransient<IUserManager, UserManager> ();
+      //      services.AddTransient< IRabbitManager, RabbitManager>();
             services.AddTransient<INotesRepository, NotesRepository>();
             services.AddTransient<INotesManager, NotesManager>();
 

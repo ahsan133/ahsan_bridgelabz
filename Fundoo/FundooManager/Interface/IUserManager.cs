@@ -11,6 +11,7 @@ namespace FundooManager.Manager
         Task<int> Regestration(RegisterModel registerModel);
         Task<RegisterModel> Login(LoginModel loginModel);
         Task<string> ResetPassword(ResetPasswordModel reset);
-        //void ForgotPassword(ForgotPasswordModel forgot);
+        Task<string> ForgotPassword(ForgotPasswordModel forgot);
+        Task<string> Logout(string email);
     }
 }

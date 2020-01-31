@@ -109,6 +109,10 @@
               "version": "[2.1.0, )",
               "autoReferenced": true
             },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[5.1.2, )"
+            },
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.0.601, )"

@@ -34,11 +34,16 @@ namespace FundooManager.Manager
              return result;
         }
 
-        //public Task ForgotPassword(ForgotPasswordModel forgot)
-        //{
+        public Task<string> ForgotPassword(ForgotPasswordModel forgot)
+        {
+            var result = this.repository.ForgotPassword(forgot);
+            return result;
+        }
 
-        //     var result = this.repository.ForgotPassword(forgot);
-        //    return result;
-        //}
+        public Task<string> Logout(string email)
+        {
+            var result = this.repository.Logout(email);
+            return result;
+        }
     }
 }
