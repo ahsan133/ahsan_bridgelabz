@@ -18,3 +18,7 @@ C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microso
 C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.AspNetCore.Hosting.xml
 C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.Extensions.ObjectPool.dll
 C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.Extensions.ObjectPool.xml
+C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\Microsoft.IdentityModel.Tokens.xml
+C:\Users\Admin\source\ahsan\Fundoo\FundooManager\bin\Debug\netcoreapp2.1\System.IdentityModel.Tokens.Jwt.xml

@@ -14,7 +14,6 @@ namespace Fundoo.Controllers
     {
         private INotesManager note;
 
-
         public NotesController(INotesManager notes)
         {
             this.note = notes;

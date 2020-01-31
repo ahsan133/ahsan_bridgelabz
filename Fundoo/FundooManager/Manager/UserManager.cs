@@ -28,6 +28,12 @@ namespace FundooManager.Manager
             return result;
         }
 
+        public Task<RegisterModel> GoogleLogin(LoginModel loginModel)
+        {
+            var result = this.repository.GoogleLogin(loginModel);
+            return result;
+        }
+
         public Task<string> ResetPassword(ResetPasswordModel reset)
         {
              var result = this.repository.ResetPassword(reset);

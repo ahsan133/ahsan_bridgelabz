@@ -1,5 +1,6 @@
 ﻿using FundooModels.Models;
 using FundooRepository.Context;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -20,9 +21,11 @@ namespace FundooRepository.Repository
     {
         private UserContext context;
 
-        public UserRepository(UserContext userContext)
+        private readonly IConfiguration configuration;
+        public UserRepository(UserContext userContext, IConfiguration configuration)
         {
             this.context = userContext;
+            this.configuration = configuration;
         }
 
         public Task<int> Register(RegisterModel registerModel)
@@ -39,25 +42,25 @@ namespace FundooRepository.Repository
             {
                 try
                 {
-                    //var tokenDescriptor = new SecurityTokenDescriptor
-                    //{
-                    //    Subject = new ClaimsIdentity(new Claim[]
-                    //    {
-                    //        new Claim("Email", loginModel.Email.ToString())
-                    //    }),
-                    //    Expires = DateTime.UtcNow.AddDays(1),
-                    //    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12345678987654")), SecurityAlgorithms.HmacSha256)
-                    //};
+                    var tokenDescriptor = new SecurityTokenDescriptor
+                    {
+                        Subject = new ClaimsIdentity(new Claim[]
+                        {
+                            new Claim("Email", loginModel.Email.ToString())
+                        }),
+                        Expires = DateTime.UtcNow.AddDays(1),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecureKey"])), SecurityAlgorithms.HmacSha256)
+                    };
 
-                    //var tokenHandler = new JwtSecurityTokenHandler();
-                    //var securityToken = tokenHandler.CreateToken(tokenDescriptor);
-                    //var token = tokenHandler.WriteToken(securityToken);
+                    var tokenHandler = new JwtSecurityTokenHandler();
+                    var securityToken = tokenHandler.CreateToken(tokenDescriptor);
+                    var token = tokenHandler.WriteToken(securityToken);
 
                     var cachekey = loginModel.Email;
 
                     ConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect("127.0.0.1:6379");
                     IDatabase database = connectionMultiplexer.GetDatabase();
-                    database.StringSet(key: cachekey, loginModel.Password);
+                    database.StringSet(key: cachekey, token);
                     database.StringGet(cachekey);
 
                     result.Status = true;
@@ -69,6 +72,39 @@ namespace FundooRepository.Repository
                     throw new Exception(e.Message);
                 }
             }
+            return null;
+        }
+
+        public async Task<RegisterModel> GoogleLogin(LoginModel loginModel)
+        {
+            var result = this.context.RegisterModels.Where(r => r.Email == loginModel.Email).SingleOrDefault();
+            if (result != null)
+            {
+                try
+                {
+                    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecureKey"]));
+                    var credential = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+                    var token = new JwtSecurityToken(
+                        expires: DateTime.Now.AddDays(1),
+                        signingCredentials: credential);
+
+                    var cacheKey = loginModel.Email;
+
+                    ConnectionMultiplexer connection = ConnectionMultiplexer.Connect("127.0.0.1:6379");
+                    IDatabase database = connection.GetDatabase();
+                    database.StringSet(cacheKey, token.ToString());
+                    database.StringGet(cacheKey);
+
+                    result.Status = true;
+                    await this.context.SaveChangesAsync();
+                    return result;
+                }
+                catch(Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
+            }
+
             return null;
         }
 
@@ -178,6 +214,6 @@ namespace FundooRepository.Repository
             return null;
         }
 
-
+      
     }
 }

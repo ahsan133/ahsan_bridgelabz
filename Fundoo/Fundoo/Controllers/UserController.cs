@@ -49,6 +49,21 @@ namespace Fundoo.Controllers
             }           
         }
 
+        [HttpPost]
+        [Route("api/googleLogin")]
+        public async Task<ActionResult> GoogleLogin([FromBody] LoginModel loginModel)
+        {
+            var result = await this.user.GoogleLogin(loginModel);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
         [HttpPut]
         [Route("api/reset")]
         public async Task<ActionResult> Resetpassword([FromBody] ResetPasswordModel reset)
