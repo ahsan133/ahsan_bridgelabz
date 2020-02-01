@@ -11,8 +11,10 @@ namespace Fundoo
     using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
+    using FundooManager.Interface;
     using FundooManager.Manager;
     using FundooRepository.Context;
+    using FundooRepository.Interfaces;
     using FundooRepository.Repository;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -41,17 +43,19 @@ namespace Fundoo
         //// For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940        
         public void ConfigureServices(IServiceCollection services)
         {
-           // services.AddRabbit(Configuration);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContextPool<UserContext>(
              options => options.UseSqlServer(Configuration.GetConnectionString("UserDbConnection")));
 
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserManager, UserManager> ();
-      //      services.AddTransient< IRabbitManager, RabbitManager>();
+
             services.AddTransient<INotesRepository, NotesRepository>();
             services.AddTransient<INotesManager, NotesManager>();
 
+            services.AddTransient<ILabelRepository, LabelRepository>();
+            services.AddTransient<ILabelManager, LabelManager>();
 
      
 

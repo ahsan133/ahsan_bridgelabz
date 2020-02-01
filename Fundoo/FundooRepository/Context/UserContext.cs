@@ -1,6 +1,7 @@
 ﻿
 using FundooModels.Models;
 using FundooModels.NotesModel;
+using FundooModels.NotesModels;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,12 @@ namespace FundooRepository.Context
         }
 
         public DbSet<NotesModel> NotesModels
+        {
+            get;
+            set;
+        }
+
+        public DbSet<LabelModel> LabelModels
         {
             get;
             set;
