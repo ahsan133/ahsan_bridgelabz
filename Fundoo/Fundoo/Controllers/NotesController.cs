@@ -280,7 +280,7 @@ namespace Fundoo.Controllers
         }
 
         [HttpPut]
-        [("api/isTrash")]
+        [Route("api/isTrash")]
         public ActionResult IsTrash(int id)
         {
             var result = this.note.IsTrash(id);

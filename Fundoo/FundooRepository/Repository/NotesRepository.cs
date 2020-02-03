@@ -284,7 +284,7 @@ namespace FundooRepository.Repository
             return data.Image;
         }
 
-        public Task Istrash(int id)
+        public Task IsTrash(int id)
         {
             var user = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
             if (user != null)
