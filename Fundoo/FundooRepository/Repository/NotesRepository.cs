@@ -267,7 +267,7 @@ namespace FundooRepository.Repository
             return null;
         }
 
-        public async Task<string> ProfilePicture(int id, string image)
+        public async Task<string> Image(int id, string image)
         {
             CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(configuration["Cloudinary:Name"], configuration["Cloudinary:ApiKey"], configuration["Cloudinary:ApiSecret"]);
             CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);

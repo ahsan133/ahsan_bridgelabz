@@ -265,10 +265,10 @@ namespace Fundoo.Controllers
         }
 
         [HttpPost]
-        [Route("api/profilePicture")]
-        public ActionResult ProfilePicture(int id, string image)
+        [Route("api/image")]
+        public ActionResult Image(int id, string image)
         {
-            var result = this.note.ProfilePicture(id, image);
+            var result = this.note.Image(id, image);
             if (result != null)
             {
                 return Ok(result);
