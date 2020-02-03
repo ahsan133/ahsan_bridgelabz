@@ -262,9 +262,9 @@ namespace FundooRepository.Repository
             return null;
         }
 
-        //public Task Image(int id,string image)
+        //public Task ProfilePicture(int id, string image)
         //{
-
+        //    CloudinaryDotNet.Account account = new CloudinaryDotNet.Account()
         //}
     }
 }

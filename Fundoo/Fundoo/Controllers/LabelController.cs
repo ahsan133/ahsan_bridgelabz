@@ -64,9 +64,9 @@ namespace Fundoo.Controllers
 
         [HttpGet]
         [Route("api/getLabel")]
-        public async Task<ActionResult> GetLabel(string email)
+        public ActionResult GetLabel(string email)
         {
-            List<LabelModel> list = this.label.GetLabel(email);
+            var list = this.label.GetLabel(email);
             if (list != null)
             {
                 return Ok(list);

@@ -23,6 +23,7 @@ namespace Fundoo
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.OpenApi.Models;
 
     /// <summary>
     /// Startup class.
@@ -66,15 +67,15 @@ namespace Fundoo
                        .AllowAnyHeader();
             }));
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new Info
-            //    {
-            //        Version = "v1",
-            //        Title = "Fundoo API",
-            //        Description = "ASP.NET Core Web API"
-            //    });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Fundoo",
+                    Description = "ASP.NET Core Web API"
+                });
+            });
         }
 
         /// <summary>
@@ -95,6 +96,13 @@ namespace Fundoo
             }
 
             app.UseStaticFiles();
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Fundoo V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseMvc(routes =>
             {
