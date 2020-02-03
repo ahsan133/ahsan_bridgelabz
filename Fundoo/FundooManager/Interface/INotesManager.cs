@@ -25,6 +25,6 @@ namespace FundooManager.Manager
         Task<string> RestoreAll(string email);
         Task<string> DeleteAll(string email);
         Task<string> Color(int id, string color);
-        //Task Image(int id, string image);
+        Task<string> ProfilePicture(int id, string image);
     }
 }

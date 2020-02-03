@@ -25,5 +25,6 @@ namespace FundooRepository.Repository
         Task<string> RestoreAll(string email);
         Task<string> DeleteAll(string email);
         Task<string> Color(int id, string color);
+        Task<string> ProfilePicture(int id, string image);
     }
 }

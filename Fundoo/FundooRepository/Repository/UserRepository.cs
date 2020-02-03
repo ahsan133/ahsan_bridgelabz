@@ -1,4 +1,6 @@
-﻿using FundooModels.Models;
+﻿using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
+using FundooModels.Models;
 using FundooRepository.Context;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -247,6 +249,21 @@ namespace FundooRepository.Repository
             return null;
         }
 
-      
+        public async Task<string> ProfilePicture(int id, string image)
+        {
+            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(configuration["Cloudinary:Name"], configuration["Cloudinarty:ApiKey"], configuration["Cloudinary:ApiSecret"]);
+            CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
+            var upload = new ImageUploadParams()
+            {
+                File = new FileDescription(image)
+            };
+            var uploadResult = cloudinary.Upload(upload);
+
+            var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            data.Image = uploadResult.Uri.ToString();
+            data.ModifiedTime = DateTime.Now;
+            await this.context.SaveChangesAsync();
+            return data.Image;
+        }
     }
 }

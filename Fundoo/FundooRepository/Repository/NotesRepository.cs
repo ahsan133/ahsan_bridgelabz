@@ -1,23 +1,28 @@
 ﻿using FundooModels.NotesModel;
 using FundooRepository.Context;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 
 namespace FundooRepository.Repository
 {
     public class NotesRepository : INotesRepository
     {
         private UserContext context;
+        private IConfiguration configuration;
 
-        public NotesRepository(UserContext context)
+        public NotesRepository(UserContext context, IConfiguration configuration)
         {
             this.context = context;
+            this.configuration = configuration;
         }
 
-
+      
         public Task<int> AddNotes(NotesModel notes)
         {
             Random random = new Random();
@@ -262,9 +267,21 @@ namespace FundooRepository.Repository
             return null;
         }
 
-        //public Task ProfilePicture(int id, string image)
-        //{
-        //    CloudinaryDotNet.Account account = new CloudinaryDotNet.Account()
-        //}
+        public async Task<string> ProfilePicture(int id, string image)
+        {
+            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(configuration["Cloudinary:Name"], configuration["Cloudinary:ApiKey"], configuration["Cloudinary:ApiSecret"]);
+            CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
+            var uploadParms = new ImageUploadParams()
+            {
+                File = new FileDescription(image)
+            };
+            var uploadResult = cloudinary.Upload(uploadParms);
+
+            var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            data.Image = uploadResult.Uri.ToString();
+            data.ModifiedTime = DateTime.Now;
+            await this.context.SaveChangesAsync();
+            return data.Image;
+        }
     }
 }

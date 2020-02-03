@@ -15,5 +15,6 @@ namespace FundooManager.Manager
         Task<string> ResetPassword(ResetPasswordModel reset);
         Task<string> ForgotPassword(ForgotPasswordModel forgot);
         Task<string> Logout(string email);
+        Task<string> ProfilePicture(int id, string image);
     }
 }

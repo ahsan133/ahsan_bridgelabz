@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "d7a2c48bfb8bd596031eb2ef51a91b1a381b1f40"
+    "signature": "859c68b682f935b74302cae5b42a06d519e03bf6"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,6 +15,17 @@
         },
         "runtime": {
           "FundooManager.dll": {}
+        }
+      },
+      "CloudinaryDotNet/1.10.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.3/CloudinaryDotNet.dll": {
+            "assemblyVersion": "1.10.0.0",
+            "fileVersion": "1.10.0.0"
+          }
         }
       },
       "Microsoft.EntityFrameworkCore/2.1.1": {
@@ -629,6 +640,7 @@
       },
       "FundooRepository/1.0.0": {
         "dependencies": {
+          "CloudinaryDotNet": "1.10.0",
           "FundooModels": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "RabbitMQ.Client": "5.1.2",
@@ -680,6 +692,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "CloudinaryDotNet/1.10.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y4C2BkacylKVAzXFFUBpLOTkevGJgxAYMxGbAghj4wJmlf8F7BG2m9Dg9+SOR6xKcMOXbu2kRw2/UdqP9GSbvA==",
+      "path": "cloudinarydotnet/1.10.0",
+      "hashPath": "cloudinarydotnet.1.10.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/2.1.1": {
       "type": "package",

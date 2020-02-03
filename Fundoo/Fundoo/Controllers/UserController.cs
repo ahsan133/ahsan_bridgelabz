@@ -18,12 +18,12 @@ namespace Fundoo.Controllers
         {
             this.user = userManager;
         }
-        
+
         [HttpPost]
         [Route("api/register")]
         public async Task<ActionResult> Register([FromBody] RegisterModel model)
         {
-          var result= await this.user.Regestration(model);
+            var result = await this.user.Regestration(model);
             if (result == 1)
             {
                 return this.Ok(model);
@@ -46,7 +46,7 @@ namespace Fundoo.Controllers
             else
             {
                 return BadRequest();
-            }           
+            }
         }
 
         [HttpPost]
@@ -109,6 +109,8 @@ namespace Fundoo.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/logout")]
         public async Task<ActionResult> Logout(string email)
         {
             var result = await user.Logout(email);
@@ -119,6 +121,21 @@ namespace Fundoo.Controllers
             else
             {
                 return this.BadRequest();
+            }
+        }
+
+        [HttpPost]
+        [Route("api/profilePic")]
+        public ActionResult ProfilePicture(int id, string image)
+        {
+            var result = this.user.ProfilePicture(id, image);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
             }
         }
     }

@@ -108,9 +108,9 @@ namespace FundooManager.Manager
             return this.repository.Color(id, color);
         }
 
-        //public Task Image(int id, string image)
-        //{
-        //    return this.repository.Image(id, image);
-        //}
+        public Task<string> ProfilePicture(int id, string image)
+        {
+            return this.repository.ProfilePicture(id, image);
+        }
     }
 }

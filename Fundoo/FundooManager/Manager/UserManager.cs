@@ -57,5 +57,10 @@ namespace FundooManager.Manager
             var result = this.repository.Logout(email);
             return result;
         }
+
+        public Task<string> ProfilePicture(int id, string image)
+        {
+            return this.repository.ProfilePicture(id, image);
+        }
     }
 }

@@ -264,9 +264,19 @@ namespace Fundoo.Controllers
             }
         }
 
-        //public ActionResult Image(int id, string image)
-        //{
-        //    var result = this.note.Image(id, image);
-        //}
+        [HttpPost]
+        [Route("api/profilePicture")]
+        public ActionResult ProfilePicture(int id, string image)
+        {
+            var result = this.note.ProfilePicture(id, image);
+            if (result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }
