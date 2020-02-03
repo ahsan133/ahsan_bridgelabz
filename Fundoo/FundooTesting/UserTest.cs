@@ -94,5 +94,16 @@ namespace FundooTesting
             var data = controller.FaceBookLogin(input);
             Assert.NotNull(data);
         }
+
+        [Fact]
+        public void Logout()
+        {
+            var services = new Mock<IUserManager>();
+            var controller = new UserController(services.Object);
+            var data = controller.Logout("ahsan@gmail.com");
+            Assert.NotNull(data);
+        }
+
+
     }
 }

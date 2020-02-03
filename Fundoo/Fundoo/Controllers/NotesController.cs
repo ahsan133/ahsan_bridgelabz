@@ -278,5 +278,20 @@ namespace Fundoo.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPut]
+        [("api/isTrash")]
+        public ActionResult IsTrash(int id)
+        {
+            var result = this.note.IsTrash(id);
+            if(result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }

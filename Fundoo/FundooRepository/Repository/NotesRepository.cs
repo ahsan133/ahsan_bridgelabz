@@ -283,5 +283,17 @@ namespace FundooRepository.Repository
             await this.context.SaveChangesAsync();
             return data.Image;
         }
+
+        public Task Istrash(int id)
+        {
+            var user = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+            if (user != null)
+            {
+                user.Trash = true;
+                return Task.Run(() => context.SaveChangesAsync());
+            }
+
+            return null;
+        }
     }
 }

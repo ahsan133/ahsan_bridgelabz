@@ -112,5 +112,10 @@ namespace FundooManager.Manager
         {
             return this.repository.Image(id, image);
         }
+
+        public Task IsTrash(int id)
+        {
+            return this.repository.IsTrash(id);
+        }
     }
 }
