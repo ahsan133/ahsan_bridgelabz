@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace FundooModels.NotesModel
@@ -20,7 +21,7 @@ namespace FundooModels.NotesModel
         private DateTime modifiedTime;
         private int id;
 
-        [Key]
+        [ForeignKey("RegisterModel")]
         public string Email { get => this.email; set => this.email = value; }
         public string Title { get => this.title; set => this.title = value; }
         public string Description { get => this.description; set => this.description = value; }

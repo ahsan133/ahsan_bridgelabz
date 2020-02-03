@@ -173,7 +173,7 @@ namespace FundooRepository.Repository
                     var fromPassword = "mohammedahsanullah";
                     var toAddress = new MailAddress(forgot.Email);
                     string subject = "New Password";
-                    string body = "Your new password is" + " " + password;
+                    string body = "Your new password is" + " " + password; 
                     SmtpClient smtp = new SmtpClient
                     {
                         Host = "smtp.gmail.com",
@@ -191,13 +191,13 @@ namespace FundooRepository.Repository
                     })
                         try
                         {
-                            smtp.Send(message);
+                            smtp.Send(message);             
                         }
                         catch (Exception e)
                         {
                             throw new Exception(e.Message);
                         }
-
+                     
                     user.Password = password;
                     context.Update(user);
                     await Task.Run(() => context.SaveChangesAsync());

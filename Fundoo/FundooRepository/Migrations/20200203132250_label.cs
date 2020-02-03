@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FundooRepository.Migrations
 {
@@ -10,13 +11,14 @@ namespace FundooRepository.Migrations
                 name: "LabelModels",
                 columns: table => new
                 {
-                    Email = table.Column<string>(nullable: false),
+                    Email = table.Column<string>(nullable: true),
                     Label = table.Column<string>(nullable: true),
                     Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LabelModels", x => x.Email);
+                    table.PrimaryKey("PK_LabelModels", x => x.Id);
                 });
         }
 

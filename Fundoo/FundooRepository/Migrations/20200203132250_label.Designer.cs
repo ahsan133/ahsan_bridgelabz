@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundooRepository.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20200128135357_notes")]
-    partial class notes
+    [Migration("20200203132250_label")]
+    partial class label
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,23 @@ namespace FundooRepository.Migrations
                 .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+            modelBuilder.Entity("FundooModels.Models.CollaboratorModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("NotesId");
+
+                    b.Property<string>("ReceiverEmail");
+
+                    b.Property<string>("SenderEmail");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CollaboratorModels");
+                });
 
             modelBuilder.Entity("FundooModels.Models.RegisterModel", b =>
                 {
@@ -31,6 +48,8 @@ namespace FundooRepository.Migrations
                     b.Property<string>("LastName");
 
                     b.Property<string>("Password");
+
+                    b.Property<bool>("Status");
 
                     b.HasKey("Email");
 
@@ -67,6 +86,21 @@ namespace FundooRepository.Migrations
                     b.HasKey("Email");
 
                     b.ToTable("NotesModels");
+                });
+
+            modelBuilder.Entity("FundooModels.NotesModels.LabelModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("Label");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LabelModels");
                 });
 #pragma warning restore 612, 618
         }
