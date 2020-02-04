@@ -307,14 +307,20 @@ namespace FundooRepository.Repository
                     {
                         item.Index = dropIndex;
                     }
-                    else if(item.Index <= dragIndex && item.Index > dropIndex)
+                    else if(dropIndex > dragIndex)
                     {
-                        item.Index += 1;
+                        if (item.Index <= dragIndex && item.Index > dropIndex)
+                        {
+                            item.Index += 1;
+                        }
                     }
-                    else
+                    else if (dropIndex < dragIndex)
                     {
-                        item.Index -= 1;
-                    }
+                        if (item.Index < dragIndex && item.Index >= dropIndex)
+                        {
+                            item.Index -= 1;
+                        }
+                    }     
                 }
             }
 
