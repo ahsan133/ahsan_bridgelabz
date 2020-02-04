@@ -20,6 +20,7 @@ namespace FundooModels.NotesModel
         private DateTime createdTime;
         private DateTime modifiedTime;
         private int id;
+        private int index;
 
         [ForeignKey("RegisterModel")]
         public string Email { get => this.email; set => this.email = value; }
@@ -34,5 +35,6 @@ namespace FundooModels.NotesModel
         public DateTime CreatedTime { get => this.createdTime; set => this.createdTime = value; }
         public DateTime ModifiedTime { get => this.modifiedTime; set => this.modifiedTime = value; }
         public int Id { get => this.id; set => this.id = value; }
+        public int Index { get => this.index; set => this.index = value; }
     }
 }

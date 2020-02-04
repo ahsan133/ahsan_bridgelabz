@@ -117,5 +117,10 @@ namespace FundooManager.Manager
         {
             return this.repository.IsTrash(id);
         }
+
+        public Task DragAndDrop(string email, int dragIndex, int dropIndex)
+        {
+            return this.repository.DragAndDrop(email, dragIndex, dropIndex);
+        }
     }
 }

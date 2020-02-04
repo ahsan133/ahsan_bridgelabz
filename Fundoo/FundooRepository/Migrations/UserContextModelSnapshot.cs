@@ -72,6 +72,8 @@ namespace FundooRepository.Migrations
 
                     b.Property<string>("Image");
 
+                    b.Property<int>("Index");
+
                     b.Property<DateTime>("ModifiedTime");
 
                     b.Property<bool>("Pin");

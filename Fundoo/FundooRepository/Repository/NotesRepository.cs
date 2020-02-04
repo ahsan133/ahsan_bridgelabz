@@ -27,8 +27,7 @@ namespace FundooRepository.Repository
         {
             Random random = new Random();
             NotesModel model = new NotesModel()
-            {
-                Id = random.Next(9999),
+            { 
                 Email = notes.Email,
                 Title = notes.Title,
                 Description = notes.Description,
@@ -294,6 +293,32 @@ namespace FundooRepository.Repository
             }
 
             return null;
+        }
+
+        public Task DragAndDrop(string email, int dragIndex, int dropIndex)
+        {
+            var user = this.context.NotesModels.Where(p => p.Email == email).SingleOrDefault();
+            if(user != null)
+            {
+                var data = from item in context.NotesModels where item.Email == email select item;
+                foreach(var item in data)
+                {
+                    if(item.Index == dragIndex)
+                    {
+                        item.Index = dropIndex;
+                    }
+                    else if(item.Index <= dragIndex && item.Index > dropIndex)
+                    {
+                        item.Index += 1;
+                    }
+                    else
+                    {
+                        item.Index -= 1;
+                    }
+                }
+            }
+
+            return Task.Run(() => context.SaveChanges());
         }
     }
 }

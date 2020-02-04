@@ -14,6 +14,18 @@
           "lib/netstandard1.3/CloudinaryDotNet.dll": {}
         }
       },
+      "Firebase.Notification/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/net45/Firebase.Notification.exe": {}
+        },
+        "runtime": {
+          "lib/net45/Firebase.Notification.exe": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -4881,6 +4893,18 @@
         "lib/netstandard1.3/CloudinaryDotNet.deps.json",
         "lib/netstandard1.3/CloudinaryDotNet.dll",
         "lib/netstandard1.3/CloudinaryDotNet.xml"
+      ]
+    },
+    "Firebase.Notification/1.0.0": {
+      "sha512": "mlsfCle3Y5uBqb2JxuBJV6lU+fqHtGfGI6OlWntTszdZ5PXg9TqSZ8snyLR1LUponghjgAOSeOyOXS1CiWb/ng==",
+      "type": "package",
+      "path": "firebase.notification/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "firebase.notification.1.0.0.nupkg.sha512",
+        "firebase.notification.nuspec",
+        "lib/net45/Firebase.Notification.exe"
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -13146,6 +13170,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Firebase.Notification >= 1.0.0",
       "FundooManager >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.AspNetCore.Mvc.Core >= 2.1.1",
@@ -13203,6 +13228,10 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Firebase.Notification": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
             "target": "Package",
@@ -13239,5 +13268,17 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Firebase.Notification 1.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Firebase.Notification",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v2.1"
+      ]
+    }
+  ]
 }

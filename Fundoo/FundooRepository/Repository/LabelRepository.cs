@@ -26,7 +26,6 @@ namespace FundooRepository.Repository
             {
                 Label = labelModel.Label,
                 Email = labelModel.Email,
-                Id = random.Next(10000)
             };
             this.context.LabelModels.Add(model);
             return context.SaveChangesAsync();

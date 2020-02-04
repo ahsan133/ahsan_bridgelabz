@@ -237,6 +237,10 @@
       "frameworks": {
         "netcoreapp2.1": {
           "dependencies": {
+            "Firebase.Notification": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",

@@ -293,5 +293,20 @@ namespace Fundoo.Controllers
                 return BadRequest();
             }
         }
+
+        [HttpPut]
+        [Route("api/dragDrop")]
+        public ActionResult DragAndDrop(string email, int dragIndex, int dropIndex)
+        {
+            var result = this.note.DragAndDrop(email, dragIndex, dropIndex);
+            if(result != null)
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
     }
 }

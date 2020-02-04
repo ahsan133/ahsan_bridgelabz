@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "4081f58ef3e910934782ec768810a77c28e8e37a"
+    "signature": "b069607887b86076aa1bd573bb22da248b9d53c2"
   },
   "compilationOptions": {},
   "targets": {
@@ -46,6 +46,17 @@
           "lib/netstandard1.3/CloudinaryDotNet.dll": {
             "assemblyVersion": "1.10.0.0",
             "fileVersion": "1.10.0.0"
+          }
+        }
+      },
+      "Firebase.Notification/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/net45/Firebase.Notification.exe": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -2949,6 +2960,7 @@
       },
       "Fundoo/1.0.0": {
         "dependencies": {
+          "Firebase.Notification": "1.0.0",
           "FundooManager": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Core": "2.1.1",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.10",
@@ -3033,6 +3045,13 @@
       "sha512": "sha512-y4C2BkacylKVAzXFFUBpLOTkevGJgxAYMxGbAghj4wJmlf8F7BG2m9Dg9+SOR6xKcMOXbu2kRw2/UdqP9GSbvA==",
       "path": "cloudinarydotnet/1.10.0",
       "hashPath": "cloudinarydotnet.1.10.0.nupkg.sha512"
+    },
+    "Firebase.Notification/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mlsfCle3Y5uBqb2JxuBJV6lU+fqHtGfGI6OlWntTszdZ5PXg9TqSZ8snyLR1LUponghjgAOSeOyOXS1CiWb/ng==",
+      "path": "firebase.notification/1.0.0",
+      "hashPath": "firebase.notification.1.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Antiforgery/2.1.0": {
       "type": "package",

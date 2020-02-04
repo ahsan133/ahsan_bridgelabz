@@ -27,5 +27,6 @@ namespace FundooRepository.Repository
         Task<string> Color(int id, string color);
         Task<string> Image(int id, string image);
         Task IsTrash(int id);
+        Task DragAndDrop(string email, int dragIndex, int dropIndex);
     }
 }
