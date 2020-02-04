@@ -58,6 +58,8 @@ namespace Fundoo
             services.AddTransient<ILabelRepository, LabelRepository>();
             services.AddTransient<ILabelManager, LabelManager>();
 
+            services.AddTransient<ICollaboratorRepository, CollaboratorRepository>();
+            services.AddTransient<ICollaboratorManager, CollaboratorManager>();
      
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>

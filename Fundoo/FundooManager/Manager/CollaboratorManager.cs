@@ -16,9 +16,24 @@ namespace FundooManager.Manager
         {
             this.repository = repository;
         }
-        public Task AddCollaborator(CollaboratorModel model)
+        public Task<string> AddCollaborator(CollaboratorModel model)
         {
             return this.repository.AddCollaborator(model);
+        }
+
+        public Task<string> RemoveCollaborator(int id)
+        {
+            return this.repository.RemoveCollaborator(id);
+        }
+
+        public List<CollaboratorModel> Get(int notesId)
+        {
+            return this.repository.Get(notesId);
+        }
+
+        public List<CollaboratorModel> GetList()
+        {
+            return this.repository.GetList();
         }
     }
 }

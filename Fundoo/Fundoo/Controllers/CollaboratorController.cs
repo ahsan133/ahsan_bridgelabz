@@ -17,10 +17,49 @@ namespace Fundoo.Controllers
         {
             this.collaborator = collaborator;
         }
-        public ActionResult AddCollaborator(CollaboratorModel model)
+
+        [HttpPut]
+        [Route("api/addCollaborator")]
+        public async Task<ActionResult> AddCollaborator(CollaboratorModel model)
         {
-            var result = this.collaborator.AddCollaborator(model);
+            var result = await this.collaborator.AddCollaborator(model);
+            if(result == "success")
+            {
+                return Ok(model);
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
 
+        [HttpDelete]
+        [Route("api/removeCollaborator")]
+        public async Task<ActionResult> RemoveCollaborator(int id)
+        {
+            var result = await this.collaborator.RemoveCollaborator(id);
+            if(result == "success")
+            {
+                return Ok(result);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("api/GetCollaborator")]
+        public IEnumerable<CollaboratorModel> Get(int notesId)
+        {
+            return this.collaborator.Get(notesId);
+        }
+
+        [HttpGet]
+        [Route("api/GetAllCollaborator")]
+        public IEnumerable<CollaboratorModel> GetList()
+        {
+            return this.collaborator.GetList();
+        }
     }
 }
