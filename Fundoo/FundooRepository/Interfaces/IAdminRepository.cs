@@ -10,6 +10,6 @@ namespace FundooRepository.Interfaces
     {
         Task AddAdmin(AdminModel model);
         string LoginAdmin(AdminModel model);
-        List<AdminModel> GetUserList();
+        List<AdminUserList> GetUserList();
     }
 }

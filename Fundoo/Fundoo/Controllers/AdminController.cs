@@ -41,7 +41,7 @@ namespace Fundoo.Controllers
 
         [HttpGet]
         [Route("api/getUserList")]
-        public IEnumerable<AdminModel> GetUserList()
+        public IEnumerable<AdminUserList> GetUserList()
         {
             var result = this.admin.GetUserList();
             return result;

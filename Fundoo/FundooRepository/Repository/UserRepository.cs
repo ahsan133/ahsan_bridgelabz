@@ -1,5 +1,6 @@
 ﻿using CloudinaryDotNet;
 using CloudinaryDotNet.Actions;
+using FundooModels.AdminModels;
 using FundooModels.Models;
 using FundooRepository.Context;
 using Microsoft.Extensions.Configuration;
@@ -66,6 +67,13 @@ namespace FundooRepository.Repository
                     database.StringGet(cachekey);
 
                     result.Status = true;
+                    var data = new AdminUserList()
+                    {
+                        Email = loginModel.Email,
+                        LoginTime = DateTime.Now
+                    };
+
+                    context.AdminUsers.Add(data);
                     context.SaveChangesAsync();
                     return Task.Run(()=>result);
                 }

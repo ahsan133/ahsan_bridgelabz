@@ -46,9 +46,9 @@ namespace FundooRepository.Repository
             return data;
         }
 
-        public List<AdminModel> GetUserList()
+        public List<AdminUserList> GetUserList()
         {
-            return context.AdminModels.ToList<AdminModel>();
+            return context.AdminUsers.ToList<AdminUserList>();
         }
     }
 }

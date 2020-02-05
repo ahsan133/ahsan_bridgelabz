@@ -45,5 +45,11 @@ namespace FundooRepository.Context
             get;
             set;
         }
+
+        public DbSet<AdminUserList> AdminUsers
+        {
+            get;
+            set;
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace FundooManager.Manager
             return this.repository.LoginAdmin(model);
         }
 
-        public List<AdminModel> GetUserList()
+        public List<AdminUserList> GetUserList()
         {
             return this.repository.GetUserList();
         }
