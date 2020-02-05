@@ -66,14 +66,7 @@ namespace FundooRepository.Repository
         {
             try
             {
-                List<CollaboratorModel> list = new List<CollaboratorModel>();
-                var data = from user in context.CollaboratorModels select user;
-                foreach (var item in data)
-                {
-                    list.Add(item);
-                }
-
-                return list;
+                return context.CollaboratorModels.ToList<CollaboratorModel>();
             }
             catch (Exception e)
             {

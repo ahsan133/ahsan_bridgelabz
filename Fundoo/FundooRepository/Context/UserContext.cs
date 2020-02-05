@@ -1,4 +1,5 @@
-﻿using FundooModels.Models;
+﻿using FundooModels.AdminModels;
+using FundooModels.Models;
 using FundooModels.NotesModel;
 using FundooModels.NotesModels;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,12 @@ namespace FundooRepository.Context
         }
 
         public DbSet<CollaboratorModel> CollaboratorModels
+        {
+            get;
+            set;
+        }
+
+        public DbSet<AdminModel> AdminModels
         {
             get;
             set;

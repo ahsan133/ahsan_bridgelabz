@@ -60,7 +60,9 @@ namespace Fundoo
 
             services.AddTransient<ICollaboratorRepository, CollaboratorRepository>();
             services.AddTransient<ICollaboratorManager, CollaboratorManager>();
-     
+
+            services.AddTransient<IAdminRepository, AdminRepository>();
+            services.AddTransient<IAdminManager, AdminManager>();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
