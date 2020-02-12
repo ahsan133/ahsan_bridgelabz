@@ -1,4 +1,6 @@
-<div class="whole">
+<form [formGroup]=loginForm>
+
+  <div class="whole">
     <h1>
       <span class="purple">F</span>
       <span class="red">u</span>
@@ -13,31 +15,29 @@
     
     <div class="in">
 
-      <div class="text">
+      <div>
         <mat-form-field appearance="outline" class="log">
           <mat-label>Email</mat-label>
-          <input matInput type="text" formControlName="email" class="tex" >      
+          <input matInput type="text" formControlName="email">      
         </mat-form-field>
       </div>
 
-      <div class="text">
+      <div>
         <mat-form-field appearance="outline" class="log">
           <mat-label>Password</mat-label>
-          <!-- <input matInput placeholder="password" [type]="hide ? 'text' : 'password'" formControlName="password">
+          <input matInput [type]="hide ? 'text' : 'password'" formControlName="password">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">
             <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-          </button> -->
-          <input matInput type="password" class="tex">      
+          </button>
         </mat-form-field>
       </div>
-
     </div>
 
-    <div class="forgot" routerLink="forgot">Forgot password?</div>
+    <div class="forgot" routerLink="/forgot">Forgot password?</div>
 
     <div class="allign">
-      <div class="register" routerLink="register">create account</div>
+      <div class="register" routerLink="/register">create account</div>
       <div class="button">
         <input type="button" value="Login" id="btn" class="btn">
       </div>
@@ -53,3 +53,5 @@
     </div>
 
 </div>
+
+</form>

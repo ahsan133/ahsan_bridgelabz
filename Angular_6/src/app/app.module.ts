@@ -6,7 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,8 +31,7 @@ import { ForgotComponent } from './Component/forgot/forgot.component';
     MatCardModule,
     MatInputModule,
     BrowserAnimationsModule,
-    // ReactiveFormsModule,
-    // FormsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
