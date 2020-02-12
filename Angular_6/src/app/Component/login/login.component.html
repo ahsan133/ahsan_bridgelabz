@@ -1,57 +1,58 @@
-<form [formGroup]=loginForm>
+<!-- <form [formGroup]=loginForm> -->
 
-  <div class="whole">
-    <h1>
-      <span class="purple">F</span>
-      <span class="red">u</span>
-      <span class="blue">n</span>
-      <span class="purple">d</span>
-      <span class="red">o</span>
-      <span class="green">o</span>
-    </h1>
-    
-    <h2>Sign in</h2>
-    <h4>Use your Google Account</h4>
-    
-    <div class="in">
-
-      <div>
-        <mat-form-field appearance="outline" class="log">
-          <mat-label>Email</mat-label>
-          <input matInput type="text" formControlName="email">      
-        </mat-form-field>
+    <div class="whole">
+      <h1>
+        <span class="purple">F</span>
+        <span class="red">u</span>
+        <span class="blue">n</span>
+        <span class="purple">d</span>
+        <span class="red">o</span>
+        <span class="green">o</span>
+      </h1>
+      
+      <h2>Sign in</h2>
+      <h4>Use your Google Account</h4>
+      
+      <div class="in">
+  
+        <div>
+          <mat-form-field appearance="outline" class="log">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName="email">      
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <mat-form-field appearance="outline" class="log">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'text' : 'password'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
       </div>
-
-      <div>
-        <mat-form-field appearance="outline" class="log">
-          <mat-label>Password</mat-label>
-          <input matInput [type]="hide ? 'text' : 'password'" formControlName="password">
-          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-            [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-          </button>
-        </mat-form-field>
+  
+      <div class="forgot" routerLink="/forgot">Forgot password?</div>
+  
+      <div class="allign">
+        <div class="register" routerLink="/register">create account</div>
+        <div class="button">
+          <input type="button" value="Login" id="btn" class="btn">
+        </div>
       </div>
-    </div>
-
-    <div class="forgot" routerLink="/forgot">Forgot password?</div>
-
-    <div class="allign">
-      <div class="register" routerLink="/register">create account</div>
-      <div class="button">
-        <input type="button" value="Login" id="btn" class="btn">
+      
+      <div class="else">or sign in with</div>
+  
+      <div class="image">
+        <div class="logo" routerLink="">
+          <img class="img" alt="Google" src="/assets/img/g.png"></div>
+          <div class="logo1" routerLink="">
+          <img class="img" alt="Facebook" src="/assets/img/f.png"></div>
       </div>
-    </div>
-    
-    <div class="else">or sign in with</div>
-
-    <div class="image">
-      <div class="logo" routerLink="">
-        <img class="img" alt="Google" src="/assets/img/g.png"></div>
-        <div class="logo1" routerLink="">
-        <img class="img" alt="Facebook" src="/assets/img/f.png"></div>
-    </div>
-
-</div>
-
-</form>
+  
+  </div>
+  
+  <!-- </form> -->
+  

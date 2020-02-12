@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Component/login/login.component';
@@ -21,13 +22,12 @@ import { ForgotComponent } from './Component/forgot/forgot.component';
     RegisterComponent,
     ForgotComponent
   ],
-
   imports: [
     BrowserModule,
+    AppRoutingModule,
     MatFormFieldModule,
     MatDialogModule,
     MatIconModule,
-    AppRoutingModule,
     MatCardModule,
     MatInputModule,
     BrowserAnimationsModule,
