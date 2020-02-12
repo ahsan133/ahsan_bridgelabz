@@ -1,0 +1,116 @@
+.whole{
+    display: grid;
+    border: 1px solid rgb(219, 200, 200);
+    border-radius: 5px;
+    margin: 5% 33% 0%;
+    align-items: center;  
+}
+
+h1 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.blue{color: blue;}
+.red{color:red;}
+.purple{color:purple;}
+.green{color:green;}
+
+h2{
+    margin: 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 130;
+    font-size: 20px;
+}
+h4{
+    text-align: center;
+    font-weight: 100;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.in{
+    text-align: center;
+}
+
+.text{
+    padding: 10px;
+}
+
+.btn{
+    background-color:purple;
+    color: white;
+    height:35px;
+    outline: none;
+    border-radius: 8px;
+    width:75px;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+    padding:10px;
+    padding-left: 150px;
+}
+
+.user{
+    position: absolute;
+    left: 485px;
+    transition: all 0.2s ease-in-out;
+}
+
+.forgot{
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+    color: blue;
+    padding-left: 45px;
+    outline: none;
+    cursor: pointer;
+    
+}
+.register{
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    color: blue;
+    outline: none;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.allign{
+    display: flex;
+    padding-left: 45px;
+}
+.else{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 130;
+    font-size: 18px;
+    margin-top:15px;
+}
+.img{
+    width: 30px;
+}
+.image{
+    display:flex;
+    justify-content: center;
+    margin:15px;
+}
+.logo{
+    padding-right: 25px;
+    outline: none;
+}
+.logo1{
+    outline: none;
+}
+.tex{
+    height: 50px;
+}
+.email{
+    position: absolute;
+}
+.log{
+    width: 320px;
+}
