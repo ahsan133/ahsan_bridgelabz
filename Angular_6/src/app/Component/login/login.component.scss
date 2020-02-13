@@ -1,16 +1,16 @@
-.whole{
-    display: grid;
-    border: 1px solid rgb(219, 200, 200);
-    border-radius: 5px;
-    margin: 5% 33% 0%;
-    align-items: center;  
+.card{
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 400px;
 }
 
 h1 {
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .blue{color: blue;}
@@ -48,7 +48,7 @@ h4{
 
 .button{
     padding:10px;
-    padding-left: 150px;
+    padding-left: 160px;
 }
 
 .user{
@@ -62,11 +62,12 @@ h4{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 14px;
     color: blue;
-    padding-left: 45px;
     outline: none;
     cursor: pointer;
-    
+    text-align: center;
+    padding-right: 220px;
 }
+
 .register{
     font-weight: 500;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -74,11 +75,12 @@ h4{
     color: blue;
     outline: none;
     padding-top: 20px;
+    padding-left: 20px;
     cursor: pointer;
 }
 .allign{
+    justify-content: center;
     display: flex;
-    padding-left: 45px;
 }
 .else{
     text-align: center;

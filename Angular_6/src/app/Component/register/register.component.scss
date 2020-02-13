@@ -1,0 +1,68 @@
+.card{
+    margin: 0 auto;
+    float: none; 
+    margin-bottom: 10px;
+    margin-top: 10px;
+    max-width: 460px;
+}
+.blue{color: blue;}
+.red{color:red;}
+.purple{color:purple;}
+.green{color:green;}
+
+h1 {
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+h4{
+    text-align: center;
+    font-weight: 100;
+    margin-top: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.names{
+    display:flex;
+    justify-content: center;
+}
+.name{
+    padding: 5px;
+}
+.log{
+width:400px;
+}
+.allign{
+    text-align: center;
+}
+
+.btn{
+    background-color:purple;
+    color: white;
+    height:35px;
+    outline: none;
+    border-radius: 8px;
+    width:75px;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+    justify-content: center;
+    display: flex;
+    padding:10px;
+}
+
+.sign{
+    font-weight: 520;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 17px;
+    color: blue;
+    outline: none;
+    padding-top: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.reg{
+    padding:10px;
+    padding-left: 250px;
+}
