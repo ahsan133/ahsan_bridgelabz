@@ -15,13 +15,13 @@
         <div class="name">
             <mat-form-field appearance="outline">
               <mat-label>First Name</mat-label>
-              <input matInput type="text" formControlName="firstName">      
+              <input matInput [(ngModel)]="Data.firstName" type="text" formControlName="firstName">      
             </mat-form-field>
           </div>
           <div class ="name">
             <mat-form-field appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input matInput type="text" formControlName="lastName">      
+              <input matInput [(ngModel)]="Data.lastName" type="text" formControlName="lastName">      
             </mat-form-field>
           </div>
     
@@ -32,14 +32,14 @@
         <div class="allign"> 
             <mat-form-field appearance="outline" class="log">
               <mat-label>Email</mat-label>
-              <input matInput type="text" formControlName="email">      
+              <input matInput [(ngModel)]="Data.email" type="text" formControlName="email">      
             </mat-form-field>
           </div>
     
           <div class="allign"> 
             <mat-form-field appearance="outline" class="log">
               <mat-label>Password</mat-label>
-              <input matInput [type]="hide ? 'text' : 'password'" formControlName="password">
+              <input matInput [(ngModel)]="Data.password" [type]="hide ? 'text' : 'password'" formControlName="password">
               <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="hide">
                 <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
@@ -51,7 +51,7 @@
       <div class="button">
           <div class="sign" routerLink="/login">Sign in</div>
           <div class="reg">
-            <input type="button" value="Register" id="btn" class="btn">
+            <input type="button" (click)="addProduct()" value="Register" id="btn" class="btn">
           </div>      
       </div>
 
