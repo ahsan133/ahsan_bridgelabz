@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   
-  constructor() { }
+  constructor(public account: AccountService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     

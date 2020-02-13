@@ -22,6 +22,11 @@ export class AccountService {
     return body || { };
   }
 
+  getProducts(): Observable<any> {
+    return this.http.get(this.endpoint + 'products').pipe(
+      map(this.extractData));
+  }
+
   addProduct(product): Observable<any> {
     console.log(product);
     return this.http.post<any>(this.endpoint + 'products', JSON.stringify(product), this.httpOptions).pipe(
