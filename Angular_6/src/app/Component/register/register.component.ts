@@ -21,4 +21,8 @@ export class RegisterComponent implements OnInit {
   };
   }
   
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
 }
