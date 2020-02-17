@@ -35,7 +35,6 @@ import { ForgotComponent } from './Component/forgot/forgot.component';
     HttpClientModule,
     RouterModule,
     FormsModule,
-    FormGroup,
     ReactiveFormsModule
   ],
   providers: [],
