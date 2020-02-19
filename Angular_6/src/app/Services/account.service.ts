@@ -19,4 +19,5 @@ register(data) {
   return this.http.post(environment.Url + 'api/register', newData);
 }
 
+
 }

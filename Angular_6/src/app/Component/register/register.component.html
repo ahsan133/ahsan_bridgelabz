@@ -1,5 +1,5 @@
 <mat-card class ="card">
-
+  <form [formGroup]="RegisterForm">
     <h1>
         <span class="purple">F</span>
         <span class="red">u</span>
@@ -11,7 +11,7 @@
       <h4>Create your Fundoo Account</h4>
     
       <div class="names">
-         
+        
         <div class="name">
             <mat-form-field appearance="outline">
               <mat-label>First Name</mat-label>
@@ -39,10 +39,9 @@
           <div class="allign"> 
             <mat-form-field appearance="outline" class="log">
               <mat-label>Password</mat-label>
-              <input matInput [type]="hide ? 'text' : 'password'" formControlName="password">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
             </mat-form-field>
           </div>
@@ -51,8 +50,8 @@
       <div class="button">
           <div class="sign" routerLink="/login">Sign in</div>
           <div class="reg">
-            <input type="button" (click)="addProduct()" value="Register" id="btn" class="btn">
+            <input type="button" (click)="GetRegister()" value="Register" id="btn" class="btn">
           </div>      
       </div>
-
+    </form>
 </mat-card>
