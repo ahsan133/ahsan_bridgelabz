@@ -21,10 +21,19 @@ export class AccountService {
 
 login(data){
   const params = {
-    Email: data.value.email,
-    Password: data.value.password
+    Email: data.email,
+    Password: data.password
   };
+
+  // const headers = new HttpHeaders();
+  // headers.set('Content-Type', 'application/json; charset=utf-8');
+
   console.log(params);
-  return this.http.post(environment.Url + 'api/login/', params);
+  return this.http.post(environment.Url + 'api/login', params,{headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS'
+}}
+);
 }
 }

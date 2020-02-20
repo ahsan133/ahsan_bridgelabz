@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/Services/account.service';
+import { Router } from '@angular/router';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-forgot',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotComponent implements OnInit {
 
-  constructor() { }
+  constructor(public account: AccountService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }

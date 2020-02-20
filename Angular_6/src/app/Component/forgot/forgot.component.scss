@@ -1,14 +1,7 @@
-// .whole{
-//     height: 100vh;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+
 .card{
     margin: 0 auto;
     float: none; 
-    margin-bottom: 10px;
-    margin-top: 10px;
     max-width: 400px;
 }
 
@@ -25,15 +18,28 @@ h1 {
 .green{color:green;}
 
 h2{
-    margin: 0px;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 140;
     font-size: 20px;
 }
 .allign{
-        text-align: center;    
+    text-align: center;    
 }
 .log{
     width: 320px;
+}
+.btn{
+    background-color:purple;
+    color: white;
+    height:35px;
+    outline: none;
+    border-radius: 8px;
+    width:75px;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+text-align: end;
+margin-right: 40px;
 }

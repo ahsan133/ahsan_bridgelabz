@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RegisterComponent implements OnInit {
   RegisterForm: FormGroup;
   registered = false;
-  hide = false;
+  hide = true;
 
   constructor(public account: AccountService, private router: Router, private snackBar: MatSnackBar) {}
    

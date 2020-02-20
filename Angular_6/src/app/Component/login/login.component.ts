@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import { AccountService } from 'src/app/Services/account.service';
 import { Router } from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class LoginComponent implements OnInit {
-  hide = false;
+  hide = true;
   LoginForm: FormGroup;
 
   constructor(public account : AccountService, private router: Router, private snackbar:MatSnackBar) {
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   Login(){
-    this.account.login(this.LoginForm).subscribe((status:any) =>{
+    this.account.login(this.LoginForm.value).subscribe((status:any) =>{
       if(status == "success")
       {
         this.router.navigate(['/dashboard']);
