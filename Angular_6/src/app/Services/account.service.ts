@@ -9,15 +9,22 @@ import { environment } from 'src/environments/environment';
 export class AccountService {
   constructor(private http: HttpClient) { }
 
-register(data) {
-  const newData = {
+ register(data) {
+  const params = {
     FirstName: data.firstName,
     LastName: data.lastName,
     Email: data.email,
     Password: data.password
   };
-  return this.http.post(environment.Url + 'api/register', newData);
+  return this.http.post(environment.Url + 'api/register/', params);
 }
 
-
+login(data){
+  const params = {
+    Email: data.value.email,
+    Password: data.value.password
+  };
+  console.log(params);
+  return this.http.post(environment.Url + 'api/login/', params);
+}
 }

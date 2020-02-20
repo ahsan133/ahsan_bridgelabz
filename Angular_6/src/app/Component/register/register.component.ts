@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AccountService } from 'src/app/Services/account.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -14,35 +14,26 @@ export class RegisterComponent implements OnInit {
   registered = false;
   hide = false;
 
-  constructor(public account: AccountService, private route: ActivatedRoute, private router: Router,
-     private snackBar: MatSnackBar) {
-  
-   }
-
+  constructor(public account: AccountService, private router: Router, private snackBar: MatSnackBar) {}
+   
   ngOnInit() {
     this.RegisterForm = new FormGroup({
       firstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]{3,15}')]),
       lastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z]{3,15}')]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', Validators.required)
+      password: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,15}')])
     });
   }
 
-  // Registers() {
-  //   this.account.register(this.RegisterForm).subscribe((result) => {
-  //     this.router.navigate(['/login']);
-  //   }, (err) => {
-  //     console.log(err);
-  //   });
-  // }
-
-  GetRegister() {
+   Register() {
     this.account.register(this.RegisterForm.value).subscribe((status: any) => {
-      if (status.result === true) {
+      if (status == 1) {
         this.router.navigate(['/login']);
         this.snackBar.open('register successful');
       }
-      this.snackBar.open('Something is wrong');
+      else{
+        this.snackBar.open('email already exist.');
+      }
     }
     );
   }
