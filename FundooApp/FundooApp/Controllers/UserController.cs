@@ -14,7 +14,8 @@ namespace FundooApp.Controllers
     using FundooModels.Models;
     using FundooRepository.Repository;
     using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;  
+    using Microsoft.AspNetCore.Cors;
+    using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
     /// Class with User controller API.
@@ -48,7 +49,7 @@ namespace FundooApp.Controllers
             var result = await this.user.Regestration(model);
             if (result == 1)
             {
-                return this.Ok(model);
+                return this.Ok(result);
             }
             else
             {
@@ -68,7 +69,7 @@ namespace FundooApp.Controllers
             var result = await this.user.Login(loginModel);
             if (result != null)
             {
-                return this.Ok(result);
+                return this.Ok("success");
             }
             else
             {
@@ -143,7 +144,7 @@ namespace FundooApp.Controllers
         /// <returns>result of action</returns>
         [HttpPost]
         [Route("api/forgot")]
-        public async Task<ActionResult> Forgotpassword(ForgotPasswordModel forgot)
+        public async Task<ActionResult> Forgotpassword([FromBody] ForgotPasswordModel forgot)
         {
             var result = await this.user.ForgotPassword(forgot);
             if (result == "success")

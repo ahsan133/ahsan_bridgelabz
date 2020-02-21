@@ -12,7 +12,7 @@ namespace FundooRepository.Repository
     using System.Text;
     using System.Threading.Tasks;
     using CloudinaryDotNet;
-    using CloudinaryDotNet.Actions;   
+    using CloudinaryDotNet.Actions;
     using FundooModels.NotesModel;
     using FundooRepository.Context;
     using Microsoft.Extensions.Configuration;
@@ -55,7 +55,7 @@ namespace FundooRepository.Repository
         {
             Random random = new Random();
             NotesModel model = new NotesModel()
-            { 
+            {
                 Email = notes.Email,
                 Title = notes.Title,
                 Description = notes.Description,
@@ -96,7 +96,7 @@ namespace FundooRepository.Repository
             else
             {
                 return "invalid";
-            }            
+            }
         }
 
         /// <summary>
@@ -499,7 +499,7 @@ namespace FundooRepository.Repository
                         {
                             item.Index -= 1;
                         }
-                    }     
+                    }
                 }
             }
 

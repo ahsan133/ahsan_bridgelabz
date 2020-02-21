@@ -1,26 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj": {}
+    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj": {
+    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj",
+        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj",
         "projectName": "FundooModels",
-        "projectPath": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooModels\\obj\\",
+        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj",
+        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -44,36 +39,38 @@
         "netcoreapp2.1": {
           "dependencies": {
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
+    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj",
+        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj",
         "projectName": "FundooRepository",
-        "projectPath": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooRepository\\obj\\",
+        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooRepository\\FundooRepository.csproj",
+        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooRepository\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -85,8 +82,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj": {
-                "projectPath": "C:\\Users\\Admin\\source\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj"
+              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj": {
+                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj"
               }
             }
           }
@@ -109,6 +106,7 @@
               "version": "[2.1.0, )"
             },
             "Microsoft.NETCore.App": {
+              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
@@ -116,13 +114,23 @@
             "StackExchange.Redis": {
               "target": "Package",
               "version": "[2.0.601, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[5.6.0, )"
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

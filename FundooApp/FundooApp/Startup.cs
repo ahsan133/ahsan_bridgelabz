@@ -77,9 +77,11 @@ namespace FundooApp
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader();
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials();
             }));
+
 
             services.AddSwaggerGen(c =>
             {
@@ -109,6 +111,7 @@ namespace FundooApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            app.UseCors("MyPolicy");
             app.UseStaticFiles();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
