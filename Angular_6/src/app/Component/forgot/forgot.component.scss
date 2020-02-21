@@ -29,6 +29,10 @@ h2{
 .log{
     width: 320px;
 }
+.align{
+    justify-content: center;
+    display: flex;
+}
 .btn{
     background-color:purple;
     color: white;
@@ -40,6 +44,15 @@ h2{
 }
 
 .button{
-text-align: end;
-margin-right: 40px;
+    padding:10px;
+    padding-left: 180px;
+}
+.register{
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    color: blue;
+    outline: none;
+    padding-top: 20px;
+    cursor: pointer;
 }

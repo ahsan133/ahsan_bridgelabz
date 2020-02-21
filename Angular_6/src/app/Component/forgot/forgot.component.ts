@@ -10,10 +10,28 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./forgot.component.scss']
 })
 export class ForgotComponent implements OnInit {
+  ForgotForm: FormGroup;
+
 
   constructor(public account: AccountService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+    this.ForgotForm=new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email])
+    });
+    
   }
 
+async Forgot(){
+    await this.account.forgot(this.ForgotForm.value).subscribe((status) => {
+   if(status == "success")
+   {
+     this.router.navigate(['/login']);
+     this.snackBar.open('check email for new passsword');
+   }else{
+     console.log("error while processing the request")
+     this.snackBar.open('invalid email');
+   }
+  });
+}
 }

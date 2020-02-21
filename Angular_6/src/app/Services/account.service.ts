@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 
 export class AccountService {
+  url: string;
   constructor(private http: HttpClient) { }
 
  register(data) {
@@ -24,16 +25,36 @@ login(data){
     Email: data.email,
     Password: data.password
   };
+  let headers = new HttpHeaders({
+    'Accept': 'application/json'
+  });
+  return this.http.post(environment.Url + 'api/login', params, {headers:headers});
+}
 
-  // const headers = new HttpHeaders();
-  // headers.set('Content-Type', 'application/json; charset=utf-8');
+googleLogin(email){
+const param = {
+  Email:email
+};
+let headers = new HttpHeaders({
+  'Accept': 'application/json'
+});
+return this.http.post(environment.Url + 'api/googleLogin', param, {headers:headers});
+}
 
+ forgot(data){
+  const params = {
+    "Email": data.email
+  };
+  let headers = new HttpHeaders({
+    'Accept': 'application/json'
+  });
   console.log(params);
-  return this.http.post(environment.Url + 'api/login', params,{headers: {
-    'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS'
-}}
-);
+  return this.http.post(environment.Url + 'api/forgot', params,{headers:headers});
+}
+
+Savesresponse(responce)
+{
+  this.url =  'http://localhost:64726/Api/Login/Savesresponse';
+  return this.http.post(this.url,responce);
 }
 }

@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular-6-social-login';
+import { SocialLoginModule, AuthServiceConfig } from 'angular-6-social-login'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +20,22 @@ import { RegisterComponent } from './Component/register/register.component';
 import { ForgotComponent } from './Component/forgot/forgot.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 
+export function socialConfigs() {  
+  const config = new AuthServiceConfig(  
+    [  
+      {  
+        id: FacebookLoginProvider.PROVIDER_ID,  
+        provider: new FacebookLoginProvider('app -id')  
+      },  
+      {  
+        id: GoogleLoginProvider.PROVIDER_ID,  
+        provider: new GoogleLoginProvider('951724777642-fro4lf3fuibjkfb9nvk95iitva7pvk65.apps.googleusercontent.com')  
+      }  
+    ]  
+  );  
+  return config;  
+  }
+  
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,10 +57,18 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    AuthService, 
+    {  
+      provide: AuthServiceConfig,  
+      useFactory: socialConfigs  
+    }  
+  ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
-export class MyModule {}
+export class MyModule { }

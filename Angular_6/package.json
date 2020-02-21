@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^6.1.10",
     "@angular/router": "^6.1.10",
     "@material/form-field": "^4.0.0",
+    "angular-6-social-login": "^1.1.1",
     "angular-material": "^1.1.21",
     "bootstrap": "^3.4.1",
     "core-util-is": "^1.0.2",
