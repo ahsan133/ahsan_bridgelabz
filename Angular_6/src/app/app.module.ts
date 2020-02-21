@@ -12,6 +12,8 @@ import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular-6-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angular-6-social-login'; 
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,7 +37,7 @@ export function socialConfigs() {
   );  
   return config;  
   }
-  
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +60,9 @@ export function socialConfigs() {
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MatSidenavModule,
+    MatToolbarModule
   ],
   providers: [
     AuthService, 
