@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     this.account.login(this.LoginForm.value).subscribe((status:any) =>{
       if(status == "success")
       {
-        localStorage.setItem('userData', JSON.stringify(status));
         this.router.navigate(['/dashboard']);
         this.snackbar.open('logged in');
       }else{
@@ -47,8 +46,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userData', JSON.stringify(status));
           this.router.navigate(['/dashboard']);
           this.snackbar.open('logged in');
-        }
+        }else{
         this.snackbar.open('Invalid Email or Password');
+        }
       }
       );
     }).catch((err) => {
@@ -57,6 +57,21 @@ export class LoginComponent implements OnInit {
   }
 
   Facebook(){
-
+    let socialPlatformProvider;
+    socialPlatformProvider = FacebookLoginProvider.PROVIDER_ID;
+    this.socialAuthService.signIn(socialPlatformProvider).then((userData) => {
+      this.account.facebookLogin(userData.email).subscribe((status: any) => {
+        if (status != null) {
+          localStorage.setItem('userData', JSON.stringify(status));
+          this.router.navigate(['/dashboard']);
+          this.snackbar.open('logged in');
+        }else{
+        this.snackbar.open('Invalid Email or Password');
+        }
+      }
+      );
+    }).catch((err) => {
+      console.log('error in FB sign in', err);
+    });
   }
 }

@@ -38,6 +38,13 @@ const param = {
 return this.http.post(environment.Url + 'api/googleLogin', param);
 }
 
+facebookLogin(email){
+  const param = {
+    Email:email
+  };
+  return this.http.post(environment.Url + 'api/fbLogin', param);
+}
+
  forgot(data){
   const params = {
     "Email": data.email
