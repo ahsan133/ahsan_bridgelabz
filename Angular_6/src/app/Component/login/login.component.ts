@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         if (status != null) {
           localStorage.setItem('userData', JSON.stringify(status));
           this.router.navigate(['/dashboard']);
+          this.snackbar.open('logged in');
         }
         this.snackbar.open('Invalid Email or Password');
       }

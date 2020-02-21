@@ -35,10 +35,7 @@ googleLogin(email){
 const param = {
   Email:email
 };
-let headers = new HttpHeaders({
-  'Accept': 'application/json'
-});
-return this.http.post(environment.Url + 'api/googleLogin', param, {headers:headers});
+return this.http.post(environment.Url + 'api/googleLogin', param);
 }
 
  forgot(data){
@@ -52,9 +49,4 @@ return this.http.post(environment.Url + 'api/googleLogin', param, {headers:heade
   return this.http.post(environment.Url + 'api/forgot', params,{headers:headers});
 }
 
-Savesresponse(responce)
-{
-  this.url =  'http://localhost:64726/Api/Login/Savesresponse';
-  return this.http.post(this.url,responce);
-}
 }
