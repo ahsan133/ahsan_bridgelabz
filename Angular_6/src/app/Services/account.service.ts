@@ -56,4 +56,7 @@ facebookLogin(email){
   return this.http.post(environment.Url + 'api/forgot', params,{headers:headers});
 }
 
+ProfilePic(email){
+return this.http.get(environment.Url + "api/getPicture?email=" + email);
+}
 }

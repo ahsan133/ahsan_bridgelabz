@@ -1,9 +1,20 @@
-<mat-toolbar class="toolbar">
-  <button mat-icon-button >
-    <mat-icon>menu</mat-icon>
+<mat-toolbar color="primary">
+
+  <button class="btn"><mat-icon>menu</mat-icon>
   </button>
+
   <h1>Fundoo</h1>
 
-  <div class="input">
-    <input type="text" value="Search" class="in"> 
-  </div>
+<div class ="input">
+  <input type="text" class="in" placeholder="Search">
+</div>
+  
+<!-- <div class="picture">
+  <button class="button"></button>
+</div> -->
+
+<div>
+  <img alt="ProfilePicture" [src]="profilePic()">
+</div>
+
+</mat-toolbar>
