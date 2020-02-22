@@ -12,6 +12,7 @@ namespace FundooManager.Manager
     using System.Threading.Tasks;
     using FundooModels.Models;
     using FundooRepository.Repository;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// This class is for access User repository
@@ -127,14 +128,24 @@ namespace FundooManager.Manager
         /// <summary>
         /// Profiles the picture.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="email">The email.</param>
         /// <param name="image">The image.</param>
         /// <returns>
         /// result of task
         /// </returns>
-        public Task<string> ProfilePicture(int id, string image)
+        public string ProfilePicture(string email, IFormFile image)
         {
-            return this.repository.ProfilePicture(id, image);
+            return this.repository.ProfilePicture(email, image);
+        }
+
+        /// <summary>
+        /// Gets the picture.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>result of task</returns>
+        public string GetPicture(string email)
+        {
+            return this.repository.GetPicture(email);
         }
     }
 }

@@ -22,6 +22,7 @@ namespace FundooRepository.Repository
     using Microsoft.Extensions.Configuration;
     using Microsoft.IdentityModel.Tokens;
     using StackExchange.Redis;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// This class is for User.
@@ -349,26 +350,52 @@ namespace FundooRepository.Repository
         /// <summary>
         /// Profiles the picture.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="email">The email..</param>
         /// <param name="image">The image.</param>
         /// <returns>
         /// profile picture result
         /// </returns>
-        public async Task<string> ProfilePicture(int id, string image)
+        public string ProfilePicture(string email, IFormFile image)
         {
-            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(this.configuration["Cloudinary:Name"], this.configuration["Cloudinarty:ApiKey"], this.configuration["Cloudinary:ApiSecret"]);
-            CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
-            var upload = new ImageUploadParams()
+            try
             {
-                File = new FileDescription(image)
-            };
-            var uploadResult = cloudinary.Upload(upload);
+                var result = image.OpenReadStream();
+                var name = image.FileName;
+                CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(this.configuration["Cloudinary:Name"], this.configuration["Cloudinary:ApiKey"], this.configuration["Cloudinary:ApiSecret"]);
+                CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
+                var upload = new ImageUploadParams()
+                {
+                    File = new FileDescription(name, result)
+                };
+                var uploadResult = cloudinary.Upload(upload);
 
-            var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
-            data.Image = uploadResult.Uri.ToString();
-            data.ModifiedTime = DateTime.Now;
-            await this.context.SaveChangesAsync();
-            return data.Image;
+                var data = this.context.RegisterModels.Where(p => p.Email == email).SingleOrDefault();
+                data.ProfilePicture = uploadResult.Uri.ToString();
+                this.context.SaveChanges();
+                return data.ProfilePicture;
+            }catch(Exception e)
+            {
+                return e.Message;
+            }
+           
+        }
+
+        /// <summary>
+        /// Gets the picture
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>picture result</returns>
+        public string GetPicture(string email)
+        {
+            var result = this.context.RegisterModels.Where(r => r.Email == email).SingleOrDefault();
+            if (result != null)
+            {
+                return result.ProfilePicture;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

@@ -78,6 +78,8 @@ namespace FundooRepository.Migrations
 
                     b.Property<string>("Password");
 
+                    b.Property<string>("ProfilePicture");
+
                     b.Property<bool>("Status");
 
                     b.HasKey("Email");

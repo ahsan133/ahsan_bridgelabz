@@ -11,6 +11,7 @@ namespace FundooManager.Manager
     using System.Text;
     using System.Threading.Tasks;
     using FundooModels.Models;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// Interface class of User manager.
@@ -72,6 +73,13 @@ namespace FundooManager.Manager
         /// <param name="id">The identifier.</param>
         /// <param name="image">The image.</param>
         /// <returns>result of task</returns>
-        Task<string> ProfilePicture(int id, string image);
+        string ProfilePicture(string email, IFormFile image);
+
+        /// <summary>
+        /// Gets the picture.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>result of task</returns>
+        string GetPicture(string email);
     }
 }

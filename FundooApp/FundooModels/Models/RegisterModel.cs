@@ -37,6 +37,11 @@ namespace FundooModels.Models
         private string password;
 
         /// <summary>
+        /// The profilePicture
+        /// </summary>
+        private string profilePicture;
+
+        /// <summary>
         /// The status
         /// </summary>
         private bool status;
@@ -81,5 +86,13 @@ namespace FundooModels.Models
         ///   <c>true</c> if status; otherwise, <c>false</c>.
         /// </value>
         public bool Status { get => this.status; set => this.status = value; }
+
+        /// <summary>
+        /// Gets or sets the profilePicture.
+        /// </summary>
+        /// <value>
+        /// The profilePicture.
+        /// </value>
+        public string ProfilePicture { get => this.profilePicture; set => this.profilePicture = value; }
     }
 }

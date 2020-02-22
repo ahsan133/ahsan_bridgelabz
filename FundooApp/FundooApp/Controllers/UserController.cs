@@ -15,6 +15,7 @@ namespace FundooApp.Controllers
     using FundooRepository.Repository;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Cors;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.AspNetCore.Mvc;
 
     /// <summary>
@@ -180,14 +181,34 @@ namespace FundooApp.Controllers
         /// <summary>
         /// Profiles the picture.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="email">The email.</param>
         /// <param name="image">The image.</param>
         /// <returns>result of action</returns>
         [HttpPost]
-        [Route("api/profilePicture")]
-        public ActionResult ProfilePicture(int id, string image)
+        [Route("api/profilePic")]
+        public ActionResult ProfilePicture(string email, IFormFile image)
         {
-            var result = this.user.ProfilePicture(id, image);
+            var result = this.user.ProfilePicture(email, image);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
+
+        /// <summary>
+        /// Gets the picture
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>result of action</returns>
+        [HttpGet]
+        [Route("api/getPicture")]
+        public ActionResult GetPicture(string email)
+        {
+            var result = this.user.GetPicture(email);
             if (result != null)
             {
                 return this.Ok(result);

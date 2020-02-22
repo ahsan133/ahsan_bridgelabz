@@ -11,6 +11,7 @@ namespace FundooRepository.Repository
     using System.Text;
     using System.Threading.Tasks;
     using FundooModels.Models;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// This interface is for User repository.
@@ -69,9 +70,16 @@ namespace FundooRepository.Repository
         /// <summary>
         /// Profiles the picture.
         /// </summary>
-        /// <param name="id">The identifier.</param>
+        /// <param name="email">The email.</param>
         /// <param name="image">The image.</param>
         /// <returns>profile picture result</returns>
-        Task<string> ProfilePicture(int id, string image);
+        string ProfilePicture(string email, IFormFile image);
+
+        /// <summary>
+        /// Gets the picture
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns>picture result</returns>
+        string GetPicture(string email);
     }
 }

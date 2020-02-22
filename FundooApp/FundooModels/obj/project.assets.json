@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj",
+      "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj",
       "projectName": "FundooModels",
-      "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\FundooModels.csproj",
+      "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj",
       "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\FundooApp\\FundooModels\\obj\\",
+      "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",

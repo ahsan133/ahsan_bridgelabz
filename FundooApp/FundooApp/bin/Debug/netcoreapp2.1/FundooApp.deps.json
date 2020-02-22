@@ -340,7 +340,8 @@
       "FundooManager/1.0.0": {
         "dependencies": {
           "FundooModels": "1.0.0",
-          "FundooRepository": "1.0.0"
+          "FundooRepository": "1.0.0",
+          "Microsoft.AspNetCore": "2.1.1"
         },
         "runtime": {
           "FundooManager.dll": {}
@@ -361,6 +362,7 @@
         "dependencies": {
           "CloudinaryDotNet": "1.10.0",
           "FundooModels": "1.0.0",
+          "Microsoft.AspNetCore": "2.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.1.1",
           "StackExchange.Redis": "2.0.601",
           "System.IdentityModel.Tokens.Jwt": "5.6.0"
