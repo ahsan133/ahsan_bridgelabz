@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
 
   Login(){
     this.account.login(this.LoginForm.value).subscribe((status:any) =>{
-      if(status == "success")
+      if(status != null)
       {
+        localStorage.setItem('userData', JSON.stringify(status));
         this.router.navigate(['/dashboard']);
         this.snackbar.open('logged in');
       }else{
@@ -74,12 +75,4 @@ export class LoginComponent implements OnInit {
       console.log('error in FB sign in', err);
     });
   }
-}
-
-export class getEmail {
-  LoginForm = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,15}')])
-  });
-  email = this.LoginForm.value;
 }

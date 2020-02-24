@@ -9,12 +9,15 @@
   <input type="text" class="in" placeholder="Search">
 </div>
   
-<!-- <div class="picture">
-  <button class="button"></button>
-</div> -->
-
 <div>
-  <img alt="ProfilePicture" [src]="profilePic()">
+  <button class="btn" ><mat-icon>list</mat-icon></button>
+  
 </div>
+<button class="btn"><mat-icon>settings</mat-icon></button>
+
+  <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" >
+
+ 
+
 
 </mat-toolbar>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/account.service';
-import { getEmail} from 'src/app/Component/login/login.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,13 +9,11 @@ import { getEmail} from 'src/app/Component/login/login.component';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private router:Router, public account: AccountService, public Email:getEmail) { }
+  userData=JSON.parse(localStorage.getItem('userData'));
+  profilePic = this.userData.profilePicture;
+  constructor(private router:Router, public account: AccountService) { }
 
   ngOnInit() {
   }
-
-profilePic(){
-return this.account.ProfilePic(this.Email.email);
-}
 
 }

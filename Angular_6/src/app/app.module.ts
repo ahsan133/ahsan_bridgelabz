@@ -14,7 +14,6 @@ import {GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular-
 import { SocialLoginModule, AuthServiceConfig } from 'angular-6-social-login'; 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
-import { getEmail} from 'src/app/Component/login/login.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -65,7 +64,7 @@ export function socialConfigs() {
     MatSidenavModule,
     MatToolbarModule
   ],
-  providers: [getEmail,
+  providers: [
     AuthService, 
     {  
       provide: AuthServiceConfig,  
