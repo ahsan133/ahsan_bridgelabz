@@ -61,8 +61,48 @@ outline: none;
     justify-content: center;
     align-items: center;
 }
-.user{
-    display:grid;
+ .user{
+     display:grid;
+     justify-content: center;
+     align-items: center;
+     padding:6px;
+ }
+h4{
+    font-weight: 500;
+    margin:0px;
+}
+h5{
+    font-weight: 400;
+    margin:0px;
+}
+.signout{
+    width:90px;
+    height:45px;
+    background-color:purple;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 10px;
+    outline: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.signo{
+    padding :10px;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+.add{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+padding-top: 10px;
+padding-bottom: 10px;
+width:100%;
+background: transparent;
+outline: none;
+border: none;
+}
+.addAcount{
+padding-left: 10px;
 }

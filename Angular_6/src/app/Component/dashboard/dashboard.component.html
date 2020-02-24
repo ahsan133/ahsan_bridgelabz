@@ -29,13 +29,22 @@
     <div class ="p">
     <img mat-card-image class="pic" alt="Profile Picture" src= "{{profilePic}}">
   </div>
-  <mat-divider></mat-divider>
   <div class="user">
   <h4>{{first}} {{last}}</h4>
-  <h5>{{email}}</h5>
 </div>
+<div class="user"><h5>{{email}}</h5></div>
 <mat-divider></mat-divider>
-<button (click)="logout()">Sign Out</button>
+
+<button class ="add">
+  <mat-icon >person_add</mat-icon>
+<div class="addAcount">Add another account</div>
+</button>
+
+<mat-divider></mat-divider>
+<div class="signo">
+  <button class="signout" (click)="logout()">Sign Out</button>
+</div>
+
   </mat-menu>
 
 </mat-toolbar>
