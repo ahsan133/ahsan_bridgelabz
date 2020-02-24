@@ -14,6 +14,8 @@ import {GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular-
 import { SocialLoginModule, AuthServiceConfig } from 'angular-6-social-login'; 
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,7 +64,9 @@ export function socialConfigs() {
     MatSnackBarModule,
     SocialLoginModule,
     MatSidenavModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatMenuModule,
+    MatDividerModule
   ],
   providers: [
     AuthService, 

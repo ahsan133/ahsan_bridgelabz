@@ -52,7 +52,13 @@ facebookLogin(email){
   let headers = new HttpHeaders({
     'Accept': 'application/json'
   });
-  console.log(params);
   return this.http.post(environment.Url + 'api/forgot', params,{headers:headers});
+}
+
+logout(email){
+  let headers = new HttpHeaders({
+    'Accept': 'application/json'
+  });
+return this.http.put(environment.Url +'api/logout?email=' + email, null,{headers:headers});
 }
 }

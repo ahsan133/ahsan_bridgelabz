@@ -1,23 +1,52 @@
+<div class="whole">
 <mat-toolbar color="primary">
 
-  <button class="btn"><mat-icon>menu</mat-icon>
+  <button class="btn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon>
   </button>
 
   <h1>Fundoo</h1>
 
-<div class ="input">
-  <input type="text" class="in" placeholder="Search">
-</div>
-  
-<div>
+  <div class="search">
+    <mat-card class="search-bar">
+      <button class="search-button" id="search-button" mat-icon-button>
+        <mat-icon matSuffix class="suffix">search</mat-icon>
+      </button>
+      <input class="in" type="text" name="search" autocomplete="off" placeholder="search ">
+      <button class="search-button" mat-icon-button>
+        <mat-icon matSuffix class="search">clear</mat-icon>
+      </button>
+    </mat-card>
+  </div>
+
+
+
   <button class="btn" ><mat-icon>list</mat-icon></button>
   
+  <button class="btn"><mat-icon>settings</mat-icon></button>
+
+  <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" [matMenuTriggerFor]="menu" >
+  <mat-menu #menu="matMenu">
+    <div class ="p">
+    <img mat-card-image class="pic" alt="Profile Picture" src= "{{profilePic}}">
+  </div>
+  <mat-divider></mat-divider>
+  <div class="user">
+  <h4>{{first}} {{last}}</h4>
+  <h5>{{email}}</h5>
 </div>
-<button class="btn"><mat-icon>settings</mat-icon></button>
-
-  <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" >
-
- 
-
+<mat-divider></mat-divider>
+<button (click)="logout()">Sign Out</button>
+  </mat-menu>
 
 </mat-toolbar>
+</div>
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="side" mode="side">
+    <div class="div">
+      <i>emoji_objects</i>
+      <button mat-button style="width: 30px;" > Notes </button>
+    </div>
+
+  </mat-drawer>
+</mat-drawer-container>

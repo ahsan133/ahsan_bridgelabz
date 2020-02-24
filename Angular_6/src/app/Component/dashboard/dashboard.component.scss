@@ -1,4 +1,7 @@
-
+.whole{
+    display:flex;
+    height:100%;
+}
 h1{
     padding-left: 20px;
     font-size: larger;
@@ -7,15 +10,6 @@ h1{
 background-color: transparent;
 border: none;
 outline: none;
-}
-.in{
-    width:50em;
-    height: 3em;
-    border-radius: 8px;
-    outline: none;
-}
-.input{
-padding-left: 10em;
 }
 .button{
     border-radius: 50%;
@@ -26,4 +20,49 @@ padding-left: 10em;
     width:40px;
     height:40px;
     border-radius: 50%;
+}
+.search-bar{
+    width:650px;
+    height:10px;
+    border-radius: 6px;
+    height: 45px;
+    padding: 0px;
+    display:flex;
+}
+.search-button{
+    background: transparent;
+    border:none;
+    outline:none;
+    padding: 0%;
+    margin-left: 13px
+}
+.in{
+    outline: none;
+    border: none;
+    width: 560px;
+    margin-left: 10px;
+}
+.search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:90%;
+}
+.pic{
+    width:80px;
+    height:80px;
+    border-radius: 50%;
+    margin:50px;
+    padding: 50px;
+    
+}
+.p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user{
+    display:grid;
+    justify-content: center;
+    align-items: center;
 }
