@@ -70,7 +70,7 @@ namespace FundooApp.Controllers
             var result = await this.user.Login(loginModel);
             if (result != null)
             {
-                return this.Ok("success");
+                return this.Ok(result);
             }
             else
             {
@@ -163,7 +163,7 @@ namespace FundooApp.Controllers
         /// </summary>
         /// <param name="email">The email.</param>
         /// <returns>result of action</returns>
-        [HttpPost]
+        [HttpPut]
         [Route("api/logout")]
         public async Task<ActionResult> Logout(string email)
         {
