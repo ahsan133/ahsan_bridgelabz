@@ -11,6 +11,12 @@ background-color: transparent;
 border: none;
 outline: none;
 }
+.btn1{
+    background-color: transparent;
+border: none;
+outline: none;
+margin-right: 10px;
+}
 .button{
     border-radius: 50%;
     width:3em;
@@ -24,11 +30,13 @@ outline: none;
 }
 .search-bar{
     width:650px;
-    height:10px;
     border-radius: 6px;
     height: 45px;
     padding: 0px;
     display:flex;
+}
+.set{
+    padding-right: 30px;
 }
 .search-button{
     background: transparent;
@@ -63,6 +71,7 @@ outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: -22px;
 }
  .user{
      display:grid;
@@ -140,4 +149,15 @@ padding-left: 10px;
     padding: 10px 15px;
     font-size: small;
     font-weight: 500
+}
+.edit{
+    background: white;
+    border-radius: 50%;
+    padding: 3px;
+    font-size: 22px;
+}
+.changePic{
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
 }

@@ -18,16 +18,21 @@
     </div>
   
   
-  
-    <button mat-icon-button class="btn" ><mat-icon>list</mat-icon></button>
+  <div class="set">
+    <button mat-icon-button class="btn1" ><mat-icon>list</mat-icon></button>
     
     <button mat-icon-button class="btn"><mat-icon>settings</mat-icon></button>
-  
+  </div>
     <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" [matMenuTriggerFor]="menu" >
     <mat-menu #menu="matMenu">
       <div class ="p">
       <img class="pic" alt="Profile Picture" src= "{{profilePic}}">
     </div>
+
+    <div class="changePic">
+      <mat-icon class="edit">photo_camera</mat-icon>
+    </div>
+    
     <div class="user">
     <h4>{{first}} {{last}}</h4>
   </div>
