@@ -1,61 +1,96 @@
 <div class="whole">
-<mat-toolbar color="primary">
-
-  <button class="btn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon>
-  </button>
-
-  <h1>Fundoo</h1>
-
-  <div class="search">
-    <mat-card class="search-bar">
-      <button class="search-button" id="search-button" mat-icon-button>
-        <mat-icon matSuffix class="suffix">search</mat-icon>
-      </button>
-      <input class="in" type="text" name="search" autocomplete="off" placeholder="search ">
-      <button class="search-button" mat-icon-button>
-        <mat-icon matSuffix class="search">clear</mat-icon>
-      </button>
-    </mat-card>
-  </div>
-
-
-
-  <button class="btn" ><mat-icon>list</mat-icon></button>
+  <mat-toolbar color="primary">
   
-  <button class="btn"><mat-icon>settings</mat-icon></button>
-
-  <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" [matMenuTriggerFor]="menu" >
-  <mat-menu #menu="matMenu">
-    <div class ="p">
-    <img mat-card-image class="pic" alt="Profile Picture" src= "{{profilePic}}">
-  </div>
-  <div class="user">
-  <h4>{{first}} {{last}}</h4>
-</div>
-<div class="user"><h5>{{email}}</h5></div>
-<mat-divider></mat-divider>
-
-<button class ="add">
-  <mat-icon >person_add</mat-icon>
-<div class="addAcount">Add another account</div>
-</button>
-
-<mat-divider></mat-divider>
-<div class="signo">
-  <button class="signout" (click)="logout()">Sign Out</button>
-</div>
-
-  </mat-menu>
-
-</mat-toolbar>
-</div>
-
-<mat-drawer-container class="container" autosize>
-  <mat-drawer #drawer class="side" mode="side">
-    <div class="div">
-      <i>emoji_objects</i>
-      <button mat-button style="width: 30px;" > Notes </button>
+    <button class="btn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon>
+    </button>
+        <h1>Fundoo</h1>
+  
+    <div class="search">
+      <mat-card class="search-bar">
+        <button class="search-button" id="search-button" mat-icon-button>
+          <mat-icon matSuffix class="suffix">search</mat-icon>
+        </button>
+        <input class="in" type="text" name="search" autocomplete="off" placeholder="search ">
+        <button class="search-button" mat-icon-button>
+          <mat-icon matSuffix class="search">clear</mat-icon>
+        </button>
+      </mat-card>
     </div>
+  
+  
+  
+    <button mat-icon-button class="btn" ><mat-icon>list</mat-icon></button>
+    
+    <button mat-icon-button class="btn"><mat-icon>settings</mat-icon></button>
+  
+    <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" [matMenuTriggerFor]="menu" >
+    <mat-menu #menu="matMenu">
+      <div class ="p">
+      <img class="pic" alt="Profile Picture" src= "{{profilePic}}">
+    </div>
+    <div class="user">
+    <h4>{{first}} {{last}}</h4>
+  </div>
+  <div class="user"><h5>{{email}}</h5></div>
+  <mat-divider></mat-divider>
+  
+  <button mat-button class ="add">
+    <div class="collab">
+      <mat-icon >person_add</mat-icon>
+      <div class="addAcount">Add another account</div>
+    </div>
+    
+  </button>
+  
+  <mat-divider></mat-divider>
+  <div class="signo">
+    <button mat-button class="signout" (click)="logout()">Sign Out</button>
+  </div>
+  
+    </mat-menu>
+  
+  </mat-toolbar>
+  </div>
+  
+  <mat-drawer-container class="container">
+    <mat-drawer #drawer mode="side" class="side" opened>
+      <mat-divider class="div"></mat-divider>
+     <button mat-button class ="add">
+       <div class="draw">
+       <mat-icon class="icon" >emoji_objects</mat-icon>
+       <div class="notes">Notes</div>
+      </div>
+     </button>
 
-  </mat-drawer>
-</mat-drawer-container>
+     <button mat-button class ="add">
+      <div class="draw">
+      <mat-icon class="icon">notifications</mat-icon>
+      <div class="notes">Remainders</div>
+     </div>
+    </button>
+    <mat-divider class="div"></mat-divider>
+    <div class="word">LABELS</div>
+
+    <button mat-button class ="add">
+      <div class="draw">
+      <mat-icon class="icon">create</mat-icon>
+      <div class="notes">Edit labels</div>
+     </div>
+    </button>
+    <mat-divider class="div"></mat-divider>
+    <button mat-button class ="add">
+      <div class="draw">
+      <mat-icon class="icon">archive</mat-icon>
+      <div class="notes">Archive</div>
+     </div>
+    </button>
+    <button mat-button class ="add">
+      <div class="draw">
+      <mat-icon class="icon">delete</mat-icon>
+      <div class="notes">Trash</div>
+     </div>
+    </button>
+
+    </mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container>

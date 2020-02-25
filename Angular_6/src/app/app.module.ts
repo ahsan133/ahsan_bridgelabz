@@ -12,10 +12,14 @@ import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular-6-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angular-6-social-login'; 
-import {MatSidenavModule} from '@angular/material/sidenav';
+// import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionModule, MatRippleModule,MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,} from '@angular/material';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -66,7 +70,16 @@ export function socialConfigs() {
     MatSidenavModule,
     MatToolbarModule,
     MatMenuModule,
-    MatDividerModule
+    MatDividerModule,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatExpansionModule,
+    MatRippleModule,
+    MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+
   ],
   providers: [
     AuthService, 
