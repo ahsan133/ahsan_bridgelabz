@@ -12,7 +12,6 @@ import { FormsModule, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular-6-social-login';
 import { SocialLoginModule, AuthServiceConfig } from 'angular-6-social-login'; 
-// import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar'; 
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
@@ -27,6 +26,7 @@ import { LoginComponent } from './Component/login/login.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { ForgotComponent } from './Component/forgot/forgot.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import { ProfilePicture } from './Component/dashboard/dashboard.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -50,7 +50,8 @@ export function socialConfigs() {
     LoginComponent,
     RegisterComponent,
     ForgotComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProfilePicture
   ],
   imports: [
     BrowserModule,
@@ -77,10 +78,14 @@ export function socialConfigs() {
     MatExpansionModule,
     MatRippleModule,
     MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
+    MatSliderModule,
+    MatSlideToggleModule,
 
   ],
+  exports: [
+    ProfilePicture
+  ],
+  entryComponents: [ProfilePicture],
   providers: [
     AuthService, 
     {  

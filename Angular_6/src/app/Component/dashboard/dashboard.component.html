@@ -30,9 +30,9 @@
     </div>
 
     <div class="changePic">
-      <mat-icon class="edit">photo_camera</mat-icon>
+    <mat-icon mat-icon-button (click)="ChangeProfile()" class="edit">photo_camera</mat-icon>
     </div>
-    
+
     <div class="user">
     <h4>{{first}} {{last}}</h4>
   </div>
@@ -97,5 +97,9 @@
     </button>
 
     </mat-drawer>
-    <mat-drawer-content>Main content</mat-drawer-content>
+    <mat-drawer-content>
+      <mat-card class="note">
+
+      </mat-card>
+    </mat-drawer-content>
   </mat-drawer-container>
