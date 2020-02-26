@@ -82,9 +82,6 @@ export function socialConfigs() {
     MatSlideToggleModule,
 
   ],
-  exports: [
-    ProfilePicture
-  ],
   entryComponents: [ProfilePicture],
   providers: [
     AuthService, 

@@ -61,4 +61,9 @@ logout(email){
   });
 return this.http.put(environment.Url +'api/logout?email=' + email, null,{headers:headers});
 }
+
+ProfilePic(email, image){
+return this.http.put(environment.Url + 'api/profilePic?email=' + email, image);
+}
+
 }
