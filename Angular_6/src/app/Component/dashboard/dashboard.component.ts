@@ -1,8 +1,9 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';;
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -34,6 +35,13 @@ export class DashboardComponent implements OnInit {
     });
   }
 
+  AddCollaborator(): void{
+    const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px'});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    })
+  }
  
    ChangeProfile(): void {
  const dialogRef =this.dialog.open(ProfilePicture,{ width: '370px',
@@ -79,7 +87,6 @@ export class ProfilePicture{
         this.userData.image = status.result;
     });
   }
-
 
 }
 
