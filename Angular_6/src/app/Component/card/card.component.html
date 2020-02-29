@@ -1,3 +1,48 @@
-<p>
-  card works!
-</p>
+<div>
+  <div>
+    <input mat-input placeholder="Title" >
+  </div>
+  <div>
+    <input mat-input type="text" placeholder="Description">
+  </div>
+</div>
+
+<div class="buttons">
+  <button mat-icon-button class="button">
+    <mat-icon class="icon" [matMenuTriggerFor]="menu">add_alert</mat-icon>
+  </button>
+  <button mat-icon-button class="button" >
+    <mat-icon class="icon" (click)="AddCollaborator()">person_add</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon">color_lens</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon">add_photo_alternate</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon">archive</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon">delete</mat-icon>
+  </button>
+  </div>
+  
+  
+  <mat-menu #menu="matMenu">
+    <div class="heading">Reminder:</div>
+  
+  <div class="Reminder_buttons">
+  <button mat-button class="Reminder_button">
+    <div class="align">
+      <div>Later Today</div>
+      <div class="space">8PM</div>
+    </div>
+  </button>
+  <button mat-button class="Reminder_button">
+    <div class="align">
+    <div>Tomorrow</div>
+    <div class="space1">8AM</div>
+  </div>
+  </button>
+  </div>

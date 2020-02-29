@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog,} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
 import {CardComponent} from 'src/app/Component/card/card.component';
 
