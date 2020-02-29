@@ -28,6 +28,7 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { ProfilePicture } from './Component/dashboard/dashboard.component';
 import { NotesComponent } from './Component/notes/notes.component';
 import { CollaboratorComponent } from './Component/collaborator/collaborator.component';
+import { CardComponent } from './Component/card/card.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -54,7 +55,8 @@ export function socialConfigs() {
     DashboardComponent,
     ProfilePicture,
     NotesComponent,
-    CollaboratorComponent
+    CollaboratorComponent,
+    CardComponent
     
   ],
   imports: [
@@ -86,7 +88,7 @@ export function socialConfigs() {
     MatSlideToggleModule,
 
   ],
-  entryComponents: [ProfilePicture, CollaboratorComponent],
+  entryComponents: [ProfilePicture, CollaboratorComponent,CardComponent],
   providers: [
     AuthService, 
     {  
