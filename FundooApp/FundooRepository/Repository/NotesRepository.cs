@@ -210,7 +210,7 @@ namespace FundooRepository.Repository
         /// </returns>
         public Task UnPin(int id)
         {
-            var data = this.context.NotesModels.Where(p => p.Id == id && p.Pin == false).SingleOrDefault();
+            var data = this.context.NotesModels.Where(p => p.Id == id && p.Pin == true).SingleOrDefault();
             if (data != null)
             {
                 data.Pin = true;

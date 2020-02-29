@@ -184,7 +184,7 @@ namespace FundooApp.Controllers
         /// <param name="email">The email.</param>
         /// <param name="image">The image.</param>
         /// <returns>result of action</returns>
-        [HttpPost]
+        [HttpPut]
         [Route("api/profilePic")]
         public ActionResult ProfilePicture(string email, IFormFile image)
         {
