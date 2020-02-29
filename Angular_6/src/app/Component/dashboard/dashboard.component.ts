@@ -2,8 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';;
 
 @Component({
   selector: 'app-dashboard',
@@ -18,13 +17,12 @@ export class DashboardComponent implements OnInit {
   last = this.userData.lastName;
   email = this.userData.email;
   image: any;
-
+  fileToUpload: File;
 
   constructor(private router:Router, public account: AccountService, public snackbar: MatSnackBar,
     public dialog: MatDialog) { }
 
-  ngOnInit() { 
-  
+  ngOnInit() {
   }
 
   logout(){
@@ -36,16 +34,16 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  ChangeProfile(): void {
-const dialogRef =this.dialog.open(ProfilePicture,{ width: '370px',
-height: '230px' , data:{ image: this.image }});
+ 
+   ChangeProfile(): void {
+ const dialogRef =this.dialog.open(ProfilePicture,{ width: '370px',
+ height: '230px' , data:{ image: this.image }});
 
-dialogRef.afterClosed().subscribe(result => {
-  console.log('The dialog was closed');
-  this.image =result;
-});
-  }
-
+ dialogRef.afterClosed().subscribe(result => {
+   console.log('The dialog was closed');
+   this.image =result;
+ });
+   }
 } 
 
 
@@ -56,8 +54,9 @@ dialogRef.afterClosed().subscribe(result => {
 })
 export class ProfilePicture{
   userData=JSON.parse(localStorage.getItem('userData'));
-  url: string | ArrayBuffer;
-  event;
+  image: any;
+  fileToUpload: File;
+  files: any;
 
   constructor(public account: AccountService,
     public dialogRef: MatDialogRef<ProfilePicture>){ }
@@ -66,23 +65,21 @@ export class ProfilePicture{
    onNoClick(): void {
      this.dialogRef.close();
    }
+   onSelectFile(files: FileList) {
 
-   onSelectFile() {
+    if (files.length === 0)
+      return;
+  
+    this.fileToUpload = files.item(0);
+    this.account.uploadProfilePicture(this.userData.email ,this.fileToUpload).subscribe((status :any) => {
+        if(status != null)
+        {
+          this.dialogRef.close();
+        }
+        this.userData.image = status.result;
+    });
+  }
 
-    if (this.event) {
-      var reader = new FileReader();
 
-      // reader.readAsDataURL(this.event); 
-
-      // reader.onload = (this.event) => { 
-      //   this.url = this.event.target.result;
-      // }
-      this.account.ProfilePic(this.userData.email, this.event).subscribe((status:any)=>{
-       if(status == "success"){
-        this.onNoClick();
-       }
-      });
-
-      }
-    }
 }
+

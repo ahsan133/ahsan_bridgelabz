@@ -16,8 +16,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionModule, MatRippleModule,MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,} from '@angular/material';
+  MatSliderModule,MatSlideToggleModule,} from '@angular/material';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +26,8 @@ import { RegisterComponent } from './Component/register/register.component';
 import { ForgotComponent } from './Component/forgot/forgot.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { ProfilePicture } from './Component/dashboard/dashboard.component';
+import { NotesComponent } from './Component/notes/notes.component';
+import { CollaboratorComponent } from './Component/collaborator/collaborator.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -51,7 +52,10 @@ export function socialConfigs() {
     RegisterComponent,
     ForgotComponent,
     DashboardComponent,
-    ProfilePicture
+    ProfilePicture,
+    NotesComponent,
+    CollaboratorComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -82,7 +86,7 @@ export function socialConfigs() {
     MatSlideToggleModule,
 
   ],
-  entryComponents: [ProfilePicture],
+  entryComponents: [ProfilePicture, CollaboratorComponent],
   providers: [
     AuthService, 
     {  

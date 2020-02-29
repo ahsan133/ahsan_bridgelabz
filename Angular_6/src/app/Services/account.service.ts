@@ -1,6 +1,9 @@
-import { Injectable } from '@angular/core';
+ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { EmailValidator } from '@angular/forms'; 
+import { Observable, of, Subject } from 'rxjs';
+import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -62,8 +65,11 @@ logout(email){
 return this.http.put(environment.Url +'api/logout?email=' + email, null,{headers:headers});
 }
 
-ProfilePic(email, image){
-return this.http.put(environment.Url + 'api/profilePic?email=' + email, image);
+uploadProfilePicture(email,file: any) {
+  let input = new FormData();
+  input.append("image", file);
+
+  return this.http.put(environment.Url + 'api/profilePic?email=' + email, input);
 }
 
 }

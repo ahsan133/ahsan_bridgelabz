@@ -1,11 +1,13 @@
 <h1 mat-dialog-title>Select profile photo</h1>
 
-
-<input type='file' class="photo" accept="image/*" [(ngModel)]="event" >
+<form #formData="ngForm" > 
+<input type='file' class="photo" accept="image/*" #file name="file">
 
 <div class="align">
     <div class="register" (click)="onNoClick()">cancel</div>
     <div class="button">
-      <input type="button" value="Set as profile photo" (click)="onSelectFile( )" id="btn" class="btn">
+      <input type="submit" value="Set as profile photo" #fileUpload  (click)="onSelectFile(file.files)" id="btn" class="btn">
     </div>
   </div>
+</form>
+

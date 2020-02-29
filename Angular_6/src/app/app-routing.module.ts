@@ -4,6 +4,7 @@ import { LoginComponent } from './Component/login/login.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { ForgotComponent } from './Component/forgot/forgot.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
+import { NotesComponent } from './Component/notes/notes.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path : 'forgot', component: ForgotComponent},
   {path : 'dashboard', component: DashboardComponent,
 children: [
-  
+  {path: '', component:NotesComponent}
 ]}
 ];
 
