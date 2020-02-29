@@ -17,7 +17,7 @@
   <mat-icon class="icon" (click)="AddCollaborator()">person_add</mat-icon>
 </button>
 <button mat-icon-button class="button">
-  <mat-icon class="icon">color_lens</mat-icon>
+  <mat-icon class="icon" [matMenuTriggerFor]="color">color_lens</mat-icon>
 </button>
 <button mat-icon-button class="button">
   <mat-icon class="icon">add_photo_alternate</mat-icon>
@@ -52,3 +52,8 @@
 
 </mat-menu>
 
+<mat-menu #color="matMenu">
+<button class="white"></button>
+<button class="red"></button>
+
+</mat-menu>
