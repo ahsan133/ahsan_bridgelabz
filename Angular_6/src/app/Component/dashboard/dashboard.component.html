@@ -21,12 +21,14 @@
   <div class="set">
     <button mat-icon-button class="btn1" ><mat-icon>list</mat-icon></button>
     
-    <button mat-icon-button class="btn"><mat-icon>settings</mat-icon></button>
+    <button mat-icon-button class="btn" [matMenuTriggerFor]="setting"><mat-icon>settings</mat-icon></button>
   </div>
+  <img class="picture" alt ="ProfilePicture" *ngIf="!profilePic" src="/assets/img/No.png" [matMenuTriggerFor]="menu">
     <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" [matMenuTriggerFor]="menu" >
     <mat-menu #menu="matMenu">
       <div class ="p">
-      <img class="pic" alt="Profile Picture" src= "{{profilePic}}">
+        <img class="pic" alt="Profile Picture"  *ngIf="!profilePic" src= "/assets/img/No.png">
+      <img class="pic" alt="Profile Picture"  *ngIf="profilePic" src= "{{profilePic}}">
     </div>
 
     <div class="changePic">
@@ -57,6 +59,10 @@
   </mat-toolbar>
   </div>
   
+  <mat-menu #setting="matMenu">
+<h5>asfdr</h5>
+  </mat-menu>
+
   <mat-drawer-container class="container">
     <mat-drawer #drawer mode="side" class="side" opened>
       <mat-divider class="div"></mat-divider>
@@ -99,6 +105,5 @@
     </mat-drawer>
     <mat-drawer-content>
       <router-outlet > </router-outlet>
-
     </mat-drawer-content>
   </mat-drawer-container>

@@ -1,0 +1,15 @@
+<app-notes></app-notes>
+<app-get-notes (messageEvent)="receiveMessage($event)"></app-get-notes>
+
+
+<mat-card class="card" *ngFor="let onenote of message">
+<div>
+  <img *ngIf="onenote.image" src="{{onenote.image}}">
+</div>
+<input type="text" *ngIf="onenote.title" placeholder="{{onenote.title}}">
+
+
+
+</mat-card>
+
+

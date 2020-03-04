@@ -1,8 +1,6 @@
  import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { EmailValidator } from '@angular/forms'; 
-import { Observable, of, Subject } from 'rxjs';
 import 'rxjs/add/operator/map';
 
 @Injectable({

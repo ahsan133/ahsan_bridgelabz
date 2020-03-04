@@ -17,6 +17,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionModule, MatRippleModule,MatSidenavModule,
   MatSliderModule,MatSlideToggleModule,} from '@angular/material';
+  import { CommonModule } from "@angular/common";
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,8 @@ import { ProfilePicture } from './Component/dashboard/dashboard.component';
 import { NotesComponent } from './Component/notes/notes.component';
 import { CollaboratorComponent } from './Component/collaborator/collaborator.component';
 import { CardComponent } from './Component/card/card.component';
+import { GetNotesComponent } from './Component/get-notes/get-notes.component';
+import { AllNotesComponent } from './Component/all-notes/all-notes.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -56,7 +59,9 @@ export function socialConfigs() {
     ProfilePicture,
     NotesComponent,
     CollaboratorComponent,
-    CardComponent
+    CardComponent,
+    GetNotesComponent,
+    AllNotesComponent
     
   ],
   imports: [
@@ -86,6 +91,7 @@ export function socialConfigs() {
     MatSidenavModule,
     MatSliderModule,
     MatSlideToggleModule,
+    CommonModule,
 
   ],
   entryComponents: [ProfilePicture, CollaboratorComponent,CardComponent],
