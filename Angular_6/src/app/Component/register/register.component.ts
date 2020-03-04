@@ -14,7 +14,10 @@ export class RegisterComponent implements OnInit {
   registered = false;
   hide = true;
 
-  constructor(public account: AccountService, private router: Router, private snackBar: MatSnackBar) {}
+  constructor(
+     public account: AccountService,
+     private router: Router, 
+     private snackBar: MatSnackBar) {}
    
   ngOnInit() {
     this.RegisterForm = new FormGroup({
@@ -26,13 +29,14 @@ export class RegisterComponent implements OnInit {
   }
 
    Register() {
-    this.account.register(this.RegisterForm.value).subscribe((status: any) => {
+    this.account.register(this.RegisterForm.value)
+    .subscribe((status: any) => {
       if (status == 1) {
         this.router.navigate(['/login']);
-        this.snackBar.open('register successful');
+        this.snackBar.open('register successful','', {duration: 2000});
       }
       else{
-        this.snackBar.open('email already exist.');
+        this.snackBar.open('email already exist.','', {duration: 2000});
       }
     }
     );

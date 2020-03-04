@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
     this.account.logout(this.userData.email).subscribe((status:any)=>{
       if (status == "success"){
         this.router.navigate(['/login']);
-        this.snackbar.open('logged out')
+        this.snackbar.open('logged out','', {duration: 2000})
       }
     });
   }

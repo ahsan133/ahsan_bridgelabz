@@ -12,25 +12,22 @@ import { NotesService } from 'src/app/Services/notes.service';
 export class NotesComponent implements OnInit {
   noteData =JSON.parse(localStorage.getItem('noteData'));
 
-  constructor(public dialog:MatDialog, private note :NotesService) { }
+  title;
+  description;
+  card1 = true;
+  card2 = false;
+  constructor() { }
 
   ngOnInit() {
   }
 
-  cardOpen(): void{
-    const dialogRef =this.dialog.open(CardComponent,{ width: '500px'});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
-
-  AddCollaborator(){
-    const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px'});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+  note(){
+    this.card2=true;
+    this.card1=false;
   }
   
+  close(){
+    this.card1 = true;
+    this.card2 = false;
+  }
 }

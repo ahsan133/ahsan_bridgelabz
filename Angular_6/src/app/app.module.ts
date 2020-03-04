@@ -32,6 +32,7 @@ import { CollaboratorComponent } from './Component/collaborator/collaborator.com
 import { CardComponent } from './Component/card/card.component';
 import { GetNotesComponent } from './Component/get-notes/get-notes.component';
 import { AllNotesComponent } from './Component/all-notes/all-notes.component';
+import { IconsComponent } from './Component/icons/icons.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -61,7 +62,8 @@ export function socialConfigs() {
     CollaboratorComponent,
     CardComponent,
     GetNotesComponent,
-    AllNotesComponent
+    AllNotesComponent,
+    IconsComponent
     
   ],
   imports: [

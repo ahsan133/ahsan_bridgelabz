@@ -22,8 +22,8 @@ export class AllNotesComponent implements OnInit {
      
    }
 
-   cardOpen(): void{
-    const dialogRef =this.dialog.open(CardComponent,{ width: '500px'});
+   matcardOpen(onenote :any): void{
+    const dialogRef =this.dialog.open(CardComponent,{ width: '500px', data:onenote});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

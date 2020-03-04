@@ -1,148 +1,37 @@
 .card{
-    width:290px;
-    margin:20px;
+    width:35em;
+    margin:10px;
     padding: 0px;
+    cursor: auto;
 }
 .takeNote{
-    font-size: x-large;
+    font-weight: 500;
     padding: 15px;
+    opacity: 50%;
 }
-.button{
-    background: transparent;
+.data{
+    font-weight: 500;
+    font-size: initial;
     border: none;
+    background: transparent;
+    width: 20em;
     outline: none;
-    margin: 4px;
+    height: 3em;
+    margin-left: 15px;
 }
-.buttons{
-    margin-top: 10px;
-}
-.icon{
-    font-size: 20px;
-}
-.heading{
-    font-size: 15px;
-    margin: 10px 15px;
-}
-.Reminder_buttons{
-    display: grid;
+.close{
+    width:68px;
+    height:35px;
+    margin-left: 12em;
+    margin-top: 15px;
+    background-color:purple;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 10px;
+    outline: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .align{
     display:flex;
-}
-.space{
-    padding-left: 80px;
-}
-.space1{
-    padding-left: 89px;
-}
-
-.white{
-    background-color: white;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    border-color: gray;
-    outline: none;
-    margin:3px;
-    cursor: pointer;
-}
-.red{
-    background-color: red;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.orange{
-    background-color: orange;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.green{
-    background-color: green;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.yellow{
-    background-color: yellow;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.gray{
-    background-color: gray;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.purple{
-    background-color: rgb(202, 5, 202);
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.pink{
-    background-color: pink;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.brown{
-    background-color: rgb(219, 80, 80);
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.indigo{
-    background-color:rgb(119, 17, 192);
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.teal{
-    background-color: teal;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
 }

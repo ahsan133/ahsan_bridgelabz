@@ -31,9 +31,9 @@ export class LoginComponent implements OnInit {
       {
         localStorage.setItem('userData', JSON.stringify(status));
         this.router.navigate(['/dashboard']);
-        this.snackbar.open('logged in');
+        this.snackbar.open('logged in','', {duration: 2000});
       }else{
-        this.snackbar.open('enter valid email and password');
+        this.snackbar.open('enter valid email and password','', {duration: 2000});
       }
     });
   }
@@ -46,9 +46,10 @@ export class LoginComponent implements OnInit {
         if (status != null) {
           localStorage.setItem('userData', JSON.stringify(status));
           this.router.navigate(['/dashboard']);
-          this.snackbar.open('logged in');
+          this.snackbar.open('logged in','', {duration: 2000});
         }else{
-        this.snackbar.open('Invalid Email or Password');
+        this.snackbar.open('Invalid Email or Password','', {duration: 2000}
+        );
         }
       }
       );
@@ -65,9 +66,9 @@ export class LoginComponent implements OnInit {
         if (status != null) {
           localStorage.setItem('userData', JSON.stringify(status));
           this.router.navigate(['/dashboard']);
-          this.snackbar.open('logged in');
+          this.snackbar.open('logged in','', {duration: 2000});
         }else{
-        this.snackbar.open('Invalid Email or Password');
+        this.snackbar.open('Invalid Email or Password','', {duration: 2000});
         }
       }
       );
