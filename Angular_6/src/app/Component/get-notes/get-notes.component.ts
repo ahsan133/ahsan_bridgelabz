@@ -22,7 +22,6 @@ export class GetNotesComponent implements OnInit {
    this.note.getNotes(this.userData.email).subscribe((status : any)=>{
      this.messageEvent.emit(status);
      this.message = status;
-     console.log(this.message);
    });
   }
 }

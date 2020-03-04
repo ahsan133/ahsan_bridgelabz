@@ -1,15 +1,69 @@
 <app-notes></app-notes>
 <app-get-notes (messageEvent)="receiveMessage($event)"></app-get-notes>
 
-
+<div class="whole">
 <mat-card class="card" *ngFor="let onenote of message">
+  <div (click)="cardOpen()">
 <div>
   <img *ngIf="onenote.image" src="{{onenote.image}}">
 </div>
-<input type="text" *ngIf="onenote.title" placeholder="{{onenote.title}}">
-
-
-
+<div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+<div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+</div>
+<div class="buttons">
+  <button mat-icon-button class="button">
+    <mat-icon class="icon" [matMenuTriggerFor]="menu">add_alert</mat-icon>
+  </button>
+  <button mat-icon-button class="button" >
+    <mat-icon class="icon" (click)="AddCollaborator()">person_add</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon" [matMenuTriggerFor]="color">color_lens</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon">add_photo_alternate</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon">archive</mat-icon>
+  </button>
+  <button mat-icon-button class="button">
+    <mat-icon class="icon" >delete</mat-icon>
+  </button>
+  </div>
 </mat-card>
+</div>
 
+<mat-menu #menu="matMenu">
+  <div class="heading">Reminder:</div>
+
+<div class="Reminder_buttons">
+<button mat-button class="Reminder_button">
+  <div class="align">
+    <div>Later Today</div>
+    <div class="space">8PM</div>
+  </div>
+</button>
+<button mat-button class="Reminder_button">
+  <div class="align">
+  <div>Tomorrow</div>
+  <div class="space1">8AM</div>
+</div>
+</button>
+</div>
+
+</mat-menu>
+
+<mat-menu #color="matMenu">
+<button class="white"></button>
+<button class="red"></button>
+<button class="orange"></button>
+<button class="green"></button>
+<button class="yellow"></button>
+<button class="gray"></button>
+<button class="purple"></button>
+<button class="pink"></button>
+<button class="brown"></button>
+<button class="indigo"></button>
+<button class="teal"></button>
+</mat-menu>
 
