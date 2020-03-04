@@ -22,7 +22,6 @@ export class CardComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.addNote();
     this.dialogRef.close();
 }
 
@@ -30,21 +29,10 @@ AddCollaborator(): void{
   const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px'});
 
   dialogRef.afterClosed().subscribe(result => {
-    this.addNote();
     console.log('The dialog was closed');
   });
 }
 
-addNote(){
-  if(this.title != null || this.description !=null){
-    this.note.addNote(this.title ,this.description,this.userData.email).subscribe((status)=>{
-      if(status != null){
-        localStorage.setItem('noteData', JSON.stringify(status));
-        this.snackbar.open('Note added.','', {duration: 2000});
-      }
-    });
-  }
-}
 
 
 }
