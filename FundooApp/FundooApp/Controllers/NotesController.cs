@@ -387,7 +387,7 @@ namespace FundooApp.Controllers
         /// <returns>result of action</returns>
         [HttpPost]
         [Route("api/image")]
-        public ActionResult Image(int id, string image)
+        public ActionResult Image(int id, IFormFile image)
         {
             var result = this.note.Image(id, image);
             if (result != null)

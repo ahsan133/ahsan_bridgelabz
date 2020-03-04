@@ -12,6 +12,7 @@ namespace FundooManager.Manager
     using System.Threading.Tasks;
     using FundooModels.NotesModel;
     using FundooRepository.Repository;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// This class is for access Notes repository
@@ -258,7 +259,7 @@ namespace FundooManager.Manager
         /// <returns>
         /// result of task
         /// </returns>
-        public Task<string> Image(int id, string image)
+        public Task<string> Image(int id, IFormFile image)
         {
             return this.repository.Image(id, image);
         }

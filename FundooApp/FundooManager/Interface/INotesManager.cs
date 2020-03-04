@@ -11,6 +11,7 @@ namespace FundooManager.Manager
     using System.Text;
     using System.Threading.Tasks;
     using FundooModels.NotesModel;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// Interface class of Notes manager.
@@ -144,7 +145,7 @@ namespace FundooManager.Manager
         /// <param name="id">The identifier.</param>
         /// <param name="image">The image.</param>
         /// <returns>result of task</returns>
-        Task<string> Image(int id, string image);
+        Task<string> Image(int id, IFormFile image);
 
         /// <summary>
         /// Determines whether the specified identifier is trash.

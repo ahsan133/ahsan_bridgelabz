@@ -11,6 +11,7 @@ namespace FundooRepository.Repository
     using System.Text;
     using System.Threading.Tasks;
     using FundooModels.NotesModel;
+    using Microsoft.AspNetCore.Http;
 
     /// <summary>
     /// This interface is for Notes repository.
@@ -144,7 +145,7 @@ namespace FundooRepository.Repository
         /// <param name="id">The identifier.</param>
         /// <param name="image">The image.</param>
         /// <returns>image result</returns>
-        Task<string> Image(int id, string image);
+        Task<string> Image(int id, IFormFile image);
 
         /// <summary>
         /// Determines whether the specified identifier is trash.

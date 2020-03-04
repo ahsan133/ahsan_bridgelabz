@@ -15,6 +15,7 @@ namespace FundooRepository.Repository
     using CloudinaryDotNet.Actions;
     using FundooModels.NotesModel;
     using FundooRepository.Context;
+    using Microsoft.AspNetCore.Http;
     using Microsoft.Extensions.Configuration;
 
     /// <summary>
@@ -429,21 +430,29 @@ namespace FundooRepository.Repository
         /// <returns>
         /// image result
         /// </returns>
-        public async Task<string> Image(int id, string image)
+        public async Task<string> Image(int id, IFormFile image)
         {
-            CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(this.configuration["Cloudinary:Name"], this.configuration["Cloudinary:ApiKey"], this.configuration["Cloudinary:ApiSecret"]);
-            CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
-            var uploadParms = new ImageUploadParams()
+            try
             {
-                File = new FileDescription(image)
-            };
-            var uploadResult = cloudinary.Upload(uploadParms);
+                var result = image.OpenReadStream();
+                var name = image.FileName;
+                CloudinaryDotNet.Account account = new CloudinaryDotNet.Account(this.configuration["Cloudinary:Name"], this.configuration["Cloudinary:ApiKey"], this.configuration["Cloudinary:ApiSecret"]);
+                CloudinaryDotNet.Cloudinary cloudinary = new CloudinaryDotNet.Cloudinary(account);
+                var uploadParms = new ImageUploadParams()
+                {
+                    File = new FileDescription(name, result)
+                };
+                var uploadResult = cloudinary.Upload(uploadParms);
 
-            var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
-            data.Image = uploadResult.Uri.ToString();
-            data.ModifiedTime = DateTime.Now;
-            await this.context.SaveChangesAsync();
-            return data.Image;
+                var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
+                data.Image = uploadResult.Uri.ToString();
+                data.ModifiedTime = DateTime.Now;
+                await this.context.SaveChangesAsync();
+                return data.Image;
+            }catch (Exception e)
+            {
+                return e.Message;
+            }
         }
 
         /// <summary>
