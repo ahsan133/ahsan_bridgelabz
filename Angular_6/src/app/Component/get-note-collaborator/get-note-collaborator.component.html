@@ -1,3 +1,9 @@
-<p>
-  get-note-collaborator works!
-</p>
+<div *ngFor="let one of message">
+<div class="userDetails">
+  <img class="picture" alt="ProfilePicture" *ngIf="!profilePic" src= "/assets/img/No.png">
+  <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "image(one)">
+  <div class="user">
+  <div>{{one.receiverEmail}}</div>
+  </div>
+  </div>
+</div>

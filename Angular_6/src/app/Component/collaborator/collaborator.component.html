@@ -10,13 +10,13 @@
 <p>{{email}}</p>
 </div>
 </div>
-
+<app-get-note-collaborator [data]="onenote"></app-get-note-collaborator>
 <div class="aligning">
   <img class="collab" src="/assets/img/collab.png">
   <input type ="text" matInput class="enterEmail" placeholder="Enter email to share with" formControlName="receiverEmail">
 </div>
 </form>
-<app-get-note-collaborator></app-get-note-collaborator>
+
 
 <div class="align">
   <div class="register" (click)="onNoClick()" >cancel</div>

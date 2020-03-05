@@ -49,4 +49,7 @@ const params={
 return this.http.post(environment.Url+ 'api/addCollaborator',params);
   }
 
+  getCollaborators(noteId){
+    return this.http.get(environment.Url+'api/GetCollaborator?notesId='+noteId);
+  }
 }

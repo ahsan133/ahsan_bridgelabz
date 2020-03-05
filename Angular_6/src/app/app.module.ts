@@ -34,7 +34,7 @@ import { CardComponent } from './Component/card/card.component';
 import { GetNotesComponent } from './Component/get-notes/get-notes.component';
 import { AllNotesComponent } from './Component/all-notes/all-notes.component';
 import { IconsComponent } from './Component/icons/icons.component';
-import { GetNoteCollaboratorComponent } from './get-note-collaborator/get-note-collaborator.component';
+import { GetNoteCollaboratorComponent } from './Component/get-note-collaborator/get-note-collaborator.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
