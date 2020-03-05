@@ -3,10 +3,10 @@
     <mat-icon class="icon" [matMenuTriggerFor]="menu">add_alert</mat-icon>
   </button>
   <button mat-icon-button class="button" >
-    <mat-icon class="icon" (click)="AddCollaborator()">person_add</mat-icon>
+    <mat-icon class="icon" (click)="AddCollaborator(data)">person_add</mat-icon>
   </button>
   <button mat-icon-button class="button">
-    <mat-icon class="icon" [matMenuTriggerFor]="color">color_lens</mat-icon>
+    <mat-icon class="icon" >color_lens</mat-icon>
   </button>
   <button mat-icon-button class="button" (click)="addImage()">
     <mat-icon class="icon">add_photo_alternate</mat-icon>
@@ -39,7 +39,7 @@
   
   </mat-menu>
   
-  <mat-menu #color="matMenu">
+  <!-- <mat-menu #color="matMenu">
     <input type="button" class="white" (click)="addColor(white)">
   <button class="white" (click)="addColor(white)"></button>
   <button class="red" (click)="addColor(red)"></button>
@@ -52,6 +52,6 @@
   <button class="brown" (click)="addColor(brown)"></button>
   <button class="indigo" (click)="addColor(indigo)"></button>
   <button class="teal" (click)="addColor(teal)"></button>
-  </mat-menu>
+  </mat-menu> -->
   
   

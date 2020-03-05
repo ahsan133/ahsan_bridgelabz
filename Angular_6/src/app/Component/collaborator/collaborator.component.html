@@ -1,6 +1,7 @@
 <h3>Collaborators</h3>
 <mat-divider></mat-divider>
 
+<form [formGroup]="CollaboratorForm">
 <div class="userDetails">
 <img class="picture" alt="ProfilePicture" *ngIf="!profilePic" src= "/assets/img/No.png">
 <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}">
@@ -8,4 +9,18 @@
   <h4>{{first}} {{last}}</h4>
 <p>{{email}}</p>
 </div>
+</div>
+
+<div class="aligning">
+  <img class="collab" src="/assets/img/collab.png">
+  <input type ="text" matInput class="enterEmail" placeholder="Enter email to share with" formControlName="receiverEmail">
+</div>
+</form>
+<app-get-note-collaborator></app-get-note-collaborator>
+
+<div class="align">
+  <div class="register" (click)="onNoClick()" >cancel</div>
+  <div class="button">
+    <input type="button" value="Save" (click)="addCollaborator()" id="btn" class="btn">
+  </div>
 </div>

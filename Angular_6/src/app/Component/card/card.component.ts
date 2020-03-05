@@ -29,13 +29,7 @@ export class CardComponent implements OnInit {
     this.dialogRef.close();
 }
 
-AddCollaborator(): void{
-  const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px'});
 
-  dialogRef.afterClosed().subscribe(result => {
-    console.log('The dialog was closed');
-  });
-}
 
 
 

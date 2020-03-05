@@ -39,4 +39,14 @@ return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
   addRemainder(id,remainder){
  return this.http.put(environment.Url+ 'api/setRemainder?id='+id+'&remainder='+remainder, null);
   }
+
+  addCollaborator(senderEmail, data, notesId){
+const params={
+  "SenderEmail": senderEmail,
+   "ReceiverEmail": data.receiverEmail,
+   "NotesId":notesId
+};
+return this.http.post(environment.Url+ 'api/addCollaborator',params);
+  }
+
 }

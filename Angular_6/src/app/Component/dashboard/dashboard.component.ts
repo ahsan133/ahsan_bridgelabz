@@ -81,7 +81,7 @@ export class ProfilePicture{
 
     if (files.length === 0)
       return;
-  
+
     this.fileToUpload = files.item(0);
     this.account.uploadProfilePicture(this.userData.email ,this.fileToUpload).subscribe((status :any) => {
         if(status != null)
@@ -96,16 +96,7 @@ export class ProfilePicture{
     this.imageChangedEvent = event;
 }
 imageCropped(event: ImageCroppedEvent) {
-    this.croppedImage = event.base64;
-}
-imageLoaded() {
-    // show cropper
-}
-cropperReady() {
-    // cropper ready
-}
-loadImageFailed() {
-    // show message
-}
+    this.croppedImage = event;
 }
 
+}

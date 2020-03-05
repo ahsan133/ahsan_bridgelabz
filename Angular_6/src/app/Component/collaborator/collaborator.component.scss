@@ -22,3 +22,49 @@ p{
     padding-left: 15px;
     padding-top: 4px;
 }
+.collab{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+.enterEmail{
+    margin-left: 14px;
+    font-size: 14px;
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 16em;
+    padding-top: 12px;
+}
+.aligning{
+display: flex;
+margin-bottom: 10px
+}
+.align{
+    justify-content: center;
+    display: flex;
+}
+.btn{
+    background-color:purple;
+    color: white;
+    height:35px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    width:75px;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+    padding: 10px 0px 10px 210px
+}
+.register{
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    color: blue;
+    outline: none;
+    padding-top: 20px;
+    cursor: pointer;
+}

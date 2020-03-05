@@ -22,8 +22,8 @@ export class IconsComponent implements OnInit {
     this.note=this.data;
   }
 
-  AddCollaborator(){
-    const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px'});
+  AddCollaborator(onenote: any): void{
+    const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px', data:onenote});
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
@@ -62,7 +62,7 @@ this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
   }
 
   addImage(){
-
+   
   }
 
   addArchive(){
