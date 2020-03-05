@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
+import { NotesService } from 'src/app/Services/notes.service';
 
 @Component({
   selector: 'app-icons',
@@ -8,10 +9,16 @@ import { MatDialog } from '@angular/material';
   styleUrls: ['./icons.component.scss']
 })
 export class IconsComponent implements OnInit {
+  @Input() data;
+  note = [];
 
-  constructor(public dialog:MatDialog) { }
+  constructor(
+    public dialog:MatDialog, 
+    private notes:NotesService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
+    this.note=this.data;
   }
 
   AddCollaborator(){
@@ -21,4 +28,36 @@ export class IconsComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
+
+  addRemainder8PM(){
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1;
+    var d = now.getDate();
+    var mm = m < 10 ? '0' + m : m;
+    var dd = d < 10 ? '0' + d : d;
+    var date = ''+y+'-'+mm+'-'+dd;
+
+this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
+  if (status != null){
+    this.snackBar.open('Remainder added.','', {duration: 2000});
+  }
+});
+  }
+  addRemainder8AM(){
+    var now = new Date();
+    var y = now.getFullYear();
+    var m = now.getMonth() + 1;
+    var d = now.getDate() + 1;
+    var mm = m < 10 ? '0' + m : m;
+    var dd = d < 10 ? '0' + d : d;
+    var date = ''+y+'-'+mm+'-'+dd;
+  
+    this.notes.addRemainder(this.data.id, date+" 08:00:00.0").subscribe((status)=>{
+      if (status != null){
+        this.snackBar.open('Remainder added.','', {duration: 2000});
+      }
+    });
+  }
+
 }

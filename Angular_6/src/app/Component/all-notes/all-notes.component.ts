@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild  } from '@angular/core';
-import {GetNotesComponent} from 'src/app/Component/get-notes/get-notes.component';
 import { MatDialog } from '@angular/material';
 import { CardComponent } from '../card/card.component';
 

@@ -35,4 +35,8 @@ return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
     
     return this.http.get(environment.Url+ 'api/getNotes?email='+email);
   }
+
+  addRemainder(id,remainder){
+ return this.http.put(environment.Url+ 'api/setRemainder?id='+id+'&remainder='+remainder, null);
+  }
 }

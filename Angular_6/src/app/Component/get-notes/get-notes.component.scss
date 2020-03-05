@@ -1,0 +1,20 @@
+.card{
+    width:290px;
+    margin:10px;
+    padding: 0px;
+}
+.whole{
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    flex-wrap: wrap;
+}
+.title{
+    font-size: large;
+    padding: 7px;
+}
+
+.description{
+    font-size: large;
+    padding: 7px;
+}

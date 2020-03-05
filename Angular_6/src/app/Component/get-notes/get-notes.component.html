@@ -1,1 +1,14 @@
-
+<div class="whole">
+    <mat-card class="card" *ngFor="let onenote of message">
+      <div (click)="matcardOpen(onenote)">
+    <div>
+      <img *ngIf="onenote.image" src="{{onenote.image}}">
+    </div>
+    <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+    <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+    </div>
+    
+    <app-icons [data]="onenote"></app-icons>
+    
+    </mat-card>
+    </div>

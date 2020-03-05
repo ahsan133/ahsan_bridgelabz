@@ -27,10 +27,10 @@ async Forgot(){
    if(status == "success")
    {
      this.router.navigate(['/login']);
-     this.snackBar.open('check email for new passsword');
+     this.snackBar.open('check email for new passsword','', {duration: 2000});
    }else{
      console.log("error while processing the request")
-     this.snackBar.open('invalid email');
+     this.snackBar.open('invalid email','', {duration: 2000});
    }
   });
 }

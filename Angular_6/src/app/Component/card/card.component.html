@@ -1,19 +1,9 @@
-<div *ngIf="!onenote">
-  <div>
-    <input mat-input placeholder="Title" class="title" [(ngModel)]="title">
-  </div>
-  <div>
-    <input class="description" mat-input type="text" placeholder="Description" [(ngModel)]="description">
-  </div>
+<div>
+  {{onenote.title}}
+  <input mat-input value="{{onenote.title}}" class="title" [(ngModel)]="title">
 </div>
-
-<div *ngIf="onenote">
-  <div>
-    <input mat-input placeholder="{{onenote.title}}" class="title" [(ngModel)]="title">
-  </div>
-  <div>
-    <input class="description" mat-input type="text" placeholder="Description" [(ngModel)]="description">
-  </div>
+<div>
+  <input class="description" mat-input type="text" placeholder="Description" [(ngModel)]="description">
 </div>
 
 <div class="align">
