@@ -11,11 +11,12 @@ import { NotesService } from 'src/app/Services/notes.service';
 export class IconsComponent implements OnInit {
   @Input() data;
   note = [];
-
+  
   constructor(
     public dialog:MatDialog, 
     private notes:NotesService,
     private snackBar: MatSnackBar) { }
+
 
   ngOnInit() {
     this.note=this.data;
@@ -42,7 +43,7 @@ this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
   if (status != null){
     this.snackBar.open('Remainder added.','', {duration: 2000});
   }
-});
+    });
   }
   addRemainder8AM(){
     var now = new Date();
@@ -60,4 +61,32 @@ this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
     });
   }
 
+  addImage(){
+
+  }
+
+  addArchive(){
+    this.notes.addArchive(this.data.id).subscribe((status)=>{
+      if(status != null){
+        this.snackBar.open('Added to archive.','', {duration: 2000});
+      }
+    }); 
+  }
+  
+  addTrash(){
+    this.notes.addTrash(this.data.id).subscribe((status)=>{
+      if(status != null){
+        this.snackBar.open('Added to trash.','', {duration: 2000});
+      }
+    }); 
+  }
+  
+  addColor(data : any){
+    console.log(data.color);
+    this.notes.addColor(this.data.id, data).subscribe((status)=>{
+      if(status != null){
+          
+      }
+    }); 
+  }
 }

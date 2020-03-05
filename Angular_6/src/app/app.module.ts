@@ -18,6 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionModule, MatRippleModule,MatSidenavModule,
   MatSliderModule,MatSlideToggleModule,} from '@angular/material';
   import { CommonModule } from "@angular/common";
+  import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,6 +65,7 @@ export function socialConfigs() {
     GetNotesComponent,
     AllNotesComponent,
     IconsComponent
+  
     
   ],
   imports: [
@@ -94,6 +96,7 @@ export function socialConfigs() {
     MatSliderModule,
     MatSlideToggleModule,
     CommonModule,
+    ImageCropperModule
 
   ],
   entryComponents: [ProfilePicture, CollaboratorComponent,CardComponent],

@@ -1,11 +1,20 @@
-<div>
-  {{onenote.title}}
-  <input mat-input value="{{onenote.title}}" class="title" [(ngModel)]="title">
+<form [formGroup]="CardForm">
+  <div *ngIf="onenote.image">
+    <img class ="image" src="{{onenote.image}}">
+  </div>
+<div *ngIf="onenote.title">
+  <input mat-input type="text" class="title" value="{{onenote.title}}" formControlName="title">
 </div>
-<div>
-  <input class="description" mat-input type="text" placeholder="Description" [(ngModel)]="description">
+<div *ngIf="!onenote.title">
+  <input mat-input type="text" class="title" placeholder="Title" formControlName="title">
 </div>
-
+<div *ngIf="onenote.description">
+  <input class="description" mat-input type="text" value="{{onenote.description}}" formControlName="description">
+</div>
+<div *ngIf="!onenote.description">
+  <input class="description" mat-input type="text" placeholder="Description" formControlName="description">
+</div>
+</form>
 <div class="align">
   <app-icons></app-icons>
   <button mat-button class="close" (click)="onNoClick()">Close</button>

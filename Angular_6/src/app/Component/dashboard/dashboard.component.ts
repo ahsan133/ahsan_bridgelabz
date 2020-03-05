@@ -4,6 +4,7 @@ import { AccountService } from 'src/app/Services/account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-dashboard',
@@ -44,8 +45,8 @@ export class DashboardComponent implements OnInit {
   }
  
    ChangeProfile(): void {
- const dialogRef =this.dialog.open(ProfilePicture,{ width: '370px',
- height: '230px' , data:{ image: this.image }});
+ const dialogRef =this.dialog.open(ProfilePicture,{ width: '460px',
+ height: '440px' , data:{ image: this.image }});
 
  dialogRef.afterClosed().subscribe(result => {
    console.log('The dialog was closed');
@@ -65,6 +66,9 @@ export class ProfilePicture{
   image: any;
   fileToUpload: File;
   files: any;
+
+  imageChangedEvent: any = '';
+    croppedImage: any = '';
 
   constructor(public account: AccountService,
     public dialogRef: MatDialogRef<ProfilePicture>){ }
@@ -88,5 +92,20 @@ export class ProfilePicture{
     });
   }
 
+  fileChangeEvent(event: any): void {
+    this.imageChangedEvent = event;
+}
+imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = event.base64;
+}
+imageLoaded() {
+    // show cropper
+}
+cropperReady() {
+    // cropper ready
+}
+loadImageFailed() {
+    // show message
+}
 }
 

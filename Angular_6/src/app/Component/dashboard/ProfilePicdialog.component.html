@@ -1,7 +1,18 @@
 <h1 mat-dialog-title>Select profile photo</h1>
 
 <form #formData="ngForm" > 
-<input type='file' class="photo" accept="image/*" #file name="file">
+<input type='file' class="photo" accept="image/*"  (change)="fileChangeEvent($event)" #file name="file">
+
+<image-cropper class = "crop"
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()">
+</image-cropper>
 
 <div class="align">
     <div class="register" (click)="onNoClick()">cancel</div>

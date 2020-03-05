@@ -5,7 +5,9 @@
       <img *ngIf="onenote.image" src="{{onenote.image}}">
     </div>
     <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+    <div class="title1" *ngIf="!onenote.title" >Title</div>
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+    <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
     
     <app-icons [data]="onenote"></app-icons>

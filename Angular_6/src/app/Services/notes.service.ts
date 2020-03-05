@@ -27,7 +27,7 @@ return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
     return this.http.put(environment.Url +'api/isTrash?id='+ id ,null);
   }
 
-  changeColor(id,value){
+  addColor(id,value){
     return this.http.put(environment.Url +'api/color?id='+ id +'&color='+ value ,null);
   }
 
