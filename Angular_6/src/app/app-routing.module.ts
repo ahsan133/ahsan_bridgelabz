@@ -23,6 +23,7 @@ children: [
   {path: 'remainder', component:RemainderComponent},
   {path: 'archive', component:ArchiveComponent},
   {path: 'trash', component:TrashComponent},
+  
   {path: 'getNotes', component:GetNotesComponent},
   {path : 'notes', component: NotesComponent}
 ]},
