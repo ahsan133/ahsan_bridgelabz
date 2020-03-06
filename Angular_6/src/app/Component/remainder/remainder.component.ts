@@ -32,6 +32,14 @@ export class RemainderComponent implements OnInit {
     });
   }
 
+  removeRemainder(id){
+    this.notes.removeRemainder(id).subscribe((status : any)=>{
+      if(status != null){
+        this.snackBar.open('Remainder removed','', {duration: 2000});
+      }
+    });
+  }
+
   matcardOpen(onenote :any): void{
     const dialogRef =this.dialog.open(CardComponent,{ width: '500px', data:onenote});
 

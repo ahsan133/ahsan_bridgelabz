@@ -56,6 +56,9 @@ export class NotesService {
   addRemainder(id,remainder){
  return this.http.put(environment.Url+ 'api/setRemainder?id='+id+'&remainder='+remainder, null);
   }
+  removeRemainder(id){
+    return this.http.put(environment.Url+ 'api/removeRemainder?id='+id, null);
+  }
 
   addCollaborator(senderEmail, data, notesId){
 const params={

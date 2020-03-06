@@ -42,3 +42,28 @@
     border-radius: 5px;
     width: 100%;
 }
+.allIcon{
+    display:flex;
+    background-color: rgb(236, 221, 221);
+    border-radius: 20px;
+    height: 24px;
+    outline: none;
+    border: none;
+}
+.icon1{
+    font-size: 20px;
+    margin-left: -6px;
+}
+.icon2{
+    font-size: 20px;
+    padding-bottom: 16px;
+}
+.remainderText{
+    font-size: smaller;
+    padding-top: 5px;
+    padding-left: 2px;
+}
+.iconbutton{
+    width: 25px;
+    height: 25px;
+}
