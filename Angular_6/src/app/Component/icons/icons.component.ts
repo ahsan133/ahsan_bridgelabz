@@ -84,7 +84,15 @@ this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
       if(status != null){
         this.snackBar.open('Added to archive.','', {duration: 2000});
       }
-    }); 
+    });
+  }
+
+  removeArchive(){
+    this.notes.removeArchive(this.data.id).subscribe((status)=>{
+      if(status != null){
+        this.snackBar.open('Removed from archive.','', {duration: 2000});
+      }
+    });
   }
   
   addTrash(){
@@ -96,10 +104,9 @@ this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
   }
   
   updatecolor(index){
-    console.log(index);
     this.notes.addColor(this.data.id, this.Colors[index].name).subscribe((status)=>{
       if(status != null){
-          
+          console.log("color added");
       }
     }); 
   }

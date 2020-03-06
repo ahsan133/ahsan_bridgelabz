@@ -1,10 +1,10 @@
 <app-notes class="note"></app-notes>
 
 <div class="whole">
-  <mat-card class="card" *ngFor="let onenote of message">
+  <mat-card class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
     <div (click)="matcardOpen(onenote)">
   <div>
-    <img *ngIf="onenote.image" src="{{onenote.image}}">
+    <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
   </div>
   <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
   <div class="title1" *ngIf="!onenote.title" >Title</div>

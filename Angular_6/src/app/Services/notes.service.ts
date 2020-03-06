@@ -30,7 +30,11 @@ export class NotesService {
   }
 
   addArchive(id){
-return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
+    return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
+  }
+
+  removeArchive(id){
+    return this.http.put(environment.Url +'api/unArchive?id='+ id ,null);
   }
 
   addTrash(id){
