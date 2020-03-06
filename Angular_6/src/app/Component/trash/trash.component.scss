@@ -47,3 +47,17 @@
 .icon{
     font-size: 20px;
 }
+.bigbuttons{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.bigbutton{
+    background: transparent;
+    border: none;
+    outline: none;
+    margin: 4px;
+}
+.bigicon{
+    font-size: 26px;
+}

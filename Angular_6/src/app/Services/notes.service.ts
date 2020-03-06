@@ -91,4 +91,11 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
   restore(id){
     return this.http.put(environment.Url+'api/restore?id='+id, null);
   }
+
+  deleteAll(email){
+    return this.http.delete(environment.Url+'api/deleteAll?email='+email);
+  }
+  restoreAll(email){
+    return this.http.put(environment.Url+'api/restoreAll?email='+email, null);
+  }
 }

@@ -45,4 +45,20 @@ export class TrashComponent implements OnInit {
       }
     });
   }
+
+  deleteAll(){
+    this.notes.deleteAll(this.userData.email).subscribe((status:any)=>{
+      if(status != null){
+        this.snackBar.open('Deleted.','', {duration: 2000});
+      }
+    });
+  }
+
+  restoreAll(){
+    this.notes.restoreAll(this.userData.email).subscribe((status:any)=>{
+      if(status != null){
+        this.snackBar.open('Restored.','', {duration: 2000});
+      }
+    });
+  }
 }

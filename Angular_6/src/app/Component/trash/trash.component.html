@@ -1,3 +1,12 @@
+<div class="bigbuttons">
+  <button mat-icon-button class="bigbutton" (click)="deleteAll()" matTooltip="Delete all">
+    <mat-icon class="bigicon">delete_forever</mat-icon>
+  </button>
+  <button mat-icon-button class="bigbutton" (click)="restoreAll()" matTooltip="Restore all">
+    <mat-icon class="bigicon">restore_from_trash</mat-icon>
+  </button>
+</div>
+
 <div class="whole">
   <mat-card class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
     <div (click)="matcardOpen(onenote)">
