@@ -195,6 +195,7 @@ namespace FundooRepository.Repository
             var data = this.context.NotesModels.Where(p => p.Id == id && p.Pin == false).SingleOrDefault();
             if (data != null)
             {
+                data.Archive = false;  
                 data.Pin = true;
                 return Task.Run(() => this.context.SaveChangesAsync());
             }
@@ -317,6 +318,29 @@ namespace FundooRepository.Repository
             if (result != null)
             {
                 var data = from user in this.context.NotesModels where user.Email == email && user.Archive == true select user;
+                foreach (var item in data)
+                {
+                    list.Add(item);
+                }
+
+                return list;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the remainder list.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>list of user statistics</returns>
+        public List<NotesModel> GetRemainderList(string email)
+        {
+            List<NotesModel> list = new List<NotesModel>();
+            var result = this.context.NotesModels.Where(p => p.Email == email && p.Remainder != null).FirstOrDefault();
+            if (result != null)
+            {
+                var data = from user in this.context.NotesModels where user.Email == email && user.Remainder != null select user;
                 foreach (var item in data)
                 {
                     list.Add(item);

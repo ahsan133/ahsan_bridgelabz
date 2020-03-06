@@ -203,6 +203,16 @@ namespace FundooManager.Manager
         }
 
         /// <summary>
+        /// Gets the remainder list.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>list of user statistics</returns>
+        public List<NotesModel> GetRemainderList(string email)
+        {
+            return this.repository.GetRemainderList(email);
+        }
+
+        /// <summary>
         /// Restores the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>

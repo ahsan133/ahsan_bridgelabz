@@ -40,9 +40,9 @@ namespace FundooApp.Controllers
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns>result of action</returns>
-        [HttpPut]
+        [HttpPost]
         [Route("api/addCollaborator")]
-        public async Task<ActionResult> AddCollaborator(CollaboratorModel model)
+        public async Task<ActionResult> AddCollaborator([FromBody] CollaboratorModel model)
         {
             var result = await this.collaborator.AddCollaborator(model);
             if (result == "success")

@@ -298,6 +298,26 @@ namespace FundooApp.Controllers
         }
 
         /// <summary>
+        /// Gets the remainder list.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>result of action</returns>
+        [HttpGet]
+        [Route("api/getRemainders")]
+        public ActionResult GetRemainderList(string email)
+        {
+            var result = this.note.GetRemainderList(email);
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
+
+        /// <summary>
         /// Restores the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>

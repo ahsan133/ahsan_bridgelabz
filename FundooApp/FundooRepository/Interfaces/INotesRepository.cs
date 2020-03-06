@@ -111,6 +111,13 @@ namespace FundooRepository.Repository
         List<NotesModel> GetArchiveList(string email);
 
         /// <summary>
+        /// Gets the remainder list.
+        /// </summary>
+        /// <param name="email">The email.</param>
+        /// <returns>list of user statistics</returns>
+        List<NotesModel> GetRemainderList(string email);
+
+        /// <summary>
         /// Restores the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
