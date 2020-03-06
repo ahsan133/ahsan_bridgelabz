@@ -337,10 +337,10 @@ namespace FundooRepository.Repository
         public List<NotesModel> GetRemainderList(string email)
         {
             List<NotesModel> list = new List<NotesModel>();
-            var result = this.context.NotesModels.Where(p => p.Email == email && p.Remainder != null).FirstOrDefault();
+            var result = this.context.NotesModels.Where(p => p.Email == email && p.Remainder != null && p.Trash == false).FirstOrDefault();
             if (result != null)
             {
-                var data = from user in this.context.NotesModels where user.Email == email && user.Remainder != null select user;
+                var data = from user in this.context.NotesModels where user.Email == email && user.Remainder != null && user.Trash == false select user;
                 foreach (var item in data)
                 {
                     list.Add(item);
