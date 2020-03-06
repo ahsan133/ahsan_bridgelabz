@@ -26,114 +26,17 @@
 .space1{
     padding-left: 89px;
 }
-
-.white{
-    background-color: white;
+.colorIcon{
     width:25px;
     height: 25px;
     border-radius: 50%;
-    border-color: gray;
-    outline: none;
-    margin:3px;
-    cursor: pointer;
+    margin: 3px;
+    border-width: 5px;
+    border-color: 5px solid black;
 }
-.red{
-    background-color: red;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
+.colorIcons{
+    display: flex;
 }
-.orange{
-    background-color: orange;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.green{
-    background-color: green;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.yellow{
-    background-color: yellow;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.gray{
-    background-color: gray;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.purple{
-    background-color: rgb(202, 5, 202);
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.pink{
-    background-color: pink;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.brown{
-    background-color: rgb(219, 80, 80);
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.indigo{
-    background-color:rgb(119, 17, 192);
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
-}
-.teal{
-    background-color: teal;
-    width:25px;
-    height: 25px;
-    border-radius: 50%;
-    outline: none;
-    border:none;
-    margin:3px;
-    cursor: pointer;
+.menu{
+    max-width: 100%;
 }

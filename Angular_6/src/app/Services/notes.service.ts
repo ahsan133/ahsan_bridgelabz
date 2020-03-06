@@ -38,7 +38,10 @@ return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
   }
 
   addColor(id,value){
-    return this.http.put(environment.Url +'api/color?id='+ id +'&color='+ value ,null);
+    const url =environment.Url +'api/color?id='+ id +'&color='+ value;
+    console.log(url);
+    
+    return this.http.put(url,null);
   }
 
   getNotes(email){

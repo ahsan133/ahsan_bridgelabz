@@ -113,6 +113,8 @@ export class ProfilePicture{
     this.imageChangedEvent = event;
 }
 imageCropped(event: ImageCroppedEvent) {
+  console.log(event);
+  
     this.croppedImage = event;
 }
 

@@ -22,6 +22,20 @@ export class IconsComponent implements OnInit {
     this.note=this.data;
   }
 
+  Colors =[
+    {colorCode:'#FFFFFF',name:'white'},
+    {colorCode:'#FF0000',name:'red'},
+    {colorCode:'#FFA500',name:'orange'},
+    {colorCode:'#008000', name:'green'},
+    {colorCode:'#FFFF00',name:'yellow'},
+    {colorCode:'#808080',name:'gray'},
+    {colorCode:'#800080',name:'purple'},
+    {colorCode:'#FFC0CB',name:'pink'},
+    {colorCode:'#A52A2A',name:'brown'},
+    {colorCode:'#4b0082',name:'indigo'},
+    {colorCode:'#008080',name:'teal'}
+  ];
+
   AddCollaborator(onenote: any): void{
     const dialogRef =this.dialog.open(CollaboratorComponent ,{ width: '370px', data:onenote});
 
@@ -81,9 +95,9 @@ this.notes.addRemainder(this.data.id, date+" 20:00:00.0").subscribe((status)=>{
     }); 
   }
   
-  addColor(data : any){
-    console.log(data.color);
-    this.notes.addColor(this.data.id, data).subscribe((status)=>{
+  updatecolor(index){
+    console.log(index);
+    this.notes.addColor(this.data.id, this.Colors[index].name).subscribe((status)=>{
       if(status != null){
           
       }

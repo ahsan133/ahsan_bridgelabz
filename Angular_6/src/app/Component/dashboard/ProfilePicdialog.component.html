@@ -3,7 +3,7 @@
 <form #formData="ngForm" > 
 <input type='file' class="photo" accept="image/*"  (change)="fileChangeEvent($event)" name="file">
 
-<image-cropper #file class = "crop"
+<image-cropper class = "crop"
     [imageChangedEvent]="imageChangedEvent"
     [maintainAspectRatio]="true"
     [aspectRatio]="4 / 3"
