@@ -72,7 +72,7 @@ export function socialConfigs() {
     GetNoteCollaboratorComponent,
     RemainderComponent,
     ArchiveComponent,
-    TrashComponent
+    TrashComponent,
   
     
   ],

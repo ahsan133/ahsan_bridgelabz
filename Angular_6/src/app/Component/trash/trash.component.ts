@@ -27,6 +27,22 @@ export class TrashComponent implements OnInit {
       else{
         this.snackBar.open('No trash to show.','', {duration: 2000});
       }
-    })
+    });
+  }
+
+  delete(id){
+    this.notes.delete(id).subscribe((status:any)=>{
+      if(status != null){
+        this.snackBar.open('Deleted.','', {duration: 2000});
+      }
+    });
+  }
+
+  restore(id){
+    this.notes.restore(id).subscribe((status:any)=>{
+      if(status != null){
+        this.snackBar.open('Restored.','', {duration: 2000});
+      }
+    });
   }
 }

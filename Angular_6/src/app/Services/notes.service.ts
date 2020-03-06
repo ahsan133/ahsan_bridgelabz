@@ -84,4 +84,11 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
   getRemainder(email){
     return this.http.get(environment.Url+'api/getRemainders?email='+email);
   }
+
+  delete(id){
+    return this.http.delete(environment.Url+'api/removeNotes?id='+id);
+  }
+  restore(id){
+    return this.http.put(environment.Url+'api/restore?id='+id, null);
+  }
 }
