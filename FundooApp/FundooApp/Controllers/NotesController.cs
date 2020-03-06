@@ -225,9 +225,9 @@ namespace FundooApp.Controllers
         /// <returns>result of action</returns>
         [HttpPut]
         [Route("api/removeRemainder")]
-        public async Task<ActionResult> RemoveRemainder(int id, string remainder)
+        public async Task<ActionResult> RemoveRemainder(int id)
         {
-            var result = await this.note.RemoveRemainder(id, remainder);
+            var result = await this.note.RemoveRemainder(id);
             if (result == "success")
             {
                 return this.Ok(new { result });

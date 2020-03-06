@@ -154,9 +154,9 @@ namespace FundooManager.Manager
         /// <returns>
         /// result of task
         /// </returns>
-        public Task<string> RemoveRemainder(int id, string remainder)
+        public Task<string> RemoveRemainder(int id)
         {
-            return this.repository.RemoveRemainder(id, remainder);
+            return this.repository.RemoveRemainder(id);
         }
 
         /// <summary>

@@ -67,7 +67,7 @@ namespace FundooApp.Controllers
             var result = await this.collaborator.RemoveCollaborator(id);
             if (result == "success")
             {
-                return this.Ok(result);
+                return this.Ok(new { result });
             }
             else
             {

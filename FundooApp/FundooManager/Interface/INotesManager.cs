@@ -88,7 +88,7 @@ namespace FundooManager.Manager
         /// <param name="id">The identifier.</param>
         /// <param name="remainder">The remainder.</param>
         /// <returns>result of task</returns>
-        Task<string> RemoveRemainder(int id, string remainder);
+        Task<string> RemoveRemainder(int id);
 
         /// <summary>
         /// Gets the list.

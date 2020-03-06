@@ -83,7 +83,7 @@ namespace FundooRepository.Repository
         /// </returns>
         public async Task<string> UpdateNotes(NotesModel notes)
         {
-            var model = this.context.NotesModels.Where(p => p.Email == notes.Email).SingleOrDefault();
+            var model = this.context.NotesModels.Where(p => p.Email == notes.Email && p.Id == notes.Id).SingleOrDefault();
             if (model != null)
             {
                 model.Title = notes.Title;
@@ -253,7 +253,7 @@ namespace FundooRepository.Repository
         /// <returns>
         /// remove remainder result
         /// </returns>
-        public async Task<string> RemoveRemainder(int id, string remainder)
+        public async Task<string> RemoveRemainder(int id)
         {
             var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
             if (data != null)
@@ -314,10 +314,10 @@ namespace FundooRepository.Repository
         public List<NotesModel> GetArchiveList(string email)
         {
             List<NotesModel> list = new List<NotesModel>();
-            var result = this.context.NotesModels.Where(p => p.Email == email && p.Archive == true).FirstOrDefault();
+            var result = this.context.NotesModels.Where(p => p.Email == email && p.Archive == true && p.Trash == false).FirstOrDefault();
             if (result != null)
             {
-                var data = from user in this.context.NotesModels where user.Email == email && user.Archive == true select user;
+                var data = from user in this.context.NotesModels where user.Email == email && user.Archive == true && user.Trash == false select user;
                 foreach (var item in data)
                 {
                     list.Add(item);
