@@ -4,7 +4,7 @@
   <div class="user">
   <div class="email">{{one.receiverEmail}}</div>
   </div>
-<button mat-icon-button ng-click="removeCollaborator(one.id)">
+<button mat-icon-button (click)="removeCollaborator(one.id)">
   <mat-icon >close</mat-icon>
 </button>
   </div>

@@ -26,10 +26,8 @@ export class GetNoteCollaboratorComponent implements OnInit {
     });
   }
 
-  removeCollaborator(one: any): void{
-    console.log(one);
-    
-    this.notes.removeCollaborator(one ).subscribe((status:any)=>{
+  removeCollaborator(id){
+    this.notes.removeCollaborator(id).subscribe((status:any)=>{
       if(status != null){
         this.snackBar.open('Collaborator removed.','', {duration: 2000});
       }
