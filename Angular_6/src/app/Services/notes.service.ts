@@ -19,6 +19,16 @@ export class NotesService {
    return this.http.post(environment.Url +'api/addNotes', params)
   }
 
+  updateNote(id, title, description, email){
+    const params={
+      Id: id,
+      Title :title,
+      Description:description,  
+      Email:email
+    };
+    return this.http.put(environment.Url+'api/updateNotes',params);
+  }
+
   addArchive(id){
 return this.http.put(environment.Url +'api/isArchive?id='+ id ,null);
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from 'src/app/Services/notes.service';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
+import { CardComponent } from '../card/card.component';
 
 @Component({
   selector: 'app-remainder',
@@ -13,7 +14,8 @@ export class RemainderComponent implements OnInit {
 
   constructor(
     private notes: NotesService,
-    private snackBar: MatSnackBar) { }
+    private snackBar: MatSnackBar,
+    public dialog:MatDialog) { }
 
   ngOnInit() {
     this.getRemainder();
@@ -27,6 +29,14 @@ export class RemainderComponent implements OnInit {
       else{
         this.snackBar.open('No remainder to show.','', {duration: 2000});
       }
+    });
+  }
+
+  matcardOpen(onenote :any): void{
+    const dialogRef =this.dialog.open(CardComponent,{ width: '500px', data:onenote});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 }
