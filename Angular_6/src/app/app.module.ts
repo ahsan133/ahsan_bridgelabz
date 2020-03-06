@@ -35,6 +35,9 @@ import { GetNotesComponent } from './Component/get-notes/get-notes.component';
 import { AllNotesComponent } from './Component/all-notes/all-notes.component';
 import { IconsComponent } from './Component/icons/icons.component';
 import { GetNoteCollaboratorComponent } from './Component/get-note-collaborator/get-note-collaborator.component';
+import { RemainderComponent } from './Component/remainder/remainder.component';
+import { ArchiveComponent } from './Component/archive/archive.component';
+import { TrashComponent } from './Component/trash/trash.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -66,7 +69,10 @@ export function socialConfigs() {
     GetNotesComponent,
     AllNotesComponent,
     IconsComponent,
-    GetNoteCollaboratorComponent
+    GetNoteCollaboratorComponent,
+    RemainderComponent,
+    ArchiveComponent,
+    TrashComponent
   
     
   ],

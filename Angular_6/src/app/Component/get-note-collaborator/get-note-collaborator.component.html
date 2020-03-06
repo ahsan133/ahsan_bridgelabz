@@ -1,9 +1,11 @@
 <div *ngFor="let one of message">
 <div class="userDetails">
-  <img class="picture" alt="ProfilePicture" *ngIf="!profilePic" src= "/assets/img/No.png">
-  <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "image(one)">
+  <img class="picture" src= "/assets/img/No.png">
   <div class="user">
-  <div>{{one.receiverEmail}}</div>
+  <div class="email">{{one.receiverEmail}}</div>
   </div>
+<button mat-icon-button ng-click="removeCollaborator(one.id)">
+  <mat-icon >close</mat-icon>
+</button>
   </div>
 </div>

@@ -66,14 +66,14 @@
   <mat-drawer-container class="container">
     <mat-drawer #drawer mode="side" class="side" opened>
       <mat-divider class="div"></mat-divider>
-     <button mat-button class ="add">
+     <button mat-button class ="add" (click)="displayNotes()">
        <div class="draw">
        <mat-icon class="icon" >emoji_objects</mat-icon>
        <div class="notes">Notes</div>
       </div>
      </button>
 
-     <button mat-button class ="add">
+     <button mat-button class ="add" (click)="displayRemainders()">
       <div class="draw">
       <mat-icon class="icon">notifications</mat-icon>
       <div class="notes">Remainders</div>
@@ -89,13 +89,13 @@
      </div>
     </button>
     <mat-divider class="div"></mat-divider>
-    <button mat-button class ="add">
+    <button mat-button class ="add" (click)="displayArchive()">
       <div class="draw">
       <mat-icon class="icon">archive</mat-icon>
       <div class="notes">Archive</div>
      </div>
     </button>
-    <button mat-button class ="add">
+    <button mat-button class ="add" (click)="displayTrash()">
       <div class="draw">
       <mat-icon class="icon">delete</mat-icon>
       <div class="notes">Trash</div>

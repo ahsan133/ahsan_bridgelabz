@@ -52,4 +52,19 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
   getCollaborators(noteId){
     return this.http.get(environment.Url+'api/GetCollaborator?notesId='+noteId);
   }
+  removeCollaborator(id){
+    return this.http.delete(environment.Url+'api/removeCollaborator?id='+id);
+  }
+
+  getArchive(email){
+    return this.http.get(environment.Url+'api/getArchive?email='+email);
+  }
+
+  getTrash(email){
+    return this.http.get(environment.Url+'api/getTrash?email='+email);
+  }
+
+  getRemainder(email){
+    return this.http.get(environment.Url+'api/getRemainders?email='+email);
+  }
 }

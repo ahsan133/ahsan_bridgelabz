@@ -53,6 +53,23 @@ export class DashboardComponent implements OnInit {
    this.image =result;
  });
    }
+
+   displayNotes(){
+     this.router.navigate(['/dashboard/allNotes']);
+   } 
+
+   displayRemainders(){
+     this.router.navigate(['/dashboard/remainder']); 
+   }
+
+   displayArchive(){
+     this.router.navigate(['/dashboard/archive']);
+   }
+
+   displayTrash(){
+     this.router.navigate(['/dashboard/trash']);
+   }
+
 } 
 
 

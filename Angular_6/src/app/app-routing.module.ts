@@ -7,6 +7,9 @@ import { DashboardComponent } from './Component/dashboard/dashboard.component';
 import { NotesComponent } from './Component/notes/notes.component';
 import { GetNotesComponent } from './Component/get-notes/get-notes.component';
 import { AllNotesComponent} from './Component/all-notes/all-notes.component';
+import { RemainderComponent} from './Component/remainder/remainder.component';
+import { ArchiveComponent} from './Component/archive/archive.component';
+import { TrashComponent} from './Component/trash/trash.component';
 
 const routes: Routes = [
   {path : '', component: LoginComponent},
@@ -17,6 +20,9 @@ const routes: Routes = [
 children: [
   {path: '', component:AllNotesComponent},
   {path: 'allNotes', component:AllNotesComponent},
+  {path: 'remainder', component:RemainderComponent},
+  {path: 'archive', component:ArchiveComponent},
+  {path: 'trash', component:TrashComponent},
   {path: 'getNotes', component:GetNotesComponent},
   {path : 'notes', component: NotesComponent}
 ]},

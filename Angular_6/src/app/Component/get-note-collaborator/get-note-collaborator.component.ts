@@ -1,5 +1,6 @@
 import { Component, OnInit, Input  } from '@angular/core';
 import { NotesService } from 'src/app/Services/notes.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-get-note-collaborator',
@@ -12,7 +13,8 @@ export class GetNoteCollaboratorComponent implements OnInit {
   message  = [];
 
   constructor(
-    private notes: NotesService) { }
+    private notes: NotesService,
+    public snackBar:MatSnackBar) { }
 
   ngOnInit() {
     this.getCollaborators();
@@ -20,10 +22,17 @@ export class GetNoteCollaboratorComponent implements OnInit {
 
   getCollaborators(){
     this.notes.getCollaborators(this.data.id).subscribe((status : any)=>{
-      this.message = status;
-      console.log(status);
-      
+      this.message = status;    
     });
   }
 
+  removeCollaborator(one: any): void{
+    console.log(one);
+    
+    this.notes.removeCollaborator(one ).subscribe((status:any)=>{
+      if(status != null){
+        this.snackBar.open('Collaborator removed.','', {duration: 2000});
+      }
+    });
+  }
 }
