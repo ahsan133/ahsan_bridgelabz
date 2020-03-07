@@ -1,0 +1,36 @@
+.align{
+    display: flex;
+}
+.btn{
+    background-color:purple;
+    color: white;
+    height:35px;
+    outline: none;
+    border-radius: 8px;
+    width:120px;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+    padding:10px;
+    padding-left: 16em;
+}
+.register{
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    color: blue;
+    outline: none;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.photo{
+    margin: 15px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    outline: none;
+    border: none;
+}
+.crop{
+    height: 13em;
+}

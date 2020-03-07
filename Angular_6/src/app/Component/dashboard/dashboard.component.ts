@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
     this.account.logout(this.userData.email).subscribe((status:any)=>{
       if (status == "success"){
         this.router.navigate(['/login']);
-        this.snackbar.open('logged out','', {duration: 2000})
+        this.snackbar.open('logged out','', {duration: 2000});
       }
     });
   }
@@ -48,10 +48,10 @@ export class DashboardComponent implements OnInit {
  const dialogRef =this.dialog.open(ProfilePicture,{ width: '460px',
  height: '440px' , data:{ image: this.image }});
 
- dialogRef.afterClosed().subscribe(result => {
+  dialogRef.afterClosed().subscribe(result => {
    console.log('The dialog was closed');
    this.image =result;
- });
+  });
    }
 
    displayNotes(){
@@ -87,6 +87,7 @@ export class ProfilePicture{
     croppedImage: any = '';
 
   constructor(public account: AccountService,
+    public snackbar: MatSnackBar,
     public dialogRef: MatDialogRef<ProfilePicture>){ }
 
 
@@ -106,13 +107,13 @@ imageCropped(event: ImageCroppedEvent) {
 }
 
 onSelectFile() {
-
   this.account.uploadProfilePicture(this.userData.email ,this.fileToUpload).subscribe((status :any) => {
       if(status != null)
       {
         this.dialogRef.close();
       }
       this.userData.image = status.result;
+      this.snackbar.open('Profile picture updated.','', {duration: 2000});
   });
 }
 

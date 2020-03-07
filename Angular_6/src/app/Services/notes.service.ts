@@ -101,4 +101,11 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
   restoreAll(email){
     return this.http.put(environment.Url+'api/restoreAll?email='+email, null);
   }
+
+  addImage(id,file: any ){
+    let input = new FormData();
+  input.append("image", file);
+  
+  return this.http.put(environment.Url + 'api/image?id=' + id, input);
+  }
 }

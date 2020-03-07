@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Upload image</h1>
+
+<form #formData="ngForm" > 
+<input type='file' class="photo" accept="image/*"  (change)="fileChangeEvent($event)" name="file">
+
+<image-cropper class = "crop"
+    [imageChangedEvent]="imageChangedEvent"
+    [maintainAspectRatio]="true"
+    [aspectRatio]="4 / 3"
+    format="png"
+    (imageCropped)="imageCropped($event)">
+</image-cropper>
+
+<div class="align">
+    <div class="register" (click)="onNoClick()">cancel</div>
+    <div class="button">
+      <input type="submit" value="Add image" #fileUpload (click)="addImage()" id="btn" class="btn">
+    </div>
+  </div>
+</form>

@@ -4,8 +4,6 @@ import { LoginComponent } from './Component/login/login.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { ForgotComponent } from './Component/forgot/forgot.component';
 import { DashboardComponent } from './Component/dashboard/dashboard.component';
-import { NotesComponent } from './Component/notes/notes.component';
-import { GetNotesComponent } from './Component/get-notes/get-notes.component';
 import { AllNotesComponent} from './Component/all-notes/all-notes.component';
 import { RemainderComponent} from './Component/remainder/remainder.component';
 import { ArchiveComponent} from './Component/archive/archive.component';
@@ -23,9 +21,6 @@ children: [
   {path: 'remainder', component:RemainderComponent},
   {path: 'archive', component:ArchiveComponent},
   {path: 'trash', component:TrashComponent},
-  
-  {path: 'getNotes', component:GetNotesComponent},
-  {path : 'notes', component: NotesComponent}
 ]},
 
 

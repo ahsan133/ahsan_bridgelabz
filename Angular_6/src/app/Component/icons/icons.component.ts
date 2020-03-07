@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CollaboratorComponent } from '../collaborator/collaborator.component';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { NotesService } from 'src/app/Services/notes.service';
+import { ImageUploadComponent } from '../image-upload/image-upload.component';
 
 @Component({
   selector: 'app-icons',
@@ -12,6 +13,8 @@ export class IconsComponent implements OnInit {
   @Input() data;
   note = [];
   
+  image: any;
+
   constructor(
     public dialog:MatDialog, 
     private notes:NotesService,
@@ -59,9 +62,17 @@ this.notes.addRemainder(this.data.id, "Today, 8:00 PM").subscribe((status)=>{
     });
   }
 
-  addImage(){
+  addImage(onenote: any): void {
+    const dialogRef =this.dialog.open(ImageUploadComponent,{ width: '460px',
+    height: '440px' ,  data:onenote});
    
-  }
+     dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.image =result;
+     });
+   }
+
+ 
 
   addArchive(){
     this.notes.addArchive(this.data.id).subscribe((status)=>{

@@ -38,6 +38,7 @@ import { GetNoteCollaboratorComponent } from './Component/get-note-collaborator/
 import { RemainderComponent } from './Component/remainder/remainder.component';
 import { ArchiveComponent } from './Component/archive/archive.component';
 import { TrashComponent } from './Component/trash/trash.component';
+import { ImageUploadComponent } from './Component/image-upload/image-upload.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -73,6 +74,7 @@ export function socialConfigs() {
     RemainderComponent,
     ArchiveComponent,
     TrashComponent,
+    ImageUploadComponent,
   
     
   ],
@@ -108,7 +110,11 @@ export function socialConfigs() {
     MatTooltipModule
 
   ],
-  entryComponents: [ProfilePicture, CollaboratorComponent,CardComponent],
+  entryComponents: [
+    ProfilePicture, 
+    CollaboratorComponent,
+    CardComponent,
+    ImageUploadComponent],
   providers: [
     AuthService, 
     {  
