@@ -4,7 +4,7 @@ import { AccountService } from 'src/app/Services/account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
 
 @Component({
   selector: 'app-dashboard',
@@ -82,8 +82,7 @@ export class ProfilePicture{
   userData=JSON.parse(localStorage.getItem('userData'));
   image: any;
   fileToUpload: File;
-  files: any;
-
+  filename;
   imageChangedEvent: any = '';
     croppedImage: any = '';
 
@@ -94,28 +93,27 @@ export class ProfilePicture{
    onNoClick(): void {
      this.dialogRef.close();
    }
-   onSelectFile(files: FileList) {
-
-    if (files.length === 0)
-      return;
-
-    this.fileToUpload = files.item(0);
-    this.account.uploadProfilePicture(this.userData.email ,this.fileToUpload).subscribe((status :any) => {
-        if(status != null)
-        {
-          this.dialogRef.close();
-        }
-        this.userData.image = status.result;
-    });
-  }
-
+   
   fileChangeEvent(event: any): void {
+    this.filename = event.target.files[0].name;
+    console.log(this.filename + " name");
+    
     this.imageChangedEvent = event;
 }
 imageCropped(event: ImageCroppedEvent) {
-  console.log(event);
-  
-    this.croppedImage = event;
+  this.croppedImage = base64ToFile(event.base64);
+  this.fileToUpload = new File([this.croppedImage], this.filename);
+}
+
+onSelectFile() {
+
+  this.account.uploadProfilePicture(this.userData.email ,this.fileToUpload).subscribe((status :any) => {
+      if(status != null)
+      {
+        this.dialogRef.close();
+      }
+      this.userData.image = status.result;
+  });
 }
 
 }

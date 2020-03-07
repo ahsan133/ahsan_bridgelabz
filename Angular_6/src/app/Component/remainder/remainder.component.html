@@ -15,8 +15,9 @@
   <button class="allIcon" *ngIf="onenote.remainder">
     <mat-icon class="icon1">query_builder</mat-icon>
     <div class="remainderText">{{onenote.remainder}}</div>
-      <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton"><mat-icon class="icon2">close</mat-icon></button>
-    
+      <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton">
+        <mat-icon class="icon2">close</mat-icon>
+      </button>
   </button>
 
   <app-icons [data]="onenote"></app-icons>
