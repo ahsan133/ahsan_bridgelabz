@@ -40,10 +40,8 @@
   </div>
   </button>
   </div>
-  
   </mat-menu>
   
-
 <mat-menu #color="matMenu"  class ="menu">
     <div class="colorIcons">
 <div *ngFor="let color of Colors;  index as i">
@@ -57,6 +55,6 @@
 <mat-menu #more="matMenu" >
   <div class="Reminder_buttons">
   <button mat-button (click)="addTrash()">Delete note</button>
-  <button mat-button >Add label</button>
+  <button mat-button (click)="addLabel()" >Add label</button>
 </div>
 </mat-menu>

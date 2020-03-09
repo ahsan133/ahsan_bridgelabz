@@ -22,8 +22,6 @@
 .close{
     width:68px;
     height:35px;
-    margin-left: 17em;
-    margin-top: 15px;
     background-color:purple;
     color: white;
     font-weight: 600;
@@ -33,5 +31,8 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .align{
-    display:flex;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1em;
+    padding-bottom: 5px
 }

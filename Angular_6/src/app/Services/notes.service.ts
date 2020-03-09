@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient) { }
 
   addNote(title, description, email){
     const params={
@@ -16,10 +16,10 @@ export class NotesService {
       Description : description,
       Email : email
     };
-   return this.http.post(environment.Url +'api/addNotes', params)
+   return this.http.post(environment.Url +'api/addNotes', params);
   }
 
-  updateNote(id, title, description, email){
+  updateNote(id, title, description, email) {
     const params={
       Id: id,
       Title :title,
@@ -42,9 +42,7 @@ export class NotesService {
   }
 
   addColor(id,value){
-    const url =environment.Url +'api/color?id='+ id +'&color='+ value;
-    console.log(url);
-    
+    const url =environment.Url +'api/color?id='+ id +'&color='+ value;   
     return this.http.put(url,null);
   }
 
@@ -61,7 +59,7 @@ export class NotesService {
   }
 
   addCollaborator(senderEmail, data, notesId){
-const params={
+   const params={
   "SenderEmail": senderEmail,
    "ReceiverEmail": data.receiverEmail,
    "NotesId":notesId
@@ -105,7 +103,11 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
   addImage(id,file: any ){
     let input = new FormData();
   input.append("image", file);
-  
+
   return this.http.put(environment.Url + 'api/image?id=' + id, input);
+  }
+
+  getLabel(email){
+    return this.http.get(environment.Url+'api/getLabel?email='+email);
   }
 }

@@ -33,6 +33,7 @@ export class TrashComponent implements OnInit {
   delete(id){
     this.notes.delete(id).subscribe((status:any)=>{
       if(status != null){
+        this.getTrash();
         this.snackBar.open('Deleted.','', {duration: 2000});
       }
     });
@@ -41,6 +42,7 @@ export class TrashComponent implements OnInit {
   restore(id){
     this.notes.restore(id).subscribe((status:any)=>{
       if(status != null){
+        this.getTrash();
         this.snackBar.open('Restored.','', {duration: 2000});
       }
     });
@@ -49,6 +51,7 @@ export class TrashComponent implements OnInit {
   deleteAll(){
     this.notes.deleteAll(this.userData.email).subscribe((status:any)=>{
       if(status != null){
+        this.getTrash();
         this.snackBar.open('Deleted.','', {duration: 2000});
       }
     });
@@ -57,6 +60,7 @@ export class TrashComponent implements OnInit {
   restoreAll(){
     this.notes.restoreAll(this.userData.email).subscribe((status:any)=>{
       if(status != null){
+        this.getTrash();
         this.snackBar.open('Restored.','', {duration: 2000});
       }
     });

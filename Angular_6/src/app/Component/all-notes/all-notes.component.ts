@@ -1,6 +1,4 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
-import { MatDialog } from '@angular/material';
-import { CardComponent } from '../card/card.component';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-all-notes',
@@ -8,24 +6,9 @@ import { CardComponent } from '../card/card.component';
   styleUrls: ['./all-notes.component.scss']
 })
 export class AllNotesComponent implements OnInit {
-  message:any;
 
-  constructor(public dialog:MatDialog ) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  receiveMessage($event) {
-     this.message = $event
-     console.log(this.message);
-     
-   }
-
-   matcardOpen(onenote :any): void{
-    const dialogRef =this.dialog.open(CardComponent,{ width: '500px', data:onenote});
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 }

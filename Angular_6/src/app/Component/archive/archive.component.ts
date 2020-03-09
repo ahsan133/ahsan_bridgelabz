@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NotesService } from 'src/app/Services/notes.service';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { CardComponent } from '../card/card.component';
+import { DataSharingService } from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-archive',
@@ -13,12 +14,21 @@ export class ArchiveComponent implements OnInit {
   message  = [];
 
   constructor(
+    private dataSharing: DataSharingService,
     private notes:NotesService,
     private snackBar:MatSnackBar,
     public dialog:MatDialog) { }
 
   ngOnInit() {
     this.getArchive();
+
+    this.dataSharing.currentMessage.subscribe((change) =>{
+      if(change == true){
+        this.getArchive();
+        this.dataSharing.changeMessage(false);
+      }
+      }); 
+
   }
 
   getArchive(){
@@ -37,6 +47,15 @@ export class ArchiveComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+    });
+  }
+
+  removeRemainder(id){
+    this.notes.removeRemainder(id).subscribe((status : any)=>{
+      if(status != null){
+        this.getArchive();
+        this.snackBar.open('Remainder removed','', {duration: 2000});
+      }
     });
   }
 }

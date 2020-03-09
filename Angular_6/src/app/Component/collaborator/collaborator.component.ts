@@ -42,6 +42,6 @@ addCollaborator(){
         this.dialogRef.close();
       }
         });
-      }
+  }
   }
 }

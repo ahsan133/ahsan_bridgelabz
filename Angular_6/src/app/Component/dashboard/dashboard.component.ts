@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
 import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
+import { LabelsComponent } from '../labels/labels.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,7 @@ import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
+  
   userData=JSON.parse(localStorage.getItem('userData'));
   profilePic = this.userData.profilePicture;
   first = this.userData.firstName;
@@ -20,16 +21,21 @@ export class DashboardComponent implements OnInit {
   email = this.userData.email;
   image: any;
   fileToUpload: File;
-
-  constructor(private router:Router, public account: AccountService, public snackbar: MatSnackBar,
+  
+  constructor(
+    private router:Router, 
+    public account: AccountService, 
+    public snackbar: MatSnackBar,
     public dialog: MatDialog) { }
 
   ngOnInit() {
+   this.displayNotes();
   }
 
   logout(){
     this.account.logout(this.userData.email).subscribe((status:any)=>{
       if (status == "success"){
+        localStorage.removeItem('userData');
         this.router.navigate(['/login']);
         this.snackbar.open('logged out','', {duration: 2000});
       }
@@ -41,7 +47,7 @@ export class DashboardComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-    })
+    });
   }
  
    ChangeProfile(): void {
@@ -69,9 +75,7 @@ export class DashboardComponent implements OnInit {
    displayTrash(){
      this.router.navigate(['/dashboard/trash']);
    }
-
 } 
-
 
 @Component({
   selector: 'ProfilePicdialog',

@@ -39,6 +39,7 @@ import { RemainderComponent } from './Component/remainder/remainder.component';
 import { ArchiveComponent } from './Component/archive/archive.component';
 import { TrashComponent } from './Component/trash/trash.component';
 import { ImageUploadComponent } from './Component/image-upload/image-upload.component';
+import { LabelsComponent } from './Component/labels/labels.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -75,6 +76,7 @@ export function socialConfigs() {
     ArchiveComponent,
     TrashComponent,
     ImageUploadComponent,
+    LabelsComponent,
   
     
   ],
@@ -115,6 +117,7 @@ export function socialConfigs() {
     CollaboratorComponent,
     CardComponent,
     ImageUploadComponent],
+    
   providers: [
     AuthService, 
     {  
