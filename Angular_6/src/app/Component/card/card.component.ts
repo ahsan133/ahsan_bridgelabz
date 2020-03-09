@@ -3,6 +3,7 @@ import {MatDialogRef, MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { NotesService } from 'src/app/Services/notes.service';
 import { MatSnackBar } from '@angular/material';
 import { FormControl, FormGroup } from '@angular/forms';
+import {DataSharingService} from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-card',
@@ -14,7 +15,9 @@ export class CardComponent implements OnInit {
   userData=JSON.parse(localStorage.getItem('userData'));
   title1:any;
   description1:any;
+
   constructor(
+    private dataSharing:DataSharingService,
     public dialogRef: MatDialogRef<CardComponent>, 
     public dialog:MatDialog, 
     public note: NotesService,
@@ -48,6 +51,7 @@ updateNote(){
   }
   this.note.updateNote(this.onenote.id, this.title1, this.description1, this.userData.email).subscribe((status)=>{
     if(status != null){
+      this.dataSharing.changeMessage(true);
       this.dialogRef.close();
     }
   });

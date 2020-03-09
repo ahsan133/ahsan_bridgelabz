@@ -21,7 +21,9 @@ export class DashboardComponent implements OnInit {
   email = this.userData.email;
   image: any;
   fileToUpload: File;
-  
+  lables=[];
+  @ViewChild(LabelsComponent) child;
+
   constructor(
     private router:Router, 
     public account: AccountService, 
@@ -30,6 +32,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
    this.displayNotes();
+   this.lables= this.child.labels
   }
 
   logout(){

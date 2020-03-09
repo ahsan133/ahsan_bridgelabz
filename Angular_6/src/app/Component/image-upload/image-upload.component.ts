@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
 import { MatSnackBar, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { NotesService } from 'src/app/Services/notes.service';
+import {DataSharingService} from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-image-upload',
@@ -16,6 +17,7 @@ export class ImageUploadComponent implements OnInit {
   croppedImage: any = '';
   
   constructor(
+    private dataSharing:DataSharingService,
     private notes:NotesService,
     public snackbar: MatSnackBar,
     public dialogRef: MatDialogRef<ImageUploadComponent>,
@@ -44,6 +46,7 @@ imageCropped(event: ImageCroppedEvent) {
     this.notes.addImage(this.onenote.id ,this.fileToUpload).subscribe((status :any) => {
       if(status != null)
       {
+        this.dataSharing.changeMessage(true);
         this.dialogRef.close();
         this.snackbar.open('Image added','', {duration: 2000});
       }

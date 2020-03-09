@@ -3,6 +3,7 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NotesService } from 'src/app/Services/notes.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import {DataSharingService} from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-collaborator',
@@ -18,6 +19,7 @@ export class CollaboratorComponent implements OnInit {
   CollaboratorForm: FormGroup;
 
   constructor(
+    private dataSharing:DataSharingService,
     public dialogRef: MatDialogRef<CollaboratorComponent>,
     private note:NotesService,
     public snackBar :MatSnackBar,
@@ -38,6 +40,7 @@ addCollaborator(){
   if (this.CollaboratorForm.value.receiverEmail != null){
     this.note.addCollaborator(this.email,this.CollaboratorForm.value,this.onenote.id).subscribe((status)=>{
       if(status != null){
+        this.dataSharing.changeMessage(true);
         this.snackBar.open('Collaborated.','', {duration: 2000});
         this.dialogRef.close();
       }
