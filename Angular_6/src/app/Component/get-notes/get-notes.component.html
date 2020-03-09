@@ -1,5 +1,6 @@
-<div class="whole">
-    <mat-card class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
+<div class="whole" >
+  
+    <mat-card  class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
       <div (click)="matcardOpen(onenote)">
     <div>
       <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
@@ -17,8 +18,9 @@
           <mat-icon class="icon2">close</mat-icon>
         </button>
     </button>
-    
+
     <app-icons [data]="onenote"></app-icons>
     
     </mat-card>
+
     </div>

@@ -6,6 +6,7 @@ import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
 import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
 import { LabelsComponent } from '../labels/labels.component';
+import { DataSharingService} from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,9 +23,12 @@ export class DashboardComponent implements OnInit {
   image: any;
   fileToUpload: File;
   lables=[];
+  card1;
+
   @ViewChild(LabelsComponent) child;
 
   constructor(
+    private dataShare: DataSharingService,
     private router:Router, 
     public account: AccountService, 
     public snackbar: MatSnackBar,
@@ -33,6 +37,16 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
    this.displayNotes();
    this.lables= this.child.labels
+  }
+
+  viewGrid(){
+    this.card1=!this.card1;
+    this.dataShare.changeCard(true);
+  }
+
+  viewList(){
+    this.card1=!this.card1;
+    this.dataShare.changeCard(false);
   }
 
   logout(){

@@ -20,6 +20,8 @@ import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionM
   import { CommonModule } from "@angular/common";
   import { ImageCropperModule } from 'ngx-image-cropper';
   import {MatTooltipModule} from '@angular/material/tooltip';
+  import {MatListModule} from '@angular/material/list';
+  import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -109,7 +111,9 @@ export function socialConfigs() {
     MatSlideToggleModule,
     CommonModule,
     ImageCropperModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatListModule,
+    MatGridListModule
 
   ],
   entryComponents: [
@@ -117,7 +121,7 @@ export function socialConfigs() {
     CollaboratorComponent,
     CardComponent,
     ImageUploadComponent],
-    
+
   providers: [
     AuthService, 
     {  

@@ -31,6 +31,7 @@ export class GetNotesComponent implements OnInit {
       }
       }); 
       
+    this.dataSharing.currentCard.subscribe(change => this.change=change)  
   }
 
   getNotes(){

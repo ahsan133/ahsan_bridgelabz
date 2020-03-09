@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
-import {CardComponent} from 'src/app/Component/card/card.component';
 import { NotesService } from 'src/app/Services/notes.service';
 import { MatSnackBar } from '@angular/material';
+import {DataSharingService} from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-notes',
@@ -16,7 +15,10 @@ export class NotesComponent implements OnInit {
   description;
   card1 = true;
   card2 = false;
-  constructor(private notes:NotesService,  private snackbar: MatSnackBar) { }
+  constructor(
+    private dataSharing:DataSharingService,
+    private notes:NotesService,  
+    private snackbar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -33,6 +35,7 @@ export class NotesComponent implements OnInit {
       this.notes.addNote(this.title ,this.description,this.userData.email).subscribe((status)=>{
         if(status != null){
           localStorage.setItem('noteData', JSON.stringify(status));
+          this.dataSharing.changeMessage(true);
           this.snackbar.open('Note added.','', {duration: 2000});
         }
       });
