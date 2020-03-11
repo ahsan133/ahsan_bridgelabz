@@ -191,7 +191,7 @@ namespace FundooApp.Controllers
             var result = this.user.ProfilePicture(email, image);
             if (result != null)
             {
-                return this.Ok(result);
+                return this.Ok(new { result });
             }
             else
             {

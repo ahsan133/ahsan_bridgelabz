@@ -49,6 +49,7 @@ namespace FundooRepository.Repository
             {
                 Label = labelModel.Label,
                 Email = labelModel.Email,
+                NotesId = labelModel.NotesId
             };
             this.context.LabelModels.Add(model);
             return this.context.SaveChangesAsync();

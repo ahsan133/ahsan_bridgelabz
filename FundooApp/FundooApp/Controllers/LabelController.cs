@@ -47,7 +47,7 @@ namespace FundooApp.Controllers
             var result = await this.label.AddLabel(labelModel);
             if (result == 1)
             {
-                return this.Ok(labelModel);
+                return this.Ok(new { result });
             }
             else
             {
@@ -67,7 +67,7 @@ namespace FundooApp.Controllers
             var result = await this.label.UpdateLabel(labelModel);
             if (result == "success")
             {
-                return this.Ok(result);
+                return this.Ok(new { result });
             }
             else
             {
@@ -87,7 +87,7 @@ namespace FundooApp.Controllers
             var result = await this.label.DeleteLabel(id);
             if (result == "success")
             {
-                return this.Ok(result);
+                return this.Ok(new { result });
             }
             else
             {

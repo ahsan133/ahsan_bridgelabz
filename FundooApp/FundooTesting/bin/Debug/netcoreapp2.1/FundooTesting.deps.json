@@ -2408,6 +2408,9 @@
         }
       },
       "FundooModels/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.1.1"
+        },
         "runtime": {
           "FundooModels.dll": {}
         }

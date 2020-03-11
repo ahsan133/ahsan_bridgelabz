@@ -132,6 +132,8 @@ namespace FundooRepository.Migrations
 
                     b.Property<string>("Label");
 
+                    b.Property<int>("NotesId");
+
                     b.HasKey("Id");
 
                     b.ToTable("LabelModels");

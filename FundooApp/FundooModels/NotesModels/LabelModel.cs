@@ -23,6 +23,11 @@ namespace FundooModels.NotesModels
         private string email;
 
         /// <summary>
+        /// The notesId
+        /// </summary>
+        private int notesId;
+
+        /// <summary>
         /// The label
         /// </summary>
         private string label;
@@ -42,6 +47,14 @@ namespace FundooModels.NotesModels
         public string Email { get => this.email; set => this.email = value; }
 
         /// <summary>
+        /// Gets or sets the notesId.
+        /// </summary>
+        /// <value>
+        /// The notesId.
+        /// </value>
+        public int NotesId { get => this.notesId; set => this.notesId = value; }
+
+        /// <summary>
         /// Gets or sets the label.
         /// </summary>
         /// <value>
@@ -56,5 +69,6 @@ namespace FundooModels.NotesModels
         /// The identifier.
         /// </value>
         public int Id { get => this.id; set => this.id = value; }
+       
     }
 }

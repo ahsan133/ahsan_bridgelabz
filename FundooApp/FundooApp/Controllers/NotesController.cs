@@ -405,14 +405,14 @@ namespace FundooApp.Controllers
         /// <param name="id">The identifier.</param>
         /// <param name="image">The image.</param>
         /// <returns>result of action</returns>
-        [HttpPost]
+        [HttpPut]
         [Route("api/image")]
         public ActionResult Image(int id, IFormFile image)
         {
             var result = this.note.Image(id, image);
             if (result != null)
             {
-                return this.Ok(result);
+                return this.Ok(new { result });
             }
             else
             {

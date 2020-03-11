@@ -269,7 +269,7 @@ namespace FundooManager.Manager
         /// <returns>
         /// result of task
         /// </returns>
-        public Task<string> Image(int id, IFormFile image)
+        public string Image(int id, IFormFile image)
         {
             return this.repository.Image(id, image);
         }

@@ -64,7 +64,6 @@ C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooTesting\obj\Debug\netcoreapp2.
 C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooTesting\obj\Debug\netcoreapp2.1\FundooTesting.csproj.CopyComplete
 C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooTesting\obj\Debug\netcoreapp2.1\FundooTesting.dll
 C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooTesting\obj\Debug\netcoreapp2.1\FundooTesting.pdb
-C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooTesting\bin\Debug\netcoreapp2.1\web.config
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooTesting\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooTesting\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooTesting\bin\Debug\netcoreapp2.1\FundooTesting.deps.json

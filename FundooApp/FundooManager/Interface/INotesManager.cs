@@ -152,7 +152,7 @@ namespace FundooManager.Manager
         /// <param name="id">The identifier.</param>
         /// <param name="image">The image.</param>
         /// <returns>result of task</returns>
-        Task<string> Image(int id, IFormFile image);
+        string Image(int id, IFormFile image);
 
         /// <summary>
         /// Determines whether the specified identifier is trash.

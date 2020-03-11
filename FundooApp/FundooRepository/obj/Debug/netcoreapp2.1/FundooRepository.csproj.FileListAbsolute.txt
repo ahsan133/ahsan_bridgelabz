@@ -42,11 +42,6 @@ C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooRepository\bin\Debug\netcoreap
 C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooModels.dll
 C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooModels.pdb
 C:\Users\bridgelabz\Desktop\ahsan\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.csproj.CopyComplete
-C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.csprojAssemblyReference.cache
-C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.AssemblyInfoInputs.cache
-C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.AssemblyInfo.cs
-C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.dll
-C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.pdb
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooRepository.deps.json
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooRepository.runtimeconfig.json
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooRepository.runtimeconfig.dev.json
@@ -54,4 +49,9 @@ C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\n
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooRepository.pdb
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooModels.dll
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\bin\Debug\netcoreapp2.1\FundooModels.pdb
+C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.csprojAssemblyReference.cache
+C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.AssemblyInfoInputs.cache
+C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.AssemblyInfo.cs
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.csproj.CopyComplete
+C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.dll
+C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooRepository\obj\Debug\netcoreapp2.1\FundooRepository.pdb

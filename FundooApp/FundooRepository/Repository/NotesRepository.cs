@@ -454,7 +454,7 @@ namespace FundooRepository.Repository
         /// <returns>
         /// image result
         /// </returns>
-        public async Task<string> Image(int id, IFormFile image)
+        public string Image(int id, IFormFile image)
         {
             try
             {
@@ -471,7 +471,7 @@ namespace FundooRepository.Repository
                 var data = this.context.NotesModels.Where(p => p.Id == id).SingleOrDefault();
                 data.Image = uploadResult.Uri.ToString();
                 data.ModifiedTime = DateTime.Now;
-                await this.context.SaveChangesAsync();
+                this.context.SaveChanges();
                 return data.Image;
             }catch (Exception e)
             {
