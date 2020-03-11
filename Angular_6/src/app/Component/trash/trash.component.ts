@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NotesService } from 'src/app/Services/notes.service';
 import { MatSnackBar } from '@angular/material';
+import { DataSharingService } from 'src/app/Services/data-sharing.service';
 
 @Component({
   selector: 'app-trash',
@@ -10,13 +11,15 @@ import { MatSnackBar } from '@angular/material';
 export class TrashComponent implements OnInit {
  userData = JSON.parse(localStorage.getItem('userData'));
  message = [];
-
+ change :boolean;
   constructor( 
+    private dataSharing:DataSharingService,
     private notes: NotesService,
     private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getTrash();
+    this.dataSharing.currentCard.subscribe(change => this.change=change) 
   }
 
   getTrash(){

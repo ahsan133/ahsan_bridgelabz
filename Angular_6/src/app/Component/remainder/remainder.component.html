@@ -1,25 +1,49 @@
 <app-notes class="note"></app-notes>
+<div class="whole" >
+  <mat-list role="list" *ngIf="change; else gridview">
+    <mat-card mat-list-item class="card1" *ngFor="let onenote of message" [style.background-color]="onenote.color">
+      <div (click)="matcardOpen(onenote)">
+    <div>
+      <img *ngIf="onenote.image" class ="image1" src="{{onenote.image}}">
+    </div>
+    <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+    <div class="title1" *ngIf="!onenote.title" >Title</div>
+    <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+    <div class="description1" *ngIf="!onenote.description">Description</div>
+    </div>
+    
+    <button class="allIcon" *ngIf="onenote.remainder">
+      <mat-icon class="icon1">query_builder</mat-icon>
+      <div class="remainderText">{{onenote.remainder}}</div>
+        <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton">
+          <mat-icon class="icon2">close</mat-icon>
+        </button>
+    </button>
+    <app-icons [data]="onenote"></app-icons>
+    </mat-card>
+    </mat-list>
 
-<div class="whole">
-  <mat-card class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
-    <div (click)="matcardOpen(onenote)">
-  <div>
-    <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
-  </div>
-  <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
-  <div class="title1" *ngIf="!onenote.title" >Title</div>
-  <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
-  <div class="description1" *ngIf="!onenote.description">Description</div>
-  </div>
-  
-  <button class="allIcon" *ngIf="onenote.remainder">
-    <mat-icon class="icon1">query_builder</mat-icon>
-    <div class="remainderText">{{onenote.remainder}}</div>
-      <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton">
-        <mat-icon class="icon2">close</mat-icon>
-      </button>
-  </button>
+    <ng-template #gridview>
+    <mat-card mat-list-item class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
+      <div (click)="matcardOpen(onenote)">
+    <div>
+      <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
+    </div>
+    <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+    <div class="title1" *ngIf="!onenote.title" >Title</div>
+    <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+    <div class="description1" *ngIf="!onenote.description">Description</div>
+    </div>
+    
+    <button class="allIcon" *ngIf="onenote.remainder">
+      <mat-icon class="icon1">query_builder</mat-icon>
+      <div class="remainderText">{{onenote.remainder}}</div>
+        <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton">
+          <mat-icon class="icon2">close</mat-icon>
+        </button>
+    </button>
+    <app-icons [data]="onenote"></app-icons>
+    </mat-card>
+  </ng-template>
 
-  <app-icons [data]="onenote"></app-icons>
-  </mat-card>
-  </div>
+    </div>

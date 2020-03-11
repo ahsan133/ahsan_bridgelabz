@@ -13,7 +13,7 @@ import { DataSharingService } from 'src/app/Services/data-sharing.service';
 export class RemainderComponent implements OnInit {
   userData = JSON.parse(localStorage.getItem('userData'));
   message = [];
-
+  change :boolean;
   constructor(
     private dataSharing:DataSharingService,
     private notes: NotesService,
@@ -29,7 +29,7 @@ export class RemainderComponent implements OnInit {
         this.dataSharing.changeMessage(false);
       }
       }); 
-
+      this.dataSharing.currentCard.subscribe(change => this.change=change) 
   }
 
   getRemainder(){
