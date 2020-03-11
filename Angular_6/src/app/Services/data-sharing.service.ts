@@ -12,6 +12,9 @@ export class DataSharingService {
   private card = new BehaviorSubject(false);
   currentCard = this.card.asObservable();
 
+  private labelSource = new BehaviorSubject(false);
+  currentLabel = this.labelSource.asObservable();
+
   constructor() { }
 
   changeMessage(message: boolean) {
@@ -21,4 +24,9 @@ export class DataSharingService {
   changeCard(value: boolean){
     this.card.next(value)
   }
+
+  changeLabel(value: boolean){
+    this.labelSource.next(value)
+  }
+
 }

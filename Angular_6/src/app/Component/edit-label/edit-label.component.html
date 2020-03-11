@@ -1,0 +1,14 @@
+<div class="text">Edit label:</div>
+
+<form [formGroup]="EditLabelForm">
+<div *ngFor="let oneLabel of data">
+  <div class="all">
+  <mat-icon class="icon">label</mat-icon>
+  <input class="data" type="text" value="{{oneLabel.label}}" formControlName="newLabel" (change)="updateLabel(oneLabel)"> 
+  <button mat-icon-button (click)="deleteLabel(oneLabel)"> <mat-icon class="icon1">delete</mat-icon></button>
+</div>
+</div>
+</form>
+<div class="align">
+  <button mat-button class="close" (click)="onNoClick()">Done</button>
+</div>

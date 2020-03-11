@@ -58,9 +58,6 @@
   </mat-toolbar>
   </div>
   
-  <mat-menu #setting="matMenu">
-<h5>asfdr</h5>
-  </mat-menu>
 
   <mat-drawer-container class="container">
     <mat-drawer #drawer mode="side" class="side" opened>
@@ -81,8 +78,8 @@
     <mat-divider class="div"></mat-divider>
     <div class="word">LABELS</div>
 
-    <div *ngIf="lables">
-    <div *ngFor="let onelabel of lables">
+    <div *ngFor="let onelabel of label">
+      <div *ngIf="id == onelabel.noteId">
       <button mat-button class ="add">
         <div class="draw">
         <mat-icon class="icon">label</mat-icon>
@@ -92,7 +89,7 @@
       </div>
     </div>
 
-    <button mat-button class ="add">
+    <button mat-button class ="add" (click)="editLabel()">
       <div class="draw">
       <mat-icon class="icon">create</mat-icon>
       <div class="notes">Edit labels</div>

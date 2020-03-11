@@ -102,12 +102,32 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
 
   addImage(id,file: any ){
     let input = new FormData();
-  input.append("image", file);
+     input.append("image", file);
 
   return this.http.put(environment.Url + 'api/image?id=' + id, input);
   }
 
   getLabel(email){
     return this.http.get(environment.Url+'api/getLabel?email='+email);
+  }
+
+  removeLabel(id){
+    return this.http.delete(environment.Url+'api/deleteLabel?id='+id);
+  }
+  addLabel(email,label,notesId){
+    const params={
+      "Email": email,
+       "Label": label,
+       "NotesId":notesId
+    };
+    return this.http.post(environment.Url+'api/addLabel',params);
+  }
+
+  updateLabel(id,newLabel){
+    const params={
+      "Id":id,
+       "Label": newLabel
+    };
+    return this.http .put(environment.Url+'api/updateLabel',params);
   }
 }

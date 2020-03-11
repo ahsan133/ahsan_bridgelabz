@@ -3,6 +3,7 @@ import { NotesService } from 'src/app/Services/notes.service';
 import { MatDialog, MatSnackBar } from '@angular/material';
 import { CardComponent } from '../card/card.component';
 import {DataSharingService} from 'src/app/Services/data-sharing.service';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-get-notes',
@@ -34,6 +35,19 @@ export class GetNotesComponent implements OnInit {
     this.dataSharing.currentCard.subscribe(change => this.change=change)  
   }
 
+  drop(event: CdkDragDrop<number[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+                        event.container.data,
+                        event.previousIndex,
+                        event.currentIndex);
+    }
+  }
+  // drop1(event: CdkDragDrop<string[]>) {
+  //   moveItemInArray(this.message, event.previousIndex, event.currentIndex);
+  // }
   getNotes(){
    this.note.getNotes(this.userData.email).subscribe((status : any)=>{
      this.message = status;

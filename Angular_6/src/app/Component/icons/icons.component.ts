@@ -4,6 +4,7 @@ import { MatDialog, MatSnackBar } from '@angular/material';
 import { NotesService } from 'src/app/Services/notes.service';
 import { ImageUploadComponent } from '../image-upload/image-upload.component';
 import {DataSharingService} from 'src/app/Services/data-sharing.service';
+import { AddLabelComponent } from '../add-label/add-label.component';
 
 @Component({
   selector: 'app-icons',
@@ -13,7 +14,7 @@ import {DataSharingService} from 'src/app/Services/data-sharing.service';
 export class IconsComponent implements OnInit {
   @Input() data;
   note = [];
-  
+  labels=[];
   image: any;
 
   constructor(
@@ -25,7 +26,16 @@ export class IconsComponent implements OnInit {
 
   ngOnInit() {
     this.note=this.data;
+    this.getLabel();
   }
+
+  getLabel(){
+    this.notes.getLabel(this.data.email).subscribe((status:any)=>{
+      if(status != null){
+        this.labels = status;
+      }
+    });
+   }
 
   Colors =[
     {colorCode:'#FFFFFF',name:'white'},
@@ -113,7 +123,15 @@ this.notes.addRemainder(this.data.id, "Today, 8:00 PM").subscribe((status)=>{
     }); 
   }
 
+ 
+
    addLabel(){
-    
+     console.log(this.labels);
+     
+    const dialogRef =this.dialog.open(AddLabelComponent ,{ width: '240px', data:{onenote: this.data, labels:this.labels}});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
    }
 }

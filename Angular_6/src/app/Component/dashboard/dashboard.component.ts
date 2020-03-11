@@ -1,12 +1,13 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/Services/account.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {CollaboratorComponent} from 'src/app/Component/collaborator/collaborator.component';
 import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
-import { LabelsComponent } from '../labels/labels.component';
 import { DataSharingService} from 'src/app/Services/data-sharing.service';
+import { NotesService } from 'src/app/Services/notes.service';
+import { EditLabelComponent } from '../edit-label/edit-label.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,14 +21,16 @@ export class DashboardComponent implements OnInit {
   first = this.userData.firstName;
   last = this.userData.lastName;
   email = this.userData.email;
+  id = this.userData.id;
   image: any;
   fileToUpload: File;
-  lables=[];
+  label=[];
   card1;
 
-  @ViewChild(LabelsComponent) child;
 
   constructor(
+    private dataSharing:DataSharingService,
+    private note:NotesService,
     private dataShare: DataSharingService,
     private router:Router, 
     public account: AccountService, 
@@ -36,8 +39,32 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
    this.displayNotes();
-   this.lables= this.child.labels
+   this.getLabel();
+
+   this.dataSharing.currentLabel.subscribe((change) =>{
+    if(change == true){
+      this.getLabel();
+      this.dataSharing.changeLabel(false);
+    }
+    }); 
+
   }
+
+  getLabel(){
+    this.note.getLabel(this.userData.email).subscribe((status:any)=>{
+      if(status != null){
+        this.label = status;
+      }
+    });
+   }
+
+   editLabel(): void{
+    const dialogRef =this.dialog.open(EditLabelComponent ,{ width: '300px', data: this.label});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+   }
 
   viewGrid(){
     this.card1=!this.card1;
@@ -105,7 +132,7 @@ export class ProfilePicture{
   fileToUpload: File;
   filename;
   imageChangedEvent: any = '';
-    croppedImage: any = '';
+  croppedImage: any = '';
 
   constructor(public account: AccountService,
     public snackbar: MatSnackBar,
@@ -121,11 +148,11 @@ export class ProfilePicture{
     console.log(this.filename + " name");
     
     this.imageChangedEvent = event;
-}
-imageCropped(event: ImageCroppedEvent) {
-  this.croppedImage = base64ToFile(event.base64);
-  this.fileToUpload = new File([this.croppedImage], this.filename);
-}
+  }
+  imageCropped(event: ImageCroppedEvent) {
+    this.croppedImage = base64ToFile(event.base64);
+    this.fileToUpload = new File([this.croppedImage], this.filename);
+  }
 
 onSelectFile() {
   this.account.uploadProfilePicture(this.userData.email ,this.fileToUpload).subscribe((status :any) => {

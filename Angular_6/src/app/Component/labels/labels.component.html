@@ -1,0 +1,8 @@
+<div class="allLabels">
+<button class="allIcon" *ngFor="let oneLabel of label">
+    <div class="remainderText">{{oneLabel.label}}</div>
+      <button mat-icon-button  class="iconbutton">
+        <mat-icon (click)="removeLabel(oneLabel)" class="icon2">close</mat-icon>
+      </button>
+  </button>
+</div>

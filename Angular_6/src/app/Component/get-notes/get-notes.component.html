@@ -1,6 +1,11 @@
 <div class="whole" >
   <mat-list role="list" *ngIf="change; else gridview">
-    <mat-card mat-list-item class="card1" *ngFor="let onenote of message" [style.background-color]="onenote.color">
+    
+    <div id="message" cdkDropList [cdkDropListData]="message"class="example-list" 
+    (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+
+    <mat-card mat-list-item class="card1" *ngFor="let onenote of message"
+     [style.background-color]="onenote.color" cdkDragLockAxis="y" cdkDrag>
       <div (click)="matcardOpen(onenote)">
     <div>
       <img *ngIf="onenote.image" class ="image1" src="{{onenote.image}}">
@@ -18,12 +23,17 @@
           <mat-icon class="icon2">close</mat-icon>
         </button>
     </button>
+    <app-labels [data]="onenote"></app-labels>
     <app-icons [data]="onenote"></app-icons>
     </mat-card>
+  </div>
     </mat-list>
 
     <ng-template #gridview>
-    <mat-card mat-list-item class="card" *ngFor="let onenote of message" [style.background-color]="onenote.color">
+      <!-- <mat-grid-list rowHeight="100px"> -->
+      <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop1($event)"> -->
+    <mat-card mat-grid-tile class="card" *ngFor="let onenote of message" 
+    [style.background-color]="onenote.color" cdkDrag>
       <div (click)="matcardOpen(onenote)">
     <div>
       <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
@@ -41,8 +51,11 @@
           <mat-icon class="icon2">close</mat-icon>
         </button>
     </button>
+    <app-labels [data]="onenote"></app-labels>
     <app-icons [data]="onenote"></app-icons>
     </mat-card>
+  <!-- </div> -->
+<!-- </mat-grid-list> -->
   </ng-template>
 
     </div>

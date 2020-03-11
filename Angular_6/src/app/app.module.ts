@@ -22,6 +22,7 @@ import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionM
   import {MatTooltipModule} from '@angular/material/tooltip';
   import {MatListModule} from '@angular/material/list';
   import {MatGridListModule} from '@angular/material/grid-list';
+  import {DragDropModule} from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,8 @@ import { ArchiveComponent } from './Component/archive/archive.component';
 import { TrashComponent } from './Component/trash/trash.component';
 import { ImageUploadComponent } from './Component/image-upload/image-upload.component';
 import { LabelsComponent } from './Component/labels/labels.component';
+import { AddLabelComponent } from './Component/add-label/add-label.component';
+import { EditLabelComponent } from './Component/edit-label/edit-label.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -79,6 +82,8 @@ export function socialConfigs() {
     TrashComponent,
     ImageUploadComponent,
     LabelsComponent,
+    AddLabelComponent,
+    EditLabelComponent,
   
     
   ],
@@ -113,10 +118,13 @@ export function socialConfigs() {
     ImageCropperModule,
     MatTooltipModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    DragDropModule
 
   ],
   entryComponents: [
+    EditLabelComponent,
+    AddLabelComponent,
     ProfilePicture, 
     CollaboratorComponent,
     CardComponent,

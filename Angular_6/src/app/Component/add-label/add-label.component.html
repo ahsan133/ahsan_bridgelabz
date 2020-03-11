@@ -1,0 +1,12 @@
+<form [formGroup] = "LabelForm">
+<div>Label Note:</div>
+<input type="text" placeholder="Enter label name" formControlName="labelInput" class="labelAdd" >
+
+<div class="align">
+  <button mat-button class="close" (click)="addLabel()">Add</button>
+</div>
+
+<div *ngFor="let onelabel of data.labels">
+<mat-checkbox   (change)="AddLabel1(onelabel)">{{onelabel.label}}</mat-checkbox>
+</div>
+</form>

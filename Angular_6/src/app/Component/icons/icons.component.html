@@ -18,7 +18,7 @@
   <button mat-icon-button class="button" *ngIf="data.archive" (click)="removeArchive()" matTooltip="Unarchive">
     <mat-icon class="icon" >unarchive</mat-icon>
   </button>
-  <button mat-icon-button class="button" matTooltip="Trash">
+  <button mat-icon-button class="button" matTooltip="More">
     <mat-icon class="icon" [matMenuTriggerFor]="more">more_vert</mat-icon>
   </button>
   </div>
@@ -54,7 +54,8 @@
 
 <mat-menu #more="matMenu" >
   <div class="Reminder_buttons">
-  <button mat-button (click)="addTrash()">Delete note</button>
-  <button mat-button (click)="addLabel()" >Add label</button>
+  <button mat-menu-item (click)="addTrash()">Delete note</button>
+  <button mat-menu-item (click)="addLabel()" >Add label</button>
 </div>
 </mat-menu>
+

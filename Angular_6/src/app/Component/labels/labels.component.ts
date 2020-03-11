@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { NotesService } from 'src/app/Services/notes.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-labels',
@@ -8,22 +9,34 @@ import { NotesService } from 'src/app/Services/notes.service';
 })
 export class LabelsComponent implements OnInit {
   userData=JSON.parse(localStorage.getItem('userData'));
-  labels =[];
+  label =[];
+  @Output() messageEvent = new EventEmitter<any>();
+  @Input() data;
 
   constructor(
+    private snackBar:MatSnackBar,
     private note:NotesService
   ) { }
 
   ngOnInit() {
     this.getLabel();
+    this.messageEvent.emit(this.label)
   }
 
   getLabel(){
    this.note.getLabel(this.userData.email).subscribe((status:any)=>{
      if(status != null){
-       console.log(status);
-       this.labels = status;
+       this.label = status;
      }
    });
+  }
+
+  removeLabel(oneLabel : any){
+    this.note.removeLabel(oneLabel.id).subscribe((status : any)=>{
+      if(status != null){
+        this.getLabel();
+        this.snackBar.open('Label Removed.','', {duration: 2000});
+      }
+    });
   }
 }
