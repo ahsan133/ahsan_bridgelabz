@@ -218,5 +218,24 @@ namespace FundooApp.Controllers
                 return this.BadRequest();
             }
         }
+
+        /// <summary>
+        /// Gets the users
+        /// </summary>
+        /// <returns>list of user statistics</returns>
+        [HttpGet]
+        [Route("api/getUsers")]
+        public ActionResult GetUsers()
+        {
+            var result = this.user.GetUsers();
+            if (result != null)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
     }
 }

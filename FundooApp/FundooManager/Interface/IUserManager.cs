@@ -81,5 +81,13 @@ namespace FundooManager.Manager
         /// <param name="email"></param>
         /// <returns>result of task</returns>
         string GetPicture(string email);
+
+        /// <summary>
+        /// Gets the users.
+        /// </summary>
+        /// <returns>
+        /// list of user statistics
+        /// </returns>
+        List<RegisterModel> GetUsers();
     }
 }

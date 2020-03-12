@@ -147,5 +147,16 @@ namespace FundooManager.Manager
         {
             return this.repository.GetPicture(email);
         }
+
+        /// <summary>
+        /// Gets the users.
+        /// </summary>
+        /// <returns>
+        /// list of user statistics
+        /// </returns>
+        public List<RegisterModel> GetUsers()
+        {
+            return this.repository.GetUsers();
+        }
     }
 }

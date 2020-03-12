@@ -397,5 +397,16 @@ namespace FundooRepository.Repository
                 return null;
             }
         }
+
+        /// <summary>
+        /// Gets the users.
+        /// </summary>
+        /// <returns>
+        /// list of user statistics
+        /// </returns>
+        public List<RegisterModel> GetUsers()
+        {
+            return this.context.RegisterModels.ToList<RegisterModel>();
+        }
     }
 }
