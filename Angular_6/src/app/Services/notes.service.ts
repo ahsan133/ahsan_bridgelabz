@@ -50,6 +50,9 @@ export class NotesService {
     
     return this.http.get(environment.Url+ 'api/getNotes?email='+email);
   }
+  getNotesList(){
+    return this.http.get(environment.Url+ 'api/getList');
+  }
 
   addRemainder(id,remainder){
  return this.http.put(environment.Url+ 'api/setRemainder?id='+id+'&remainder='+remainder, null);

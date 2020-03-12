@@ -9,8 +9,11 @@ import { NotesService } from 'src/app/Services/notes.service';
 })
 export class AdminDashboardComponent implements OnInit {
 userData = [];
+usersData = [];
+notes = [];
 statistics = true;
 details = false;
+count;
 
   constructor(
     public account: AccountService,
@@ -19,7 +22,7 @@ details = false;
 
   ngOnInit() {
     this.getUserList();
-    //this.getNotes();
+    this.getNotes();
     this.getUsers();
   }
 
@@ -40,11 +43,28 @@ details = false;
   }
 
   getUsers(){
-
+    this.account.getUsers().subscribe((status:any)=>{
+      if(status != null){
+        this.usersData = status;
+      }
+    });
   }
 
-  // getNotes(){
-  //   this.note.getNotes()
-  // }
+  getNotes(){
+     this.note.getNotesList().subscribe((status:any)=>{
+      if(status != null){
+        this.notes = status;
+        console.log(status);
+      }
+    });
+   }
   
+   countNotes(email){
+     this.count=0;
+     for(let i of this.notes){
+       if(i.email == email){
+         this.count = this.count+1
+       }
+     }
+   }
 }

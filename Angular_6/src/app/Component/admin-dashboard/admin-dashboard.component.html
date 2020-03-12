@@ -9,6 +9,13 @@
     <span class="green">o</span>
   </h1>
 
+<div class="buttons">
+  <mat-button-toggle-group >
+    <mat-button-toggle (click)="UserStatistics()">User Statistics</mat-button-toggle>
+    <mat-button-toggle (click)="UserDetails()">User Details</mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
   <div *ngIf="statistics">
   <h2>User Statistics</h2>
 <mat-divider></mat-divider>
@@ -32,12 +39,22 @@
   
   <div class="texts">
     <div class="fname">First name</div>
-    <div class="text2">Last name</div>
-    <div class="text2">Email</div>
-    <div class="text2">Number of notes</div>
-    <div class="text2">Status</div>
+    <div class="lname">Last name</div>
+    <div class="mail">Email</div>
+    <div class="notes">Number of notes</div>
+    <div class="status">Status</div>
     </div>
 
+    <div *ngFor="let oneUser of usersData">
+      <div>{{countNotes(oneUser.email)}}</div>
+      <div class="texts">
+        <div class="fname1">{{oneUser.firstName}}</div>
+        <div class="lname1">{{oneUser.lastName}}</div>
+        <div class="mail1">{{oneUser.email}}</div>
+       <div class="notes1">{{count}}</div>
+       <div class="status1">{{oneUser.status}}</div>
+    </div>
+    </div>
 
 </div>
 </mat-card>

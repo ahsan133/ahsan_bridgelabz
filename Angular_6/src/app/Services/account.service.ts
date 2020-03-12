@@ -35,6 +35,9 @@ export class AccountService {
      return this.http.get(environment.Url + 'api/getUserList');
   }
 
+  getUsers(){
+    return this.http.get(environment.Url + 'api/getUsers');
+  }
  register(data) {
   const params = {
     FirstName: data.firstName,

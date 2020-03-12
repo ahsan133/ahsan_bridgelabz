@@ -1,13 +1,12 @@
- .whole {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height: 45%;
- }
+  .whole {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
 .card{
     margin: 0 auto;
     float: none; 
-    max-width: 460px;
+    max-width: 50em;
 }
 
 h1 {
@@ -20,6 +19,12 @@ h1 {
 .purple{color:purple;}
 .green{color:green;}
 
+.buttons{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
 h2{
     margin: 0px;
     text-align: center;
@@ -31,7 +36,7 @@ h2{
 
 .texts{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .text1{
@@ -49,4 +54,44 @@ h2{
 }
 .time{
     margin: 5px 0px 5px 16px;
+}
+.fname{
+    font-size: large;
+    font-weight: 500;
+    margin: 10px 0px 8px 0px;
+}
+.lname{
+    font-size: large;
+    font-weight: 500;
+    margin: 10px 0px 8px 90px;
+}
+.mail{
+    font-size: large;
+    font-weight: 500;
+    margin: 10px 0px 8px 100px;
+}
+.notes{
+    font-size: large;
+    font-weight: 500;
+    margin: 10px 0px 8px 100px;
+}
+.status{
+    font-size: large;
+    font-weight: 500;
+    margin: 10px 0px 8px 70px;
+}
+.fname1{
+    margin: 5px 0px 5px 0px;
+}
+.lname1{
+    margin: 5px 0px 5px 130px;
+}
+.mail1{
+    margin: 5px 0px 5px 50px;
+}
+.notes1{
+    margin: 5px 0px 5px 40px;
+}
+.status1{
+    margin: 5px 0px 5px 70px;
 }
