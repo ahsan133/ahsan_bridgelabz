@@ -1,0 +1,4 @@
+<div class="pin">
+<img class="img" *ngIf="!data.pin" (click)="pinNote()" src="/assets/img/pin.png" matTooltip="Pin note">
+<img class="img" *ngIf="data.pin" (click)="unpinNote()" src="/assets/img/unpin.png" matTooltip="Unpin note">
+</div>

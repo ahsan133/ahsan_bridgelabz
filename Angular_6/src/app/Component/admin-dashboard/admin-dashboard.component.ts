@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from 'src/app/Services/account.service';
 import { NotesService } from 'src/app/Services/notes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -17,7 +18,8 @@ count;
 
   constructor(
     public account: AccountService,
-    public note:NotesService
+    public note:NotesService,
+    public router:Router
   ) { }
 
   ngOnInit() {
@@ -66,5 +68,9 @@ count;
          this.count = this.count+1
        }
      }
+   }
+
+   logout(){
+     this.router.navigate(['/login']);
    }
 }

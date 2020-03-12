@@ -48,6 +48,7 @@ import { AddLabelComponent } from './Component/add-label/add-label.component';
 import { EditLabelComponent } from './Component/edit-label/edit-label.component';
 import { AdminDashboardComponent} from './Component/admin-dashboard/admin-dashboard.component';
 import {AdminRegisterComponent} from './Component/admin-register/admin-register.component';
+import { PinComponent } from './Component/pin/pin.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -88,7 +89,8 @@ export function socialConfigs() {
     AddLabelComponent,
     EditLabelComponent,
     AdminDashboardComponent,
-    AdminRegisterComponent
+    AdminRegisterComponent,
+    PinComponent
 
   ],
   imports: [

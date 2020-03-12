@@ -45,7 +45,12 @@ export class NotesService {
     const url =environment.Url +'api/color?id='+ id +'&color='+ value;   
     return this.http.put(url,null);
   }
-
+  pinNote(id){
+     return this.http.put(environment.Url+'api/IsPin?id='+id,null);
+  }
+  unpinNote(id){
+    return this.http.put(environment.Url+'api/UnPin?id='+id,null);
+  }
   getNotes(email){
     
     return this.http.get(environment.Url+ 'api/getNotes?email='+email);

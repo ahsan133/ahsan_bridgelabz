@@ -13,6 +13,7 @@ h1 {
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-bottom: 20px;
+    margin-top: -10px;
 }
 .blue{color: blue;}
 .red{color:red;}
@@ -94,4 +95,19 @@ h2{
 }
 .status1{
     margin: 5px 0px 5px 70px;
+}
+.signout{
+    width:90px;
+    height:36px;
+    background-color:purple;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    border-radius: 10px;
+    outline: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.signo{
+    display: flex;
+    justify-content: flex-end;
 }

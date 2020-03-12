@@ -10,7 +10,7 @@
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    
+    <app-pin [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
@@ -34,7 +34,7 @@
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    
+    <app-pin [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>

@@ -7,15 +7,17 @@
     <mat-card mat-list-item class="card1" *ngFor="let onenote of message"
      [style.background-color]="onenote.color" cdkDragLockAxis="y" cdkDrag>
       <div (click)="matcardOpen(onenote)">
-    <div>
+  
+       
+
       <img *ngIf="onenote.image" class ="image1" src="{{onenote.image}}">
-    </div>
+    
     <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
     <div class="title1" *ngIf="!onenote.title" >Title</div>
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    
+    <app-pin [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
@@ -34,16 +36,19 @@
       <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop1($event)"> -->
     <mat-card mat-grid-tile class="card" *ngFor="let onenote of message" 
     [style.background-color]="onenote.color" cdkDrag>
+    
       <div (click)="matcardOpen(onenote)">
+       
     <div>
       <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
     </div>
+   
     <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
     <div class="title1" *ngIf="!onenote.title" >Title</div>
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    
+    <app-pin [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
