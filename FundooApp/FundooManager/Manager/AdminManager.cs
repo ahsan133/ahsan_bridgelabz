@@ -41,7 +41,7 @@ namespace FundooManager.Manager
         /// <returns>
         /// result of task
         /// </returns>
-        public Task AddAdmin(AdminModel model)
+        public Task<int> AddAdmin(AdminModel model)
         {
             return this.repository.AddAdmin(model);
         }

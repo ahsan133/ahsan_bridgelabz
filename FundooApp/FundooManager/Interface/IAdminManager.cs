@@ -22,7 +22,7 @@ namespace FundooManager.Interface
         /// </summary>
         /// <param name="model">The model.</param>
         /// <returns>result of task</returns>
-        Task AddAdmin(AdminModel model);
+        Task<int> AddAdmin(AdminModel model);
 
         /// <summary>
         /// Logins the admin.

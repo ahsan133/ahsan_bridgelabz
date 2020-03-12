@@ -40,10 +40,17 @@ namespace FundooApp.Controllers
         /// <returns>result of action</returns>
         [HttpPost]
         [Route("api/addAdmin")]
-        public ActionResult AddAdmin(AdminModel model)
+        public async Task<ActionResult> AddAdmin([FromBody] AdminModel model)
         {
-            var result = this.admin.AddAdmin(model);
-            return this.Ok(result);
+            var result = await this.admin.AddAdmin(model);
+            if (result == 1)
+            {
+                return this.Ok(result);
+            }
+            else
+            {
+                return this.BadRequest();
+            }
         }
 
         /// <summary>
@@ -53,7 +60,7 @@ namespace FundooApp.Controllers
         /// <returns>result of action</returns>
         [HttpPost]
         [Route("api/loginAdmin")]
-        public ActionResult LoginAdmin(AdminModel model)
+        public ActionResult LoginAdmin([FromBody] AdminModel model)
         {
             var result = this.admin.LoginAdmin(model);
             if (result != "error")

@@ -43,12 +43,13 @@ namespace FundooRepository.Repository
         /// result of task
         /// </returns>
         /// <exception cref="Exception"></exception>
-        public Task AddAdmin(AdminModel model)
+        public Task<int> AddAdmin(AdminModel model)
         {
             try
             {
                 this.context.AdminModels.Add(model);
-                return Task.Run(() => this.context.SaveChanges());
+                var result = this.context.SaveChangesAsync();
+                return result;
             }
             catch (Exception e)
             {
