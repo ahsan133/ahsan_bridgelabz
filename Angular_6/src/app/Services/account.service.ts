@@ -11,6 +11,17 @@ export class AccountService {
   url: string;
   constructor(private http: HttpClient) { }
 
+  AdminLogin(data){
+    const params = {
+      Email: data.email,
+      Password: data.password
+    };
+    let headers = new HttpHeaders({
+      'Accept': 'application/json'
+    });
+    return this.http.post(environment.Url + 'api/loginAdmin', params, {headers:headers});
+  }
+
  register(data) {
   const params = {
     FirstName: data.firstName,

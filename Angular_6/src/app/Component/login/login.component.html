@@ -1,7 +1,5 @@
 <div class="whole">
 <mat-card class="card">
-<form [formGroup]="LoginForm">
-
       <h1>
         <span class="purple">F</span>
         <span class="red">u</span>
@@ -11,9 +9,10 @@
         <span class="green">o</span>
       </h1>
       
+      <div *ngIf="userPage">
       <h2>Sign in</h2>
       <h4>Use your Fundoo Account</h4>
-      
+      <form [formGroup]="LoginForm">
       <div class="in">
   
         <div>
@@ -52,5 +51,46 @@
           <img class="img" alt="Facebook" (click)="Facebook()" src="/assets/img/f.png"></div>
       </div>
     </form>
+   
+      <div class="admin" (click)="AdminPage()" >Admin Login.</div>
+    
+  </div>
+
+
+  <div *ngIf="adminPage">
+    <h2 class ="singinAdmin">Sign in as Admin.</h2>
+ <form [formGroup]="AdminLoginForm">
+      <div class="in">
+  
+        <div>
+          <mat-form-field appearance="outline" class="log">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" formControlName= "email">      
+          </mat-form-field>
+        </div>
+  
+        <div>
+          <mat-form-field appearance="outline" class="log">
+            <mat-label>password</mat-label>
+            <input matInput formControlName= "password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="allign">
+        <div class="register" routerLink="/adminRegister">create admin account</div>
+        <div class="button">
+          <input type="button" (click)="AdminLogin()" value="Login" id="btn" class="btn">
+        </div>
+      </div>
+
+      <div class="admin1" (click)="UserPage()" >User Login.</div>
+
+    </form>
+  </div>
+
 </mat-card>
 </div>

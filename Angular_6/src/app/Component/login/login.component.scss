@@ -117,3 +117,32 @@ h4{
 .log{
     width: 320px;
 }
+.admin{
+    font-weight: 500;
+    font-family: unset;
+    font-size: 16px;
+    color: darkblue;
+    outline: none;
+    cursor: pointer;
+    justify-content: flex-end;
+    display: flex;
+}
+.admin1{
+    font-weight: 500;
+    font-family: unset;
+    font-size: 16px;
+    color: darkblue;
+    outline: none;
+    cursor: pointer;
+    justify-content: flex-end;
+    display: flex;
+    margin-top:2em;
+}
+.singinAdmin{
+    margin: 0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 130;
+    font-size: 20px;
+    margin-bottom: 25px;
+}

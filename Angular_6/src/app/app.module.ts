@@ -23,6 +23,7 @@ import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionM
   import {MatListModule} from '@angular/material/list';
   import {MatGridListModule} from '@angular/material/grid-list';
   import {DragDropModule} from '@angular/cdk/drag-drop';
+  import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -45,6 +46,8 @@ import { ImageUploadComponent } from './Component/image-upload/image-upload.comp
 import { LabelsComponent } from './Component/labels/labels.component';
 import { AddLabelComponent } from './Component/add-label/add-label.component';
 import { EditLabelComponent } from './Component/edit-label/edit-label.component';
+import { AdminDashboardComponent} from './Component/admin-dashboard/admin-dashboard.component';
+import {AdminRegisterComponent} from './Component/admin-register/admin-register.component';
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -84,8 +87,9 @@ export function socialConfigs() {
     LabelsComponent,
     AddLabelComponent,
     EditLabelComponent,
-  
-    
+    AdminDashboardComponent,
+    AdminRegisterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -119,7 +123,8 @@ export function socialConfigs() {
     MatTooltipModule,
     MatListModule,
     MatGridListModule,
-    DragDropModule
+    DragDropModule,
+    FlexLayoutModule
 
   ],
   entryComponents: [

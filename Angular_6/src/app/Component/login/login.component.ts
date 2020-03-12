@@ -14,7 +14,9 @@ import { GoogleLoginProvider, FacebookLoginProvider, AuthService } from 'angular
 export class LoginComponent implements OnInit {
   hide = true;
   LoginForm: FormGroup;
-
+  AdminLoginForm:FormGroup;
+  adminPage=false;
+  userPage=true;
   constructor(public account : AccountService, private router: Router, private snackbar:MatSnackBar, public socialAuthService: AuthService) {
   }
 
@@ -22,6 +24,30 @@ export class LoginComponent implements OnInit {
     this.LoginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,15}')])
+    });
+    this.AdminLoginForm = new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]{6,15}')])
+    });
+  }
+
+  AdminPage(){
+    this.adminPage=true;
+    this.userPage= false;
+  }
+  UserPage(){
+    this.adminPage=false;
+    this.userPage= true;
+  }
+  
+  AdminLogin(){
+    this.account.AdminLogin(this.AdminLoginForm.value).subscribe((status:any)=>{
+      if(status != null){
+        this.router.navigate(['/adminDashboard']);
+        this.snackbar.open('logged in','', {duration: 2000});
+      }else{
+        this.snackbar.open('enter valid email and password','', {duration: 2000});
+      }
     });
   }
 
