@@ -31,6 +31,9 @@ export class AccountService {
     });
     return this.http.post(environment.Url + 'api/loginAdmin', params, {headers:headers});
   }
+  getUserList(){
+     return this.http.get(environment.Url + 'api/getUserList');
+  }
 
  register(data) {
   const params = {

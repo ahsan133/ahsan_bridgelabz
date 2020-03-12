@@ -1,3 +1,44 @@
-<p>
-  admin-dashboard works!
-</p>
+<div class="whole">
+<mat-card class ="card">
+  <h1>
+    <span class="purple">F</span>
+    <span class="red">u</span>
+    <span class="blue">n</span>
+    <span class="purple">d</span>
+    <span class="red">o</span>
+    <span class="green">o</span>
+  </h1>
+
+  <div *ngIf="statistics">
+  <h2>User Statistics</h2>
+<mat-divider></mat-divider>
+
+<div class="texts">
+<div class="text1">Email</div>
+<div class="text2">Login time</div>
+</div>
+
+<div *ngFor="let oneUser of userData">
+  <div class="texts">
+<div class="email">{{oneUser.email}}</div>
+<div class ="time">{{oneUser.loginTime}}</div>
+</div>
+</div>
+</div>
+
+<div *ngIf="details">
+  <h2>User Details</h2>
+  <mat-divider></mat-divider>
+  
+  <div class="texts">
+    <div class="fname">First name</div>
+    <div class="text2">Last name</div>
+    <div class="text2">Email</div>
+    <div class="text2">Number of notes</div>
+    <div class="text2">Status</div>
+    </div>
+
+
+</div>
+</mat-card>
+</div>
