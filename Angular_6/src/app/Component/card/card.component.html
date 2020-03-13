@@ -16,6 +16,6 @@
 </div>
 </form>
 <div class="align">
-  <app-icons [data]="onenote"></app-icons>
+  <app-icons *ngIf="advance" [data]="onenote"></app-icons>
   <button mat-button class="close" (click)="updateNote()">Save</button>
   </div>

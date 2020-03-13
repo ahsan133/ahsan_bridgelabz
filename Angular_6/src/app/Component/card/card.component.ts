@@ -15,6 +15,7 @@ export class CardComponent implements OnInit {
   userData=JSON.parse(localStorage.getItem('userData'));
   title1:any;
   description1:any;
+  advance;
 
   constructor(
     private dataSharing:DataSharingService,
@@ -25,6 +26,7 @@ export class CardComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public onenote: any) { }
 
   ngOnInit() {
+    this.serviceCard();
     this.CardForm= new FormGroup({
       title:new FormControl(),
       description: new FormControl()
@@ -35,7 +37,14 @@ export class CardComponent implements OnInit {
     this.dialogRef.close();
 }
 
-
+serviceCard(){
+  if(this.userData.cardType == "Basic"){
+    this.advance = false;
+  }
+  if(this.userData.cardType == "Advance"){
+    this.advance = true;
+  }
+}
 updateNote(){
   if(this.CardForm.value.title === null){
     this.title1 = this.onenote.title;
