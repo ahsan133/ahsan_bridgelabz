@@ -8,8 +8,9 @@ import { AllNotesComponent} from './Component/all-notes/all-notes.component';
 import { RemainderComponent} from './Component/remainder/remainder.component';
 import { ArchiveComponent} from './Component/archive/archive.component';
 import { TrashComponent} from './Component/trash/trash.component';
-import{AdminRegisterComponent} from './Component/admin-register/admin-register.component';
+import {AdminRegisterComponent} from './Component/admin-register/admin-register.component';
 import {AdminDashboardComponent} from './Component/admin-dashboard/admin-dashboard.component';
+import {ServiceCardComponent} from './Component/service-card/service-card.component';
 
 const routes: Routes = [
   {path : '', component: LoginComponent},
@@ -25,7 +26,8 @@ children: [
   {path: 'trash', component:TrashComponent},
 ]},
   {path: 'adminRegister', component:AdminRegisterComponent},
-  {path: 'adminDashboard', component:AdminDashboardComponent}
+  {path: 'adminDashboard', component:AdminDashboardComponent},
+  {path: 'serviceCard', component:ServiceCardComponent}
 ];
 
 @NgModule({

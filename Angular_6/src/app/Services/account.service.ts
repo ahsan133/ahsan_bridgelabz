@@ -9,6 +9,7 @@ import 'rxjs/add/operator/map';
 
 export class AccountService {
   url: string;
+  card;
   constructor(private http: HttpClient) { }
 
   adminRegister(data){
@@ -38,12 +39,17 @@ export class AccountService {
   getUsers(){
     return this.http.get(environment.Url + 'api/getUsers');
   }
+
+  SelectCard(card){
+    this.card = card;
+  }
  register(data) {
   const params = {
     FirstName: data.firstName,
     LastName: data.lastName,
     Email: data.email,
-    Password: data.password
+    Password: data.password,
+    cardType: this.card
   };
   return this.http.post(environment.Url + 'api/register/', params);
 }

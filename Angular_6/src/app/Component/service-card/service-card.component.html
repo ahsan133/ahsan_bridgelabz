@@ -1,0 +1,26 @@
+<div class="whole">
+<mat-card class= "card">
+  <h2>Select a Card</h2>
+  <div class="cards">
+<mat-card class="card1" (click)="basicCard()" [ngClass]="{'highlight' : selected, 'not-highlight' : !selected}">
+  <h1>₹49.99</h1>
+  <h3>Basic:</h3>
+ <div>Limit to only Text notes.</div>
+</mat-card>
+
+<mat-card class="card1" (click)="advanceCard()" [ngClass]="{'highlight' : !selected, 'not-highlight' : selected}">
+  <h1>₹99.99</h1>
+  <h3>Advance Service:</h3>
+ <div>Support for image Notes,URL Notes, Checklists, Unlimited Collaborations.</div>
+</mat-card>
+</div>
+
+<div class="allign">
+  <div class="register" routerLink="/login">Login</div>
+  <div class="button">
+    <input type="button" (click)="next()" value="Next" id="btn" class="btn">
+  </div>
+</div>
+
+</mat-card>
+</div>

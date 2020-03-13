@@ -1,0 +1,72 @@
+.whole{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+.card{
+    width: 40em;
+    margin: 0 auto;
+    float: none;
+}
+.card1{
+    width: 22em;
+    height: 10em;
+    margin: 10px;
+    cursor: pointer;
+}
+.card1:hover {
+    transform: scale(1.05);
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    font-weight: 500;
+}
+h1{
+    font-weight: 500;
+}
+h3{
+    font-weight: 500;
+    color: darkblue;
+}
+
+.highlight{
+    background: rgb(184, 182, 182);
+  }
+  
+  .not-highlight{
+    background: white;
+  }
+  .register{
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    color: blue;
+    outline: none;
+    padding-top: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+}
+.allign{
+    justify-content: center;
+    display: flex;
+    margin-top: 1em; 
+}
+.btn{
+    background-color:purple;
+    color: white;
+    height:35px;
+    outline: none;
+    border-radius: 8px;
+    width:75px;   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.button{
+    padding:10px;
+    margin-left: 30em;
+}

@@ -15,7 +15,7 @@
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    <app-pin class="showPin" [data]="onenote"></app-pin>
+    <app-pin *ngIf="advance" class="showPin" [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
@@ -23,8 +23,8 @@
           <mat-icon class="icon2">close</mat-icon>
         </button>
     </button>
-    <app-labels [data]="onenote"></app-labels>
-    <app-icons [data]="onenote"></app-icons>
+    <app-labels *ngIf="advance" [data]="onenote"></app-labels>
+    <app-icons *ngIf="advance" [data]="onenote"></app-icons>
     </mat-card>
   </div>
     </mat-list>
@@ -46,7 +46,7 @@
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    <app-pin  class="showPin" [data]="onenote"></app-pin>
+    <app-pin *ngIf="advance" class="showPin" [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
@@ -54,8 +54,8 @@
           <mat-icon class="icon2">close</mat-icon>
         </button>
     </button>
-    <app-labels [data]="onenote"></app-labels>
-    <app-icons class="showIcons" [data]="onenote"></app-icons>
+    <app-labels *ngIf="advance" [data]="onenote"></app-labels>
+    <app-icons *ngIf="advance" class="showIcons" [data]="onenote"></app-icons>
     </mat-card>
   <!-- </div> -->
 <!-- </mat-grid-list> -->

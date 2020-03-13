@@ -13,7 +13,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 export class GetNotesComponent implements OnInit {
   userData =JSON.parse(localStorage.getItem('userData'));
   message  = [];
-
+  advance;
   change :boolean;
 
   constructor(
@@ -23,6 +23,7 @@ export class GetNotesComponent implements OnInit {
     public dialog:MatDialog ) { }
 
   ngOnInit() {
+    this.serviceCard();
     this.getNotes();
 
     this.dataSharing.currentMessage.subscribe((change) =>{
@@ -48,6 +49,16 @@ export class GetNotesComponent implements OnInit {
   // drop1(event: CdkDragDrop<string[]>) {
   //   moveItemInArray(this.message, event.previousIndex, event.currentIndex);
   // }
+
+  serviceCard(){
+    if(this.userData.cardType == "Basic"){
+      this.advance = false;
+    }
+    if(this.userData.cardType == "Advance"){
+      this.advance = true;
+    }
+  }
+
   getNotes(){
    this.note.getNotes(this.userData.email).subscribe((status : any)=>{
      this.message = status;
