@@ -157,6 +157,7 @@ namespace FundooRepository.Repository
             var data = this.context.NotesModels.Where(p => p.Id == id && p.Archive == false).SingleOrDefault();
             if (data != null)
             {
+                data.Pin = false;
                 data.Archive = true;
                 return Task.Run(() => this.context.SaveChangesAsync());
             }
@@ -215,7 +216,7 @@ namespace FundooRepository.Repository
             var data = this.context.NotesModels.Where(p => p.Id == id && p.Pin == true).SingleOrDefault();
             if (data != null)
             {
-                data.Pin = true;
+                data.Pin = false;
                 return Task.Run(() => this.context.SaveChangesAsync());
             }
 

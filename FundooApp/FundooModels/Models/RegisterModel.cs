@@ -47,6 +47,11 @@ namespace FundooModels.Models
         private bool status;
 
         /// <summary>
+        /// The cardType
+        /// </summary>
+        private string cardType;
+
+        /// <summary>
         /// Gets or sets the first name.
         /// </summary>
         /// <value>
@@ -94,5 +99,13 @@ namespace FundooModels.Models
         /// The profilePicture.
         /// </value>
         public string ProfilePicture { get => this.profilePicture; set => this.profilePicture = value; }
+
+        /// <summary>
+        /// Gets or sets the CardType.
+        /// </summary>
+        /// <value>
+        /// The CardType.
+        /// </value>
+        public string CardType { get => this.cardType; set => this.cardType = value; }
     }
 }

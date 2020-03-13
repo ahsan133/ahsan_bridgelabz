@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FundooRepository.Migrations
 {
-    public partial class updatedColumn : Migration
+    public partial class Fundoo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -99,7 +99,8 @@ namespace FundooRepository.Migrations
                     Email = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: true),
                     Status = table.Column<bool>(nullable: false),
-                    ProfilePicture = table.Column<string>(nullable: true)
+                    ProfilePicture = table.Column<string>(nullable: true),
+                    CardType = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
