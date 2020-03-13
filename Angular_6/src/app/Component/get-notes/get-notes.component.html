@@ -8,8 +8,6 @@
      [style.background-color]="onenote.color" cdkDragLockAxis="y" cdkDrag>
       <div (click)="matcardOpen(onenote)">
   
-       
-
       <img *ngIf="onenote.image" class ="image1" src="{{onenote.image}}">
     
     <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
@@ -17,7 +15,7 @@
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    <app-pin [data]="onenote"></app-pin>
+    <app-pin class="showPin" [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
@@ -48,7 +46,7 @@
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
     <div class="description1" *ngIf="!onenote.description">Description</div>
     </div>
-    <app-pin [data]="onenote"></app-pin>
+    <app-pin  class="showPin" [data]="onenote"></app-pin>
     <button class="allIcon" *ngIf="onenote.remainder">
       <mat-icon class="icon1">query_builder</mat-icon>
       <div class="remainderText">{{onenote.remainder}}</div>
@@ -57,7 +55,7 @@
         </button>
     </button>
     <app-labels [data]="onenote"></app-labels>
-    <app-icons [data]="onenote"></app-icons>
+    <app-icons class="showIcons" [data]="onenote"></app-icons>
     </mat-card>
   <!-- </div> -->
 <!-- </mat-grid-list> -->

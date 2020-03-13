@@ -1,16 +1,13 @@
 <div class="whole">
 <!-- <div fxLayout.lg ="row" fxLayout.lg="column" fxlayoutAlign="center"> -->
   
-  <mat-toolbar color="primary">
-    <div class="tgf"
-  fxLayout
-  fxLayout.xs="row">
+  <mat-toolbar color="primary" class="toolbar" fxLayout="row" fxLayoutAlign="space-between center">
     <button class="btn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon>
     </button>
     
-        <h1 fxFlex="20%">Fundoo</h1>
+        <h1>Fundoo</h1>
   
-    <div fxFlex="50%" class="search">
+    <div class="search">
       <mat-card class="search-bar">
         <button class="search-button" id="search-button" mat-icon-button>
           <mat-icon matSuffix class="suffix">search</mat-icon>
@@ -23,11 +20,11 @@
     </div>
   
   
-  <div fxFlex="10%" class="set">
+  <div class="set">
     <button mat-icon-button class="btn1" *ngIf="!card1" (click)="viewGrid()" matTooltip="List view"><mat-icon>list</mat-icon></button>
     <button mat-icon-button class="btn1" *ngIf="card1" (click)="viewList()" matTooltip="Grid view"><mat-icon>grid_on</mat-icon></button>
   </div>
-  <div fxFlex="20%">
+  <div>
   <img class="picture" alt ="ProfilePicture" *ngIf="!profilePic" src="/assets/img/No.png" [matMenuTriggerFor]="menu">
     <img class="picture" alt="ProfilePicture" *ngIf="profilePic" src= "{{profilePic}}" [matMenuTriggerFor]="menu" >
   </div>
@@ -61,10 +58,10 @@
   </div>
   
     </mat-menu>
-  </div>
+ 
   </mat-toolbar>
- 
- 
+<!--  
+</div> -->
 </div> 
 
   <mat-drawer-container class="container">

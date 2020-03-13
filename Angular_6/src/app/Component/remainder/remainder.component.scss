@@ -4,7 +4,15 @@
     align-items: center;
     margin:20px;
 }
-
+.card:hover .showPin{
+    display: block;
+}
+.card1:hover .showPin{
+    display: block;
+}
+.showPin{
+   display: none;
+}
 .card{
     width:290px;
     margin:10px;

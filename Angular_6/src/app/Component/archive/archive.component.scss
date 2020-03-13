@@ -4,6 +4,15 @@
     padding: 0px;
     border-radius: 10px;
 }
+.card:hover .showPin{
+    display: block;
+}
+.card1:hover .showPin{
+    display: block;
+}
+.showPin{
+   display: none;
+}
 .card1{
     width:40em;
     margin:10px;
