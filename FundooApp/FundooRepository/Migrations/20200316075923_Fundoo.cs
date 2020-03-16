@@ -83,7 +83,8 @@ namespace FundooRepository.Migrations
                     ModifiedTime = table.Column<DateTime>(nullable: false),
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Index = table.Column<int>(nullable: false)
+                    Index = table.Column<int>(nullable: false),
+                    Label = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

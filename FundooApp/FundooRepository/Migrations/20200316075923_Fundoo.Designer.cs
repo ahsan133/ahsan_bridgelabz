@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FundooRepository.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20200313055634_Fundoo")]
+    [Migration("20200316075923_Fundoo")]
     partial class Fundoo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -110,6 +110,8 @@ namespace FundooRepository.Migrations
                     b.Property<string>("Image");
 
                     b.Property<int>("Index");
+
+                    b.Property<string>("Label");
 
                     b.Property<DateTime>("ModifiedTime");
 

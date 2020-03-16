@@ -32,6 +32,13 @@ namespace FundooRepository.Interfaces
         Task<string> UpdateLabel(LabelModel labelModel);
 
         /// <summary>
+        /// Removes the label.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>remove label result</returns>
+        Task<string> RemoveLabel(int id);
+
+        /// <summary>
         /// Deletes the label.
         /// </summary>
         /// <param name="id">The identifier.</param>

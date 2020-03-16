@@ -60,11 +60,11 @@ namespace FundooRepository.Repository
                 Email = notes.Email,
                 Title = notes.Title,
                 Description = notes.Description,
-                Archive = false,
+                Archive = notes.Archive,
                 Pin = false,
                 Trash = false,
-                Color = 0.ToString(),
-                Remainder = null,
+                Color = notes.Color,
+                Remainder = notes.Remainder,
                 CreatedTime = DateTime.Now,
                 ModifiedTime = DateTime.Now
             };

@@ -109,6 +109,8 @@ namespace FundooRepository.Migrations
 
                     b.Property<int>("Index");
 
+                    b.Property<string>("Label");
+
                     b.Property<DateTime>("ModifiedTime");
 
                     b.Property<bool>("Pin");

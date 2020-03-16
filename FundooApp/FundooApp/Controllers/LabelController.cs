@@ -76,6 +76,26 @@ namespace FundooApp.Controllers
         }
 
         /// <summary>
+        /// Removes the label.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>result of action</returns>
+        [HttpPut]
+        [Route("api/removeLabel")]
+        public async Task<ActionResult> RemoveLabel(int id)
+        {
+            var result = await this.label.RemoveLabel(id);
+            if (result == "success")
+            {
+                return this.Ok(new { result });
+            }
+            else
+            {
+                return this.BadRequest();
+            }
+        }
+        
+        /// <summary>
         /// Deletes the label.
         /// </summary>
         /// <param name="id">The identifier.</param>

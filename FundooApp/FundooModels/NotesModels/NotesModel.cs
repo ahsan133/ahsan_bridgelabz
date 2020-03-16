@@ -83,6 +83,11 @@ namespace FundooModels.NotesModel
         private int index;
 
         /// <summary>
+        /// The label
+        /// </summary>
+        private String label;
+
+        /// <summary>
         /// Gets or sets the email.
         /// </summary>
         /// <value>
@@ -186,5 +191,13 @@ namespace FundooModels.NotesModel
         /// The index.
         /// </value>
         public int Index { get => this.index; set => this.index = value; }
+
+        /// <summary>
+        /// Gets or sets the label.
+        /// </summary>
+        /// <value>
+        /// The label.
+        /// </value>
+        public string Label { get => this.label; set => this.label = value; }
     }
 }

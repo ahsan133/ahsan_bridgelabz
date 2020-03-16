@@ -77,6 +77,26 @@ namespace FundooRepository.Repository
         }
 
         /// <summary>
+        /// Removes the label.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// remove label result
+        /// </returns>
+        public async Task<string> RemoveLabel(int id)
+        {
+            var label = this.context.LabelModels.Where(p => p.Id == id).SingleOrDefault();
+            if(label != null)
+            {
+                label.NotesId = 0;
+                await this.context.SaveChangesAsync();
+                return "success";
+            }
+
+            return null;
+        }
+
+        /// <summary>
         /// Deletes the label.
         /// </summary>
         /// <param name="id">The identifier.</param>

@@ -61,6 +61,19 @@ namespace FundooManager.Manager
         }
 
         /// <summary>
+        /// Removes the label.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns>
+        /// remove label result
+        /// </returns>
+        public Task<string> RemoveLabel(int id)
+        {
+            var result = this.repository.RemoveLabel(id);
+            return result;
+        }
+
+        /// <summary>
         /// Deletes the label.
         /// </summary>
         /// <param name="id">The identifier.</param>
