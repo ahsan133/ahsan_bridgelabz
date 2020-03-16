@@ -32,11 +32,12 @@
     <ng-template #gridview>
       <!-- <mat-grid-list rowHeight="100px"> -->
       <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop1($event)"> -->
-    <mat-card mat-grid-tile class="card" *ngFor="let onenote of message" 
-    [style.background-color]="onenote.color" cdkDrag>
     
+  
+        <mat-card mat-grid-tile class="card" *ngFor="let onenote of message | filter:text" 
+    [style.background-color]="onenote.color" cdkDrag>
+    <div *ngIf="onenote.label == text"></div>
       <div (click)="matcardOpen(onenote)">
-       
     <div>
       <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
     </div>

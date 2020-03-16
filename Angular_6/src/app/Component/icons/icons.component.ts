@@ -124,7 +124,6 @@ this.notes.addRemainder(this.data.id, "Today, 8:00 PM").subscribe((status)=>{
   }
 
  
-
    addLabel(){
     const dialogRef =this.dialog.open(AddLabelComponent ,{ width: '240px', data:{onenote: this.data, labels:this.labels}});
 

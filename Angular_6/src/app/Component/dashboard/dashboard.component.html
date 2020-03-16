@@ -1,7 +1,7 @@
 <div class="whole">
 <!-- <div fxLayout.lg ="row" fxLayout.lg="column" fxlayoutAlign="center"> -->
   
-  <mat-toolbar color="primary" class="toolbar" fxLayout="row" fxLayoutAlign="space-between center">
+  <mat-toolbar color="primary" class="toolbar" fxLayout.lg="row" fxLayoutAlign="space-between center">
     <button class="btn" mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon>
     </button>
     
@@ -12,13 +12,24 @@
         <button class="search-button" id="search-button" mat-icon-button>
           <mat-icon matSuffix class="suffix">search</mat-icon>
         </button>
-        <input class="in" type="text" name="search" autocomplete="off" placeholder="search ">
+        <input class="in" type="text" name="search" (change)="searchText($event)" autocomplete="off" 
+        placeholder="&#61442; Search">
         <button class="search-button" mat-icon-button>
           <mat-icon matSuffix class="search">clear</mat-icon>
         </button>
       </mat-card>
     </div>
-  
+
+    <!-- <div *ngFor="let onelabel of label | filter:searchText">
+        
+
+    </div>
+
+  <tbody>
+    <tr *ngFor="let onelabel of label | filter:searchText">
+      <td>{{onelabel.label}}</td>
+    </tr>
+  </tbody> -->
   
   <div class="set">
     <button mat-icon-button class="btn1" *ngIf="!card1" (click)="viewGrid()" matTooltip="List view"><mat-icon>list</mat-icon></button>

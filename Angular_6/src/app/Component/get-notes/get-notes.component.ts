@@ -15,6 +15,8 @@ export class GetNotesComponent implements OnInit {
   message  = [];
   advance;
   change :boolean;
+  pin;
+  text; 
 
   constructor(
     private dataSharing:DataSharingService,
@@ -23,17 +25,28 @@ export class GetNotesComponent implements OnInit {
     public dialog:MatDialog ) { }
 
   ngOnInit() {
-    this.serviceCard();
     this.getNotes();
+    this.serviceCard();
 
     this.dataSharing.currentMessage.subscribe((change) =>{
       if(change == true){
         this.getNotes();
         this.dataSharing.changeMessage(false);
       }
-      }); 
+      });
       
     this.dataSharing.currentCard.subscribe(change => this.change=change)  
+    
+    this.dataSharing.currentValue.subscribe((text) =>{
+      this.text = text;
+      this.changeText();
+      this.getNotes();
+    });
+  }
+
+  changeText(){
+    console.log(this.text);
+    
   }
 
   drop(event: CdkDragDrop<number[]>) {
@@ -57,6 +70,12 @@ export class GetNotesComponent implements OnInit {
     if(this.userData.cardType == "Advance"){
       this.advance = true;
     }
+    for(let i of this.message){
+      if(i.pin == true){
+        this.pin = true;  
+     }
+    }
+   
   }
 
   getNotes(){

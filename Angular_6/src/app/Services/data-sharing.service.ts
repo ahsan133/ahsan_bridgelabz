@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataSharingService {
 
+
   private messageSource = new BehaviorSubject(false);
   currentMessage = this.messageSource.asObservable();
 
@@ -14,6 +15,12 @@ export class DataSharingService {
 
   private labelSource = new BehaviorSubject(false);
   currentLabel = this.labelSource.asObservable();
+
+  private getnote = new BehaviorSubject(false);
+  currentData = this.getnote.asObservable();
+
+  private valueSource = new BehaviorSubject(null);
+  currentValue = this.valueSource.asObservable();
 
   constructor() { }
 
@@ -29,4 +36,11 @@ export class DataSharingService {
     this.labelSource.next(value)
   }
 
+  changeData(value : boolean){
+    this.getnote.next(value);
+  }
+
+  changeValue(value: string) {
+    this.valueSource.next(value)
+  }
 }

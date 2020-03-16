@@ -1,4 +1,4 @@
-<mat-card *ngIf="!card2" class="card" (click)="note()">
+<mat-card *ngIf="!card2" class="card" (click)="note()" [style.background-color]="color">
   <div class="takeNote">Take a note...</div>
 </mat-card>
 
@@ -7,9 +7,8 @@
   <input class="data" type="text" placeholder="Title" [(ngModel)]="title">
   <input class="data" type="text" placeholder="Take a note..." [(ngModel)]="description">
 </div>
-
+<app-icon *ngIf="advance"></app-icon>
 <div class="align">
 <button mat-button class="close" (click)="close()">Save</button>
 </div>
 </mat-card>
-

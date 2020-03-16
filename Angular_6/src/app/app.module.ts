@@ -24,6 +24,7 @@ import {MatButtonModule, MatCheckboxModule, MatButtonToggleModule, MatExpansionM
   import {MatGridListModule} from '@angular/material/grid-list';
   import {DragDropModule} from '@angular/cdk/drag-drop';
   import { FlexLayoutModule } from '@angular/flex-layout';
+  import { PipesModule } from 'pipes-module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,6 +51,9 @@ import { AdminDashboardComponent} from './Component/admin-dashboard/admin-dashbo
 import {AdminRegisterComponent} from './Component/admin-register/admin-register.component';
 import { PinComponent } from './Component/pin/pin.component';
 import { ServiceCardComponent } from './Component/service-card/service-card.component';
+import { IconComponent } from './Component/icon/icon.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 export function socialConfigs() {  
   const config = new AuthServiceConfig(  
@@ -92,7 +96,8 @@ export function socialConfigs() {
     AdminDashboardComponent,
     AdminRegisterComponent,
     PinComponent,
-    ServiceCardComponent
+    ServiceCardComponent,
+    IconComponent
 
   ],
   imports: [
@@ -128,7 +133,8 @@ export function socialConfigs() {
     MatListModule,
     MatGridListModule,
     DragDropModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    Ng2SearchPipeModule
 
   ],
   entryComponents: [

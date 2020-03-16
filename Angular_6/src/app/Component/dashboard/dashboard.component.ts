@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   fileToUpload: File;
   label=[];
   card1;
-
+  text;
 
   constructor(
     private dataSharing:DataSharingService,
@@ -47,7 +47,11 @@ export class DashboardComponent implements OnInit {
       this.dataSharing.changeLabel(false);
     }
     }); 
+  }
 
+  searchText(event : any){
+    this.text = event.target.value;
+    this.dataSharing.changeValue(this.text);
   }
 
   getLabel(){

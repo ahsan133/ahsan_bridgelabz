@@ -6,15 +6,26 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class NotesService {
+  archive: any;
+  color: any;
+  remainder: any;
 
   constructor(
     private http: HttpClient) { }
 
+    sendData(archive, color,remainder){
+      this.archive=archive;
+      this.color = color;
+      this.remainder = remainder;
+    }
   addNote(title, description, email){
     const params={
       Title :title,
       Description : description,
-      Email : email
+      Email : email,
+      Color : this.color,
+      Archive : this.archive,
+      Remainder : this.remainder
     };
    return this.http.post(environment.Url +'api/addNotes', params);
   }
