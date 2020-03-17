@@ -7,8 +7,11 @@
   <input class="data" type="text" placeholder="Title" [(ngModel)]="title">
   <input class="data" type="text" placeholder="Take a note..." [(ngModel)]="description">
 </div>
+
+<div class="done">
 <app-icon *ngIf="advance"></app-icon>
 <div class="align">
 <button mat-button class="close" (click)="close()">Save</button>
+</div>
 </div>
 </mat-card>
