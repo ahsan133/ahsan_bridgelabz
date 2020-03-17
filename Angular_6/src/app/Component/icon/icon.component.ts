@@ -10,7 +10,7 @@ import { DataSharingService } from 'src/app/Services/data-sharing.service';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
-color= "#FFFFFF";
+color = "#FFFFFF";
 archive=false;
 remainder=null;
 
@@ -22,6 +22,8 @@ remainder=null;
 
   ngOnInit() {
     this.sendData();
+
+
   }
 sendData(){
   this.note.sendData(this.archive,this.color, this.remainder);
@@ -67,6 +69,6 @@ sendData(){
   updatecolor(i){
     this.color =this.Colors[i].colorCode;
     this.sendData();
-    this.dataSharing.changeData(true);
+    this.dataSharing.changeData(this.color);
   }
 }

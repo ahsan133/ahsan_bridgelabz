@@ -1,6 +1,11 @@
 <div class="text">Edit label:</div>
-
 <form [formGroup]="EditLabelForm">
+
+<div class="input">
+<input type="text" class="in" placeholder="Create new label" formControlName="CreateLabel">
+<button mat-icon-button class="done" (click)="createLabel()"><mat-icon>done </mat-icon></button>
+</div>
+
 <div *ngFor="let oneLabel of data">
   <div class="all">
   <mat-icon class="icon">label</mat-icon>

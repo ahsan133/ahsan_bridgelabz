@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material';
 export class LabelsComponent implements OnInit {
   userData=JSON.parse(localStorage.getItem('userData'));
   label =[];
+
   @Output() messageEvent = new EventEmitter<any>();
   @Input() data;
 
@@ -20,7 +21,6 @@ export class LabelsComponent implements OnInit {
 
   ngOnInit() {
     this.getLabel();
-    this.messageEvent.emit(this.label)
   }
 
   getLabel(){
@@ -32,11 +32,12 @@ export class LabelsComponent implements OnInit {
   }
 
   removeLabel(oneLabel : any){
-    this.note.removeLabel(oneLabel.id).subscribe((status : any)=>{
+    this.note.removeLabell(oneLabel.id).subscribe((status : any)=>{
       if(status != null){
         this.getLabel();
         this.snackBar.open('Label Removed.','', {duration: 2000});
       }
     });
   }
+
 }

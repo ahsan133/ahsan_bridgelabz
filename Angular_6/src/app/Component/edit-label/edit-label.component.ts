@@ -11,6 +11,7 @@ import { DataSharingService } from 'src/app/Services/data-sharing.service';
 })
 export class EditLabelComponent implements OnInit {
   EditLabelForm:FormGroup;
+  userData= JSON.parse(localStorage.getItem('userData'));
 
   constructor(
     private dataSharing:DataSharingService,
@@ -22,11 +23,25 @@ export class EditLabelComponent implements OnInit {
 
   ngOnInit() {
     this.EditLabelForm = new FormGroup({
-      newLabel: new FormControl()
+      newLabel: new FormControl(),
+      CreateLabel: new FormControl()
     });
   }
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  createLabel(){
+    if(this.EditLabelForm.value.CreateLabel != null){
+      this.note.createLabel(this.userData.email,this.EditLabelForm.value.CreateLabel).subscribe((status)=>{
+        if(status != null){
+          this.dataSharing.changeMessage(true);
+          this.dataSharing.changeLabel(true);
+            console.log("label added");
+            this.ngOnInit();
+        }
+     });  
+    }
   }
 
   updateLabel(oneLabel){
@@ -34,11 +49,11 @@ export class EditLabelComponent implements OnInit {
       if(status != null){
         this.dataSharing.changeLabel(true);
         this.dataSharing.changeMessage(true);
-        console.log("done");
         this.snackbar.open('Updated.','', {duration: 2000});
       }
     });
   }
+
   deleteLabel(oneLabel){
     this.note.removeLabel(oneLabel.id).subscribe((status)=>{
       if(status != null){

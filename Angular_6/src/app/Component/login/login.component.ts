@@ -17,7 +17,11 @@ export class LoginComponent implements OnInit {
   AdminLoginForm:FormGroup;
   adminPage=false;
   userPage=true;
-  constructor(public account : AccountService, private router: Router, private snackbar:MatSnackBar, public socialAuthService: AuthService) {
+  constructor(
+    public account : AccountService, 
+    private router: Router, 
+    private snackbar:MatSnackBar, 
+    public socialAuthService: AuthService) {
   }
 
   ngOnInit() {

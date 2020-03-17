@@ -1,7 +1,7 @@
 <div class="whole" >
   <mat-list role="list" *ngIf="change; else gridview">
     
-    <div id="message" cdkDropList [cdkDropListData]="message"class="example-list" 
+    <div id="message" cdkDropList [cdkDropListData]="message"
     (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
 
     <mat-card mat-list-item class="card1" *ngFor="let onenote of message"
@@ -30,12 +30,13 @@
     </mat-list>
 
     <ng-template #gridview>
-      <!-- <mat-grid-list rowHeight="100px"> -->
-      <!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="drop1($event)"> -->
-    
-  
+
+        <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="message" class="example-list"
+        (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+
         <mat-card mat-grid-tile class="card" *ngFor="let onenote of message | filter:text" 
     [style.background-color]="onenote.color" cdkDrag>
+    
     <div *ngIf="onenote.label == text"></div>
       <div (click)="matcardOpen(onenote)">
     <div>
@@ -55,11 +56,11 @@
           <mat-icon class="icon2">close</mat-icon>
         </button>
     </button>
+    
     <app-labels *ngIf="advance" [data]="onenote"></app-labels>
     <app-icons *ngIf="advance" class="showIcons" [data]="onenote"></app-icons>
     </mat-card>
-  <!-- </div> -->
-<!-- </mat-grid-list> -->
-  </ng-template>
 
+  </div>
+  </ng-template>
     </div>

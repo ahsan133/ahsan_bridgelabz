@@ -1,8 +1,8 @@
-<mat-card *ngIf="!card2" class="card" (click)="note()" [style.background-color]="color">
+<mat-card *ngIf="!card2" class="card" (click)="note()" >
   <div class="takeNote">Take a note...</div>
 </mat-card>
 
-<mat-card *ngIf="!card1" class="card">
+<mat-card *ngIf="!card1" class="card" [style.background-color]="color">
   <div class ="text">
   <input class="data" type="text" placeholder="Title" [(ngModel)]="title">
   <input class="data" type="text" placeholder="Take a note..." [(ngModel)]="description">

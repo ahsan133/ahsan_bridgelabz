@@ -16,11 +16,11 @@ export class DataSharingService {
   private labelSource = new BehaviorSubject(false);
   currentLabel = this.labelSource.asObservable();
 
-  private getnote = new BehaviorSubject(false);
-  currentData = this.getnote.asObservable();
-
   private valueSource = new BehaviorSubject(null);
   currentValue = this.valueSource.asObservable();
+
+  private dataSource = new BehaviorSubject(null);
+  currentData = this.dataSource.asObservable();
 
   constructor() { }
 
@@ -36,11 +36,11 @@ export class DataSharingService {
     this.labelSource.next(value)
   }
 
-  changeData(value : boolean){
-    this.getnote.next(value);
-  }
-
   changeValue(value: string) {
     this.valueSource.next(value)
+  }
+
+  changeData(value: any){
+    this.dataSource.next(value)
   }
 }

@@ -11,7 +11,7 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class NotesComponent implements OnInit {
   userData=JSON.parse(localStorage.getItem('userData'));
-  color= "#FFFFFF";
+  color;
   archive=false;
   remainder=null;
   title;
@@ -27,17 +27,13 @@ export class NotesComponent implements OnInit {
 
   ngOnInit() {
     this.serviceCard();
-    // this.change(this.color, this.archive, this.remainder);
 
-    this.dataSharing.currentMessage.subscribe((change) =>{
-      if(change == true){
-        this.change(color,archive,remainder);
-        this.ngOnInit();
-        this.dataSharing.changeMessage(false);
-      }
-      }); 
+    this.dataSharing.currentData.subscribe((data) => {
+      this.color = data;
+    });
   }
 
+ 
   change(color,archive,remainder){
     this.color =  color;
     this.archive = archive;
@@ -61,6 +57,7 @@ export class NotesComponent implements OnInit {
   close(){
     this.card1 = true;
     this.card2 = false;
+    this.color= "#FFFFFF";
     if(this.title != null || this.description !=null){
       this.notes.addNote(this.title ,this.description,this.userData.email).subscribe((status)=>{
         if(status != null){

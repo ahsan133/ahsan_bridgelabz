@@ -17,6 +17,7 @@ export class NotesService {
       this.archive=archive;
       this.color = color;
       this.remainder = remainder;
+
     }
   addNote(title, description, email){
     const params={
@@ -133,11 +134,22 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
   removeLabel(id){
     return this.http.delete(environment.Url+'api/deleteLabel?id='+id);
   }
+  removeLabell(id){
+    return this.http.put(environment.Url+'api/removeLabel?id='+id, null);
+  }
   addLabel(email,label,notesId){
     const params={
       "Email": email,
        "Label": label,
        "NotesId":notesId
+    };
+    return this.http.post(environment.Url+'api/addLabel',params);
+  }
+
+  createLabel(email,label){
+    const params={
+      "Email": email,
+       "Label": label
     };
     return this.http.post(environment.Url+'api/addLabel',params);
   }

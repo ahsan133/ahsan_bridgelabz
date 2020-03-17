@@ -17,6 +17,7 @@ export class GetNotesComponent implements OnInit {
   change :boolean;
   pin;
   text; 
+  show;
 
   constructor(
     private dataSharing:DataSharingService,
@@ -36,7 +37,7 @@ export class GetNotesComponent implements OnInit {
       });
       
     this.dataSharing.currentCard.subscribe(change => this.change=change)  
-    
+
     this.dataSharing.currentValue.subscribe((text) =>{
       this.text = text;
       this.changeText();
@@ -46,10 +47,9 @@ export class GetNotesComponent implements OnInit {
 
   changeText(){
     console.log(this.text);
-    
   }
 
-  drop(event: CdkDragDrop<number[]>) {
+  drop(event: CdkDragDrop<any>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {
@@ -64,7 +64,7 @@ export class GetNotesComponent implements OnInit {
   // }
 
   serviceCard(){
-    if(this.userData.cardType == "Basic"){
+    if(this.userData.cardType == "Basic"){ 
       this.advance = false;
     }
     if(this.userData.cardType == "Advance"){
@@ -75,7 +75,6 @@ export class GetNotesComponent implements OnInit {
         this.pin = true;  
      }
     }
-   
   }
 
   getNotes(){
