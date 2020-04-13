@@ -34,7 +34,7 @@
         <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="message" class="example-list"
         (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
 
-        <mat-card mat-grid-tile class="card" *ngFor="let onenote of message | filter:text" 
+        <mat-card mat-grid-tile class="card" *ngFor="let onenote of message | filter:text"
     [style.background-color]="onenote.color" cdkDrag>
     
     <div *ngIf="onenote.label == text"></div>

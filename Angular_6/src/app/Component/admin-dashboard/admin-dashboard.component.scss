@@ -37,6 +37,10 @@ h2{
 
 .texts{
     display: flex;
+    justify-content: center;
+}
+.texts1{
+    display: flex;
     justify-content: space-between;
 }
 
@@ -56,46 +60,15 @@ h2{
 .time{
     margin: 5px 0px 5px 16px;
 }
-.fname{
-    font-size: large;
+th{
     font-weight: 500;
-    margin: 10px 0px 8px 0px;
+    text-align: inherit;
+    padding-left: 10px;
 }
-.lname{
-    font-size: large;
-    font-weight: 500;
-    margin: 10px 0px 8px 90px;
+td{
+    padding-left: 10px;
 }
-.mail{
-    font-size: large;
-    font-weight: 500;
-    margin: 10px 0px 8px 100px;
-}
-.notes{
-    font-size: large;
-    font-weight: 500;
-    margin: 10px 0px 8px 100px;
-}
-.status{
-    font-size: large;
-    font-weight: 500;
-    margin: 10px 0px 8px 70px;
-}
-.fname1{
-    margin: 5px 0px 5px 0px;
-}
-.lname1{
-    margin: 5px 0px 5px 130px;
-}
-.mail1{
-    margin: 5px 0px 5px 50px;
-}
-.notes1{
-    margin: 5px 0px 5px 40px;
-}
-.status1{
-    margin: 5px 0px 5px 70px;
-}
+
 .signout{
     width:90px;
     height:36px;
