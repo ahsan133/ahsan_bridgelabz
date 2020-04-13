@@ -1,10 +1,14 @@
-<div class="whole" >
+<div *ngIf="showpin">
+  <div class="pin">PINNED</div>
+</div>
+
+<div class="whole" *ngIf="pinned">
   <mat-list role="list" *ngIf="change; else gridview">
     
-    <div id="message" cdkDropList [cdkDropListData]="message"
+    <div id="message" cdkDropList [cdkDropListData]="pinned"
     (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
 
-    <mat-card mat-list-item class="card1" *ngFor="let onenote of message"
+    <mat-card mat-list-item class="card1" *ngFor="let onenote of pinned"
      [style.background-color]="onenote.color" cdkDragLockAxis="y" cdkDrag>
       <div (click)="matcardOpen(onenote)">
   
@@ -31,10 +35,11 @@
 
     <ng-template #gridview>
 
-        <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="message" class="example-list"
+        <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="pinned" class="example-list"
         (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
 
-        <mat-card mat-grid-tile class="card" *ngFor="let onenote of message | filter:text"
+        
+        <mat-card mat-grid-tile class="card" *ngFor="let onenote of pinned | filter:text"
     [style.background-color]="onenote.color" cdkDrag>
     
     <div *ngIf="onenote.label == text"></div>
@@ -42,7 +47,7 @@
     <div>
       <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
     </div>
-   
+    
     <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
     <div class="title1" *ngIf="!onenote.title" >Title</div>
     <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
@@ -64,3 +69,78 @@
   </div>
   </ng-template>
     </div>
+
+
+<div *ngIf="showpin">
+  <div class="pin">OTHERS</div>
+</div>
+
+<div class="whole" >
+  <mat-list role="list" *ngIf="change; else gridview">
+    
+    <div id="message" cdkDropList [cdkDropListData]="unpinned"
+    (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+
+    <mat-card mat-list-item class="card1" *ngFor="let onenote of unpinned"
+     [style.background-color]="onenote.color" cdkDragLockAxis="y" cdkDrag>
+      <div (click)="matcardOpen(onenote)">
+  
+      <img *ngIf="onenote.image" class ="image1" src="{{onenote.image}}">
+    
+    <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+    <div class="title1" *ngIf="!onenote.title" >Title</div>
+    <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+    <div class="description1" *ngIf="!onenote.description">Description</div>
+    </div>
+    <app-pin *ngIf="advance" class="showPin" [data]="onenote"></app-pin>
+    <button class="allIcon" *ngIf="onenote.remainder">
+      <mat-icon class="icon1">query_builder</mat-icon>
+      <div class="remainderText">{{onenote.remainder}}</div>
+        <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton">
+          <mat-icon class="icon2">close</mat-icon>
+        </button>
+    </button>
+    <app-labels *ngIf="advance" [data]="onenote"></app-labels>
+    <app-icons *ngIf="advance" [data]="onenote"></app-icons>
+    </mat-card>
+  </div>
+    </mat-list>
+
+    <ng-template #gridview>
+
+        <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="unpinned" class="example-list"
+        (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+
+        
+        <mat-card mat-grid-tile class="card" *ngFor="let onenote of unpinned | filter:text"
+    [style.background-color]="onenote.color" cdkDrag>
+    
+    <div *ngIf="onenote.label == text"></div>
+      <div (click)="matcardOpen(onenote)">
+    <div>
+      <img *ngIf="onenote.image" class ="image" src="{{onenote.image}}">
+    </div>
+    
+    <div class="title" *ngIf="onenote.title" >{{onenote.title}}</div>
+    <div class="title1" *ngIf="!onenote.title" >Title</div>
+    <div class="description" *ngIf="onenote.description">{{onenote.description}}</div>
+    <div class="description1" *ngIf="!onenote.description">Description</div>
+    </div>
+    <app-pin *ngIf="advance" class="showPin" [data]="onenote"></app-pin>
+    <button class="allIcon" *ngIf="onenote.remainder">
+      <mat-icon class="icon1">query_builder</mat-icon>
+      <div class="remainderText">{{onenote.remainder}}</div>
+        <button mat-icon-button (click)="removeRemainder(onenote.id)" class="iconbutton">
+          <mat-icon class="icon2">close</mat-icon>
+        </button>
+    </button>
+    
+    <app-labels *ngIf="advance" [data]="onenote"></app-labels>
+    <app-icons *ngIf="advance" class="showIcons" [data]="onenote"></app-icons>
+    </mat-card>
+
+  </div>
+  </ng-template>
+  
+    </div>
+    

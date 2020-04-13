@@ -105,3 +105,13 @@
  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
    }
+
+
+   .pin{
+    padding-left: 8%;
+    font-weight: 500;
+    color: gray;
+    font-size: small;
+    margin-top: 40px;
+    margin-bottom: 10px;
+   }

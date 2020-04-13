@@ -18,7 +18,9 @@ export class GetNotesComponent implements OnInit {
   pin;
   text; 
   show;
-
+  pinned = [];
+  unpinned = [];
+  showpin;
   constructor(
     private dataSharing:DataSharingService,
     private snackBar:MatSnackBar,
@@ -59,9 +61,6 @@ export class GetNotesComponent implements OnInit {
                         event.currentIndex);
     }
   }
-  // drop1(event: CdkDragDrop<string[]>) {
-  //   moveItemInArray(this.message, event.previousIndex, event.currentIndex);
-  // }
 
   serviceCard(){
     if(this.userData.cardType == "Basic"){ 
@@ -80,6 +79,25 @@ export class GetNotesComponent implements OnInit {
   getNotes(){
    this.note.getNotes(this.userData.email).subscribe((status : any)=>{
      this.message = status;
+     
+     let i=0;
+     let j=0;
+    this.pinned.length=0;
+    this.unpinned.length=0;
+     for(let one of this.message){
+       if(one.pin == true){
+         this.pinned[i++] = one;
+       }else{
+         this.unpinned[j++] = one;
+       }
+     }  
+
+    if(this.pinned.length != 0){
+      this.showpin = true;
+    }else{
+      this.showpin = false;
+    }
+    
    });
   }
 
