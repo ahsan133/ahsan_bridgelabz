@@ -7,7 +7,7 @@
     
         <h1>Fundoo</h1>
   
-    <div class="search">
+    <div class="search" fxShow="true" fxHide.lt-md="true">
       <mat-card class="search-bar" >
         <button class="search-button" id="search-button" mat-icon-button>
           <mat-icon matSuffix class="suffix">search</mat-icon>
@@ -20,7 +20,14 @@
       </mat-card>
     </div>
   
-  <div class="set">
+    <mat-card class="search1" fxShow="false" fxHide.lt-md ="false">
+      <input class="in1" type="text" name="search" (change)="searchText($event)" autocomplete="off" 
+      placeholder="&#61442; Search">
+    </mat-card>
+
+
+
+  <div class="set" fxShow="true" fxHide.xs="true">
     <button mat-icon-button class="btn1" *ngIf="!card1" (click)="viewGrid()" matTooltip="List view"><mat-icon>list</mat-icon></button>
     <button mat-icon-button class="btn1" *ngIf="card1" (click)="viewList()" matTooltip="Grid view"><mat-icon>grid_on</mat-icon></button>
   </div>
