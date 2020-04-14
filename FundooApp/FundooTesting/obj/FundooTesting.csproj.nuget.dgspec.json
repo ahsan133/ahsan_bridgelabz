@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooTesting\\FundooTesting.csproj": {}
+    "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooTesting\\FundooTesting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooApp\\FundooApp.csproj": {
+    "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooApp\\FundooApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooApp\\FundooApp.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooApp\\FundooApp.csproj",
         "projectName": "FundooApp",
-        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooApp\\FundooApp.csproj",
-        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooApp\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooApp\\FundooApp.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,14 +27,14 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooManager\\FundooManager.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooManager\\FundooManager.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooManager\\FundooManager.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooManager\\FundooManager.csproj"
               },
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj"
               },
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj"
               }
             }
           }
@@ -84,21 +84,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooManager\\FundooManager.csproj": {
+    "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooManager\\FundooManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooManager\\FundooManager.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooManager\\FundooManager.csproj",
         "projectName": "FundooManager",
-        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooManager\\FundooManager.csproj",
-        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooManager\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooManager\\FundooManager.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -111,11 +111,11 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj"
               },
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj"
               }
             }
           }
@@ -150,21 +150,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj": {
+    "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj",
         "projectName": "FundooModels",
-        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj",
-        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -209,21 +209,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
+    "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj",
         "projectName": "FundooRepository",
-        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\FundooRepository.csproj",
-        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooRepository\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\FundooRepository.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooRepository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -236,8 +236,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooModels\\FundooModels.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooModels\\FundooModels.csproj"
               }
             }
           }
@@ -288,21 +288,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooTesting\\FundooTesting.csproj": {
+    "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooTesting\\FundooTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooTesting\\FundooTesting.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooTesting\\FundooTesting.csproj",
         "projectName": "FundooTesting",
-        "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooTesting\\FundooTesting.csproj",
-        "packagesPath": "C:\\Users\\bridgelabz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooTesting\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooTesting\\FundooTesting.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooTesting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\bridgelabz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -315,8 +315,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooApp\\FundooApp.csproj": {
-                "projectPath": "C:\\Users\\bridgelabz\\Desktop\\ahsan\\backend\\FundooApp\\FundooApp\\FundooApp.csproj"
+              "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooApp\\FundooApp.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\ahsan\\Fundoo\\FundooApp\\FundooApp\\FundooApp.csproj"
               }
             }
           }
@@ -355,7 +355,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

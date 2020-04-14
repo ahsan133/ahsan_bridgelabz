@@ -28,3 +28,15 @@ C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooModels\obj\Debug\netco
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.AssemblyInfo.cs
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.dll
 C:\Users\bridgelabz\Desktop\ahsan\backend\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.pdb
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.deps.json
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.runtimeconfig.json
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.runtimeconfig.dev.json
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.dll
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\bin\Debug\netcoreapp2.1\FundooModels.pdb
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.AssemblyInfo.cs
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.dll
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.pdb
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\FundooModels\obj\Debug\netcoreapp2.1\FundooModels.genruntimeconfig.cache

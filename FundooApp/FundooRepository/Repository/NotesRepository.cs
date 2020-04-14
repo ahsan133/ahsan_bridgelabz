@@ -510,7 +510,7 @@ namespace FundooRepository.Repository
         /// </returns>
         public Task DragAndDrop(string email, int dragIndex, int dropIndex)
         {
-            var user = this.context.NotesModels.Where(p => p.Email == email).SingleOrDefault();
+            var user = this.context.NotesModels.Where(p => p.Email == email).FirstOrDefault();
             if (user != null)
             {
                 var data = from item in this.context.NotesModels where item.Email == email select item;
