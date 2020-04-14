@@ -89,6 +89,8 @@
     display: flex;
     flex-direction: row;
     align-items: end;
+    flex-wrap: wrap;
+    justify-content: center;    
  }
 .cdk-drag-preview {
     box-sizing: border-box;

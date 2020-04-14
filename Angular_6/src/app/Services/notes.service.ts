@@ -159,7 +159,11 @@ return this.http.post(environment.Url+ 'api/addCollaborator',params);
       "Id":id,
        "Label": newLabel
     };
-    return this.http .put(environment.Url+'api/updateLabel',params);
+    return this.http.put(environment.Url+'api/updateLabel',params);
   }
 
+  Index(email,previous,current){
+    const url=environment.Url+'api/dragDrop?email='+email+'&dragIndex='+previous+'&dropIndex='+current;
+      return this.http.put(url,null);
+  }
 }

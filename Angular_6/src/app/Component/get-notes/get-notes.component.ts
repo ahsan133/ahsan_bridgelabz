@@ -60,15 +60,27 @@ export class GetNotesComponent implements OnInit {
                         event.previousIndex,
                         event.currentIndex);
     }
+    this.note.Index(this.userData.email,event.previousIndex,event.currentIndex).subscribe((status)=>{
+      console.log(status);
+    });
   }
 
   drop1(event: CdkDragDrop<any>) {
     moveItemInArray(this.unpinned, event.previousIndex, event.currentIndex);
+    console.log(event);
+    console.log(event.container.data);
+    this.note.Index(this.userData.email,event.previousIndex,event.currentIndex).subscribe((status)=>{
+      console.log(status);
+    });
   }
 
   drop2(event: CdkDragDrop<any>) {
     moveItemInArray(this.pinned, event.previousIndex, event.currentIndex);
+    this.note.Index(this.userData.email,event.previousIndex,event.currentIndex).subscribe((status)=>{
+      console.log(status);
+    });
   }
+
   serviceCard(){
     if(this.userData.cardType == "Basic"){ 
       this.advance = false;
