@@ -62,6 +62,13 @@ export class GetNotesComponent implements OnInit {
     }
   }
 
+  drop1(event: CdkDragDrop<any>) {
+    moveItemInArray(this.unpinned, event.previousIndex, event.currentIndex);
+  }
+
+  drop2(event: CdkDragDrop<any>) {
+    moveItemInArray(this.pinned, event.previousIndex, event.currentIndex);
+  }
   serviceCard(){
     if(this.userData.cardType == "Basic"){ 
       this.advance = false;

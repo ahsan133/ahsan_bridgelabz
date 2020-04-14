@@ -35,9 +35,8 @@
 
     <ng-template #gridview>
 
-        <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="pinned" class="example-list"
-        (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
-
+        <div id="message" cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="pinned" class="example-list"
+        (cdkDropListDropped)="drop2($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
         
         <mat-card mat-grid-tile class="card" *ngFor="let onenote of pinned | filter:text"
     [style.background-color]="onenote.color" cdkDrag>
@@ -108,8 +107,8 @@
 
     <ng-template #gridview>
 
-        <div id="message" cdkDropList fxLayout="row" [cdkDropListData]="unpinned" class="example-list"
-        (cdkDropListDropped)="drop($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
+        <div id="message" cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="unpinned" class="example-list"
+        (cdkDropListDropped)="drop1($event)" [cdkDropListEnterPredicate]="noReturnPredicate">
 
         
         <mat-card mat-grid-tile class="card" *ngFor="let onenote of unpinned | filter:text"

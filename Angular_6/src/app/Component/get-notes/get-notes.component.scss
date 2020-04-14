@@ -85,10 +85,11 @@
     height: 25px;
 }
 
-.example-list{
-    flex-wrap: wrap;
-    justify-content: center;
-}
+ .example-list{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+ }
 .cdk-drag-preview {
     box-sizing: border-box;
     border-radius: 10px;
