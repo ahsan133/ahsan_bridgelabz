@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooApp", "FundooApp\FundooApp.csproj", "{02386678-25E0-4285-A516-0BAD8E1411AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooApp", "FundooApp\FundooApp.csproj", "{02386678-25E0-4285-A516-0BAD8E1411AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooManager", "FundooManager\FundooManager.csproj", "{BC91BC2C-2F84-49DC-8DE0-3973F3360422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooManager", "FundooManager\FundooManager.csproj", "{BC91BC2C-2F84-49DC-8DE0-3973F3360422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooModels", "FundooModels\FundooModels.csproj", "{C8BC433A-F503-49B2-8A69-C9E374904A3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooModels", "FundooModels\FundooModels.csproj", "{C8BC433A-F503-49B2-8A69-C9E374904A3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooRepository", "FundooRepository\FundooRepository.csproj", "{71AE076D-1776-43DC-ABF9-B3A4B9983C51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooRepository", "FundooRepository\FundooRepository.csproj", "{71AE076D-1776-43DC-ABF9-B3A4B9983C51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundooTesting", "FundooTesting\FundooTesting.csproj", "{54E92363-34D5-4F62-9C1B-3F4E204CA64F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundooTesting", "FundooTesting\FundooTesting.csproj", "{54E92363-34D5-4F62-9C1B-3F4E204CA64F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeliniumTesting", "SeliniumTesting\SeliniumTesting.csproj", "{0108335C-6794-4B31-9EFD-9B3C97F14F5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{54E92363-34D5-4F62-9C1B-3F4E204CA64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E92363-34D5-4F62-9C1B-3F4E204CA64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E92363-34D5-4F62-9C1B-3F4E204CA64F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0108335C-6794-4B31-9EFD-9B3C97F14F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0108335C-6794-4B31-9EFD-9B3C97F14F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0108335C-6794-4B31-9EFD-9B3C97F14F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0108335C-6794-4B31-9EFD-9B3C97F14F5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
