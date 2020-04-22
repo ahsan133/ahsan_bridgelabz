@@ -33,7 +33,7 @@ namespace FundooRepository.Repository
         /// <summary>
         /// The context
         /// </summary>
-        private UserContext context;
+        private readonly UserContext context;
 
         /// <summary>
         /// The configuration

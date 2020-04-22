@@ -5,9 +5,6 @@ namespace SeliniumTesting
 {
     class Program
     {
-        
-
-       
     }
 }
 
