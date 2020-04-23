@@ -1,7 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 using OpenQA.Selenium;
 using System;
-//using Baseclass.Contrib.SpecFlow.Selenium.NUnit.Bindings;
 using TechTalk.SpecFlow.Assist;
 using OpenQA.Selenium.Chrome;
 
@@ -12,15 +11,14 @@ namespace SeleniumTest.Steps
     {
         readonly IWebDriver driver = new ChromeDriver();
 
-        [Given(@"I have navigated to login page")]
+        [Given(@"I have navigated to Login page")]
         public void GivenIHaveNavigatedToLoginPage()
         {
             driver.Navigate().GoToUrl("http://localhost:4200/login");
-
         }
 
-        [Given(@"I see login page is fully loaded")]
-        public void GivenISeeLoginPageIsFullyLoadeded()
+        [Given(@"I see Login page is fully loaded")]
+        public void GivenISeeLoginPageIsFullyLoaded()
         {
             if (driver.FindElement(By.Id("mat-input-0")).Displayed == true)
             {
@@ -32,25 +30,25 @@ namespace SeleniumTest.Steps
             }
         }
 
-        [When(@"I type email keyword as")]
+        [When(@"I type email Keyword as")]
         public void WhenITypeEmailKeywordAs(Table table)
         {
             dynamic detail = table.CreateDynamicInstance();
             driver.FindElement(By.Id("mat-input-0")).SendKeys(detail.Keyword);
         }
 
-        [When(@"I type password keyword as")]
+        [When(@"I type password Keyword as")]
         public void WhenITypePasswordKeywordAs(Table table)
         {
             dynamic detail = table.CreateDynamicInstance();
             driver.FindElement(By.Id("mat-input-1")).SendKeys(detail.Keyword);
+            driver.FindElement(By.Id("btn")).Click();
         }
 
-        [Then(@"the result should be logged in")]
-        public void ThenTheResultShouldBeLoggedIn()
+        [Then(@"It should log in")]
+        public void ThenItShouldLogIn()
         {
-            Console.WriteLine("done");
+            Console.WriteLine("logged in");
         }
-
     }
 }
