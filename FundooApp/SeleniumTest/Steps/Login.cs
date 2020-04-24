@@ -3,13 +3,16 @@ using OpenQA.Selenium;
 using System;
 using TechTalk.SpecFlow.Assist;
 using OpenQA.Selenium.Chrome;
+using SeleniumTest.Pages;
 
 namespace SeleniumTest.Steps
 {
     [Binding]
     class LoginSteps
     {
-        readonly IWebDriver driver = new ChromeDriver();
+        IWebDriver driver = new ChromeDriver();
+
+        
 
         [Given(@"I have navigated to Login page")]
         public void GivenIHaveNavigatedToLoginPage()
@@ -42,7 +45,10 @@ namespace SeleniumTest.Steps
         {
             dynamic detail = table.CreateDynamicInstance();
             driver.FindElement(By.Id("mat-input-1")).SendKeys(detail.Keyword);
-            driver.FindElement(By.Id("btn")).Click();
+
+            LoginPage page = new LoginPage(driver);
+
+            DashboardPage DPage = page.ClickBtn();
         }
 
         [Then(@"It should log in")]

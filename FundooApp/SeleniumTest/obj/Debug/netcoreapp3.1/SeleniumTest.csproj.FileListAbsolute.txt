@@ -15,6 +15,7 @@ C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\SeleniumTest.pdb
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\BoDi.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\Cucumber.Messages.dll
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\SeleniumExtras.PageObjects.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\Dynamitey.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\Gherkin.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
@@ -107,6 +108,7 @@ C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.csprojAssemblyReference.cache
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.AssemblyInfoInputs.cache
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.AssemblyInfo.cs
@@ -114,4 +116,3 @@ C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.pdb
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.genruntimeconfig.cache
-C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.csprojAssemblyReference.cache
