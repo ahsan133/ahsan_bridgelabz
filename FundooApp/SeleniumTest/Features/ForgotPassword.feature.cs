@@ -111,12 +111,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("I see ForgotPassword page is fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Email"});
-                table4.AddRow(new string[] {
+                table6.AddRow(new string[] {
                             "ahsan@gmail.com"});
 #line 10
- testRunner.When("I type email as", ((string)(null)), table4, "When ");
+ testRunner.When("I type email as", ((string)(null)), table6, "When ");
 #line hidden
 #line 13
  testRunner.Then("It should send mail", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

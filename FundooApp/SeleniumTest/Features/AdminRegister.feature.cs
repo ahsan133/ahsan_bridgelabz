@@ -111,18 +111,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("I see adminRegister page is fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "Email",
                             "Password"});
-                table3.AddRow(new string[] {
+                table5.AddRow(new string[] {
                             "mda",
                             "ahsan",
                             "ahsan@gmail.com",
                             "ahsan123"});
 #line 10
- testRunner.When("I type data for admin as", ((string)(null)), table3, "When ");
+ testRunner.When("I type data for admin as", ((string)(null)), table5, "When ");
 #line hidden
 #line 13
  testRunner.Then("It should register for admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

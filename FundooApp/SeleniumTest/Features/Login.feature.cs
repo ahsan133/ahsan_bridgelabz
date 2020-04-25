@@ -111,21 +111,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("I see Login page is fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Keyword"});
-                table5.AddRow(new string[] {
-                            "ahsan@gmail.com"});
-#line 10
- testRunner.When("I type email Keyword as", ((string)(null)), table5, "When ");
-#line hidden
-                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Keyword"});
-                table6.AddRow(new string[] {
+                TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Email",
+                            "Password"});
+                table7.AddRow(new string[] {
+                            "ahsan@gmail.com",
                             "ahsan123"});
-#line 13
- testRunner.And("I type password Keyword as", ((string)(null)), table6, "And ");
+#line 10
+ testRunner.When("I type email and password", ((string)(null)), table7, "When ");
 #line hidden
-#line 16
+#line 13
+ testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
  testRunner.Then("It should log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
