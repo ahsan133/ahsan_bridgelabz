@@ -8,9 +8,12 @@ namespace SeleniumTest.Pages
 {
     class AddNotePage : BasePage
     {
+        IWebDriver driver2;
+
         public AddNotePage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
+            this.driver2 = driver;
         }
 
         [FindsBy(How = How.Id, Using = "title")]
@@ -44,11 +47,12 @@ namespace SeleniumTest.Pages
             note.Click();
         }
 
-        public void GiveValues(string title, string description)
+        public NoteOperationPage GiveValues(string title, string description)
         {
             enterTitle.SendKeys(title);
             enterDescription.SendKeys(description);
             ClickSave.Click();
+            return new NoteOperationPage(driver2);
         }
 
     }

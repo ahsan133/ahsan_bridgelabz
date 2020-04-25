@@ -15,7 +15,7 @@ namespace SeleniumTest.Steps
         {
             ((AddNotePage)PropertyCollection.CurrentPage).ClickOnNote();
             dynamic detail = table.CreateDynamicInstance();
-            ((AddNotePage)PropertyCollection.CurrentPage).GiveValues(detail.Title, detail.Description);
+            PropertyCollection.CurrentPage = ((AddNotePage)PropertyCollection.CurrentPage).GiveValues(detail.Title, detail.Description);
         }
 
         [Then(@"the note should be added")]
