@@ -111,19 +111,19 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.And("I see AdminLogin page is fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Keyword"});
-                table3.AddRow(new string[] {
-                            "ahsan@gmail.com"});
-#line 9
- testRunner.When("I type email Keyword for admin as", ((string)(null)), table3, "When ");
-#line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Keyword"});
                 table4.AddRow(new string[] {
+                            "ahsan@gmail.com"});
+#line 9
+ testRunner.When("I type email Keyword for admin as", ((string)(null)), table4, "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Keyword"});
+                table5.AddRow(new string[] {
                             "ahsan123"});
 #line 12
- testRunner.And("I type password Keyword for admin as", ((string)(null)), table4, "And ");
+ testRunner.And("I type password Keyword for admin as", ((string)(null)), table5, "And ");
 #line hidden
 #line 15
  testRunner.Then("It should log in as admin", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

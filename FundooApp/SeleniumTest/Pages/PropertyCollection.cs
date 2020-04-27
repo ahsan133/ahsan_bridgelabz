@@ -8,6 +8,5 @@ namespace SeleniumTest.Pages
     {
         public static BasePage CurrentPage { get; set; }
 
-        public static BasePage CurrenPage1 { get; set; }
     }
 }

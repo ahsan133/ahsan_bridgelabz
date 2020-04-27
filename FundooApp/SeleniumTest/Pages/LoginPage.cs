@@ -38,5 +38,11 @@ namespace SeleniumTest.Pages
             return new AddNotePage(driver1);
         }
 
+        public AccountOperationPage ClickButton()
+        {
+            clickLogin.Click();
+            return new AccountOperationPage(driver1);
+        }
+
     }
 }

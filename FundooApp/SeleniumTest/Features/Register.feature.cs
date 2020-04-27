@@ -111,18 +111,18 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.And("I see Register page is fully loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-                TechTalk.SpecFlow.Table table12 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table13 = new TechTalk.SpecFlow.Table(new string[] {
                             "FirstName",
                             "LastName",
                             "Email",
                             "Password"});
-                table12.AddRow(new string[] {
+                table13.AddRow(new string[] {
                             "mda",
                             "ahsan",
                             "ahsan@gmail.com",
                             "ahsan123"});
 #line 10
- testRunner.When("I type data as", ((string)(null)), table12, "When ");
+ testRunner.When("I type data as", ((string)(null)), table13, "When ");
 #line hidden
 #line 13
  testRunner.Then("It should register", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

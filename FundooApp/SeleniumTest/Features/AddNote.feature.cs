@@ -108,14 +108,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 8
  testRunner.Given("I have navigated to Login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Email",
                             "Password"});
-                table1.AddRow(new string[] {
+                table2.AddRow(new string[] {
                             "ahsan@gmail.com",
                             "ahsan123"});
 #line 9
- testRunner.When("I type email and password", ((string)(null)), table1, "When ");
+ testRunner.When("I type email and password", ((string)(null)), table2, "When ");
 #line hidden
 #line 12
  testRunner.And("I click login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -123,14 +123,14 @@ this.ScenarioInitialize(scenarioInfo);
 #line 13
  testRunner.Then("It should log in", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Title",
                             "Description"});
-                table2.AddRow(new string[] {
+                table3.AddRow(new string[] {
                             "hi",
                             "whatsup"});
 #line 14
- testRunner.When("I give title and description", ((string)(null)), table2, "When ");
+ testRunner.When("I give title and description", ((string)(null)), table3, "When ");
 #line hidden
 #line 17
  testRunner.Then("the note should be added", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
