@@ -38,6 +38,11 @@ Scenario:5 Add label
 	| goods |
 	Then the label is added
 
-Scenario:6 Add archive
+Scenario:6 Add image
+    When I click on choose file
+	And I add the image 
+	Then The image should be added
+
+Scenario:7 Add archive
     When I click on add archive
 	Then the note is added to archive

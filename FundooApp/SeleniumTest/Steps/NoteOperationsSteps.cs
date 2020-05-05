@@ -75,6 +75,24 @@ namespace SeleniumTest.Steps
             Console.WriteLine("label added");
         }
 
+        [When(@"I click on choose file")]
+        public void WhenIClickOnChooseFile()
+        {
+            ((NoteOperationPage)PropertyCollection.CurrentPage).AddImage();
+        }
+
+        [When(@"I add the image")]
+        public void WhenIAddTheImage()
+        {
+            ((NoteOperationPage)PropertyCollection.CurrentPage).ImageUpload();
+        }
+
+        [Then(@"The image should be added")]
+        public void ThenTheImageShouldBeAdded()
+        {
+            Console.WriteLine("image added");
+        }
+
         [When(@"I click on add archive")]
         public void WhenIClickOnAddArchive()
         {

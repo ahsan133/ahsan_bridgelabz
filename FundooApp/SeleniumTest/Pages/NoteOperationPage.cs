@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using AutoItX3Lib;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,6 +49,36 @@ namespace SeleniumTest.Pages
 
         [FindsBy(How = How.Id, Using = "archive")]
         private IWebElement addArchive;
+
+        [FindsBy(How = How.Id, Using = "image")]
+        private IWebElement addImage;
+
+        [FindsBy(How = How.Id, Using = "uploadImage")]
+        private IWebElement imageUpload;
+
+        [FindsBy(How = How.Id, Using = "open")]
+        private IWebElement ChooseImage;
+
+        public void AddImage()
+        {
+            System.Threading.Thread.Sleep(2000);
+            addImage.Click();
+        }
+
+        public void ImageUpload()
+        {
+            ChooseImage.SendKeys(@"C:\Users\HP\Desktop\example.webp");
+            //System.Threading.Thread.Sleep(5000);
+            //AutoItX3 auto = new AutoItX3();
+            //auto.WinActivate("Open");
+
+            System.Threading.Thread.Sleep(5000);
+            //auto.Send(@"C:\Users\HP\Desktop\example.webp");
+            //System.Threading.Thread.Sleep(9000);
+            //auto.Send("{ENTER}");
+            imageUpload.Click();
+            System.Threading.Thread.Sleep(9000);
+        }
 
         public void AddRemainder()
         {

@@ -115,3 +115,7 @@ C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.dll
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.pdb
 C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.genruntimeconfig.cache
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\bin\Debug\netcoreapp3.1\Interop.AutoItX3Lib.dll
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\Interop.AutoItX3Lib.dll
+C:\Users\HP\Desktop\ahsan\Fundoo\FundooApp\SeleniumTest\obj\Debug\netcoreapp3.1\SeleniumTest.csproj.ResolveComReference.cache

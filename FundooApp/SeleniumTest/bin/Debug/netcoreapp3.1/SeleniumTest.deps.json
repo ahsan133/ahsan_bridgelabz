@@ -21,7 +21,8 @@
           "SpecFlow.NUnit": "3.1.97",
           "SpecFlow.Tools.MsBuild.Generation": "3.1.97",
           "WebDriver.ChromeDriver": "26.14.313457.1",
-          "NUnit": "3.12.0"
+          "NUnit": "3.12.0",
+          "Interop.AutoItX3Lib": "1.0.0.0"
         },
         "runtime": {
           "SeleniumTest.dll": {}
@@ -1257,7 +1258,15 @@
           }
         }
       },
-      "WebDriver.ChromeDriver/26.14.313457.1": {}
+      "WebDriver.ChromeDriver/26.14.313457.1": {},
+      "Interop.AutoItX3Lib/1.0.0.0": {
+        "runtime": {
+          "Interop.AutoItX3Lib.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
     }
   },
   "libraries": {
@@ -2056,6 +2065,11 @@
       "sha512": "sha512-/d6N/cxrAUaApPE9kp4km/ivMowlg7TSmgmYJL9fcUFa+Hq6pgCDlxO8aDlczW1cwdQG7lbDsQpnXduyUQbJqw==",
       "path": "webdriver.chromedriver/26.14.313457.1",
       "hashPath": "webdriver.chromedriver.26.14.313457.1.nupkg.sha512"
+    },
+    "Interop.AutoItX3Lib/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
