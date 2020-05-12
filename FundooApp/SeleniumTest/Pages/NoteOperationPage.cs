@@ -4,6 +4,7 @@ using AutoItX3Lib;
 using System;
 using System.Collections.Generic;
 using System.Text;
+//using DocumentFormat.OpenXml.Drawing.Charts;
 
 namespace SeleniumTest.Pages
 {
@@ -32,12 +33,12 @@ namespace SeleniumTest.Pages
         [FindsBy(How = How.Id, Using = "color")]
         private IWebElement addColor;
 
-        [FindsBy(How = How.Id, Using = "col(i)")]
+        [FindsBy(How = How.XPath, Using = "/html/body/div[3]/div[2]/div/div/div/div/div/div[7]/button")]
         private IWebElement color;
 
         [FindsBy(How = How.Id, Using = "more")]
         private IWebElement more;
-
+        
         [FindsBy(How = How.Id, Using = "label")]
         private IWebElement addLabel;
 
@@ -78,6 +79,8 @@ namespace SeleniumTest.Pages
             //auto.Send("{ENTER}");
             imageUpload.Click();
             System.Threading.Thread.Sleep(9000);
+
+           
         }
 
         public void AddRemainder()
@@ -92,7 +95,7 @@ namespace SeleniumTest.Pages
             System.Threading.Thread.Sleep(2000);
             collaborator.SendKeys(collabs);   
         }
-
+         
         public void ClickSave()
         {
             saveCollab.Click();
@@ -119,6 +122,7 @@ namespace SeleniumTest.Pages
         public void ChangeColor()
         {
             addColor.Click();
+            System.Threading.Thread.Sleep(2000);
             color.Click();
         }
     }

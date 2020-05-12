@@ -6,6 +6,11 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+
   <ItemGroup>
     <COMReference Include="AutoItX3Lib.dll">
       <Guid>f8937e53-d444-4e71-9275-35b64210cc3b</Guid>
@@ -18,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.10.1" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects.Core" Version="3.12.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
     <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
@@ -31,7 +37,71 @@
     <PackageReference Include="SpecFlow.Assist.Dynamic" Version="1.4.1" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.1.97" />
     <PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.1.97" />
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
     <PackageReference Include="WebDriver.ChromeDriver" Version="26.14.313457.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EncoderCore">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\EncoderCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\SDK\Microsoft.Expression.Encoder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.Api2">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\SDK\Microsoft.Expression.Encoder.Api2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.CommonUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Encoder.CommonUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.CoreUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Encoder.CoreUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.EncoderUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Encoder.EncoderUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.Project">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Encoder.Project.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.ProjectNewUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Startup\Microsoft.Expression.Encoder.ProjectNewUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.Types">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\SDK\Microsoft.Expression.Encoder.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.Utilities">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\SDK\Microsoft.Expression.Encoder.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder.UtilitiesUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Encoder.UtilitiesUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Extensibility">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Framework">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Licensing">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Expression.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Extensibility">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Windows.Design.Extensibility.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Design.Interaction">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\Microsoft.Windows.Design.Interaction.dll</HintPath>
+    </Reference>
+    <Reference Include="XSetupAct">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\XSetupAct.dll</HintPath>
+    </Reference>
+    <Reference Include="XSetupLic">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\XSetupLic.dll</HintPath>
+    </Reference>
+    <Reference Include="XSetupSqm">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\XSetupSqm.dll</HintPath>
+    </Reference>
+    <Reference Include="XSetupUI">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Expression\Encoder 4\XSetupUI.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

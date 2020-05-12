@@ -11,11 +11,13 @@ namespace SeleniumTest.Steps
     class LoginSteps
     {
         IWebDriver driver = new ChromeDriver();
-
+        //protected Recorder sr = new Recorder();
 
         [Given(@"I have navigated to Login page")]
         public void GivenIHaveNavigatedToLoginPage()
         {
+           // sr.SetVideoOutputLocation();
+            //sr.StartRecording();
             driver.Navigate().GoToUrl("http://localhost:4200/login");
         }
 
@@ -55,6 +57,7 @@ namespace SeleniumTest.Steps
         {
             AddNotePage NPage = new AddNotePage(driver);
             NPage.IsLoggedIn();
+            //sr.StopRecording();
         }
     }
 }

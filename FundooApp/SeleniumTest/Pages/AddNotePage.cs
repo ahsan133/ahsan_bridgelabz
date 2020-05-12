@@ -1,7 +1,10 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.Extensions;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Text;
 
 namespace SeleniumTest.Pages
@@ -45,11 +48,17 @@ namespace SeleniumTest.Pages
         public void ClickOnNote()
         {
             note.Click();
+           
         }
 
         public NoteOperationPage GiveValues(string title, string description)
         {
             enterTitle.SendKeys(title);
+
+            //var fullPath = Path.Combine(@"C:\Users\HP\Desktop\image.png", "sample.jpg");
+            Screenshot ss = ((ITakesScreenshot)driver2).GetScreenshot();
+            ss.SaveAsFile(@"C:\Users\HP\Desktop\image.png", ScreenshotImageFormat.Png);
+
             enterDescription.SendKeys(description);
             ClickSave.Click();
             return new NoteOperationPage(driver2);
