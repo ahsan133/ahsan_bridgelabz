@@ -1,0 +1,8 @@
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\bin\Debug\netstandard2.0\Models.deps.json
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\bin\Debug\netstandard2.0\Models.dll
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\bin\Debug\netstandard2.0\Models.pdb
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\obj\Debug\netstandard2.0\Models.csprojAssemblyReference.cache
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\obj\Debug\netstandard2.0\Models.AssemblyInfoInputs.cache
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\obj\Debug\netstandard2.0\Models.AssemblyInfo.cs
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\obj\Debug\netstandard2.0\Models.dll
+C:\Users\bridgelabz\Desktop\ahsan\BookStore\Models\obj\Debug\netstandard2.0\Models.pdb
